@@ -3,63 +3,283 @@
   "titular": "Víctor Hugo Ramírez Salgado",
   "lema": "Comercio internacional · logística portuaria · desarrollo",
   "trayectoria": [
-    { "periodo": "2005 – hoy", "texto": "21 años en la industria marítimo-portuaria." },
-    { "periodo": "2005 – 2009", "texto": "Coordinador de trámites aduanales, Agencia Aduanal Soriano y Rivera." },
-    { "periodo": "2009 – 2022", "texto": "API / ASIPONA Ensenada: control y almacenaje, estadística, operaciones e ingeniería, subgerencia de operaciones y ecología." },
-    { "periodo": "2012 – 2022", "texto": "Estadísticas portuarias de Ensenada, El Sauzal y Costa Azul para la Coordinación General de Puertos y Marina Mercante y los Comités de Operación." },
-    { "periodo": "2013", "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada)." },
-    { "periodo": "2016 – hoy", "texto": "Fundador de ContenedorEns© y Arsa Bodegas©: venta, renta y modificación de contenedores." },
-    { "periodo": "Docencia", "texto": "Licenciatura en Universidad Xochicalco y Universidad Autónoma de Durango (campus Ensenada); profesor en programas de CETYS Universidad." }
+    {
+      "periodo": "2005 – hoy",
+      "texto": "21 años en la industria marítimo-portuaria."
+    },
+    {
+      "periodo": "2005 – 2009",
+      "texto": "Coordinador de trámites aduanales, Agencia Aduanal Soriano y Rivera."
+    },
+    {
+      "periodo": "2009 – 2022",
+      "texto": "API / ASIPONA Ensenada: control y almacenaje, estadística, operaciones e ingeniería, subgerencia de operaciones y ecología."
+    },
+    {
+      "periodo": "2012 – 2022",
+      "texto": "Estadísticas portuarias de Ensenada, El Sauzal y Costa Azul para la Coordinación General de Puertos y Marina Mercante y los Comités de Operación."
+    },
+    {
+      "periodo": "2013",
+      "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada)."
+    },
+    {
+      "periodo": "2016 – hoy",
+      "texto": "Fundador de ContenedorEns© y Arsa Bodegas©: venta, renta y modificación de contenedores."
+    },
+    {
+      "periodo": "Docencia",
+      "texto": "Licenciatura en Universidad Xochicalco y Universidad Autónoma de Durango (campus Ensenada); profesor en programas de CETYS Universidad."
+    }
   ],
   "formacion": [
-    { "periodo": "2014", "texto": "XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos — Puertos del Estado (España) y Comisión Interamericana de Puertos (CIP-OEA), Santander.", "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf" },
-    { "periodo": "CIP-OEA", "texto": "Cursos de la Comisión Interamericana de Puertos de la OEA.", "liga": "https://www.oas.org/cip/cursosanteriores.html" },
-    { "periodo": "OMI", "texto": "Cursos marítimos avalados por la Organización Marítima Internacional." },
-    { "periodo": "2017", "texto": "MBA con especialidad en Mercadotecnia, CETYS Universidad." },
-    { "periodo": "2009", "texto": "Licenciatura en Comercio Internacional, Universidad Xochicalco." }
+    {
+      "periodo": "2014",
+      "texto": "XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos — Puertos del Estado (España) y CIP-OEA; Universidad de Cantabria / UIMP, Santander, 19 may – 13 jun 2014 (175 h, 7 ECTS). 19 profesionales de países iberoamericanos, entre ellos México.",
+      "liga": "https://www.puertosantander.es/en/node/196060"
+    },
+    {
+      "periodo": "2012",
+      "texto": "Seminario de Estadísticas Portuarias — Autoridad Portuaria Nacional del Perú y CIP-OEA, Lima, 29–30 nov 2012.",
+      "liga": "https://oas.org/cip/docs/cursos/Boletin%20Seminario%20Estadistica%20rev%203%20c%20hotel.pdf"
+    },
+    {
+      "periodo": "2016 · 2021",
+      "texto": "Curso Básico de Terminales de Contenedores (2016) y El Contenedor en el Puerto (2021) — CIP-OEA / APN Perú, en línea (57 h c/u)."
+    },
+    {
+      "periodo": "2016",
+      "texto": "Operations Management: Asia Approach — Northwestern Polytechnical University / CETYS, Xi'an, China (30 h)."
+    },
+    {
+      "periodo": "2016",
+      "texto": "Certificación EC0217 Impartición de Cursos de Formación del Capital Humano — CONOCER."
+    },
+    {
+      "periodo": "2011",
+      "texto": "Logística del Contenedor — Fundación Valenciaport, España (20 h)."
+    },
+    {
+      "periodo": "OMI",
+      "texto": "Cursos marítimos avalados por la Organización Marítima Internacional."
+    },
+    {
+      "periodo": "2017",
+      "texto": "MBA con especialidad en Mercadotecnia — CETYS Universidad."
+    },
+    {
+      "periodo": "2009",
+      "texto": "Licenciatura en Comercio Internacional — Universidad Xochicalco."
+    }
   ],
   "prensa": [
-    { "fecha": "2016-05-27", "medio": "CETYS Universidad", "titulo": "Analizan logística y operación en Ensenada", "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.", "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/", "verificada": true },
-    { "fecha": "", "medio": "CETYS Universidad", "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada", "nota": "", "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/", "verificada": false },
-    { "fecha": "2019-05-31", "medio": "El Vigía", "titulo": "Requiere Ensenada expertos en logística", "nota": "", "liga": "https://www.elvigia.net/general/2019/5/31/requiere-ensenada-expertos-en-logistica-316272.html", "verificada": false },
-    { "fecha": "", "medio": "Universidad Xochicalco", "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada", "nota": "", "liga": "https://noticias.xochicalco.edu.mx/noticia/556", "verificada": false }
+    {
+      "fecha": "2019-06-05",
+      "medio": "CETYS Universidad",
+      "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada",
+      "nota": "Lo cita como Subgerente de Operaciones de la API Ensenada.",
+      "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/",
+      "verificada": true
+    },
+    {
+      "fecha": "2019-06-11",
+      "medio": "LogiNews",
+      "titulo": "Puerto Ensenada necesita expertos en logística",
+      "nota": "Réplica de la nota de CETYS.",
+      "liga": "https://noticiaslogisticaytransporte.com/",
+      "verificada": true
+    },
+    {
+      "fecha": "2019",
+      "medio": "El Imparcial",
+      "titulo": "Crece necesidad de expertos en logística en el puerto de Ensenada",
+      "nota": "Réplica de la nota de CETYS.",
+      "liga": "https://www.elimparcial.com/",
+      "verificada": true
+    },
+    {
+      "fecha": "2019-05-31",
+      "medio": "El Vigía",
+      "titulo": "Requiere Ensenada expertos en logística",
+      "nota": "Incluida en la síntesis informativa de CETYS (El Mexicano, El Vigía, Infobaja, Radar Noticias, AGP).",
+      "liga": "https://www.elvigia.net/general/2019/5/31/requiere-ensenada-expertos-en-logistica-316272.html",
+      "verificada": true
+    },
+    {
+      "fecha": "2016-05-27",
+      "medio": "CETYS Universidad",
+      "titulo": "Analizan logística y operación en Ensenada",
+      "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.",
+      "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/",
+      "verificada": true
+    },
+    {
+      "fecha": "2014-06-13",
+      "medio": "Autoridad Portuaria de Santander",
+      "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
+      "nota": "Clausura del curso en el que participó.",
+      "liga": "https://www.puertosantander.es/en/node/196060",
+      "verificada": true
+    },
+    {
+      "fecha": "2013-06",
+      "medio": "T21 y API Ensenada",
+      "titulo": "1er Simposio Nacional de Recintos Fiscalizados de las API",
+      "nota": "Fundador y coordinador.",
+      "liga": "https://t21.com.mx/",
+      "verificada": false
+    },
+    {
+      "fecha": "",
+      "medio": "Universidad Xochicalco",
+      "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada",
+      "nota": "",
+      "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
+      "verificada": false
+    }
   ],
   "proyectos": [
-    { "nombre": "ContenedorEns©", "dominio": "contenedorens.com", "estatus": "Activo", "nota": "Contenedores: venta, renta y modificación." },
-    { "nombre": "Arsa Bodegas©", "dominio": "arsabodegas.com", "estatus": "Activo", "nota": "Mini bodegas tipo self storage en El Sauzal." },
-    { "nombre": "Trazabilidad de contenedores", "dominio": "tcontenedores.com", "estatus": "En desarrollo", "nota": "Rastreo e inventario de contenedores de segundo uso." },
-    { "nombre": "Intertopía©", "dominio": "intertopía.com", "estatus": "En desarrollo", "nota": "Concepto propuesto a la RAE (2026)." },
-    { "nombre": "Econotopía©", "dominio": "econotopía.com", "estatus": "En desarrollo", "nota": "Sistema de comunicación del Cubo." },
-    { "nombre": "Código Cúbico©", "dominio": "codigocubico.com", "estatus": "En preparación", "nota": "Código de comunicación del Cubo (33)." },
-    { "nombre": "Cubo 33©", "dominio": "cubo33.com", "estatus": "En preparación", "nota": "El Cubo de la Comunicación A–Z." },
-    { "nombre": "SOSistem™ / S.S.O.S.©", "dominio": "sosistem.com", "estatus": "En desarrollo", "nota": "Monitoreo sin cámaras para espacios confinados." }
+    {
+      "nombre": "ContenedorEns©",
+      "dominio": "contenedorens.com",
+      "estatus": "Activo",
+      "nota": "Contenedores: venta, renta y modificación."
+    },
+    {
+      "nombre": "Arsa Bodegas©",
+      "dominio": "arsabodegas.com",
+      "estatus": "Activo",
+      "nota": "Mini bodegas tipo self storage en El Sauzal."
+    },
+    {
+      "nombre": "Trazabilidad de contenedores",
+      "dominio": "tcontenedores.com",
+      "estatus": "En desarrollo",
+      "nota": "Rastreo e inventario de contenedores de segundo uso."
+    },
+    {
+      "nombre": "Intertopía©",
+      "dominio": "intertopía.com",
+      "estatus": "En desarrollo",
+      "nota": "Concepto propuesto a la RAE (2026)."
+    },
+    {
+      "nombre": "Econotopía©",
+      "dominio": "econotopía.com",
+      "estatus": "En desarrollo",
+      "nota": "Sistema de comunicación del Cubo."
+    },
+    {
+      "nombre": "Código Cúbico©",
+      "dominio": "codigocubico.com",
+      "estatus": "En preparación",
+      "nota": "Código de comunicación del Cubo (33)."
+    },
+    {
+      "nombre": "Cubo 33©",
+      "dominio": "cubo33.com",
+      "estatus": "En preparación",
+      "nota": "El Cubo de la Comunicación A–Z."
+    },
+    {
+      "nombre": "SOSistem™ / S.S.O.S.©",
+      "dominio": "sosistem.com",
+      "estatus": "En desarrollo",
+      "nota": "Monitoreo sin cámaras para espacios confinados."
+    }
   ],
   "registros": [
-    { "obra": "ContenedorEns© (nombre y logo)", "registro": "2609046908752" },
-    { "obra": "Arsa Bodegas© (nombre y logo)", "registro": "2609046908806" },
-    { "obra": "Econotopía©", "registro": "2610077261709" },
-    { "obra": "Teclado Cubo — memoria descriptiva y código fuente", "registro": "2610097277155" },
-    { "obra": "Econotopía Segura · El Cubo de la Comunicación — memoria técnica y descriptiva", "registro": "2610097277377" },
-    { "obra": "Lector Cúbico, Econotopía Segura — lector del Código Cúbico con cámara", "registro": "2610097277568" },
-    { "obra": "SOSistem™ versiones 3.9 a 6.6", "registro": "2610317507284" },
-    { "obra": "Econotopía© 2.0 — sistema de comunicación del Cubo", "registro": "2610317507307" },
-    { "obra": "Estructura y Validación mediante Código Omnigráfico©", "registro": "2610317507444" },
-    { "obra": "S.S.O.S.© — expediente técnico y modelo de negocio", "registro": "2610317507475" },
-    { "obra": "Sensor híper inteligente SOSistem™ — documento de diseño", "registro": "2610317507499" },
-    { "obra": "Cartera de dominios y sitios web del autor", "registro": "2611017524083" }
+    {
+      "obra": "ContenedorEns© (nombre y logo)",
+      "registro": "2609046908752"
+    },
+    {
+      "obra": "Arsa Bodegas© (nombre y logo)",
+      "registro": "2609046908806"
+    },
+    {
+      "obra": "Econotopía©",
+      "registro": "2610077261709"
+    },
+    {
+      "obra": "Teclado Cubo — memoria descriptiva y código fuente",
+      "registro": "2610097277155"
+    },
+    {
+      "obra": "Econotopía Segura · El Cubo de la Comunicación — memoria técnica y descriptiva",
+      "registro": "2610097277377"
+    },
+    {
+      "obra": "Lector Cúbico, Econotopía Segura — lector del Código Cúbico con cámara",
+      "registro": "2610097277568"
+    },
+    {
+      "obra": "SOSistem™ versiones 3.9 a 6.6",
+      "registro": "2610317507284"
+    },
+    {
+      "obra": "Econotopía© 2.0 — sistema de comunicación del Cubo",
+      "registro": "2610317507307"
+    },
+    {
+      "obra": "Estructura y Validación mediante Código Omnigráfico©",
+      "registro": "2610317507444"
+    },
+    {
+      "obra": "S.S.O.S.© — expediente técnico y modelo de negocio",
+      "registro": "2610317507475"
+    },
+    {
+      "obra": "Sensor híper inteligente SOSistem™ — documento de diseño",
+      "registro": "2610317507499"
+    },
+    {
+      "obra": "Cartera de dominios y sitios web del autor",
+      "registro": "2611017524083"
+    }
   ],
   "fuentes": [
-    { "titulo": "Repositorios públicos en GitHub", "liga": "https://github.com/victorhugoramirezsalgado-boop" },
-    { "titulo": "Perfil profesional en LinkedIn", "liga": "https://www.linkedin.com/in/victor-hugo-ramirez-salgado-58389a52/" },
-    { "titulo": "Comisión Interamericana de Puertos (CIP-OEA)", "liga": "https://www.oas.org/cip/" }
+    {
+      "titulo": "Repositorios públicos en GitHub",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop"
+    },
+    {
+      "titulo": "Perfil profesional en LinkedIn",
+      "liga": "https://www.linkedin.com/in/victor-hugo-ramirez-salgado-58389a52/"
+    },
+    {
+      "titulo": "Comisión Interamericana de Puertos (CIP-OEA)",
+      "liga": "https://www.oas.org/cip/"
+    }
   ],
   "privado": [
-    { "titulo": "Archivo de ligas, fuentes y evidencias", "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-" },
-    { "titulo": "Panel de sitios (código)", "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs" },
-    { "titulo": "Inventario y pedimentos ContenedorEns©", "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas" },
-    { "titulo": "Estadísticas portuarias", "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias" },
-    { "titulo": "Trazabilidad de contenedores", "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-" },
-    { "titulo": "Safe Creative — registros y pendientes", "liga": "https://www.safecreative.org/" },
-    { "titulo": "Dropbox — SAFE CREATIVE VHRS REGISTRAR", "liga": "https://www.dropbox.com/home" }
+    {
+      "titulo": "Archivo de ligas, fuentes y evidencias",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-"
+    },
+    {
+      "titulo": "Panel de sitios (código)",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs"
+    },
+    {
+      "titulo": "Inventario y pedimentos ContenedorEns©",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas"
+    },
+    {
+      "titulo": "Estadísticas portuarias",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias"
+    },
+    {
+      "titulo": "Trazabilidad de contenedores",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-"
+    },
+    {
+      "titulo": "Safe Creative — registros y pendientes",
+      "liga": "https://www.safecreative.org/"
+    },
+    {
+      "titulo": "Dropbox — SAFE CREATIVE VHRS REGISTRAR",
+      "liga": "https://www.dropbox.com/home"
+    }
   ]
 }
