@@ -21,7 +21,7 @@ IDIOMAS = '''<option value="">Español</option>
 def clase(est): return {'Activo': 'ok', 'En desarrollo': 'dev'}.get(est, 'prep')
 
 def pagina(s, rel):
-    url = f"https://{s['dominio']}/"
+    url = f"https://{s.get('cname', s['dominio'])}/"
     secc = []
     for x in s['secciones']:
         cuerpo = ''.join(f"<p>{e(p)}</p>" for p in x.get('parrafos', []))
@@ -30,7 +30,7 @@ def pagina(s, rel):
     regs = ''.join(
         f'<li><span>{e(nombres.get(n, "Obra registrada"))}</span><a href="https://www.safecreative.org/work/{n}" target="_blank" rel="noopener"><code>{n}</code> ↗</a></li>'
         for n in s['registros'])
-    red = ''.join(f'<a href="{e(r["liga"])}">{e(r["nombre"])}</a>' for r in datos['comun']['red'] if s['dominio'] not in r['liga'])
+    red = ''.join(f'<a href="{e(r["liga"])}">{e(r["nombre"])}</a>' for r in datos['comun']['red'] if s.get('cname', s['dominio']) not in r['liga'] and s['dominio'] not in r['liga'])
     nums = ' · '.join(s['registros'][:3])
     ld = json.dumps({"@context": "https://schema.org", "@type": "CreativeWork", "name": s['titulo'], "description": s['descripcion'],
                      "url": url, "author": {"@type": "Person", "name": datos['comun']['autor'], "url": datos['comun']['panel']},
@@ -101,10 +101,11 @@ for s in datos['sitios']:
     d = salida / s['slug']; d.mkdir(parents=True, exist_ok=True)
     (d / 'index.html').write_text(pagina(s, ''), encoding='utf-8')
     for f in ('estilo.css', 'cubo.js', 'sitio.js'): shutil.copy(RAIZ / f, d / f)
-    (d / 'CNAME').write_text(s['dominio'] + '\n')
+    host = s.get('cname', s['dominio'])
+    (d / 'CNAME').write_text(host + '\n')
     (d / '.nojekyll').write_text('')
-    (d / 'robots.txt').write_text(f"User-agent: *\nAllow: /\nSitemap: https://{s['dominio']}/sitemap.xml\n")
-    (d / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://{s["dominio"]}/</loc></url></urlset>\n')
+    (d / 'robots.txt').write_text(f"User-agent: *\nAllow: /\nSitemap: https://{host}/sitemap.xml\n")
+    (d / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://{host}/</loc></url></urlset>\n')
     (d / 'LICENSE').write_text(LICENCIA.format(dom=s['dominio'], regs=', '.join(s['registros'])), encoding='utf-8')
     (d / 'README.md').write_text(f"# {s['titulo']}\n\n{s['descripcion']}\n\nSitio: https://{s['dominio']} · Copia en https://victorhugoramirezsalgado.com/{s['slug']}/\n\n© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Ver LICENSE.\n", encoding='utf-8')
     # 2) Copia dentro de vhrs.com

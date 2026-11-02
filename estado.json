@@ -162,13 +162,15 @@
       "nombre": "Intertopía©",
       "dominio": "intertopía.com",
       "estatus": "En desarrollo",
-      "nota": "Concepto propuesto a la RAE (2026)."
+      "nota": "Concepto propuesto a la RAE (2026).",
+      "copia": "intertopia/"
     },
     {
       "nombre": "Econotopía©",
       "dominio": "econotopía.com",
       "estatus": "En desarrollo",
-      "nota": "Sistema de comunicación del Cubo."
+      "nota": "Sistema de comunicación del Cubo.",
+      "copia": "econotopia/"
     },
     {
       "nombre": "Código Cúbico©",
