@@ -1,0 +1,68 @@
+/* © 2026 Víctor Hugo Ramírez Salgado — vhrs.com */
+:root{
+  --marino:#0F2236; --marino-2:#16314D; --niebla:#E6EBEF; --acero:#7D8C9C; --blanco:#FFFFFF; --senal:#F2B705;
+  --fondo:var(--niebla); --tinta:var(--marino); --suave:#4F6072; --linea:#C9D2DA; --panel:var(--blanco);
+  --exp:"Archivo",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{--fondo:#0B1A2A;--tinta:#E6EBEF;--suave:#9AA8B6;--linea:#24394F;--panel:#11263B}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:400 17px/1.6 var(--exp);font-variant-numeric:tabular-nums}
+a{color:inherit;text-decoration-color:var(--senal);text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--senal);outline-offset:2px}
+
+/* Barra */
+.barra{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;background:color-mix(in srgb,var(--fondo) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.marca{font-weight:800;font-stretch:125%;letter-spacing:.02em;text-decoration:none;cursor:pointer}
+.marca b{color:var(--senal)}
+.barra nav{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;font-size:15px}
+.barra nav a{text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.barra nav a:hover{border-bottom-color:var(--senal)}
+.barra .llave{background:var(--marino);color:var(--blanco);border-radius:6px;padding:6px 12px}
+@media (prefers-color-scheme:dark){.barra .llave{background:var(--senal);color:var(--marino)}}
+.idioma select{font:inherit;font-size:14px;background:var(--panel);color:var(--tinta);border:1px solid var(--linea);border-radius:6px;padding:4px 6px;max-width:130px}
+
+/* Portada: la cara del Cubo */
+.portada{position:relative;background:var(--marino);color:var(--blanco);overflow:hidden}
+.portada-in{width:min(100%,1180px);margin:0 auto;display:grid;align-items:center}
+@media (min-width:900px){.portada-in{grid-template-columns:1fr minmax(0,520px);gap:40px;padding:40px 20px}}
+.cara{display:grid;grid-template-columns:repeat(28,minmax(0,1fr));width:100%;padding:8px 12px 24px;font-weight:600;font-size:clamp(7px,1.25vw,12px);color:#3D5A78;user-select:none}
+.cara span{aspect-ratio:1;min-width:0;overflow:hidden;display:grid;place-items:center;border:.5px solid #1C3956;line-height:1}
+.cara .on{font-size:.68em;letter-spacing:-.03em}
+.cara .borde{color:var(--acero);border-color:transparent}
+.cara .on{background:var(--senal);color:var(--marino);border-color:var(--senal)}
+@media (prefers-reduced-motion:no-preference){.cara .on{animation:enciende .5s both;animation-delay:calc(var(--i) * 45ms + .3s)}}
+@keyframes enciende{from{background:transparent;color:#3D5A78}}
+.titular{padding:32px 20px 12px}
+.titular h1{margin:0;font-weight:800;font-stretch:125%;font-size:clamp(36px,6.4vw,76px);line-height:.95;letter-spacing:-.01em;cursor:pointer}
+.titular p{margin:14px 0 0;max-width:46ch;font-size:clamp(17px,2.2vw,21px);color:#C9D6E2}
+.morse-linea{min-height:1.6em;color:var(--senal)!important;font-size:14px!important;word-break:break-word}
+.cifras{display:flex;flex-wrap:wrap;gap:28px;margin-top:22px}
+.cifras div{font-size:14px;color:#9FB2C5}
+.cifras strong{display:block;font-size:30px;font-weight:800;font-stretch:112%;color:var(--blanco)}
+
+/* Contenido */
+main{width:min(100%,980px);margin:0 auto;padding:8px 20px 64px}
+section{padding:44px 0 8px;scroll-margin-top:64px}
+h2{margin:0 0 6px;font-weight:800;font-stretch:118%;font-size:clamp(26px,4vw,36px);line-height:1.1}
+h2+.nota{margin-top:0}
+.nota{color:var(--suave);font-size:15px;max-width:70ch}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;background:var(--linea);border:2px solid var(--linea);margin-top:18px}
+.tarjeta{background:var(--panel);padding:18px}
+.tarjeta h3{margin:0;font-size:19px;font-weight:700;cursor:pointer}
+.tarjeta p{margin:6px 0 10px;color:var(--suave);font-size:15px}
+.tarjeta a{font-size:15px}
+.cab{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.estatus{font-size:13px;white-space:nowrap;padding:1px 9px;border-radius:999px;border:1.5px solid currentColor}
+.estatus.ok{color:#1F8A5B}.estatus.dev{color:#B07A00}.estatus.prep{color:var(--acero)}
+@media (prefers-color-scheme:dark){.estatus.ok{color:#5FD39C}.estatus.dev{color:var(--senal)}}
+.familia{margin:30px 0 6px;font-size:18px;font-weight:700;padding-left:12px;border-left:4px solid var(--senal)}
+.tabla{list-style:none;padding:0;margin:0}
+.tabla li{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--linea)}
+.tabla code{font-family:inherit;font-weight:600;font-size:15px;letter-spacing:.02em}
+.tabla small{color:var(--suave)}
+.linea{list-style:none;padding:0;margin:14px 0 0}
+.linea li{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.linea b{font-weight:700;color:var(--suave)}
+@media (max-width:560px){.linea li{grid-template-columns:1fr;gap:2px}.barra nav{display:none}}
+footer{margin-top:56px;padding-top:20px;border-top:2px solid var(--tinta);font-size:14px;color:var(--suave)}

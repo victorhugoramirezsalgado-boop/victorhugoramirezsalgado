@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.github.com; img-src 'self' blob: data:; frame-src blob:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; script-src 'self'; base-uri 'none'; form-action 'none'">
+<title>VHRS · Privado</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../vhrs.css">
+<link rel="stylesheet" href="privado.css">
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="../">VHRS<b>.</b></a>
+  <nav aria-label="Privado"><a href="../">Sitio público</a></nav>
+  <button id="cerrar" class="boton fantasma" hidden>Cerrar sesión</button>
+</header>
+
+<main>
+  <!-- Entrada -->
+  <section id="entrada" class="entrada">
+    <h1>Archivo privado</h1>
+    <p class="nota">Entra con tu clave de GitHub. Tus archivos se leen en vivo desde tus repositorios privados: no se guardan en este sitio y GitHub comprueba que la clave sea tuya.</p>
+    <form id="form" autocomplete="off">
+      <label for="clave">Clave</label>
+      <input id="clave" type="password" inputmode="text" spellcheck="false" autocomplete="current-password" placeholder="github_pat_…" required>
+      <label class="check"><input id="recordar" type="checkbox"> Recordar en este dispositivo</label>
+      <button class="boton" type="submit">Entrar</button>
+      <p id="aviso" class="aviso" role="alert"></p>
+    </form>
+    <details class="ayuda">
+      <summary>Crear tu clave (una sola vez)</summary>
+      <ol>
+        <li>Abre <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
+        <li>Nombre: «vhrs privado». Vencimiento: el que prefieras (90 días es buen equilibrio).</li>
+        <li>Repository access: <b>All repositories</b>.</li>
+        <li>Permissions → Repository permissions → <b>Contents: Read-only</b> (Metadata se agrega solo).</li>
+        <li>Generate token, cópialo y pégalo arriba.</li>
+      </ol>
+      <p class="nota">Es de solo lectura: con ella nadie puede borrar ni cambiar tus archivos. Si la pierdes, revócala en la misma página de GitHub.</p>
+    </details>
+  </section>
+
+  <!-- Archivo -->
+  <section id="archivo" hidden>
+    <div class="cabeza">
+      <h1 id="saludo">Archivo privado</h1>
+      <input id="buscar" type="search" placeholder="Buscar archivo en el repositorio abierto" aria-label="Buscar archivo">
+    </div>
+    <div id="accesos" class="accesos"></div>
+    <h2>Repositorios</h2>
+    <div id="repos" class="repos"></div>
+    <div id="visor" class="visor" hidden>
+      <div class="ruta"><button id="subir" class="boton fantasma">Subir un nivel</button><span id="ruta"></span></div>
+      <ul id="lista" class="tabla"></ul>
+      <article id="archivo-ver" class="ver" hidden></article>
+    </div>
+  </section>
+  <footer><p>© 2026 Víctor Hugo Ramírez Salgado. Área privada.</p></footer>
+</main>
+<script src="privado.js"></script>
+</body>
+</html>
