@@ -1,0 +1,37 @@
+{
+  "actualizado": "2026-11-02",
+  "titular": "Víctor Hugo Ramírez Salgado",
+  "lema": "Comercio internacional · logística portuaria · desarrollo",
+  "trayectoria": [
+    { "periodo": "2005 – hoy", "texto": "21 años en la industria marítimo-portuaria." },
+    { "periodo": "2009 – 2022", "texto": "API / ASIPONA Ensenada: control y almacenaje, estadística, operaciones e ingeniería, subgerencia de operaciones y ecología." },
+    { "periodo": "2012 – 2022", "texto": "Estadísticas portuarias de Ensenada, El Sauzal y Costa Azul para la Coordinación General de Puertos y Marina Mercante." },
+    { "periodo": "2013", "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada)." },
+    { "periodo": "2016 – hoy", "texto": "Fundador de ContenedorEns© y Arsa Bodegas©: venta, renta y modificación de contenedores." },
+    { "periodo": "Docencia", "texto": "Licenciatura en Universidad Xochicalco y Universidad Autónoma de Durango (campus Ensenada)." }
+  ],
+  "proyectos": [
+    { "nombre": "ContenedorEns©", "dominio": "contenedorens.com", "estatus": "Activo", "nota": "Contenedores: venta, renta y modificación." },
+    { "nombre": "Arsa Bodegas©", "dominio": "arsabodegas.com", "estatus": "Activo", "nota": "Mini bodegas tipo self storage en El Sauzal." },
+    { "nombre": "Trazabilidad de contenedores", "dominio": "tcontenedores.com", "estatus": "En desarrollo", "nota": "Rastreo e inventario de contenedores de segundo uso." },
+    { "nombre": "Intertopía©", "dominio": "intertopía.com", "estatus": "En desarrollo", "nota": "Concepto propuesto a la RAE (2026)." },
+    { "nombre": "Econotopía©", "dominio": "econotopía.com", "estatus": "En desarrollo", "nota": "Registro Safe Creative 2610077261709." },
+    { "nombre": "Código Cúbico©", "dominio": "codigocubico.com", "estatus": "En preparación", "nota": "Código de comunicación del Cubo (33)." },
+    { "nombre": "Cubo 33©", "dominio": "cubo33.com", "estatus": "En preparación", "nota": "El Cubo de la Comunicación A–Z." },
+    { "nombre": "Sistema S.O.S.", "dominio": "sosistem.com", "estatus": "En desarrollo", "nota": "Monitoreo sin cámaras para espacios confinados." }
+  ],
+  "registros": [
+    { "obra": "ContenedorEns© (nombre y logo)", "registro": "Safe Creative 2609046908752" },
+    { "obra": "Arsa Bodegas© (nombre y logo)", "registro": "Safe Creative 2609046908806" },
+    { "obra": "Econotopía©", "registro": "Safe Creative 2610077261709" }
+  ],
+  "fuentes": [
+    { "titulo": "Repositorios públicos en GitHub", "liga": "https://github.com/victorhugoramirezsalgado-boop" }
+  ],
+  "privado": [
+    { "titulo": "Archivo de ligas, fuentes y evidencias", "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-" },
+    { "titulo": "Panel de sitios (código)", "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs" },
+    { "titulo": "Inventario y pedimentos ContenedorEns©", "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas" },
+    { "titulo": "Estadísticas portuarias", "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias" }
+  ]
+}
