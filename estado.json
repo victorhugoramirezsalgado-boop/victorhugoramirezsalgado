@@ -190,52 +190,114 @@
   ],
   "registros": [
     {
+      "obra": "Intertopía©",
+      "registro": "2602144563892",
+      "fecha": "feb 2026"
+    },
+    {
+      "obra": "1ntertopía©",
+      "registro": "2606096034080",
+      "fecha": "jun 2026"
+    },
+    {
+      "obra": "Sistema S.O.S.©",
+      "registro": "2609046908578",
+      "fecha": "sep 2026"
+    },
+    {
       "obra": "ContenedorEns© (nombre y logo)",
-      "registro": "2609046908752"
+      "registro": "2609046908752",
+      "fecha": "sep 2026"
     },
     {
       "obra": "Arsa Bodegas© (nombre y logo)",
-      "registro": "2609046908806"
+      "registro": "2609046908806",
+      "fecha": "sep 2026"
     },
     {
       "obra": "Econotopía©",
-      "registro": "2610077261709"
+      "registro": "2610077261709",
+      "fecha": "oct 2026"
     },
     {
-      "obra": "Teclado Cubo — memoria descriptiva y código fuente",
-      "registro": "2610097277155"
+      "obra": "CuboPY©",
+      "registro": "2610097275281",
+      "fecha": "oct 2026"
     },
     {
-      "obra": "Econotopía Segura · El Cubo de la Comunicación — memoria técnica y descriptiva",
-      "registro": "2610097277377"
+      "obra": "Código Cúbico© · Código de comunicación del Cubo (33)©",
+      "registro": "2610097276721",
+      "fecha": "oct 2026"
     },
     {
-      "obra": "Lector Cúbico, Econotopía Segura — lector del Código Cúbico con cámara",
-      "registro": "2610097277568"
+      "obra": "Cubo Interior©",
+      "registro": "2610097277049",
+      "fecha": "oct 2026"
+    },
+    {
+      "obra": "Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)",
+      "registro": "2610097277155",
+      "fecha": "9 oct 2026"
+    },
+    {
+      "obra": "Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva",
+      "registro": "2610097277377",
+      "fecha": "9 oct 2026"
+    },
+    {
+      "obra": "Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara",
+      "registro": "2610097277568",
+      "fecha": "9 oct 2026"
+    },
+    {
+      "obra": "Cubo Morse©",
+      "registro": "2610257441754",
+      "fecha": "25 oct 2026"
+    },
+    {
+      "obra": "SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)",
+      "registro": "2610257442171",
+      "fecha": "25 oct 2026"
     },
     {
       "obra": "SOSistem™ versiones 3.9 a 6.6",
-      "registro": "2610317507284"
+      "registro": "2610317507284",
+      "fecha": "31 oct 2026"
     },
     {
-      "obra": "Econotopía© 2.0 — sistema de comunicación del Cubo",
-      "registro": "2610317507307"
+      "obra": "Econotopía© 2.0 · sistema de comunicación del Cubo",
+      "registro": "2610317507307",
+      "fecha": "31 oct 2026"
     },
     {
-      "obra": "Estructura y Validación mediante Código Omnigráfico©",
-      "registro": "2610317507444"
+      "obra": "Estructura y Validación mediante Código Omnigráfico© (definitivo)",
+      "registro": "2610317507444",
+      "fecha": "31 oct 2026"
     },
     {
-      "obra": "S.S.O.S.© — expediente técnico y modelo de negocio",
-      "registro": "2610317507475"
+      "obra": "S.S.O.S.© expediente técnico y modelo de negocio",
+      "registro": "2610317507475",
+      "fecha": "31 oct 2026"
     },
     {
-      "obra": "Sensor híper inteligente SOSistem™ — documento de diseño",
-      "registro": "2610317507499"
+      "obra": "Sensor híper inteligente SOSistem™ (documento de diseño)",
+      "registro": "2610317507499",
+      "fecha": "31 oct 2026"
+    },
+    {
+      "obra": "Registro mundial de naufragios (propuesta CIP/OMI)",
+      "registro": "2610317507550",
+      "fecha": "31 oct 2026"
+    },
+    {
+      "obra": "Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)",
+      "registro": "2610317507741",
+      "fecha": "31 oct 2026"
     },
     {
       "obra": "Cartera de dominios y sitios web del autor",
-      "registro": "2611017524083"
+      "registro": "2611017524083",
+      "fecha": "1 nov 2026"
     }
   ],
   "fuentes": [
@@ -281,5 +343,6 @@
       "titulo": "Dropbox — SAFE CREATIVE VHRS REGISTRAR",
       "liga": "https://www.dropbox.com/home"
     }
-  ]
+  ],
+  "registros_en_proceso": 3
 }
