@@ -38,3 +38,9 @@ code{color:var(--acc);font-size:14px}
 footer{margin-top:48px;font-size:13px;text-align:center}
 @media (max-width:520px){.linea li{grid-template-columns:1fr;gap:2px}}
 .prensa li{align-items:flex-start}.prensa small{color:var(--mut)}
+.marca{color:var(--ink);text-decoration:none}
+.lema{font-size:18px}
+section>p{color:var(--ink)}
+.puntos{padding-left:20px;margin:.4em 0}.puntos li{margin:.35em 0}
+.red{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.red a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;background:var(--card)}

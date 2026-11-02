@@ -155,7 +155,8 @@
       "nombre": "Trazabilidad de contenedores",
       "dominio": "tcontenedores.com",
       "estatus": "En desarrollo",
-      "nota": "Rastreo e inventario de contenedores de segundo uso."
+      "nota": "Rastreo e inventario de contenedores de segundo uso.",
+      "copia": "tcontenedores/"
     },
     {
       "nombre": "Intertopía©",
@@ -173,13 +174,15 @@
       "nombre": "Código Cúbico©",
       "dominio": "codigocubico.com",
       "estatus": "En preparación",
-      "nota": "Código de comunicación del Cubo (33)."
+      "nota": "Código de comunicación del Cubo (33).",
+      "copia": "codigocubico/"
     },
     {
       "nombre": "Cubo 33©",
       "dominio": "cubo33.com",
       "estatus": "En preparación",
-      "nota": "El Cubo de la Comunicación A–Z."
+      "nota": "El Cubo de la Comunicación A–Z.",
+      "copia": "cubo33/"
     },
     {
       "nombre": "SOSistem™ / S.S.O.S.©",

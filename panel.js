@@ -14,7 +14,7 @@
         <article class="tarjeta">
           <div class="cab"><h3 data-morse="${esc(p.nombre)}">${esc(p.nombre)}</h3><span class="estatus ${clase(p.estatus)}">${esc(p.estatus)}</span></div>
           <p>${esc(p.nota)}</p>
-          <a href="https://${esc(p.dominio)}" target="_blank" rel="noopener">${esc(p.dominio)} ↗</a>
+          <a href="https://${esc(p.dominio)}" target="_blank" rel="noopener">${esc(p.dominio)} ↗</a>${p.copia ? `<br><a href="${esc(p.copia)}">Copia en vhrs.com →</a>` : ''}
         </article>`).join('');
       $('lista-trayectoria').innerHTML = (d.trayectoria || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}</span></li>`).join('');
       $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><a href="https://www.safecreative.org/work/${esc(r.registro)}" target="_blank" rel="noopener"><code>${esc(r.registro)}</code> ↗</a></li>`).join('');

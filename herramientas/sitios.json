@@ -1,0 +1,106 @@
+{
+  "comun": {
+    "autor": "Víctor Hugo Ramírez Salgado",
+    "panel": "https://victorhugoramirezsalgado.com",
+    "red": [
+      { "nombre": "Víctor Hugo Ramírez Salgado", "liga": "https://victorhugoramirezsalgado.com" },
+      { "nombre": "SOSistem™", "liga": "https://sosistem.com" },
+      { "nombre": "El Cubo de la Comunicación (33)©", "liga": "https://cubo33.com" },
+      { "nombre": "Código Cúbico©", "liga": "https://codigocubico.com" },
+      { "nombre": "Trazabilidad de contenedores", "liga": "https://tcontenedores.com" },
+      { "nombre": "ContenedorEns©", "liga": "https://contenedorens.com" },
+      { "nombre": "Arsa Bodegas©", "liga": "https://arsabodegas.com" }
+    ]
+  },
+  "sitios": [
+    {
+      "slug": "cubo33",
+      "dominio": "cubo33.com",
+      "titulo": "El Cubo de la Comunicación (33)©",
+      "morse": "CUBO 33",
+      "lema": "Cubo A–Z de seis caras para comunicar, aprender y cifrar en cualquier idioma",
+      "descripcion": "El Cubo de la Comunicación (33)©: cubo de seis caras con cuadrícula 26×26, alfabeto A–Z en los cuatro bordes y numeración 1–4056. Base de Econotopía©. Obra de Víctor Hugo Ramírez Salgado.",
+      "estatus": "En desarrollo",
+      "secciones": [
+        { "titulo": "Qué es", "parrafos": [
+          "El Cubo de la Comunicación es un cubo de seis caras. Cada cara es una cuadrícula de 26 × 26 con el alfabeto A–Z en sus cuatro bordes, y todas sus casillas se numeran en secuencia del 1 al 4056.",
+          "Sobre esa estructura se escriben mensajes: una frase por cara o una frase completa en un solo lado. El cubo marca siempre su letra o figura inicial y final, y el idioma funciona como una capa más, de modo que cada persona puede comunicarse en la lengua que elija."
+        ]},
+        { "titulo": "Para qué sirve", "lista": [
+          "Comunicación cifrada entre personas, con mensajes que no se guardan en ningún servidor.",
+          "Aprendizaje de idiomas y alfabetos con el cubo como herramienta visual.",
+          "Base de Econotopía©: sistema de comunicación, aprendizaje y escritura cifrada.",
+          "Base del Código Cúbico© para seguridad comercial e industrial."
+        ]},
+        { "titulo": "Principios", "lista": [
+          "Privacidad: la plataforma no guarda la información de comunicación de nadie.",
+          "Multilingüe: idiomas oficiales de la ONU, lenguas europeas, asiáticas y regionales, con Lengua de Señas Mexicana en desarrollo.",
+          "Educación: un fondo educativo sostiene la mejora y difusión del cubo."
+        ]}
+      ],
+      "registros": ["2610077261709", "2610097277377", "2610097277155", "2610317507307", "2610257441754", "2610097277049"],
+      "relacion": "Forma parte de Econotopía© y vive con sus versiones dentro de sosistem.com."
+    },
+    {
+      "slug": "codigocubico",
+      "dominio": "codigocubico.com",
+      "titulo": "Código Cúbico©",
+      "morse": "CODIGO CUBICO",
+      "lema": "Econotopía Segura · código de seguridad cara tras cara",
+      "descripcion": "Código Cúbico©: código de seguridad tipo QR construido sobre el Cubo de la Comunicación (33), impreso en 2D o digital en 3D, con lector por cámara. Obra de Víctor Hugo Ramírez Salgado.",
+      "estatus": "En preparación",
+      "secciones": [
+        { "titulo": "Qué es", "parrafos": [
+          "El Código Cúbico es la modalidad de seguridad de Econotopía (Econotopía Segura). Funciona como un código tipo QR, pero formado por las caras del Cubo de la Comunicación, que pasan una tras otra.",
+          "Quien lo observa no sabe hacia dónde gira el cubo, qué dice ni en qué idioma está escrito: el idioma es siempre una capa adicional de protección."
+        ]},
+        { "titulo": "Formatos", "lista": [
+          "Impreso en 2D: las seis caras en una sola imagen, en hojas o calcomanías para productos.",
+          "Digital en 3D: partes del cubo que giran uno o dos espacios.",
+          "Lector por cámara: lectura desde el teléfono con el Lector Cúbico©.",
+          "Teclado Cubo©: escritura directa en el formato del cubo."
+        ]},
+        { "titulo": "Aplicaciones", "lista": [
+          "Identificación y autenticidad de productos.",
+          "Enlace seguro entre sistemas de seguridad.",
+          "Comunicación comercial e industrial.",
+          "Calcomanías de identificación para contenedores en el proyecto de trazabilidad."
+        ]}
+      ],
+      "registros": ["2610097276721", "2610097277568", "2610097277155", "2610317507444", "2610097275281"],
+      "relacion": "Modalidad de seguridad de Econotopía©, construida sobre El Cubo de la Comunicación (33)©."
+    },
+    {
+      "slug": "tcontenedores",
+      "dominio": "tcontenedores.com",
+      "titulo": "Trazabilidad de contenedores",
+      "morse": "TRAZABILIDAD",
+      "lema": "Rastreo e inventario nacional de contenedores marítimos de segundo uso",
+      "descripcion": "Trazabilidad de contenedores: propuesta de sistema nacional de rastreo e inventario de contenedores marítimos no retornados (segundo uso) en México. Obra de Víctor Hugo Ramírez Salgado.",
+      "estatus": "En desarrollo",
+      "secciones": [
+        { "titulo": "El problema", "parrafos": [
+          "Miles de contenedores marítimos que entran a México no vuelven a salir: se venden y se quedan en el país para un segundo uso como bodegas, oficinas o viviendas.",
+          "Hoy no existe un registro que diga dónde terminan. Eso deja huecos en las estadísticas portuarias, en la recaudación y en el control sanitario de cajas que pueden llegar dañadas o con residuos."
+        ]},
+        { "titulo": "La propuesta", "lista": [
+          "Un inventario nacional (y binacional) de contenedores, desde su llegada por puerto, aeropuerto o frontera hasta su destino final.",
+          "Que las navieras informen cuando un contenedor cambia de régimen o de dueño, y a quién se entrega.",
+          "Una revisión de salubridad y estado físico antes de su segundo uso, con certificación.",
+          "Identificación de cada contenedor con calcomanía de Código Cúbico©."
+        ]},
+        { "titulo": "Objetivos", "lista": [
+          "Estadísticas portuarias reales.",
+          "Impuestos y contribuciones cubiertos.",
+          "Sanidad comprobada del destino.",
+          "Seguridad nacional y salud pública."
+        ]},
+        { "titulo": "Autoridades y organismos de referencia", "parrafos": [
+          "SEMAR, Coordinación General de Puertos y Marina Mercante, ANAM, CIP-OEA, Organización Mundial de Aduanas y Organización Mundial del Comercio."
+        ]}
+      ],
+      "registros": ["2610317507741"],
+      "relacion": "Proyecto de Víctor Hugo Ramírez Salgado, con 21 años en la industria marítimo-portuaria. Operación de contenedores de segundo uso en ContenedorEns© y Arsa Bodegas©."
+    }
+  ]
+}
