@@ -20,10 +20,6 @@
         "liga": "https://codigocubico.com"
       },
       {
-        "nombre": "Intertopía©",
-        "liga": "https://xn--intertopa-n5a.com"
-      },
-      {
         "nombre": "Econotopía©",
         "liga": "https://xn--econotopa-n5a.com"
       },
@@ -34,14 +30,69 @@
       {
         "nombre": "ContenedorEns©",
         "liga": "https://contenedorens.com"
-      },
-      {
-        "nombre": "Arsa Bodegas©",
-        "liga": "https://arsabodegas.com"
       }
     ]
   },
   "sitios": [
+    {
+      "slug": "contenedorens",
+      "dominio": "contenedorens.com",
+      "titulo": "ContenedorEns©",
+      "morse": "CONTENEDORENS",
+      "lema": "Venta, renta y modificación de contenedores marítimos para proyectos urbanos",
+      "descripcion": "ContenedorEns©: venta, renta y modificación de contenedores marítimos en Ensenada, Baja California. Configurador 3D y cotización con folio. Desde 2016.",
+      "estatus": "Activo",
+      "herramientas": [
+        {
+          "t": "Configura y cotiza tu contenedor",
+          "d": "Elige tamaño, uso, aperturas e instalaciones; míralo en 3D y obtén tu presupuesto.",
+          "l": "configurador/"
+        },
+        {
+          "t": "Cotización oficial en PDF",
+          "d": "Genera la cotización con folio por sede y año (E-26001), partidas, IVA y condiciones.",
+          "l": "configurador/#quote"
+        },
+        {
+          "t": "Hoja técnica",
+          "d": "Medidas, condición y especificaciones del contenedor configurado.",
+          "l": "configurador/"
+        },
+        {
+          "t": "Rastrear un contenedor",
+          "d": "Consulta la trazabilidad por número ISO 6346 en tcontenedores.com.",
+          "l": "https://tcontenedores.com/consulta/"
+        }
+      ],
+      "secciones": [
+        {
+          "titulo": "Qué hacemos",
+          "lista": [
+            "Venta de contenedores marítimos de 20 y 40 pies, nuevos y de segundo uso.",
+            "Renta de contenedores para obra, almacenaje y oficinas.",
+            "Modificación para usos urbanos: oficinas, bodegas, locales, sanitarios, viviendas y más.",
+            "Cada contenedor con su número ISO 6346 validado y su pedimento."
+          ]
+        },
+        {
+          "titulo": "Cómo se cotiza",
+          "parrafos": [
+            "El configurador recorre seis caras, como el Cubo de la Comunicación: el contenedor, el uso urbano, las aperturas y la estructura, las instalaciones y acabados, la sede y el año, y una verificación final.",
+            "Al terminar te da un código ContenedorEns, la vista en 3D y en plano, el presupuesto y la cotización oficial con folio."
+          ]
+        },
+        {
+          "titulo": "Sedes",
+          "parrafos": [
+            "Ensenada, Mexicali, La Paz y Chihuahua."
+          ]
+        }
+      ],
+      "registros": [
+        "2609046908752"
+      ],
+      "relacion": "ContenedorEns© opera desde 2016; su primer proyecto fue la «Caja Seca» para el colectivo de Artes de la UABC."
+    },
     {
       "slug": "cubo33",
       "dominio": "cubo33.com",
@@ -179,8 +230,8 @@
       "dominio": "tcontenedores.com",
       "titulo": "Trazabilidad de contenedores",
       "morse": "TRAZABILIDAD",
-      "lema": "Rastreo e inventario nacional de contenedores marítimos de segundo uso",
-      "descripcion": "Trazabilidad de contenedores: propuesta de sistema nacional de rastreo e inventario de contenedores marítimos no retornados (segundo uso) en México. Obra de Víctor Hugo Ramírez Salgado.",
+      "lema": "Trazabilidad binacional del contenedor marítimo, de Ensenada a Long Beach",
+      "descripcion": "Trazabilidad de contenedores: sistema y propuesta de rastreo e inventario de contenedores marítimos de segundo uso, con corredor binacional Ensenada–Long Beach. Obra de Víctor Hugo Ramírez Salgado.",
       "estatus": "En desarrollo",
       "secciones": [
         {
@@ -191,11 +242,18 @@
           ]
         },
         {
+          "titulo": "Corredor Ensenada – Long Beach",
+          "parrafos": [
+            "Un contenedor puede entrar por Ensenada y salir por Long Beach, o al revés. La plataforma sigue al contenedor en los dos lados de la frontera, con enlaces hacia puertos, navieras, terminales y empresas autorizadas para el segundo uso."
+          ]
+        },
+        {
           "titulo": "La propuesta",
           "lista": [
-            "Un inventario nacional (y binacional) de contenedores, desde su llegada por puerto, aeropuerto o frontera hasta su destino final.",
+            "Un inventario nacional y binacional de contenedores, desde su llegada por puerto, aeropuerto o frontera hasta su destino final.",
             "Que las navieras informen cuando un contenedor cambia de régimen o de dueño, y a quién se entrega.",
-            "Una revisión de salubridad y estado físico antes de su segundo uso, con certificación.",
+            "Un padrón de empresas con clave única para recibir contenedores de segundo uso.",
+            "Una revisión de salubridad y estado físico antes del segundo uso, con certificación.",
             "Identificación de cada contenedor con calcomanía de Código Cúbico©."
           ]
         },
@@ -218,17 +276,17 @@
       "registros": [
         "2610317507741"
       ],
-      "relacion": "Proyecto de Víctor Hugo Ramírez Salgado, con 21 años en la industria marítimo-portuaria. Operación de contenedores de segundo uso en ContenedorEns© y Arsa Bodegas©.",
+      "relacion": "Proyecto de Víctor Hugo Ramírez Salgado, con 21 años en la industria marítimo-portuaria y 12 en la Administración Portuaria Integral de Ensenada.",
       "herramientas": [
         {
-          "t": "Comprar, rentar o modificar un contenedor",
-          "d": "ContenedorEns©: contenedores de segundo uso revisados.",
-          "l": "https://contenedorens.com"
+          "t": "Consultar un contenedor",
+          "d": "Busca por su número ISO 6346 y ve su historial de trazabilidad.",
+          "l": "consulta/"
         },
         {
-          "t": "Rentar una mini bodega",
-          "d": "Arsa Bodegas©: bodegas de 20 pies en El Sauzal, Ensenada.",
-          "l": "https://arsabodegas.com"
+          "t": "Padrón de empresas",
+          "d": "Empresas con clave única para recibir contenedores de segundo uso.",
+          "l": "consulta/"
         },
         {
           "t": "Ver el registro de la propuesta",
@@ -237,7 +295,7 @@
         },
         {
           "t": "Hablar con el autor",
-          "d": "Para autoridades, navieras, terminales y empresas interesadas en la trazabilidad.",
+          "d": "Para autoridades, navieras, terminales y empresas interesadas.",
           "l": "https://victorhugoramirezsalgado.com/cv/"
         }
       ]

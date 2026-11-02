@@ -143,26 +143,27 @@
       "nombre": "ContenedorEns©",
       "dominio": "contenedorens.com",
       "estatus": "Activo",
-      "nota": "Contenedores: venta, renta y modificación."
+      "nota": "Venta, renta y modificación de contenedores: configurador 3D/2D y cotizaciones con folio.",
+      "copia": "contenedorens/"
     },
     {
       "nombre": "Arsa Bodegas©",
       "dominio": "arsabodegas.com",
-      "estatus": "Activo",
-      "nota": "Mini bodegas tipo self storage en El Sauzal."
+      "estatus": "En preparación",
+      "nota": "Mini bodegas en El Sauzal. Proyecto propio pendiente; por ahora su información va en ContenedorEns."
     },
     {
       "nombre": "Trazabilidad de contenedores",
       "dominio": "tcontenedores.com",
       "estatus": "En desarrollo",
-      "nota": "Rastreo e inventario de contenedores de segundo uso.",
+      "nota": "Trazabilidad binacional de contenedores, corredor Ensenada – Long Beach. Consulta por número ISO 6346.",
       "copia": "tcontenedores/"
     },
     {
       "nombre": "Intertopía©",
       "dominio": "intertopía.com",
-      "estatus": "En desarrollo",
-      "nota": "Concepto propuesto a la RAE (2026).",
+      "estatus": "En preparación",
+      "nota": "Pendiente.",
       "copia": "intertopia/"
     },
     {
