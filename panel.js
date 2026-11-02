@@ -20,6 +20,11 @@
       $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><a href="https://www.safecreative.org/work/${esc(r.registro)}" target="_blank" rel="noopener"><code>${esc(r.registro)}</code> ↗</a></li>`).join('');
       $('lista-formacion').innerHTML = (d.formacion || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}${t.liga ? ` <a href="${esc(t.liga)}" target="_blank" rel="noopener">fuente ↗</a>` : ''}</span></li>`).join('');
       $('lista-prensa').innerHTML = (d.prensa || []).map((n) => `<li><div><a href="${esc(n.liga)}" target="_blank" rel="noopener">${esc(n.titulo)} ↗</a><br><small>${esc(n.medio)}${n.fecha ? ' · ' + esc(n.fecha) : ''}${n.nota ? ' — ' + esc(n.nota) : ''}</small></div><span class="estatus ${n.verificada ? 'ok' : 'prep'}">${n.verificada ? 'Verificada' : 'Por verificar'}</span></li>`).join('');
+      $('lista-sistemas').innerHTML = (d.sistemas || []).map((f) => `<h3 class="familia">${esc(f.familia)}</h3><ul class="tabla">` + f.items.map((i) => {
+        const nom = i.liga ? `<a href="${esc(i.liga)}"${/^https?:/.test(i.liga) ? ' target="_blank" rel="noopener"' : ''}>${i.privado ? '🔒 ' : ''}${esc(i.nombre)}${/^https?:/.test(i.liga) ? ' ↗' : ''}</a>` : esc(i.nombre);
+        const regs = (i.registros || []).map((n) => `<a href="https://www.safecreative.org/work/${esc(n)}" target="_blank" rel="noopener"><code>${esc(n)}</code></a>`).join(' ');
+        return `<li><span>${nom}${i.nota ? `<br><small>${esc(i.nota)}</small>` : ''}</span><span>${regs || (i.privado ? '<small>privado</small>' : '')}</span></li>`;
+      }).join('') + '</ul>').join('') + (d.en_registro ? `<p class="nota">⏳ ${esc(d.en_registro)}.</p>` : '');
       const ligas = (arr, cand) => (arr || []).map((f) => `<li><a href="${esc(f.liga)}" target="_blank" rel="noopener">${cand}${esc(f.titulo)} ↗</a></li>`).join('');
       $('lista-fuentes').innerHTML = ligas(d.fuentes, '');
       $('lista-privado').innerHTML = ligas(d.privado, '🔒 ');

@@ -365,5 +365,349 @@
       "liga": "https://www.dropbox.com/home"
     }
   ],
-  "registros_en_proceso": 3
+  "registros_en_proceso": 3,
+  "sistemas": [
+    {
+      "familia": "El Cubo de la Comunicación · Econotopía©",
+      "items": [
+        {
+          "nombre": "El Cubo de la Comunicación (33)©",
+          "registros": [
+            "2610077261709"
+          ],
+          "liga": "cubo33/",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Econotopía© 2.0 · comunicación, aprendizaje y escritura cifrada",
+          "registros": [
+            "2610317507307"
+          ],
+          "liga": "econotopia/",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Econotopía Segura© · memoria técnica",
+          "registros": [
+            "2610097277377"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Código Cúbico©",
+          "registros": [
+            "2610097276721"
+          ],
+          "liga": "codigocubico/",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Lector Cúbico© · lectura con cámara",
+          "registros": [
+            "2610097277568"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Teclado Cubo© · memoria y código fuente",
+          "registros": [
+            "2610097277155"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Cubo Morse©",
+          "registros": [
+            "2610257441754"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Cubo Interior©",
+          "registros": [
+            "2610097277049"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "CuboPY©",
+          "registros": [
+            "2610097275281"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Estructura y Validación mediante Código Omnigráfico©",
+          "registros": [
+            "2610317507444"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Página pública del Cubo (versión inicial)",
+          "registros": [],
+          "liga": "https://victorhugoramirezsalgado-boop.github.io/Econotop-a-cubo/",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        }
+      ]
+    },
+    {
+      "familia": "SOSistem™ · Sistema S.O.S.©",
+      "items": [
+        {
+          "nombre": "Sistema S.O.S.© · arquitectura electrónica",
+          "registros": [
+            "2609046908578"
+          ],
+          "liga": "https://sosistem.com",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "SOSistem™ plataforma 1.0.0 – 3.8",
+          "registros": [
+            "2610257442171"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "SOSistem™ versiones 3.9 – 6.6",
+          "registros": [
+            "2610317507284"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "S.S.O.S.© · expediente técnico y modelo de negocio",
+          "registros": [
+            "2610317507475"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Sensor híper inteligente SOSistem™ · diseño",
+          "registros": [
+            "2610317507499"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Desarrollo y firmware",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/sistema-sos",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "App de iPhone para SOSistem",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/iphone-para-sosistem",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        }
+      ]
+    },
+    {
+      "familia": "Contenedores, puertos y logística",
+      "items": [
+        {
+          "nombre": "ContenedorEns© · venta, renta y modificación",
+          "registros": [
+            "2609046908752"
+          ],
+          "liga": "https://contenedorens.com",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Arsa Bodegas© · mini bodegas self storage",
+          "registros": [
+            "2609046908806"
+          ],
+          "liga": "https://arsabodegas.com",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Regulación de contenedores de segundo uso · trazabilidad nacional",
+          "registros": [
+            "2610317507741"
+          ],
+          "liga": "tcontenedores/",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Registro mundial de buques varados y hundidos (propuesta CIP-OEA / OMI)",
+          "registros": [
+            "2610317507550"
+          ],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Estadísticas portuarias",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Trazabilidad · desarrollo de la propuesta",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Inventario de contenedores y pedimentos",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Cotizaciones ContenedorEns / Arsa (folio por sede)",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Cobranza y portal de clientes Arsa",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Configurador 3D de contenedores modificados",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/configurador",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Traslado de agua potable",
+          "registros": [],
+          "liga": null,
+          "privado": false,
+          "estatus": null,
+          "nota": "Servicio con logo propio."
+        }
+      ]
+    },
+    {
+      "familia": "Intertopía©",
+      "items": [
+        {
+          "nombre": "Intertopía© · concepto propuesto a la RAE",
+          "registros": [
+            "2602144563892"
+          ],
+          "liga": "intertopia/",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "1ntertopía© · sistema de generación de valor",
+          "registros": [
+            "2606096034080"
+          ],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/1ntertop-a",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        }
+      ]
+    },
+    {
+      "familia": "Autor",
+      "items": [
+        {
+          "nombre": "Cartera de dominios y sitios web del autor",
+          "registros": [
+            "2611017524083"
+          ],
+          "liga": "#proyectos",
+          "privado": false,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "CV, Rizoma, ORCID y expedientes institucionales",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/expedientes",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        },
+        {
+          "nombre": "Archivo de ligas, fuentes y evidencias",
+          "registros": [],
+          "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-",
+          "privado": true,
+          "estatus": null,
+          "nota": ""
+        }
+      ]
+    }
+  ],
+  "en_registro": "3 obras enviadas a registro en Safe Creative el 2 nov 2026"
 }
