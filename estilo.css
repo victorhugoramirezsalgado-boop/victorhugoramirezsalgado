@@ -1,47 +1,53 @@
-/* © 2026 Víctor Hugo Ramírez Salgado */
-:root{--bg:#f4efe6;--ink:#1d1d1f;--mut:#6b6b6b;--acc:#24477a;--line:#d9d2c5;--card:#fbf8f2;--ok:#2f7d4f;--dev:#9a6a12;--prep:#6b6b6b}
-@media (prefers-color-scheme:dark){:root{--bg:#14171a;--ink:#eceae4;--mut:#9a9a9a;--acc:#8fb0e0;--line:#2c3036;--card:#1b1f23;--ok:#6fc496;--dev:#e0b25c;--prep:#9a9a9a}}
+/* © 2026 Víctor Hugo Ramírez Salgado — estilo común de los sitios de proyecto (misma identidad que vhrs.com) */
+:root{--marino:#0F2236;--senal:#F2B705;--acero:#7D8C9C;--bg:#E6EBEF;--ink:#0F2236;--mut:#4F6072;--acc:#0F2236;--line:#C9D2DA;--card:#FFFFFF;--ok:#1F8A5B;--dev:#B07A00;--prep:#7D8C9C}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1A2A;--ink:#E6EBEF;--mut:#9AA8B6;--acc:#E6EBEF;--line:#24394F;--card:#11263B;--ok:#5FD39C;--dev:#F2B705;--prep:#9AA8B6}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,serif}
-a{color:var(--acc)}
-.barra{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.marca{font:600 15px ui-monospace,monospace;letter-spacing:.15em;cursor:pointer}
-.idioma select{font:inherit;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px 6px;max-width:160px}
-main{max-width:860px;margin:0 auto;padding:0 16px 48px}
-.portada{text-align:center;padding:28px 0 8px}
-h1{font-weight:400;font-size:clamp(28px,6vw,44px);margin:.2em 0;cursor:pointer}
-h2{font-weight:400;font-size:24px;border-bottom:1px solid var(--line);padding-bottom:6px;margin-top:44px}
-h3{font-size:17px;margin:0;cursor:pointer}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Archivo",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+a{color:inherit;text-decoration-color:var(--senal);text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,select:focus-visible{outline:3px solid var(--senal);outline-offset:2px}
+.barra{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.marca{font-weight:800;font-stretch:125%;letter-spacing:.02em;color:var(--ink);text-decoration:none;cursor:pointer}
+.idioma select{font:inherit;font-size:14px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px 6px;max-width:150px}
+main{max-width:980px;margin:0 auto;padding:0 20px 64px}
+/* Portada en azul marino, con el cubo girando */
+.portada{margin:0 -20px;padding:36px 20px 40px;background:var(--marino);color:#fff;text-align:left}
+.portada code{color:#C9D6E2;font-family:inherit;font-size:15px}
+.portada .estatus{margin-left:8px}
+.portada .estatus.ok{color:#5FD39C}.portada .estatus.dev{color:var(--senal)}.portada .estatus.prep{color:#C9D6E2}
+h1{font-weight:800;font-stretch:122%;font-size:clamp(34px,7vw,68px);line-height:1;margin:.2em 0;cursor:pointer}
+.lema{font-size:clamp(17px,2.4vw,21px);color:#C9D6E2!important;max-width:46ch;margin:12px 0 0}
+.morse-linea{color:var(--senal)!important;font-size:14px;min-height:1.6em;word-break:break-word}
+h2{font-weight:800;font-stretch:115%;font-size:clamp(24px,3.6vw,32px);line-height:1.1;margin:44px 0 10px}
+h3{font-size:18px;margin:0;cursor:pointer}
 p{color:var(--mut)}
-.morse-linea{font:13px ui-monospace,monospace;color:var(--acc);min-height:1.5em;word-break:break-word}
-.pestanas{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px}
-.pestanas a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;background:var(--card)}
-.esc{perspective:600px;height:150px;margin:8px auto 16px}
-.cubo{width:110px;height:110px;margin:auto;position:relative;transform-style:preserve-3d;animation:g 18s linear infinite}
-.cara{position:absolute;inset:0;border:1px solid var(--line);display:grid;place-items:center;font:600 13px/1.2 ui-monospace,monospace;color:var(--acc);opacity:.55;background:color-mix(in srgb,var(--bg) 85%,transparent);word-break:break-all;padding:6px}
+section>p{color:var(--ink);max-width:68ch}
+.esc{perspective:600px;height:140px;margin:0 0 12px}
+.cubo{width:100px;height:100px;position:relative;transform-style:preserve-3d;animation:g 18s linear infinite}
+.cara{position:absolute;inset:0;border:1px solid #2B4A6B;display:grid;place-items:center;font:600 12px/1.2 "Archivo",sans-serif;color:var(--senal);opacity:.8;background:rgba(15,34,54,.85);word-break:break-all;padding:6px}
 @keyframes g{to{transform:rotateX(360deg) rotateY(720deg)}}
 @media (prefers-reduced-motion:reduce){.cubo{animation:none}}
-.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-.tarjeta{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-.tarjeta p{margin:.4em 0 .6em;font-size:15px}
-.cab{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.estatus{font:12px ui-monospace,monospace;white-space:nowrap;border:1px solid currentColor;border-radius:999px;padding:1px 8px}
+/* Úsalo ahora: herramientas reales */
+.herr{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.herr-i{display:grid;gap:4px;background:var(--card);padding:16px 18px;text-decoration:none;border-left:4px solid var(--senal)}
+.herr-i b{font-size:18px}
+.herr-i span{color:var(--mut);font-size:15px}
+.herr-i:hover{background:color-mix(in srgb,var(--senal) 14%,var(--card))}
+.estatus{font-size:13px;white-space:nowrap;border:1.5px solid currentColor;border-radius:999px;padding:1px 9px}
 .estatus.ok{color:var(--ok)}.estatus.dev{color:var(--dev)}.estatus.prep{color:var(--prep)}
-.linea{list-style:none;padding:0;margin:0}
-.linea li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
-.linea b{font:600 14px ui-monospace,monospace;color:var(--acc)}
 .tabla{list-style:none;padding:0;margin:0}
-.tabla li{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
-.nota{font-size:14px}
-code{color:var(--acc);font-size:14px}
-footer{margin-top:48px;font-size:13px;text-align:center}
+.tabla li{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 16px;padding:11px 0;border-bottom:1px solid var(--line)}
+.tabla code{font-family:inherit;font-weight:600;font-size:15px}
+.nota{font-size:15px}
+.puntos{padding-left:20px;margin:.4em 0;max-width:68ch}.puntos li{margin:.4em 0}
+.red{display:flex;flex-wrap:wrap;gap:8px;margin-top:44px;padding-top:20px;border-top:2px solid var(--ink)}
+.red a{text-decoration:none;border:1.5px solid var(--line);border-radius:6px;padding:6px 12px;font-size:15px;background:var(--card)}
+.red a:hover{border-color:var(--senal)}
+footer{margin-top:40px;font-size:14px;color:var(--mut)}
+/* compatibilidad con páginas anteriores */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.tarjeta{background:var(--card);border:1px solid var(--line);padding:14px}
+.cab{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.linea{list-style:none;padding:0;margin:0}.linea li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.familia{font-size:18px;margin:24px 0 4px;padding-left:12px;border-left:4px solid var(--senal)}
 @media (max-width:520px){.linea li{grid-template-columns:1fr;gap:2px}}
-.prensa li{align-items:flex-start}.prensa small{color:var(--mut)}
-.marca{color:var(--ink);text-decoration:none}
-.lema{font-size:18px}
-section>p{color:var(--ink)}
-.puntos{padding-left:20px;margin:.4em 0}.puntos li{margin:.35em 0}
-.red{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
-.red a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;background:var(--card)}
-.familia{font-size:17px;margin:24px 0 4px;color:var(--acc)}

@@ -84,7 +84,34 @@
         "2610257441754",
         "2610097277049"
       ],
-      "relacion": "Forma parte de Econotopía© y vive con sus versiones dentro de sosistem.com."
+      "relacion": "Forma parte de Econotopía© y vive con sus versiones dentro de sosistem.com.",
+      "herramientas": [
+        {
+          "t": "Juego del Cubo",
+          "d": "Aprende a pedir ayuda de cinco maneras y en 22 idiomas, con el cubo como tablero.",
+          "l": "https://sosistem.com/#aprende"
+        },
+        {
+          "t": "Mensajero del Cubo",
+          "d": "Escribe un mensaje cifrado en las caras del cubo y compártelo con una liga.",
+          "l": "https://sosistem.com/#mensajero"
+        },
+        {
+          "t": "Cubo Morse",
+          "d": "Un cubo de doce caras con un solo código; versión armable para imprimir.",
+          "l": "https://sosistem.com/#cubo-morse"
+        },
+        {
+          "t": "Prototipo del Cubo 33 para imprimir",
+          "d": "Nivel 1 en hoja carta, listo para recortar y armar.",
+          "l": "https://sosistem.com/assets/cubo33-nivel1-prototipo-carta.pdf"
+        },
+        {
+          "t": "Página original del Cubo",
+          "d": "La primera versión pública de El Cubo de la Comunicación.",
+          "l": "https://victorhugoramirezsalgado-boop.github.io/Econotop-a-cubo/"
+        }
+      ]
     },
     {
       "slug": "codigocubico",
@@ -128,7 +155,24 @@
         "2610317507444",
         "2610097275281"
       ],
-      "relacion": "Modalidad de seguridad de Econotopía©, construida sobre El Cubo de la Comunicación (33)©."
+      "relacion": "Modalidad de seguridad de Econotopía©, construida sobre El Cubo de la Comunicación (33)©.",
+      "herramientas": [
+        {
+          "t": "Generar un mensaje en Código Cúbico",
+          "d": "El Mensajero del Cubo convierte tu texto en caras del cubo.",
+          "l": "https://sosistem.com/#mensajero"
+        },
+        {
+          "t": "Escuchar y leer Morse",
+          "d": "Tu celular escucha el código Morse y lo convierte en texto.",
+          "l": "https://sosistem.com/#receptor"
+        },
+        {
+          "t": "Cubo Morse armable",
+          "d": "Imprime el cubo de doce caras y úsalo sin pantalla.",
+          "l": "https://sosistem.com/assets/cubo-morse-armable.pdf"
+        }
+      ]
     },
     {
       "slug": "tcontenedores",
@@ -174,7 +218,29 @@
       "registros": [
         "2610317507741"
       ],
-      "relacion": "Proyecto de Víctor Hugo Ramírez Salgado, con 21 años en la industria marítimo-portuaria. Operación de contenedores de segundo uso en ContenedorEns© y Arsa Bodegas©."
+      "relacion": "Proyecto de Víctor Hugo Ramírez Salgado, con 21 años en la industria marítimo-portuaria. Operación de contenedores de segundo uso en ContenedorEns© y Arsa Bodegas©.",
+      "herramientas": [
+        {
+          "t": "Comprar, rentar o modificar un contenedor",
+          "d": "ContenedorEns©: contenedores de segundo uso revisados.",
+          "l": "https://contenedorens.com"
+        },
+        {
+          "t": "Rentar una mini bodega",
+          "d": "Arsa Bodegas©: bodegas de 20 pies en El Sauzal, Ensenada.",
+          "l": "https://arsabodegas.com"
+        },
+        {
+          "t": "Ver el registro de la propuesta",
+          "d": "Certificado de la propuesta de regulación en Safe Creative.",
+          "l": "https://www.safecreative.org/work/2610317507741"
+        },
+        {
+          "t": "Hablar con el autor",
+          "d": "Para autoridades, navieras, terminales y empresas interesadas en la trazabilidad.",
+          "l": "https://victorhugoramirezsalgado.com/cv/"
+        }
+      ]
     },
     {
       "slug": "intertopia",
@@ -212,7 +278,19 @@
         "2602144563892",
         "2606096034080"
       ],
-      "relacion": "Obra conceptual de Víctor Hugo Ramírez Salgado, base del nombre de Econotopía© y de 1ntertopía©."
+      "relacion": "Obra conceptual de Víctor Hugo Ramírez Salgado, base del nombre de Econotopía© y de 1ntertopía©.",
+      "herramientas": [
+        {
+          "t": "Ver Econotopía",
+          "d": "El sistema de comunicación que toma su nombre de este concepto.",
+          "l": "https://victorhugoramirezsalgado.com/econotopia/"
+        },
+        {
+          "t": "Ver el registro de la obra",
+          "d": "Certificado de Intertopía© en Safe Creative.",
+          "l": "https://www.safecreative.org/work/2602144563892"
+        }
+      ]
     },
     {
       "slug": "econotopia",
@@ -263,7 +341,29 @@
         "2610097277568",
         "2610097277155"
       ],
-      "relacion": "Econotopía vive con sus versiones dentro de sosistem.com, y cada proyecto conserva su valor individual."
+      "relacion": "Econotopía vive con sus versiones dentro de sosistem.com, y cada proyecto conserva su valor individual.",
+      "herramientas": [
+        {
+          "t": "Econotopía E · aprender",
+          "d": "El Juego del Cubo para aprender idiomas y formas de pedir ayuda.",
+          "l": "https://sosistem.com/#aprende"
+        },
+        {
+          "t": "Econotopía M · enviar",
+          "d": "El Mensajero del Cubo para escribir mensajes cifrados.",
+          "l": "https://sosistem.com/#mensajero"
+        },
+        {
+          "t": "Econotopía R · recibir",
+          "d": "El receptor que escucha y traduce el código.",
+          "l": "https://sosistem.com/#receptor"
+        },
+        {
+          "t": "Cubo 33 para imprimir",
+          "d": "Prototipo del Nivel 1 en hoja carta.",
+          "l": "https://sosistem.com/assets/cubo33-nivel1-prototipo-carta.pdf"
+        }
+      ]
     }
   ]
 }

@@ -27,6 +27,9 @@ def pagina(s, rel):
         cuerpo = ''.join(f"<p>{e(p)}</p>" for p in x.get('parrafos', []))
         if x.get('lista'): cuerpo += '<ul class="puntos">' + ''.join(f"<li>{e(i)}</li>" for i in x['lista']) + '</ul>'
         secc.append(f"<section><h2>{e(x['titulo'])}</h2>{cuerpo}</section>")
+    herr = ('<section class="usar"><h2>Úsalo ahora</h2><div class="herr">' + ''.join(
+        f'<a class="herr-i" href="{e(h["l"])}" target="_blank" rel="noopener"><b>{e(h["t"])}</b><span>{e(h["d"])}</span></a>'
+        for h in s.get('herramientas', [])) + '</div></section>') if s.get('herramientas') else ''
     regs = ''.join(
         f'<li><span>{e(nombres.get(n, "Obra registrada"))}</span><a href="https://www.safecreative.org/work/{n}" target="_blank" rel="noopener"><code>{n}</code> ↗</a></li>'
         for n in s['registros'])
@@ -48,6 +51,7 @@ def pagina(s, rel):
 <meta property="og:type" content="website"><meta property="og:url" content="{url}">
 <meta property="og:title" content="{e(s['titulo'])}"><meta property="og:description" content="{e(s['lema'])}">
 <meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{rel}estilo.css">
 <script type="application/ld+json">{ld}</script>
 </head>
@@ -64,6 +68,7 @@ def pagina(s, rel):
     <p class="lema">{e(s['lema'])}</p>
     <p class="morse-linea" id="morse" aria-live="polite"></p>
   </section>
+  {herr}
   {''.join(secc)}
   <section><h2>Registros © en Safe Creative</h2>
     <p class="nota">Toca un número para ver su certificado.</p>
