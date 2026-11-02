@@ -307,6 +307,18 @@
   ],
   "fuentes": [
     {
+      "titulo": "CV de consultor (español)",
+      "liga": "cv/"
+    },
+    {
+      "titulo": "Consultant CV (English)",
+      "liga": "cv/en/"
+    },
+    {
+      "titulo": "ORCID 0009-0002-7831-8433",
+      "liga": "https://orcid.org/0009-0002-7831-8433"
+    },
+    {
       "titulo": "Repositorios públicos en GitHub",
       "liga": "https://github.com/victorhugoramirezsalgado-boop"
     },
@@ -320,6 +332,10 @@
     }
   ],
   "privado": [
+    {
+      "titulo": "Expedientes: Rizoma, ORCID, SECIHTI, CIP-OEA, BID, INDAUTOR, IMPI",
+      "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/expedientes"
+    },
     {
       "titulo": "Archivo de ligas, fuentes y evidencias",
       "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-"
