@@ -13,23 +13,27 @@
       },
       {
         "nombre": "El Cubo de la Comunicación (33)©",
-        "liga": "https://cubo33.com"
+        "liga": "https://victorhugoramirezsalgado.com/cubo33/"
       },
       {
         "nombre": "Código Cúbico©",
-        "liga": "https://codigocubico.com"
+        "liga": "https://victorhugoramirezsalgado.com/codigocubico/"
       },
       {
         "nombre": "Econotopía©",
-        "liga": "https://xn--econotopa-n5a.com"
+        "liga": "https://victorhugoramirezsalgado.com/econotopia/"
+      },
+      {
+        "nombre": "Intertopía©",
+        "liga": "https://victorhugoramirezsalgado.com/intertopia/"
       },
       {
         "nombre": "Trazabilidad de contenedores",
-        "liga": "https://tcontenedores.com"
+        "liga": "https://victorhugoramirezsalgado.com/tcontenedores/"
       },
       {
         "nombre": "ContenedorEns©",
-        "liga": "https://contenedorens.com"
+        "liga": "https://victorhugoramirezsalgado.com/contenedorens/"
       }
     ]
   },
@@ -61,7 +65,7 @@
         {
           "t": "Rastrear un contenedor",
           "d": "Consulta la trazabilidad por número ISO 6346 en tcontenedores.com.",
-          "l": "https://tcontenedores.com/consulta/"
+          "l": "https://victorhugoramirezsalgado.com/tcontenedores/consulta/"
         }
       ],
       "secciones": [
@@ -230,46 +234,150 @@
       "dominio": "tcontenedores.com",
       "titulo": "Trazabilidad de contenedores",
       "morse": "TRAZABILIDAD",
-      "lema": "Trazabilidad binacional del contenedor marítimo, de Ensenada a Long Beach",
+      "lema": "Proyecto de trazabilidad binacional del contenedor marítimo · corredor Ensenada – Long Beach",
       "descripcion": "Trazabilidad de contenedores: sistema y propuesta de rastreo e inventario de contenedores marítimos de segundo uso, con corredor binacional Ensenada–Long Beach. Obra de Víctor Hugo Ramírez Salgado.",
       "estatus": "En desarrollo",
       "secciones": [
         {
-          "titulo": "El problema",
+          "titulo": "1. Resumen ejecutivo",
           "parrafos": [
-            "Miles de contenedores marítimos que entran a México no vuelven a salir: se venden y se quedan en el país para un segundo uso como bodegas, oficinas o viviendas.",
-            "Hoy no existe un registro que diga dónde terminan. Eso deja huecos en las estadísticas portuarias, en la recaudación y en el control sanitario de cajas que pueden llegar dañadas o con residuos."
+            "Trazabilidad de contenedores es un proyecto para registrar el ciclo de vida completo del contenedor marítimo que entra a México: desde su descarga en puerto hasta su retorno al tráfico internacional o su destino final como contenedor de segundo uso (bodega, oficina, vivienda o módulo comercial).",
+            "La primera etapa se plantea en el corredor binacional Ensenada – Long Beach, uno de los enlaces marítimos más activos del Pacífico norteamericano, con una plataforma pública de consulta por número ISO 6346 y un padrón de empresas autorizadas."
           ]
         },
         {
-          "titulo": "Corredor Ensenada – Long Beach",
+          "titulo": "2. Planteamiento del problema",
           "parrafos": [
-            "Un contenedor puede entrar por Ensenada y salir por Long Beach, o al revés. La plataforma sigue al contenedor en los dos lados de la frontera, con enlaces hacia puertos, navieras, terminales y empresas autorizadas para el segundo uso."
+            "Los contenedores que se quedan en el país para un segundo uso salen del registro portuario y aduanero en el momento en que cambian de dueño. No existe hoy un inventario que permita saber cuántos son, dónde están, en qué estado sanitario llegaron ni si cubrieron sus contribuciones.",
+            "Las cifras oficiales del propio Puerto de Ensenada muestran el desequilibrio que alimenta ese fenómeno: el contenedor llega lleno y, en su mayoría, regresa vacío."
+          ],
+          "kpis": [
+            {
+              "v": "393,200",
+              "l": "TEU movidos en Ensenada, enero–noviembre de 2025",
+              "s": "ASIPONA Ensenada (2025)"
+            },
+            {
+              "v": "187,938",
+              "l": "TEU de importación llenos",
+              "s": "frente a 47,752 TEU de exportación llenos"
+            },
+            {
+              "v": "74.6 %",
+              "l": "de los TEU de exportación salieron vacíos",
+              "s": "139,926 de 187,678 TEU"
+            },
+            {
+              "v": "9.88 M",
+              "l": "TEU en Long Beach en 2025, récord histórico",
+              "s": "40 % fueron vacíos (3.96 M TEU)"
+            }
           ]
         },
         {
-          "titulo": "La propuesta",
+          "titulo": "3. Datos del corredor Ensenada – Long Beach",
+          "tabla": {
+            "cab": [
+              "Indicador",
+              "Ensenada (ene–nov 2025)",
+              "Long Beach (2025)"
+            ],
+            "filas": [
+              [
+                "TEU totales",
+                "393,200",
+                "9,881,595"
+              ],
+              [
+                "Importación (TEU)",
+                "196,533",
+                "4,779,559"
+              ],
+              [
+                "Exportación (TEU)",
+                "187,678",
+                "1,141,113"
+              ],
+              [
+                "Vacíos (TEU)",
+                "149,307",
+                "3,960,925"
+              ],
+              [
+                "Participación de vacíos",
+                "38.0 %",
+                "40.1 %"
+              ]
+            ]
+          },
+          "parrafos": [
+            "Cálculo de porcentajes del autor con base en las cifras publicadas. Los datos de Ensenada corresponden al acumulado oficial a noviembre de 2025."
+          ]
+        },
+        {
+          "titulo": "4. Objetivos",
+          "parrafos": [
+            "Objetivo general: crear un registro nacional y binacional que siga a cada contenedor desde su llegada hasta su destino final, para generar estadística portuaria real, asegurar el cumplimiento fiscal y sanitario y fortalecer la seguridad."
+          ],
           "lista": [
-            "Un inventario nacional y binacional de contenedores, desde su llegada por puerto, aeropuerto o frontera hasta su destino final.",
-            "Que las navieras informen cuando un contenedor cambia de régimen o de dueño, y a quién se entrega.",
-            "Un padrón de empresas con clave única para recibir contenedores de segundo uso.",
-            "Una revisión de salubridad y estado físico antes del segundo uso, con certificación.",
-            "Identificación de cada contenedor con calcomanía de Código Cúbico©."
+            "Identificar cada contenedor por su número ISO 6346 con dígito verificador validado.",
+            "Registrar cada cambio de régimen aduanero o de propietario, con el aviso de la naviera o del importador.",
+            "Integrar un padrón de empresas con clave única autorizadas para recibir contenedores de segundo uso.",
+            "Verificar el estado sanitario y estructural antes del segundo uso, con constancia.",
+            "Publicar estadística abierta del corredor para autoridades, puertos e investigadores."
           ]
         },
         {
-          "titulo": "Objetivos",
+          "titulo": "5. Alcance y etapas",
           "lista": [
-            "Estadísticas portuarias reales.",
-            "Impuestos y contribuciones cubiertos.",
-            "Sanidad comprobada del destino.",
-            "Seguridad nacional y salud pública."
+            "Etapa 1 · Piloto en Ensenada: inventario inicial de contenedores de segundo uso de ContenedorEns© y consulta pública por número.",
+            "Etapa 2 · Corredor binacional: enlace con terminales y navieras que operan Ensenada – Long Beach.",
+            "Etapa 3 · Escala nacional: propuesta de regulación ante SEMAR, la Coordinación General de Puertos y Marina Mercante y la ANAM.",
+            "Etapa 4 · Proyección regional: presentación ante la CIP-OEA como modelo para los puertos de las Américas."
           ]
         },
         {
-          "titulo": "Autoridades y organismos de referencia",
+          "titulo": "6. Arquitectura de la plataforma",
+          "lista": [
+            "Consulta pública por número de contenedor (ISO 6346) con historial de movimientos.",
+            "Padrón de empresas receptoras con clave única.",
+            "Registro de eventos: llegada, cambio de régimen, venta, verificación, modificación y destino final.",
+            "Identificación física con calcomanía de Código Cúbico©, legible con la cámara del celular.",
+            "Tablero estadístico del corredor, con datos abiertos."
+          ]
+        },
+        {
+          "titulo": "7. Marco normativo de referencia",
+          "lista": [
+            "ISO 6346:2022 · codificación, identificación y marcado de contenedores.",
+            "Convenio Internacional sobre la Seguridad de los Contenedores (CSC, 1972) · Organización Marítima Internacional.",
+            "Ley Aduanera de México · régimen de importación temporal y cambio de régimen.",
+            "Ley de Puertos y Ley de Navegación y Comercio Marítimos de México."
+          ]
+        },
+        {
+          "titulo": "8. Indicadores de resultado propuestos",
+          "lista": [
+            "Porcentaje de contenedores de segundo uso identificados en el corredor.",
+            "Tiempo entre el cambio de régimen y su registro.",
+            "Número de empresas receptoras en el padrón.",
+            "Contenedores con constancia sanitaria y estructural antes de su segundo uso."
+          ]
+        },
+        {
+          "titulo": "9. Autoridades y organismos de referencia",
           "parrafos": [
-            "SEMAR, Coordinación General de Puertos y Marina Mercante, ANAM, CIP-OEA, Organización Mundial de Aduanas y Organización Mundial del Comercio."
+            "SEMAR, Coordinación General de Puertos y Marina Mercante, ASIPONA Ensenada, ANAM, Puerto de Long Beach, CIP-OEA, Organización Marítima Internacional, Organización Mundial de Aduanas y Organización Mundial del Comercio."
+          ]
+        },
+        {
+          "titulo": "Referencias",
+          "apa": [
+            "Administración del Sistema Portuario Nacional Ensenada. (2025). <i>Acumulado de cargas, enero–noviembre 2025</i> [Estadística]. https://puertoensenada.com.mx/upl/sec/Acumulado%20de%20cargas%202025/Acumulado_Noviembre.pdf",
+            "Container News. (2026, 18 de enero). <i>Port of Long Beach moves nearly 9.9 million TEUs in 2025</i>. https://container-news.com/port-of-long-beach-moves-nearly-9-9-million-teus-in-2025",
+            "International Organization for Standardization. (2022). <i>Freight containers — Coding, identification and marking</i> (ISO 6346:2022). https://www.iso.org/standard/83558.html",
+            "Organización Marítima Internacional. (1972). <i>Convenio internacional sobre la seguridad de los contenedores (CSC)</i>. https://www.imo.org/es/About/Conventions/Pages/International-Convention-for-Safe-Containers-(CSC).aspx",
+            "Ramírez Salgado, V. H. (2026). <i>Regulación de contenedores de segundo uso · trazabilidad nacional</i> [Propuesta; registro n.º 2610317507741]. Safe Creative. https://www.safecreative.org/work/2610317507741"
           ]
         }
       ],
@@ -289,12 +397,12 @@
           "l": "consulta/"
         },
         {
-          "t": "Ver el registro de la propuesta",
+          "t": "Registro de la propuesta",
           "d": "Certificado de la propuesta de regulación en Safe Creative.",
           "l": "https://www.safecreative.org/work/2610317507741"
         },
         {
-          "t": "Hablar con el autor",
+          "t": "Contacto con el autor",
           "d": "Para autoridades, navieras, terminales y empresas interesadas.",
           "l": "https://victorhugoramirezsalgado.com/cv/"
         }

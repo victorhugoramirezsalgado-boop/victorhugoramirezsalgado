@@ -144,13 +144,15 @@
       "dominio": "contenedorens.com",
       "estatus": "Activo",
       "nota": "Venta, renta y modificación de contenedores: configurador 3D/2D y cotizaciones con folio.",
-      "copia": "contenedorens/"
+      "copia": "contenedorens/",
+      "dominio_activo": true
     },
     {
       "nombre": "Arsa Bodegas©",
       "dominio": "arsabodegas.com",
       "estatus": "En preparación",
-      "nota": "Mini bodegas en El Sauzal. Proyecto propio pendiente; por ahora su información va en ContenedorEns."
+      "nota": "Mini bodegas en El Sauzal. Proyecto propio pendiente; por ahora su información va en ContenedorEns.",
+      "copia": "contenedorens/"
     },
     {
       "nombre": "Trazabilidad de contenedores",
@@ -191,7 +193,9 @@
       "nombre": "SOSistem™ / S.S.O.S.©",
       "dominio": "sosistem.com",
       "estatus": "En desarrollo",
-      "nota": "Monitoreo sin cámaras para espacios confinados."
+      "nota": "Monitoreo sin cámaras para espacios confinados.",
+      "copia": "https://sosistem.com",
+      "dominio_activo": true
     }
   ],
   "registros": [

@@ -51,3 +51,16 @@ footer{margin-top:40px;font-size:14px;color:var(--mut)}
 .linea{list-style:none;padding:0;margin:0}.linea li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
 .familia{font-size:18px;margin:24px 0 4px;padding-left:12px;border-left:4px solid var(--senal)}
 @media (max-width:520px){.linea li{grid-template-columns:1fr;gap:2px}}
+
+/* Proyecto profesional: cifras, tabla de datos y referencias APA 7 */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.kpi{border:1px solid color-mix(in srgb,currentColor 18%,transparent);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.kpi b{font-size:1.7rem;font-weight:800;font-stretch:115%;line-height:1.05}
+.kpi span{font-size:.95rem}.kpi small{opacity:.65;font-size:.8rem}
+.t-datos{overflow-x:auto;margin:12px 0}
+.t-datos table{border-collapse:collapse;width:100%;min-width:420px;font-variant-numeric:tabular-nums}
+.t-datos th,.t-datos td{padding:8px 10px;border-bottom:1px solid color-mix(in srgb,currentColor 15%,transparent);text-align:right}
+.t-datos th:first-child,.t-datos td:first-child{text-align:left}
+.t-datos th{font-weight:700}
+.apa{list-style:none;padding:0;margin:8px 0}
+.apa li{padding-left:2em;text-indent:-2em;margin:0 0 10px;overflow-wrap:anywhere}

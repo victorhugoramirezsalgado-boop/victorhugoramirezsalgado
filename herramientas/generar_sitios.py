@@ -25,7 +25,13 @@ def pagina(s, rel):
     secc = []
     for x in s['secciones']:
         cuerpo = ''.join(f"<p>{e(p)}</p>" for p in x.get('parrafos', []))
+        if x.get('kpis'): cuerpo += '<div class="kpis">' + ''.join(f'<div class="kpi"><b>{e(k["v"])}</b><span>{e(k["l"])}</span><small>{e(k.get("s", ""))}</small></div>' for k in x['kpis']) + '</div>'
+        if x.get('tabla'):
+            t = x['tabla']
+            cuerpo += '<div class="t-datos"><table><thead><tr>' + ''.join(f'<th>{e(c)}</th>' for c in t['cab']) + '</tr></thead><tbody>' + ''.join('<tr>' + ''.join(f'<td>{e(c)}</td>' for c in f) + '</tr>' for f in t['filas']) + '</tbody></table></div>'
         if x.get('lista'): cuerpo += '<ul class="puntos">' + ''.join(f"<li>{e(i)}</li>" for i in x['lista']) + '</ul>'
+        # Referencias APA 7: texto de confianza (sitios.json), con cursivas <i> y la URL convertida en liga
+        if x.get('apa'): cuerpo += '<ul class="apa">' + ''.join('<li>' + re.sub(r'(https://\S+)', r'<a href="\1" target="_blank" rel="noopener">\1</a>', i) + '</li>' for i in x['apa']) + '</ul>'
         secc.append(f"<section><h2>{e(x['titulo'])}</h2>{cuerpo}</section>")
     herr = ('<section class="usar"><h2>Úsalo ahora</h2><div class="herr">' + ''.join(
         f'<a class="herr-i" href="{e(h["l"])}" target="_blank" rel="noopener"><b>{e(h["t"])}</b><span>{e(h["d"])}</span></a>'
@@ -33,7 +39,7 @@ def pagina(s, rel):
     regs = ''.join(
         f'<li><span>{e(nombres.get(n, "Obra registrada"))}</span><a href="https://www.safecreative.org/work/{n}" target="_blank" rel="noopener"><code>{n}</code> ↗</a></li>'
         for n in s['registros'])
-    red = ''.join(f'<a href="{e(r["liga"])}">{e(r["nombre"])}</a>' for r in datos['comun']['red'] if s.get('cname', s['dominio']) not in r['liga'] and s['dominio'] not in r['liga'])
+    red = ''.join(f'<a href="{e(r["liga"])}">{e(r["nombre"])}</a>' for r in datos['comun']['red'] if s.get('cname', s['dominio']) not in r['liga'] and s['dominio'] not in r['liga'] and f"/{s['slug']}/" not in r['liga'])
     nums = ' · '.join(s['registros'][:3])
     ld = json.dumps({"@context": "https://schema.org", "@type": "CreativeWork", "name": s['titulo'], "description": s['descripcion'],
                      "url": url, "author": {"@type": "Person", "name": datos['comun']['autor'], "url": datos['comun']['panel']},

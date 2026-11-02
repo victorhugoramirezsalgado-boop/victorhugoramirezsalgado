@@ -14,20 +14,23 @@
         <article class="tarjeta">
           <div class="cab"><h3 data-morse="${esc(p.nombre)}">${esc(p.nombre)}</h3><span class="estatus ${clase(p.estatus)}">${esc(p.estatus)}</span></div>
           <p>${esc(p.nota)}</p>
-          <a href="https://${esc(p.dominio)}" target="_blank" rel="noopener">${esc(p.dominio)} ↗</a>${p.copia ? `<br><a href="${esc(p.copia)}">Ver copia en vhrs.com</a>` : ''}
+          ${p.copia ? `<a class="ir" href="${esc(p.copia)}"${/^https?:/.test(p.copia) ? ' target="_blank" rel="noopener"' : ''}>Ver el proyecto →</a>` : ''}
+          <small class="dominio">${esc(p.dominio)}${p.dominio_activo ? '' : ' · dominio en conexión'}</small>
         </article>`).join('');
+      // Toda la tarjeta lleva a la página pública del proyecto (nunca a un sitio privado)
+      document.querySelectorAll('#lista-proyectos .tarjeta').forEach((t) => { const a = t.querySelector('a.ir'); if (!a) return; t.classList.add('clic'); t.addEventListener('click', (ev) => { if (ev.target.closest('a,[data-morse]')) return; a.click(); }); });
       $('lista-trayectoria').innerHTML = (d.trayectoria || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}</span></li>`).join('');
       $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><a href="https://www.safecreative.org/work/${esc(r.registro)}" target="_blank" rel="noopener"><code>${esc(r.registro)}</code> ↗</a></li>`).join('');
       $('lista-formacion').innerHTML = (d.formacion || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}${t.liga ? ` <a href="${esc(t.liga)}" target="_blank" rel="noopener">fuente ↗</a>` : ''}</span></li>`).join('');
       $('lista-prensa').innerHTML = (d.prensa || []).map((n) => `<li><div><a href="${esc(n.liga)}" target="_blank" rel="noopener">${esc(n.titulo)} ↗</a><br><small>${esc(n.medio)}${n.fecha ? ' · ' + esc(n.fecha) : ''}${n.nota ? ' — ' + esc(n.nota) : ''}</small></div><span class="estatus ${n.verificada ? 'ok' : 'prep'}">${n.verificada ? 'Verificada' : 'Por verificar'}</span></li>`).join('');
       $('lista-sistemas').innerHTML = (d.sistemas || []).map((f) => `<h3 class="familia">${esc(f.familia)}</h3><ul class="tabla">` + f.items.map((i) => {
-        const nom = i.liga ? `<a href="${esc(i.liga)}"${/^https?:/.test(i.liga) ? ' target="_blank" rel="noopener"' : ''}>${i.privado ? '🔒 ' : ''}${esc(i.nombre)}${/^https?:/.test(i.liga) ? ' ↗' : ''}</a>` : esc(i.nombre);
+        const nom = i.privado ? `🔒 ${esc(i.nombre)}` : i.liga ? `<a href="${esc(i.liga)}"${/^https?:/.test(i.liga) ? ' target="_blank" rel="noopener"' : ''}>${i.privado ? '🔒 ' : ''}${esc(i.nombre)}${/^https?:/.test(i.liga) ? ' ↗' : ''}</a>` : esc(i.nombre);
         const regs = (i.registros || []).map((n) => `<a href="https://www.safecreative.org/work/${esc(n)}" target="_blank" rel="noopener"><code>${esc(n)}</code></a>`).join(' ');
         return `<li><span>${nom}${i.nota ? `<br><small>${esc(i.nota)}</small>` : ''}</span><span>${regs || (i.privado ? '<small>privado</small>' : '')}</span></li>`;
       }).join('') + '</ul>').join('') + (d.en_registro ? `<p class="nota">⏳ ${esc(d.en_registro)}.</p>` : '');
       const ligas = (arr, cand) => (arr || []).map((f) => `<li><a href="${esc(f.liga)}" target="_blank" rel="noopener">${cand}${esc(f.titulo)} ↗</a></li>`).join('');
       $('lista-fuentes').innerHTML = ligas(d.fuentes, '');
-      $('lista-privado').innerHTML = ligas(d.privado, '🔒 ');
+      $('lista-privado').innerHTML = (d.privado || []).map((f) => `<li><span>🔒 ${esc(f.titulo)}</span><a href="privado/">Entrar</a></li>`).join('');
     })
     .catch(() => { $('lista-proyectos').innerHTML = '<p class="nota">No se pudo cargar el estatus.</p>'; });
 
