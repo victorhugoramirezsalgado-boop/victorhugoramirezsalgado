@@ -37,3 +37,4 @@ p{color:var(--mut)}
 code{color:var(--acc);font-size:14px}
 footer{margin-top:48px;font-size:13px;text-align:center}
 @media (max-width:520px){.linea li{grid-template-columns:1fr;gap:2px}}
+.prensa li{align-items:flex-start}.prensa small{color:var(--mut)}

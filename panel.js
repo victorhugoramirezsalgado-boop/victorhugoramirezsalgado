@@ -17,7 +17,9 @@
           <a href="https://${esc(p.dominio)}" target="_blank" rel="noopener">${esc(p.dominio)} ↗</a>
         </article>`).join('');
       $('lista-trayectoria').innerHTML = (d.trayectoria || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}</span></li>`).join('');
-      $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><code>${esc(r.registro)}</code></li>`).join('');
+      $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><a href="https://www.safecreative.org/work/${esc(r.registro)}" target="_blank" rel="noopener"><code>${esc(r.registro)}</code> ↗</a></li>`).join('');
+      $('lista-formacion').innerHTML = (d.formacion || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}${t.liga ? ` <a href="${esc(t.liga)}" target="_blank" rel="noopener">fuente ↗</a>` : ''}</span></li>`).join('');
+      $('lista-prensa').innerHTML = (d.prensa || []).map((n) => `<li><div><a href="${esc(n.liga)}" target="_blank" rel="noopener">${esc(n.titulo)} ↗</a><br><small>${esc(n.medio)}${n.fecha ? ' · ' + esc(n.fecha) : ''}${n.nota ? ' — ' + esc(n.nota) : ''}</small></div><span class="estatus ${n.verificada ? 'ok' : 'prep'}">${n.verificada ? 'Verificada' : 'Por verificar'}</span></li>`).join('');
       const ligas = (arr, cand) => (arr || []).map((f) => `<li><a href="${esc(f.liga)}" target="_blank" rel="noopener">${cand}${esc(f.titulo)} ↗</a></li>`).join('');
       $('lista-fuentes').innerHTML = ligas(d.fuentes, '');
       $('lista-privado').innerHTML = ligas(d.privado, '🔒 ');
