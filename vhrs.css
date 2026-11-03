@@ -69,3 +69,15 @@ footer{margin-top:56px;padding-top:20px;border-top:2px solid var(--tinta);font-s
 
 /* Tarjetas de proyecto: toda la tarjeta abre la página pública */
 .tarjeta.clic{cursor:pointer;transition:transform .15s,box-shadow .15s}.tarjeta.clic:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.12)}.tarjeta .ir{font-weight:700;display:inline-block;margin-top:4px}.tarjeta .dominio{display:block;opacity:.6;margin-top:6px}
+
+/* Ruta de proyectos: número, hito (Inicio/Fin), año y entrada directa */
+.tarjeta .paso{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px}
+.tarjeta .num{font-weight:800;font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tarjeta .hito{background:var(--tinta,#111);color:var(--panel,#fff);padding:2px 8px;border-radius:999px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+.tarjeta .anio{margin-left:auto;opacity:.6}
+.tarjeta.etapa{outline:2px solid currentColor;outline-offset:-2px}
+.tarjeta .porque{font-size:13px;opacity:.8;margin-top:-4px}
+.tarjeta .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:6px}
+.tarjeta .boton{padding:8px 14px;border:2px solid currentColor;border-radius:6px;text-decoration:none}
+.tarjeta .boton:hover{background:var(--tinta);color:var(--panel)}
+.tarjeta .ficha{font-size:14px;opacity:.75}

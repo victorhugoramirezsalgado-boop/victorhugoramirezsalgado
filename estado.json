@@ -145,49 +145,85 @@
       "estatus": "Activo",
       "nota": "Venta, renta y modificación de contenedores: configurador 3D/2D y cotizaciones con folio.",
       "copia": "contenedorens/",
-      "dominio_activo": true
+      "dominio_activo": true,
+      "orden": 1,
+      "anio": "2016",
+      "entrar": "contenedorens/configurador/",
+      "entrar_texto": "Configurar y cotizar",
+      "porque": "Origen de todo: el negocio de contenedores, activo desde 2016.",
+      "etapa": "Inicio"
     },
     {
       "nombre": "Arsa Bodegas©",
       "dominio": "arsabodegas.com",
       "estatus": "En preparación",
       "nota": "Mini bodegas en El Sauzal. Proyecto propio pendiente; por ahora su información va en ContenedorEns.",
-      "copia": "contenedorens/"
+      "copia": "contenedorens/",
+      "orden": 2,
+      "anio": "2018",
+      "entrar": "contenedorens/",
+      "entrar_texto": "Ver servicios",
+      "porque": "Mismo negocio: mini bodegas en contenedores de 20 pies."
     },
     {
       "nombre": "Trazabilidad de contenedores",
       "dominio": "tcontenedores.com",
       "estatus": "En desarrollo",
       "nota": "Trazabilidad binacional de contenedores, corredor Ensenada – Long Beach. Consulta por número ISO 6346.",
-      "copia": "tcontenedores/"
+      "copia": "tcontenedores/",
+      "orden": 3,
+      "anio": "2026",
+      "entrar": "tcontenedores/consulta/",
+      "entrar_texto": "Consultar un contenedor",
+      "porque": "Nace de los 21 años en puertos y del negocio de contenedores."
     },
     {
       "nombre": "Intertopía©",
       "dominio": "intertopía.com",
       "estatus": "En preparación",
-      "nota": "Pendiente.",
-      "copia": "intertopia/"
+      "nota": "El espacio intermedio entre la utopía y la distopía.",
+      "copia": "intertopia/",
+      "orden": 4,
+      "anio": "2026",
+      "entrar": "intertopia/",
+      "entrar_texto": "Leer el concepto",
+      "porque": "Concepto propuesto a la RAE (feb 2026); da nombre a la familia «topía»."
     },
     {
       "nombre": "Econotopía©",
       "dominio": "econotopía.com",
       "estatus": "En desarrollo",
       "nota": "Sistema de comunicación del Cubo.",
-      "copia": "econotopia/"
-    },
-    {
-      "nombre": "Código Cúbico©",
-      "dominio": "codigocubico.com",
-      "estatus": "En preparación",
-      "nota": "Código de comunicación del Cubo (33).",
-      "copia": "codigocubico/"
+      "copia": "econotopia/",
+      "orden": 5,
+      "anio": "2026",
+      "entrar": "https://sosistem.com/#aprende",
+      "entrar_texto": "Aprender con el Cubo",
+      "porque": "Sistema de comunicación que toma su nombre de Intertopía."
     },
     {
       "nombre": "Cubo 33©",
       "dominio": "cubo33.com",
       "estatus": "En preparación",
       "nota": "El Cubo de la Comunicación A–Z.",
-      "copia": "cubo33/"
+      "copia": "cubo33/",
+      "orden": 6,
+      "anio": "2026",
+      "entrar": "cubo33/",
+      "entrar_texto": "Ver el Cubo",
+      "porque": "Herramienta central de Econotopía."
+    },
+    {
+      "nombre": "Código Cúbico©",
+      "dominio": "codigocubico.com",
+      "estatus": "En preparación",
+      "nota": "Código de comunicación del Cubo (33).",
+      "copia": "codigocubico/",
+      "orden": 7,
+      "anio": "2026",
+      "entrar": "https://sosistem.com/#mensajero",
+      "entrar_texto": "Escribir en Código Cúbico",
+      "porque": "Modalidad de seguridad de Econotopía, basada en el Cubo."
     },
     {
       "nombre": "SOSistem™ / S.S.O.S.©",
@@ -195,7 +231,13 @@
       "estatus": "En desarrollo",
       "nota": "Monitoreo sin cámaras para espacios confinados.",
       "copia": "https://sosistem.com",
-      "dominio_activo": true
+      "dominio_activo": true,
+      "orden": 8,
+      "anio": "2026",
+      "entrar": "https://sosistem.com",
+      "entrar_texto": "Entrar a SOSistem™",
+      "porque": "Plataforma que integra todo: las apps del Cubo y la prueba en ContenedorEns.",
+      "etapa": "Fin"
     }
   ],
   "registros": [
@@ -714,5 +756,6 @@
       ]
     }
   ],
-  "en_registro": "3 obras enviadas a registro en Safe Creative el 2 nov 2026"
+  "en_registro": "3 obras enviadas a registro en Safe Creative el 2 nov 2026",
+  "orden_proyectos": "Del origen (negocio de contenedores, 2016) a la plataforma que integra todo (SOSistem™)."
 }

@@ -10,15 +10,24 @@
     .then((d) => {
       $('actualizado').textContent = d.actualizado || '—';
       if (d.lema) $('lema').textContent = d.lema;
-      $('lista-proyectos').innerHTML = (d.proyectos || []).map((p) => `
-        <article class="tarjeta">
+      // Proyectos en orden: del origen (Inicio) a la plataforma que integra todo (Fin)
+      const ext = (u) => /^https?:/.test(u || '');
+      const proys = (d.proyectos || []).slice().sort((x, y) => (x.orden || 99) - (y.orden || 99));
+      if (d.orden_proyectos) $('orden-proyectos').textContent = d.orden_proyectos;
+      $('lista-proyectos').innerHTML = proys.map((p, i) => {
+        const entrar = p.entrar || p.copia;
+        return `
+        <article class="tarjeta clic${p.etapa ? ' etapa' : ''}" data-ir="${esc(entrar)}">
+          <div class="paso"><span class="num">${String(p.orden || i + 1).padStart(2, '0')}</span>${p.etapa ? `<span class="hito">${esc(p.etapa)}</span>` : ''}<span class="anio">${esc(p.anio || '')}</span></div>
           <div class="cab"><h3 data-morse="${esc(p.nombre)}">${esc(p.nombre)}</h3><span class="estatus ${clase(p.estatus)}">${esc(p.estatus)}</span></div>
           <p>${esc(p.nota)}</p>
-          ${p.copia ? `<a class="ir" href="${esc(p.copia)}"${/^https?:/.test(p.copia) ? ' target="_blank" rel="noopener"' : ''}>Ver el proyecto →</a>` : ''}
-          <small class="dominio">${esc(p.dominio)}${p.dominio_activo ? '' : ' · dominio en conexión'}</small>
-        </article>`).join('');
-      // Toda la tarjeta lleva a la página pública del proyecto (nunca a un sitio privado)
-      document.querySelectorAll('#lista-proyectos .tarjeta').forEach((t) => { const a = t.querySelector('a.ir'); if (!a) return; t.classList.add('clic'); t.addEventListener('click', (ev) => { if (ev.target.closest('a,[data-morse]')) return; a.click(); }); });
+          ${p.porque ? `<p class="porque">${esc(p.porque)}</p>` : ''}
+          <div class="acciones"><a class="ir boton" href="${esc(entrar)}">${esc(p.entrar_texto || 'Entrar')} →</a>${p.copia && p.copia !== entrar ? `<a class="ficha" href="${esc(p.copia)}">Ficha del proyecto</a>` : ''}</div>
+          <small class="dominio">${esc(p.dominio)}${p.dominio_activo ? '' : ' · dominio en conexión'}${ext(entrar) ? ' · abre ' + esc(entrar.replace(/^https?:\/\//, '').split('/')[0]) : ''}</small>
+        </article>`;
+      }).join('');
+      // Toda la tarjeta entra directo a la página o herramienta del proyecto, en la misma pestaña
+      document.querySelectorAll('#lista-proyectos .tarjeta[data-ir]').forEach((t) => t.addEventListener('click', (ev) => { if (ev.target.closest('a,[data-morse]')) return; location.href = t.dataset.ir; }));
       $('lista-trayectoria').innerHTML = (d.trayectoria || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}</span></li>`).join('');
       $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><a href="https://www.safecreative.org/work/${esc(r.registro)}" target="_blank" rel="noopener"><code>${esc(r.registro)}</code> ↗</a></li>`).join('');
       $('lista-formacion').innerHTML = (d.formacion || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}${t.liga ? ` <a href="${esc(t.liga)}" target="_blank" rel="noopener">fuente ↗</a>` : ''}</span></li>`).join('');
