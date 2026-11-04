@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-02",
+  "actualizado": "2026-11-03",
   "titular": "Víctor Hugo Ramírez Salgado",
   "lema": "Comercio internacional, logística portuaria y desarrollo. Autor de El Cubo de la Comunicación (33)©.",
   "trayectoria": [
@@ -156,14 +156,15 @@
     {
       "nombre": "Arsa Bodegas©",
       "dominio": "arsabodegas.com",
-      "estatus": "En preparación",
-      "nota": "Mini bodegas en El Sauzal. Proyecto propio pendiente; por ahora su información va en ContenedorEns.",
-      "copia": "contenedorens/",
+      "estatus": "Activo",
+      "nota": "Mini bodegas en El Sauzal: patio 3D de 20 bodegas, contratos con firma electrónica, recibos y cobranza.",
+      "copia": "arsabodegas/",
       "orden": 2,
       "anio": "2018",
-      "entrar": "contenedorens/",
-      "entrar_texto": "Ver servicios",
-      "porque": "Mismo negocio: mini bodegas en contenedores de 20 pies."
+      "entrar": "arsabodegas/",
+      "entrar_texto": "Ver el patio 3D",
+      "porque": "Renta de mini bodegas en contenedores de 20 pies; opera desde 2018.",
+      "dominio_activo": true
     },
     {
       "nombre": "Trazabilidad de contenedores",
@@ -410,6 +411,10 @@
     {
       "titulo": "Dropbox — SAFE CREATIVE VHRS REGISTRAR",
       "liga": "https://www.dropbox.com/home"
+    },
+    {
+      "titulo": "Panel Arsa Bodegas: contratos, recibos, cobranza y constancias fiscales",
+      "liga": "https://claude.ai/artifact/SHsR7Ycv14hdTyYsBm5uKi"
     }
   ],
   "registros_en_proceso": 3,
@@ -616,7 +621,7 @@
           "registros": [
             "2609046908806"
           ],
-          "liga": "https://arsabodegas.com",
+          "liga": "arsabodegas/",
           "privado": false,
           "estatus": null,
           "nota": ""
@@ -674,9 +679,9 @@
           "nota": ""
         },
         {
-          "nombre": "Cobranza y portal de clientes Arsa",
+          "nombre": "Contratos, recibos y cobranza Arsa (panel)",
           "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs",
+          "liga": "https://claude.ai/artifact/SHsR7Ycv14hdTyYsBm5uKi",
           "privado": true,
           "estatus": null,
           "nota": ""
@@ -696,6 +701,22 @@
           "privado": false,
           "estatus": null,
           "nota": "Servicio con logo propio."
+        },
+        {
+          "nombre": "Firma electrónica de contratos Arsa",
+          "registros": [],
+          "liga": "https://arsabodegas.com/firma/",
+          "privado": false,
+          "estatus": "Activo",
+          "nota": "El cliente firma desde su teléfono; PDF con constancia y huella SHA-256."
+        },
+        {
+          "nombre": "Patio 3D Arsa Bodegas",
+          "registros": [],
+          "liga": "arsabodegas/#patio",
+          "privado": false,
+          "estatus": "Activo",
+          "nota": "20 bodegas, oficina, andén, acceso y estacionamiento."
         }
       ]
     },
