@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ruta México–Europa · Trazabilidad logística</title>
+<meta name="description" content="Trazabilidad logística de una exportación de México a España: mapa real de puertos y navieras, consolidación, costos, tiempos, trámites, normativa y glosario de nomenclaturas. Obra de Víctor Hugo Ramírez Salgado.">
+<meta name="author" content="Víctor Hugo Ramírez Salgado">
+<link rel="canonical" href="https://victorhugoramirezsalgado.com/contenedorens/ruta-europa/">
+<meta property="og:type" content="article"><meta property="og:url" content="https://victorhugoramirezsalgado.com/contenedorens/ruta-europa/">
+<meta property="og:title" content="Ruta México–Europa · Trazabilidad logística">
+<meta property="og:description" content="Del taller artesanal en México a la bodega en España: puertos, navieras, costos, tiempos y trámites, explicado paso a paso.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="../../estilo.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ruta México–Europa · Trazabilidad logística","url":"https://victorhugoramirezsalgado.com/contenedorens/ruta-europa/","inLanguage":"es","author":{"@type":"Person","name":"Víctor Hugo Ramírez Salgado","url":"https://victorhugoramirezsalgado.com"},"copyrightHolder":{"@type":"Person","name":"Víctor Hugo Ramírez Salgado"},"copyrightYear":2026,"dateModified":"2026-11-06"}</script>
+<style>
+/* Pestaña Ruta México–Europa: mismas fichas de identidad del sitio (marino, señal, acero) + colores por naviera */
+:root{--msc:#B08F00;--hl:#D9601A;--cma:#2556C4;--mk:#12909E;--feeder:#7D8C9C;--recol:#C8205F;--soft:#DDE6EE}
+@media (prefers-color-scheme:dark){:root{--msc:#E5C33A;--hl:#FF8A47;--cma:#7DA2FF;--mk:#3CC7D4;--feeder:#9AA8B6;--recol:#FF6FA5;--soft:#16304A}}
+.pestanas{display:flex;gap:6px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none;margin-top:8px}
+.pestanas a{white-space:nowrap;text-decoration:none;border:1.5px solid var(--line);border-radius:6px;padding:6px 12px;font-size:15px;background:var(--card)}
+.pestanas a[aria-current]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.indice{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:var(--line);border:2px solid var(--line);margin-top:12px}
+.indice div{background:var(--card);padding:14px 16px;min-width:0}
+.indice b{display:block;font-stretch:115%;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.indice ol{margin:0;padding-left:22px}.indice li{margin:3px 0}
+.indice a{text-decoration-thickness:1.5px}
+section{scroll-margin-top:70px}
+.grupo{margin:56px -20px 0;padding:14px 20px;background:var(--marino);color:#fff}
+.grupo span{display:block;color:var(--senal);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.grupo h2{margin:2px 0 0;color:#fff}
+#mapa{height:min(72vh,620px);min-height:380px;border:2px solid var(--ink);background:var(--soft);margin-top:12px}
+.leaflet-container{font:inherit}
+.leaflet-popup-content{font-size:14px;line-height:1.45;margin:10px 12px}
+.leaflet-popup-content b{font-size:15px}
+.capas{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.capas label{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);border-radius:6px;padding:5px 10px;font-size:15px;background:var(--card);cursor:pointer}
+.capas input{accent-color:var(--ink);width:16px;height:16px}
+.sw{display:inline-block;width:22px;height:5px;border-radius:3px}
+.sw.dash{background:repeating-linear-gradient(90deg,var(--feeder) 0 6px,transparent 6px 10px)!important}
+.sw.dot{background:repeating-linear-gradient(90deg,var(--recol) 0 3px,transparent 3px 7px)!important}
+.aviso{border-left:4px solid var(--senal);background:var(--card);padding:12px 16px;max-width:none!important;margin:14px 0}
+.cajas{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:12px}
+.caja{background:var(--card);border:1px solid var(--line);padding:16px;min-width:0}
+.caja h3{cursor:auto;margin-bottom:6px}
+.caja ul,.caja ol{margin:0;padding-left:20px}.caja li{margin:4px 0}
+.chip{display:inline-block;font-size:12.5px;font-weight:600;border:1.5px solid currentColor;border-radius:999px;padding:0 8px;white-space:nowrap}
+.chip.ok{color:var(--ok)}.chip.dev{color:var(--dev)}.chip.mut{color:var(--mut)}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--card);margin-top:12px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);font-weight:700}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;white-space:nowrap}
+.pasos{counter-reset:p;list-style:none;padding:0;margin:0}
+.pasos li{counter-increment:p;display:grid;grid-template-columns:34px 1fr;gap:10px;margin:10px 0}
+.pasos li::before{content:counter(p);width:28px;height:28px;display:grid;place-items:center;background:var(--marino);color:var(--senal);font-weight:800;font-size:14px}
+.pasos li>div{min-width:0}
+.calc{background:var(--card);border:2px solid var(--ink);padding:16px;margin-top:12px}
+.campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.campos label{display:grid;gap:4px;font-size:14px;color:var(--mut)}
+.campos input,.campos select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:8px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.res div{border:1px solid var(--line);padding:10px}
+.res small{display:block;color:var(--mut);font-size:13px}
+.res b{font-stretch:115%;font-size:24px;font-weight:800}
+.lt{display:grid;gap:6px;font-size:14.5px;background:var(--card);border:1px solid var(--line);padding:14px;margin-top:12px}
+.lt-f{display:grid;grid-template-columns:170px 1fr;gap:8px;align-items:center}
+.lt-p{position:relative;height:16px;background:var(--bg)}
+.lt-b{position:absolute;top:0;height:16px}
+.lt-e{display:grid;grid-template-columns:170px 1fr;gap:8px;font-size:12px;color:var(--mut)}
+.lt-e div{display:flex;justify-content:space-between}
+@media (max-width:520px){.lt-f,.lt-e{grid-template-columns:100px 1fr}}
+.glos{display:grid;gap:0;margin-top:8px}
+.glos h3{cursor:auto;margin:26px 0 6px;padding-left:12px;border-left:4px solid var(--senal);font-stretch:115%}
+dl{margin:0;display:grid;grid-template-columns:minmax(120px,190px) 1fr;border-top:1px solid var(--line)}
+dt,dd{margin:0;padding:9px 0;border-bottom:1px solid var(--line)}
+dt{font-weight:700;padding-right:12px}
+dd{color:var(--ink)}
+dd i{color:var(--mut);font-style:normal}
+@media (max-width:560px){dl{grid-template-columns:1fr}dt{border-bottom:0;padding-bottom:0}}
+.buscar{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);margin-top:8px}
+.fuentes ol{padding-left:22px}.fuentes li{margin:8px 0;padding-left:1.4em;text-indent:-1.4em;list-style-position:inside;font-size:15px}
+.fuentes a{word-break:break-word}
+.sin-mapa{padding:20px;color:var(--mut)}
+</style>
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="https://victorhugoramirezsalgado.com" title="Panel del autor">VHRS</a>
+  <label class="idioma">🌐 <select id="idioma" aria-label="Idioma"><option value="">Español</option>
+<optgroup label="ONU"><option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ru">Русский</option></optgroup>
+<optgroup label="Europa"><option value="pt">Português</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="uk">Українська</option><option value="el">Ελληνικά</option><option value="sv">Svenska</option><option value="ro">Română</option><option value="ca">Català</option><option value="eu">Euskara</option><option value="gl">Galego</option></optgroup>
+<optgroup label="Asia"><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="id">Bahasa Indonesia</option><option value="tr">Türkçe</option><option value="he">עברית</option><option value="fa">فارسی</option></optgroup>
+<optgroup label="Regionales"><option value="yua">Maya yucateco</option><option value="nhe">Náhuatl</option></optgroup></select></label>
+</header>
+<main data-nombre="Ruta Mexico Europa">
+  <section class="portada">
+    <p><code>victorhugoramirezsalgado.com/contenedorens/ruta-europa</code> <span class="estatus ok">Guía pública · nov 2026</span></p>
+    <h1 data-morse="MEXICO EUROPA" title="Toca para oír en Morse">Ruta México–Europa</h1>
+    <p class="lema">Trazabilidad logística de una exportación, del taller artesanal en México a la bodega en España: puertos, navieras, costos, tiempos y trámites.</p>
+    <p class="morse-linea" id="morse" aria-live="polite"></p>
+  </section>
+
+  <nav class="pestanas" aria-label="Pestañas del sitio">
+    <a href="../">ContenedorEns</a><a href="./" aria-current="page">Ruta México–Europa</a><a href="../configurador/">Configurador</a><a href="../../tcontenedores/consulta/">Consultar contenedor</a>
+  </nav>
+
+  <section id="indice">
+    <h2>Índice</h2>
+    <p>Caso de ejemplo: artesanías mexicanas (barro, talavera, textil, madera, plata) que salen de proveedores del centro del país hacia Valencia, Barcelona o Algeciras. Las palabras técnicas están explicadas en el <a href="#glosario">glosario</a> al final.</p>
+    <div class="indice">
+      <div><b>A · La ruta</b><ol><li><a href="#mapa-s">Mapa real de puertos y rutas</a></li><li><a href="#leer">Cómo leer el mapa</a></li><li><a href="#consolidar">Recolección y consolidación</a></li><li><a href="#puertos">Puertos mexicanos</a></li><li><a href="#navieras">Navieras a España</a></li></ol></div>
+      <div><b>B · La operación</b><ol start="6"><li><a href="#volumen">Cantidades y producto</a></li><li><a href="#costos">Calculadora de costos</a></li><li><a href="#tiempos">Tiempos de punta a punta</a></li><li><a href="#traza">Trazabilidad: quién toca la carga</a></li></ol></div>
+      <div><b>C · Lo legal</b><ol start="10"><li><a href="#mx">Trámites en México</a></li><li><a href="#es">Trámites en España</a></li><li><a href="#normas">Normativa UE por material</a></li><li><a href="#tratado">Tratado México–UE</a></li></ol></div>
+      <div><b>D · Referencia</b><ol start="14"><li><a href="#ahorro">Ahorro y automatización</a></li><li><a href="#glosario">Glosario de nomenclaturas</a></li><li><a href="#fuentes">Fuentes (APA 7)</a></li></ol></div>
+    </div>
+  </section>
+
+  <!-- ===================== A · LA RUTA ===================== -->
+  <div class="grupo"><span>Grupo A</span><h2>La ruta</h2></div>
+
+  <section id="mapa-s">
+    <h2>1. Mapa real de puertos y rutas</h2>
+    <p>Mapa de OpenStreetMap. Acerca con dos dedos, toca un puerto para ver qué hace y activa o quita cada naviera. Las rutas marítimas siguen los pasos reales: Golfo de México, estrecho de Florida, Atlántico y estrecho de Gibraltar; desde el Pacífico, el Canal de Panamá.</p>
+    <div id="mapa" role="region" aria-label="Mapa de rutas marítimas de México a Europa"><p class="sin-mapa" id="sinmapa">Cargando mapa…</p></div>
+    <div class="capas" id="capas" aria-label="Capas del mapa"></div>
+    <p class="aviso"><b>Lectura rápida:</b> para Europa conviene salir por el Golfo. Veracruz y Altamira tienen servicios directos al Mediterráneo y al norte de Europa. Desde el Pacífico (Ensenada, Guaymas, Mazatlán, Manzanillo, Lázaro Cárdenas) la carga cruza por Panamá con transbordo: más días y más costo. Las rutas dibujadas son representativas; cada naviera cambia sus escalas varias veces al año, así que confirma el itinerario de la semana antes de reservar.</p>
+  </section>
+
+  <section id="leer">
+    <h2>2. Cómo leer el mapa</h2>
+    <div class="cajas">
+      <div class="caja"><h3>Colores</h3><ul>
+        <li><span class="sw" style="background:var(--msc)"></span> <b>MSC</b> · directo Golfo → Mediterráneo y norte de Europa</li>
+        <li><span class="sw" style="background:var(--hl)"></span> <b>Hapag-Lloyd</b> · directo Golfo → Mediterráneo</li>
+        <li><span class="sw" style="background:var(--cma)"></span> <b>CMA CGM</b> · Veracruz → transbordo en el Caribe → Algeciras</li>
+        <li><span class="sw" style="background:var(--mk)"></span> <b>Maersk</b> · Pacífico → Canal de Panamá → Algeciras / Barcelona</li>
+        <li><span class="sw dash"></span> <b>Feeder</b> · barco pequeño que lleva carga a un puerto mayor</li>
+        <li><span class="sw dot"></span> <b>Recolección</b> · camión del proveedor al puerto</li></ul></div>
+      <div class="caja"><h3>Símbolos</h3><ul>
+        <li>Círculo grande: puerto principal con servicio a Europa.</li>
+        <li>Círculo chico: puerto alimentador o de transbordo.</li>
+        <li>Rombo rosa: ciudad de proveedores artesanales.</li>
+        <li>Cuadro marino: punto de transbordo (Panamá, Caribe).</li>
+        <li>Las líneas no son a escala de tiempo: un trazo más largo no siempre es más lento.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="consolidar">
+    <h2>3. Recolección y consolidación</h2>
+    <p>Consolidar es juntar la mercancía de varios proveedores en un solo envío. Hay dos formas de hacerlo:</p>
+    <div class="cajas">
+      <div class="caja"><span class="chip ok">Recomendado para Europa</span><h3>A. Consolidar tierra adentro y bajar a Veracruz</h3><ul>
+        <li>Los talleres entregan en una bodega de consolidación en CDMX, Puebla o Querétaro.</li>
+        <li>Ahí se revisa calidad, se etiqueta, se embala y se llena el contenedor (o se manda a un almacén de grupaje).</li>
+        <li>Un solo viaje en camión CDMX → Veracruz (unos 400 km, un día).</li>
+        <li>Ventaja: un pedimento, un control de calidad, menos roturas.</li></ul></div>
+      <div class="caja"><span class="chip dev">Con pocos proveedores grandes</span><h3>B. Cada proveedor envía directo al puerto</h3><ul>
+        <li>Cada taller manda su carga a un almacén de consolidación (CFS) en Veracruz o Manzanillo.</li>
+        <li>El consolidador del puerto arma el embarque.</li>
+        <li>Ventaja: no pagas bodega intermedia. Riesgo: si un proveedor se atrasa, el contenedor pierde el barco y pagas almacenaje.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="puertos">
+    <h2>4. Puertos mexicanos y su papel hacia Europa</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Puerto</th><th>Litoral</th><th>Hacia Europa</th><th>Cuándo usarlo</th></tr></thead>
+      <tbody>
+        <tr><td><b>Veracruz</b></td><td>Golfo</td><td><span class="chip ok">Directo</span></td><td>Opción principal desde el centro y sur del país.</td></tr>
+        <tr><td><b>Altamira</b></td><td>Golfo</td><td><span class="chip ok">Directo</span></td><td>Proveedores del Bajío, San Luis Potosí, Nuevo León y Tamaulipas.</td></tr>
+        <tr><td>Coatzacoalcos</td><td>Golfo</td><td><span class="chip dev">Feeder</span></td><td>Carga del sureste; revisa la frecuencia.</td></tr>
+        <tr><td>Progreso</td><td>Golfo</td><td><span class="chip dev">Feeder / Caribe</span></td><td>Yucatán (hamacas, henequén, filigrana).</td></tr>
+        <tr><td><b>Manzanillo</b></td><td>Pacífico</td><td><span class="chip dev">Transbordo vía Panamá</span></td><td>Proveedores de Jalisco y Colima, si el flete compensa.</td></tr>
+        <tr><td><b>Lázaro Cárdenas</b></td><td>Pacífico</td><td><span class="chip dev">Transbordo vía Panamá</span></td><td>Michoacán; buena conexión de tren.</td></tr>
+        <tr><td>Salina Cruz</td><td>Pacífico</td><td><span class="chip mut">Corredor Interoceánico</span></td><td>Oaxaca; en tren a Coatzacoalcos y de ahí al Golfo.</td></tr>
+        <tr><td>Mazatlán · Guaymas · Ensenada</td><td>Pacífico</td><td><span class="chip mut">Feeder</span></td><td>Solo si la carga ya está en el noroeste. Hacia Europa suele salir más caro y lento que bajar al Golfo.</td></tr>
+      </tbody></table></div>
+    <p class="aviso">Contexto 2026: Manzanillo superó 2 millones de TEU en el primer semestre y Lázaro Cárdenas movió 685,412 TEU en el primer trimestre (+15 %). Son puertos fuertes, pero orientados a Asia; para Europa la puerta natural es el Golfo.</p>
+  </section>
+
+  <section id="navieras">
+    <h2>5. Navieras con servicio a España y Europa</h2>
+    <p>El nombre del servicio sirve para buscar el itinerario en la página de cada naviera.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Naviera</th><th>Servicio</th><th>Puertos MX</th><th>Puertos Europa</th><th class="num">Tránsito aprox.</th></tr></thead>
+      <tbody>
+        <tr><td><b style="color:var(--msc)">MSC</b></td><td>Mediterranean Direct</td><td>Altamira, Veracruz</td><td>Barcelona, Gioia Tauro, Nápoles, La Spezia, Valencia, Sines</td><td class="num">15–22 días</td></tr>
+        <tr><td><b style="color:var(--msc)">MSC</b></td><td>Mexico Express / Gulf</td><td>Altamira, Veracruz</td><td>Amberes, Bremerhaven, Felixstowe, Le Havre</td><td class="num">18–25 días</td></tr>
+        <tr><td><b style="color:var(--hl)">Hapag-Lloyd</b></td><td>Med–Mex</td><td>Veracruz, Altamira</td><td>Livorno, Génova, Barcelona, Valencia</td><td class="num">16–24 días</td></tr>
+        <tr><td><b style="color:var(--hl)">Hapag-Lloyd</b></td><td>MSW (con transbordo)</td><td>Vía Caucedo / Cartagena</td><td>Vigo, Málaga, Valencia, Génova, Livorno, Barcelona</td><td class="num">25–35 días</td></tr>
+        <tr><td><b style="color:var(--cma)">CMA CGM</b></td><td>Con transbordo</td><td>Veracruz</td><td>Algeciras</td><td class="num">~35 días</td></tr>
+        <tr><td><b style="color:var(--mk)">Maersk</b></td><td>Vía Panamá</td><td>Manzanillo, Veracruz, Altamira</td><td>Algeciras, Barcelona</td><td class="num">20–45 días</td></tr>
+      </tbody></table></div>
+    <p class="nota">Los tiempos son referencias de cotizadores y publicaciones de 2026, no compromisos de la naviera.</p>
+  </section>
+
+  <!-- ===================== B · LA OPERACIÓN ===================== -->
+  <div class="grupo"><span>Grupo B</span><h2>La operación</h2></div>
+
+  <section id="volumen">
+    <h2>6. Cantidades y tipo de producto</h2>
+    <div class="cajas">
+      <div class="caja"><h3>¿Grupaje (LCL) o contenedor completo (FCL)?</h3><ul>
+        <li><b>Menos de 5 m³:</b> grupaje. Un contenedor completo quedaría casi vacío.</li>
+        <li><b>5 a 15 m³:</b> cotiza ambos; el grupaje suele salir 20–40 % más barato.</li>
+        <li><b>15 a 28 m³:</b> contenedor de 20 pies.</li>
+        <li><b>Más de 28 m³:</b> contenedor de 40 pies o 40 HC.</li>
+        <li>El grupaje tarda 2 a 5 días más por consolidar y desconsolidar.</li></ul></div>
+      <div class="caja"><h3>Artesanías: qué revisar por material</h3><ul>
+        <li><b>Barro, talavera, cerámica</b> (capítulo 69): si es para alimentos, límites de plomo y cadmio.</li>
+        <li><b>Textiles</b> (capítulos 61–63): etiqueta de composición de fibras.</li>
+        <li><b>Madera y alebrijes</b> (capítulo 44): tarimas con sello NIMP-15.</li>
+        <li><b>Plata</b> (capítulo 71): ley del metal marcada.</li>
+        <li><b>Piel exótica, plumas, conchas, coral:</b> posible permiso CITES.</li>
+        <li><b>Juguetes artesanales:</b> marcado CE obligatorio.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="costos">
+    <h2>7. Calculadora de costo puerta a puerta</h2>
+    <p>Estimación para planear, con valores de referencia de mercado 2026 en dólares. Antes de cerrar precio con un cliente pide tres cotizaciones reales: transitario, naviera directa y consolidador de grupaje.</p>
+    <div class="calc">
+      <div class="campos">
+        <label for="val">Valor de la mercancía (USD)<input id="val" type="number" min="0" step="100" value="25000"></label>
+        <label for="cbm">Volumen (m³)<input id="cbm" type="number" min="0.5" step="0.5" value="22"></label>
+        <label for="kg">Peso (kg)<input id="kg" type="number" min="1" step="10" value="4500"></label>
+        <label for="orig">Puerto de salida<select id="orig"><option value="golfo">Veracruz / Altamira (Golfo)</option><option value="pac">Manzanillo / Lázaro (Pacífico)</option></select></label>
+        <label for="ara">Arancel en la UE<select id="ara"><option value="0">0 % con prueba de origen</option><option value="0.035">3.5 % (textil o madera sin origen)</option><option value="0.06">6 % (cerámica sin origen)</option><option value="0.12">12 % (prendas sin origen)</option></select></label>
+        <label for="fx">Tipo de cambio MXN por USD<input id="fx" type="number" step="0.05" value="18.50"></label>
+      </div>
+      <div class="res" aria-live="polite">
+        <div><small>Modalidad sugerida</small><b id="r-mod">—</b></div>
+        <div><small>Costo logístico total</small><b id="r-tot">—</b><small id="r-mx"></small></div>
+        <div><small>Logística sobre valor</small><b id="r-pct">—</b></div>
+        <div><small>IVA España 21 % (recuperable)</small><b id="r-iva">—</b></div>
+      </div>
+      <div class="tbl"><table><thead><tr><th>Concepto</th><th>Quién lo cobra</th><th class="num">USD</th></tr></thead><tbody id="r-filas"></tbody></table></div>
+      <p class="nota">Incluye camión al puerto, honorarios de agente aduanal con DTA de exportación (cuota 2026: $463 MXN), maniobras en terminal, flete con recargos, seguro 0.4 %, gastos en destino, agente de aduanas en España y entrega a bodega en un radio de ~350 km. Ajusta el tipo de cambio al publicado en el DOF del día.</p>
+    </div>
+  </section>
+
+  <section id="tiempos">
+    <h2>8. Tiempos de punta a punta</h2>
+    <p>Ruta Golfo con servicio directo a Valencia o Barcelona, contenedor completo. Días acumulados.</p>
+    <div class="lt" id="lt"></div>
+    <p class="aviso">Total típico: <b>30 a 45 días</b> por el Golfo y <b>40 a 60 días</b> por el Pacífico con transbordo. Reserva espacio 2 a 4 semanas antes; para la temporada navideña europea (se embarca de agosto a octubre), con más anticipación.</p>
+  </section>
+
+  <section id="traza">
+    <h2>9. Trazabilidad: quién toca la carga y qué documento deja</h2>
+    <p>Cada eslabón deja un documento con el que puedes seguir la mercancía. Si algo se pierde o se daña, ese documento dice dónde y con quién estaba.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Etapa</th><th>Responsable</th><th>Documento o evidencia</th><th>Qué rastreas</th></tr></thead>
+      <tbody>
+        <tr><td>1. Compra al taller</td><td>Proveedor artesanal</td><td>Factura o nota de compra, fotos del lote</td><td>Cantidad, calidad, fecha de entrega</td></tr>
+        <tr><td>2. Consolidación</td><td>Bodega / consolidador</td><td>Lista de empaque, recibo de almacén</td><td>Cajas por proveedor, peso y volumen</td></tr>
+        <tr><td>3. Camión al puerto</td><td>Transportista</td><td>Carta porte CFDI, número de contenedor y sello</td><td>Ruta, horario, sello intacto</td></tr>
+        <tr><td>4. Despacho de salida</td><td>Agente aduanal</td><td>Pedimento de exportación, COVE</td><td>Valor declarado, fracción, semáforo fiscal</td></tr>
+        <tr><td>5. Terminal y barco</td><td>Terminal y naviera</td><td>Booking, VGM, conocimiento de embarque (BL)</td><td>Fecha de carga, buque, viaje, ETA</td></tr>
+        <tr><td>6. Travesía</td><td>Naviera</td><td>Rastreo por número de contenedor (ISO 6346)</td><td>Escalas, transbordos, retrasos</td></tr>
+        <tr><td>7. Despacho en España</td><td>Agente de aduanas</td><td>DUA de importación, prueba de origen</td><td>Arancel, IVA, levante</td></tr>
+        <tr><td>8. Entrega</td><td>Transportista en España</td><td>CMR o albarán firmado</td><td>Fecha y estado de recepción</td></tr>
+      </tbody></table></div>
+    <p class="nota">El número del contenedor (4 letras y 7 dígitos) es la llave de toda la trazabilidad. Puedes consultarlo en <a href="../../tcontenedores/consulta/">Consultar contenedor</a>.</p>
+  </section>
+
+  <!-- ===================== C · LO LEGAL ===================== -->
+  <div class="grupo"><span>Grupo C</span><h2>Lo legal</h2></div>
+
+  <section id="mx">
+    <h2>10. Trámites en México (exportación)</h2>
+    <ol class="pasos">
+      <li><div><b>RFC activo y e.firma vigente.</b> La exportación de artesanía, en general, no exige padrón sectorial de exportadores.</div></li>
+      <li><div><b>Clasificar la fracción arancelaria</b> de cada producto (TIGIE + NICO) con el agente aduanal.</div></li>
+      <li><div><b>Contratar agente aduanal</b> y darle el encargo conferido en VUCEM.</div></li>
+      <li><div><b>Contratar transitario o naviera:</b> reserva (booking), fecha de corte y conocimiento de embarque.</div></li>
+      <li><div><b>Factura CFDI con complemento de comercio exterior</b> y lista de empaque.</div></li>
+      <li><div><b>Prueba de origen</b> para que el comprador en España pague 0 % de arancel.</div></li>
+      <li><div><b>Permisos según material:</b> certificado fitosanitario (madera, fibras), CITES de SEMARNAT (fauna), sello NIMP-15 en tarimas.</div></li>
+      <li><div><b>Pedimento de exportación (clave A1).</b> La exportación no paga impuesto; solo DTA de cuota fija y prevalidación.</div></li>
+      <li><div><b>Camión al puerto</b> y entrega antes del corte documental y físico.</div></li>
+    </ol>
+  </section>
+
+  <section id="es">
+    <h2>11. Trámites en España (importación)</h2>
+    <ol class="pasos">
+      <li><div><b>Importador con número EORI</b> (prefijo ES + NIF). Lo da la Agencia Tributaria (AEAT), gratis, con certificado digital.</div></li>
+      <li><div><b>Agente de aduanas o representante aduanero</b> que presenta el DUA de importación.</div></li>
+      <li><div><b>Pago de arancel</b> (0 % con prueba de origen válida) e <b>IVA 21 %</b> sobre valor en aduana más arancel. Una empresa puede diferirlo en su declaración mensual.</div></li>
+      <li><div><b>Gastos portuarios de destino:</b> THC, liberación del BL, inspección si toca.</div></li>
+      <li><div><b>Camión a la bodega</b> en la ciudad desde Valencia, Barcelona o Algeciras.</div></li>
+      <li><div><b>Cumplimiento del producto:</b> operador responsable en la UE, etiquetado y seguridad (sección 12).</div></li>
+    </ol>
+  </section>
+
+  <section id="normas">
+    <h2>12. Normativa de la Unión Europea por material</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Norma</th><th>Aplica a</th><th>Qué pide</th></tr></thead>
+      <tbody>
+        <tr><td>Reglamento (UE) 2023/988 (GPSR)</td><td>Todo producto de consumo</td><td>Operador responsable en la UE, trazabilidad y datos del fabricante en el producto o empaque.</td></tr>
+        <tr><td>Directiva 84/500/CEE</td><td>Cerámica en contacto con alimentos</td><td>Prueba de migración de plomo y cadmio y declaración de conformidad. Clave para talavera y barro vidriado.</td></tr>
+        <tr><td>Reglamento (UE) 1007/2011</td><td>Textiles</td><td>Etiqueta de composición de fibras.</td></tr>
+        <tr><td>Seguridad de juguetes (UE)</td><td>Juguetes artesanales</td><td>Marcado CE y evaluación de seguridad.</td></tr>
+        <tr><td>Reglamento (UE) 2026/382</td><td>Paquetes a consumidor de hasta 150 €</td><td>Desde el 1 de julio de 2026 terminó la exención: 3 € de arancel fijo por artículo hasta julio de 2028. Importa si vendes por paquetería.</td></tr>
+        <tr><td>CITES</td><td>Piel exótica, plumas, coral, concha</td><td>Permiso de exportación (SEMARNAT) y de importación en destino.</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section id="tratado">
+    <h2>13. Tratado México–Unión Europea</h2>
+    <p>El Acuerdo Global Modernizado y el Acuerdo Comercial Interino se firmaron el 22 de mayo de 2026. El Parlamento Europeo los aprobó el 8 de julio y el Consejo de la UE celebró el interino el 14 de julio. El interino entra en vigor el primer día del segundo mes después de que ambas partes se notifiquen; faltaba la aprobación del Senado mexicano.</p>
+    <p>Mientras no esté en vigor aplica el Acuerdo Global de 2000, que ya da 0 % de arancel a la mayoría de los productos industriales mexicanos con prueba de origen. Revisa el estado en el DOF antes de cada embarque, porque cambia el formato de la prueba de origen.</p>
+  </section>
+
+  <!-- ===================== D · REFERENCIA ===================== -->
+  <div class="grupo"><span>Grupo D</span><h2>Referencia</h2></div>
+
+  <section id="ahorro">
+    <h2>14. Cómo pagar menos y hacerlo más rápido</h2>
+    <div class="cajas">
+      <div class="caja"><h3>Ahorro</h3><ul>
+        <li>Consolida varios proveedores en un contenedor de 20 pies: desde ~15 m³ rinde más que el grupaje.</li>
+        <li>Sal por Veracruz o Altamira aunque el proveedor esté en Jalisco: el camión extra suele costar menos que el transbordo en Panamá.</li>
+        <li>Vende en FCA o FOB Veracruz si el cliente tiene su propio transitario; tú pagas solo hasta el puerto.</li>
+        <li>Emite siempre prueba de origen: es la diferencia entre 0 % y 3.5–12 % de arancel.</li>
+        <li>Pide tres cotizaciones con el mismo Incoterm.</li>
+        <li>Cajas uniformes y tarimas NIMP-15 bajan maniobras y roturas.</li></ul></div>
+      <div class="caja"><h3>Automatización con portales oficiales</h3><ul>
+        <li><b>VUCEM (SAT):</b> servicios web para COVE, documentos digitalizados y consulta de pedimentos con e.firma.</li>
+        <li><b>Navieras:</b> Maersk, Hapag-Lloyd y CMA CGM publican APIs de itinerarios y rastreo (estándar DCSA) con registro gratuito de desarrollador.</li>
+        <li><b>Validación EORI:</b> servicio público de la Comisión Europea.</li>
+        <li><b>Access2Markets y TARIC:</b> arancel y requisitos por código de producto.</li>
+        <li><b>ComerciaMX</b> (Embajada de México en España): contacto con compradores.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="glosario" class="glos">
+    <h2>15. Glosario de nomenclaturas</h2>
+    <p>Agrupado por tema. Escribe en el buscador para filtrar.</p>
+    <input class="buscar" id="buscar" type="search" placeholder="Buscar: BL, TEU, pedimento, EORI…" aria-label="Buscar en el glosario">
+
+    <div class="gg"><h3>Autoridades e instituciones</h3><dl>
+      <dt>ANAM</dt><dd>Agencia Nacional de Aduanas de México. Opera las aduanas del país.</dd>
+      <dt>SAT</dt><dd>Servicio de Administración Tributaria. Recauda impuestos y administra RFC, e.firma y VUCEM.</dd>
+      <dt>SEMAR</dt><dd>Secretaría de Marina. Autoridad marítima y portuaria de México.</dd>
+      <dt>ASIPONA (antes API)</dt><dd>Administración del Sistema Portuario Nacional. Administra cada puerto: Veracruz, Manzanillo, Ensenada, etc.</dd>
+      <dt>SEMARNAT</dt><dd>Secretaría de Medio Ambiente. Emite permisos CITES para especies protegidas.</dd>
+      <dt>SENASICA</dt><dd>Servicio Nacional de Sanidad, Inocuidad y Calidad Agroalimentaria. Certificados fitosanitarios y zoosanitarios.</dd>
+      <dt>DOF</dt><dd>Diario Oficial de la Federación. Publica leyes, tipo de cambio y entradas en vigor.</dd>
+      <dt>AEAT</dt><dd>Agencia Estatal de Administración Tributaria de España. Aduana española y número EORI.</dd>
+      <dt>UE</dt><dd>Unión Europea: 27 países con una sola aduana exterior y un mismo arancel.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>Aduana y documentos en México</h3><dl>
+      <dt>RFC</dt><dd>Registro Federal de Contribuyentes: tu clave fiscal.</dd>
+      <dt>e.firma</dt><dd>Firma electrónica del SAT; sustituye tu firma autógrafa en trámites.</dd>
+      <dt>VUCEM</dt><dd>Ventanilla Única de Comercio Exterior Mexicana: portal donde se hacen los trámites de comercio exterior.</dd>
+      <dt>CFDI</dt><dd>Comprobante Fiscal Digital por Internet: la factura electrónica.</dd>
+      <dt>Complemento de comercio exterior</dt><dd>Datos extra que lleva el CFDI cuando la venta es al extranjero.</dd>
+      <dt>Carta porte</dt><dd>Complemento CFDI que ampara el traslado de mercancía en camión dentro de México.</dd>
+      <dt>Pedimento</dt><dd>Declaración aduanal oficial de la importación o exportación. Lo firma el agente aduanal.</dd>
+      <dt>Clave A1</dt><dd>Clave de pedimento para importación o exportación definitiva.</dd>
+      <dt>COVE</dt><dd>Comprobante de Valor Electrónico: la factura transmitida a VUCEM.</dd>
+      <dt>Prevalidación</dt><dd>Revisión electrónica del pedimento antes de pagarlo; tiene un cobro fijo.</dd>
+      <dt>DTA</dt><dd>Derecho de Trámite Aduanero. En exportación es una cuota fija ($463 MXN en 2026).</dd>
+      <dt>Semáforo fiscal</dt><dd>Selección automatizada en la aduana: verde pasa, rojo va a revisión.</dd>
+      <dt>Agente aduanal</dt><dd>Profesional con patente que despacha tu mercancía ante la aduana.</dd>
+      <dt>Encargo conferido</dt><dd>Autorización en VUCEM para que un agente aduanal opere a tu nombre.</dd>
+      <dt>Padrón de exportadores sectorial</dt><dd>Registro necesario solo para ciertos productos (minerales, tequila, acero, etc.). Las artesanías en general no lo requieren.</dd>
+      <dt>IMMEX</dt><dd>Programa de manufactura de exportación; permite importar insumos sin pagar impuestos al momento.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>Clasificación y aranceles</h3><dl>
+      <dt>SA / HS</dt><dd>Sistema Armonizado: código internacional de 6 dígitos para clasificar cualquier producto.</dd>
+      <dt>Fracción arancelaria</dt><dd>Código de 8 dígitos de México basado en el SA.</dd>
+      <dt>NICO</dt><dd>Número de Identificación Comercial: 2 dígitos que se agregan a la fracción.</dd>
+      <dt>TIGIE / LIGIE</dt><dd>Tarifa (y su ley) con los aranceles de importación y exportación de México.</dd>
+      <dt>IGI / IGE</dt><dd>Impuesto General de Importación / de Exportación.</dd>
+      <dt>NC / CN</dt><dd>Nomenclatura Combinada: código de 8 dígitos de la UE.</dd>
+      <dt>TARIC</dt><dd>Arancel integrado de la UE (10 dígitos) con tasas y requisitos.</dd>
+      <dt>Arancel</dt><dd>Impuesto por cruzar una frontera, normalmente un % del valor.</dd>
+      <dt>Prueba de origen</dt><dd>Documento o declaración que demuestra que el producto es mexicano; con ella aplica el arancel preferencial (0 %).</dd>
+      <dt>Valor en aduana</dt><dd>Base para calcular impuestos: precio de la mercancía más flete y seguro hasta la frontera de la UE.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>Transporte marítimo</h3><dl>
+      <dt>Naviera</dt><dd>Empresa dueña u operadora de los barcos (MSC, Maersk, Hapag-Lloyd, CMA CGM).</dd>
+      <dt>Transitario / freight forwarder</dt><dd>Organiza el envío completo y negocia con navieras por ti.</dd>
+      <dt>NVOCC</dt><dd>Transportista que vende espacio marítimo sin tener barcos.</dd>
+      <dt>Booking</dt><dd>Reserva de espacio en un barco.</dd>
+      <dt>Corte (cut-off)</dt><dd>Fecha y hora límite para entregar documentos o el contenedor en la terminal.</dd>
+      <dt>BL (Bill of Lading)</dt><dd>Conocimiento de embarque: contrato de transporte, recibo de la carga y título de propiedad.</dd>
+      <dt>MBL / HBL</dt><dd>BL máster (de la naviera) y BL hijo (del transitario o consolidador).</dd>
+      <dt>ETD / ETA</dt><dd>Fecha estimada de salida / de llegada.</dd>
+      <dt>Feeder</dt><dd>Barco pequeño que lleva contenedores de un puerto chico a uno grande.</dd>
+      <dt>Transbordo</dt><dd>Cambio de barco en un puerto intermedio (hub), como Panamá o Algeciras.</dd>
+      <dt>Hub</dt><dd>Puerto concentrador donde se cruzan rutas y se hacen transbordos.</dd>
+      <dt>Rotación</dt><dd>Orden de puertos que toca un servicio de línea.</dd>
+      <dt>Tránsito</dt><dd>Días entre la salida y la llegada del barco.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>Contenedores y carga</h3><dl>
+      <dt>TEU / FEU</dt><dd>Unidad equivalente a un contenedor de 20 pies / de 40 pies.</dd>
+      <dt>20' DV</dt><dd>Contenedor seco de 20 pies: ~33 m³, para carga pesada o hasta ~28 m³ útiles.</dd>
+      <dt>40' HC</dt><dd>Contenedor de 40 pies de cubo alto: ~76 m³, para carga ligera y voluminosa.</dd>
+      <dt>FCL</dt><dd>Full Container Load: contenedor completo para un solo embarcador.</dd>
+      <dt>LCL / grupaje</dt><dd>Less than Container Load: tu carga comparte contenedor con otras.</dd>
+      <dt>CFS</dt><dd>Container Freight Station: almacén donde se llena o vacía el grupaje.</dd>
+      <dt>Consolidar / desconsolidar</dt><dd>Juntar cargas en un contenedor / separarlas al llegar.</dd>
+      <dt>m³ / CBM</dt><dd>Metro cúbico, la medida del volumen.</dd>
+      <dt>W/M</dt><dd>Peso o medida: en grupaje se cobra lo mayor entre toneladas y m³.</dd>
+      <dt>VGM</dt><dd>Masa bruta verificada del contenedor, obligatoria por el convenio SOLAS antes de cargar.</dd>
+      <dt>ISO 6346</dt><dd>Norma del número de contenedor: 4 letras y 7 dígitos, el último es de control.</dd>
+      <dt>Sello o precinto</dt><dd>Candado numerado que prueba que nadie abrió el contenedor.</dd>
+      <dt>NIMP-15</dt><dd>Norma internacional de tratamiento de tarimas de madera; llevan un sello impreso.</dd>
+      <dt>Lista de empaque</dt><dd>Detalle de cajas, contenido, pesos y medidas.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>Costos y recargos</h3><dl>
+      <dt>Flete</dt><dd>Precio del transporte.</dd>
+      <dt>THC</dt><dd>Terminal Handling Charge: cargo por manejar el contenedor en la terminal.</dd>
+      <dt>BAF</dt><dd>Recargo por combustible.</dd>
+      <dt>CAF</dt><dd>Recargo por variación de moneda.</dd>
+      <dt>GRI / PSS</dt><dd>Alza general de tarifas / recargo de temporada alta.</dd>
+      <dt>Demora (demurrage)</dt><dd>Cobro por dejar el contenedor en la terminal más días de los libres.</dd>
+      <dt>Detention</dt><dd>Cobro por tener el contenedor fuera de la terminal más días de los libres.</dd>
+      <dt>Almacenaje</dt><dd>Cobro del recinto fiscal por guardar la carga.</dd>
+      <dt>Maniobras</dt><dd>Carga, descarga y movimientos dentro del puerto.</dd>
+      <dt>Seguro de carga</dt><dd>Póliza contra pérdida o daño; suele costar 0.3–0.5 % del valor.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>Incoterms 2020 (quién paga qué)</h3><dl>
+      <dt>EXW</dt><dd>En fábrica: el comprador recoge y paga todo, incluso el despacho de exportación.</dd>
+      <dt>FCA</dt><dd>Franco transportista: el vendedor entrega despachado al transportista que eligió el comprador.</dd>
+      <dt>FOB</dt><dd>Libre a bordo: el vendedor paga hasta que la carga está en el barco en Veracruz.</dd>
+      <dt>CFR / CIF</dt><dd>El vendedor paga el flete hasta Valencia (CIF incluye además el seguro).</dd>
+      <dt>DAP</dt><dd>Entregado en lugar: el vendedor lleva hasta la bodega; el comprador paga impuestos.</dd>
+      <dt>DDP</dt><dd>Entregado con impuestos pagados: el vendedor paga todo, incluido el IVA español.</dd>
+    </dl></div>
+
+    <div class="gg"><h3>España y la Unión Europea</h3><dl>
+      <dt>EORI</dt><dd>Número de operador económico; sin él no se puede importar a la UE.</dd>
+      <dt>NIF</dt><dd>Número de Identificación Fiscal en España.</dd>
+      <dt>DUA</dt><dd>Documento Único Administrativo: la declaración aduanera de la UE.</dd>
+      <dt>IVA</dt><dd>Impuesto al consumo: 21 % general en España. Una empresa lo recupera.</dd>
+      <dt>Levante</dt><dd>Autorización de la aduana para retirar la mercancía.</dd>
+      <dt>CMR</dt><dd>Carta de porte del transporte por carretera en Europa.</dd>
+      <dt>GPSR</dt><dd>Reglamento General de Seguridad de los Productos de la UE.</dd>
+      <dt>Marcado CE</dt><dd>Sello que declara que el producto cumple las normas europeas que le aplican.</dd>
+      <dt>CITES</dt><dd>Convención internacional sobre comercio de especies amenazadas.</dd>
+      <dt>OEA</dt><dd>Operador Económico Autorizado: certificación de confianza que agiliza aduanas.</dd>
+      <dt>AGM / ACI</dt><dd>Acuerdo Global Modernizado / Acuerdo Comercial Interino México–UE.</dd>
+      <dt>TLCUEM</dt><dd>Nombre común del tratado comercial México–UE vigente desde el año 2000.</dd>
+    </dl></div>
+  </section>
+
+  <section id="fuentes" class="fuentes">
+    <h2>16. Fuentes (formato APA 7)</h2>
+    <ol>
+      <li>Administración Portuaria Integral de Altamira. (s. f.). <i>Líneas navieras con servicio regular por terminal</i>. <a href="https://www.puertoaltamira.com.mx/upl/sec//Rutas%20lineas%20navieras%202011mod.pdf" target="_blank" rel="noopener">puertoaltamira.com.mx</a></li>
+      <li>The Logistics World. (2026, 2 de agosto). <i>Suma Puerto Altamira nuevos servicios de carga contenerizada</i>. <a href="https://thelogisticsworld.com/historico/suma-puerto-altamira-nuevos-servicios-de-carga-contenerizada" target="_blank" rel="noopener">thelogisticsworld.com</a></li>
+      <li>Container News. (2026, 3 de abril). <i>Hapag-Lloyd adjusts MSW service</i>. <a href="https://www.pulse.bot/supply-chain/news/hapag-lloyd-adjusts-msw-service-b7c91ea2-28c3-47d0-8119-ef218f245cc3/" target="_blank" rel="noopener">pulse.bot</a></li>
+      <li>Globy. (2026). <i>Freight rates from Mexico to Spain</i>. <a href="https://globy.com/freight-calculator/from-mexico/to-spain" target="_blank" rel="noopener">globy.com</a></li>
+      <li>Container News. (2026). <i>Manzanillo surpasses 2 million TEUs in first half of 2026</i>. <a href="https://container-news.com/manzanillo-surpasses-2-million-teus-in-first-half-of-2026/" target="_blank" rel="noopener">container-news.com</a></li>
+      <li>The Logistics World. (2026, 20 de julio). <i>Puerto de Manzanillo: contenedores movilizados</i>. <a href="https://thelogisticsworld.com/transporte/puerto-manzanillo-contenedores-movilizados-toneladas-carga/" target="_blank" rel="noopener">thelogisticsworld.com</a></li>
+      <li>Container News. (2026). <i>CMA CGM and COSCO revise Mexican call on PEX2/CAX1 service</i>. <a href="https://container-news.com/cma-cgm-and-cosco-revise-mexican-call-on-pex2-cax1-service/" target="_blank" rel="noopener">container-news.com</a></li>
+      <li>Secretaría de Relaciones Exteriores. (2026, 22 de mayo). <i>Se firma el Acuerdo Global Modernizado</i> (Comunicado 112/2026). <a href="https://embamex.sre.gob.mx/alemania/index.php/de/comunicados/812-firma-del-acuerdo-global-modernizado-entre-mexico-y-la-union-europea" target="_blank" rel="noopener">embamex.sre.gob.mx</a></li>
+      <li>Holland &amp; Knight. (2026, 10 de julio). <i>México y la Unión Europea avanzan hacia la entrada en vigor del Acuerdo Global Modernizado</i>. <a href="https://www.hklaw.com/es/insights/publications/2026/07/mexico-y-la-union-europea-avanzan-hacia-la-entrada-en-vigor" target="_blank" rel="noopener">hklaw.com</a></li>
+      <li>Consejo de la Unión Europea. (2026). <i>Decisión (UE) 2026/1742 relativa a la celebración del Acuerdo Comercial Interino</i>. Diario Oficial de la Unión Europea. <a href="https://www.boe.es/doue/2026/1742/L00001-00002.pdf" target="_blank" rel="noopener">boe.es</a></li>
+      <li>El Congresista. (2026). <i>Consejo Europeo aprueba acuerdo comercial con México</i>. <a href="https://elcongresista.mx/politica/nacional/consejo-europeo-aprueba-acuerdo-comercial-mexico" target="_blank" rel="noopener">elcongresista.mx</a></li>
+      <li>Trade Law College. (2026, 16 de enero). <i>Nuevas cuotas de derechos para las gestiones aduaneras, Anexo 4 RMF 2026</i>. <a href="https://www.tradelawcollege.edu.mx/single-post/nuevas-cuotas-de-derechos-para-las-gestiones-aduaneras-anexo-4-rmf-para-2026" target="_blank" rel="noopener">tradelawcollege.edu.mx</a></li>
+      <li>Forvis Mazars. (2026). <i>Cambios en comercio exterior para 2026 en México</i>. <a href="https://www.forvismazars.com/mx/es/insights/forvis-mazars-en-mexico-lideres-de-opinion/foreign-trade-customs-alert/cambios-en-comercio-exterior-para-2026-en-mexico" target="_blank" rel="noopener">forvismazars.com</a></li>
+      <li>Suaid Global. (2026). <i>Tarifas FCL 2026: costos 20ft y 40ft por ruta</i>. <a href="https://suaidglobal.com/es/insights/fcl-container-rates-2026/" target="_blank" rel="noopener">suaidglobal.com</a></li>
+      <li>Billeo. (2026). <i>IVA en importaciones y exportaciones para empresas 2026</i>. <a href="https://www.billeo.es/blog/iva-importacion-exportacion-espana-empresas-2026" target="_blank" rel="noopener">billeo.es</a></li>
+      <li>Lexgo. (2026, 29 de julio). <i>The end of the EUR 150 customs duty exemption</i>. <a href="https://www.lexgo.be/en/news-and-articles/14980-the-end-of-the-eur-150-customs-duty-exemption-the-european-union-introduces-a-flat-rate-eur-3-duty-on-small-parcels" target="_blank" rel="noopener">lexgo.be</a></li>
+      <li>Embajada de México en España. (s. f.). <i>Cómo exportar a España</i>. <a href="https://embamex.sre.gob.mx/espana/index.php/asuntos-economicos/como-exportar-a-espana" target="_blank" rel="noopener">embamex.sre.gob.mx</a></li>
+      <li>OpenStreetMap contributors. (2026). <i>OpenStreetMap</i> [Mapa base]. <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">openstreetmap.org</a></li>
+    </ol>
+  </section>
+
+  <nav class="red" aria-label="Proyectos relacionados"><a href="https://victorhugoramirezsalgado.com">Víctor Hugo Ramírez Salgado</a><a href="https://tcontenedores.com">Trazabilidad de contenedores</a><a href="https://www.contenedorens.com">ContenedorEns©</a><a href="https://arsabodegas.com">Arsa Bodegas©</a><a href="https://codigocubico.com">Código Cúbico©</a></nav>
+  <footer>
+    <p>ContenedorEns© · venta, renta y modificación de contenedores marítimos · Ensenada, B.C. · Nombre y logotipo registrados en Safe Creative 2609046908752.</p>
+    <p>© 2026 Víctor Hugo Ramírez Salgado. Autor y titular. Todos los derechos reservados. Elaborado con asistencia de IA como herramienta de búsqueda y redacción.</p>
+    <p>Costos y tiempos son estimaciones de referencia al 6 de noviembre de 2026; no sustituyen cotizaciones ni la asesoría de un agente aduanal. Prohibida su reproducción total o parcial y su uso para entrenar inteligencia artificial sin autorización escrita del titular.</p>
+  </footer>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="../../sitio.js"></script>
+<script>
+// © 2026 Víctor Hugo Ramírez Salgado — mapa, calculadora, línea de tiempo y glosario
+(function(){
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  /* ---------- MAPA ---------- */
+  const P = { // [lat, lon]
+    ensenada:[31.85,-116.63], guaymas:[27.92,-110.89], mazatlan:[23.20,-106.42], manzanillo:[19.05,-104.32],
+    lazaro:[17.94,-102.18], salinacruz:[16.16,-95.19], altamira:[22.48,-97.86], veracruz:[19.20,-96.13],
+    coatza:[18.15,-94.42], progreso:[21.33,-89.67],
+    balboa:[8.95,-79.57], colon:[9.36,-79.90], kingston:[17.97,-76.79], caucedo:[18.42,-69.63],
+    algeciras:[36.13,-5.43], malaga:[36.71,-4.42], valencia:[39.44,-0.32], barcelona:[41.35,2.16],
+    sines:[37.95,-8.87], vigo:[42.24,-8.73], lehavre:[49.48,0.11], amberes:[51.27,4.35],
+    rotterdam:[51.95,4.05], bremerhaven:[53.56,8.55], genova:[44.40,8.92], livorno:[43.56,10.30]
+  };
+  // Vías marítimas reales (puntos de paso en mar abierto)
+  const golfoSalida = [[21.6,-94.6],[23.2,-90.0],[24.0,-85.0],[24.15,-82.0],[24.4,-80.6],[25.8,-79.75],[28.0,-79.2],[30.5,-75.0]];
+  const atlSur = [[33.5,-60.0],[35.6,-40.0],[36.4,-20.0],[36.3,-10.0],[35.95,-6.2]];
+  const medEsp = [[36.05,-4.5],[36.7,-1.5],[38.2,0.6]];
+  const atlNorte = [[36.0,-60.0],[41.0,-40.0],[46.0,-20.0],[48.6,-7.0],[49.9,-3.0],[50.3,-0.5]];
+  const canalMancha = [[50.9,1.4],[51.3,2.4]];
+  const pacificoSur = [[17.6,-103.0],[15.3,-98.5],[12.0,-91.5],[8.0,-85.0],[6.8,-80.5],[8.5,-79.4]];
+  const caribeSalida = [[11.5,-78.5],[15.0,-75.5],[17.6,-71.5],[18.4,-67.9],[22.0,-62.0],[28.0,-50.0]];
+
+  const LINEAS = [
+    {id:'msc', nom:'MSC', col:'--msc', des:'Mediterranean Direct · Altamira y Veracruz → Sines, Valencia, Barcelona, Italia', tramos:[
+      [P.altamira,[22.6,-96.5],[21.6,-94.6]],
+      [P.veracruz,[19.9,-95.3],...golfoSalida,...atlSur,...medEsp,P.valencia],
+      [P.valencia,[40.2,1.2],P.barcelona],[P.barcelona,[42.5,5.5],P.genova],
+      [[36.3,-10.0],[37.0,-9.3],P.sines]]},
+    {id:'mscn', nom:'MSC norte', col:'--msc', dash:'10 6', des:'Mexico Express / Gulf · Altamira y Veracruz → Le Havre, Amberes, Bremerhaven', tramos:[
+      [[30.5,-75.0],...atlNorte,P.lehavre],[[50.3,-0.5],...canalMancha,P.amberes],[[51.3,2.4],[52.6,4.0],[53.9,7.2],P.bremerhaven]]},
+    {id:'hl', nom:'Hapag-Lloyd', col:'--hl', des:'Med–Mex · Veracruz y Altamira → Barcelona, Valencia, Génova, Livorno', tramos:[
+      [P.altamira,[22.3,-96.4],[21.4,-94.9]],
+      [P.veracruz,[19.6,-95.0],[21.3,-94.3],[22.9,-89.8],[23.7,-84.9],[23.9,-82.0],[24.15,-80.75],[25.6,-79.5],[27.8,-78.9],[30.2,-74.6],[33.2,-59.6],[35.3,-39.8],[36.1,-20.0],[36.05,-10.0],[35.9,-6.0],[35.9,-4.3],[36.5,-1.3],[38.0,0.9],P.valencia],
+      [P.valencia,[40.0,1.6],P.barcelona],[P.barcelona,[42.3,6.0],P.genova],[P.genova,[43.9,9.8],P.livorno]]},
+    {id:'cma', nom:'CMA CGM', col:'--cma', des:'Veracruz → transbordo en el Caribe (Kingston / Caucedo) → Algeciras', tramos:[
+      [P.veracruz,[19.5,-94.0],[21.3,-87.0],[19.2,-83.0],P.kingston],[P.kingston,[17.5,-73.0],P.caucedo],
+      [P.caucedo,[19.2,-66.0],[24.0,-55.0],[31.0,-35.0],[35.5,-15.0],[35.95,-6.2],P.algeciras]]},
+    {id:'mk', nom:'Maersk', col:'--mk', des:'Manzanillo / Lázaro Cárdenas → Canal de Panamá → Algeciras y Barcelona', tramos:[
+      [P.manzanillo,...pacificoSur,P.balboa],[P.balboa,[9.15,-79.75],P.colon],
+      [P.colon,...caribeSalida,[33.0,-35.0],[35.7,-15.0],[36.0,-6.3],P.algeciras],
+      [P.algeciras,[36.4,-2.0],[39.0,1.0],[40.6,1.8],P.barcelona],[P.lazaro,[17.3,-102.5],[17.6,-103.0]]]},
+    {id:'feeder', nom:'Feeder', col:'--feeder', dash:'8 8', des:'Barcos alimentadores a puertos con servicio a Europa', tramos:[
+      [P.ensenada,[30.0,-116.6],[26.5,-114.6],[23.4,-111.0],[22.6,-109.6],[21.4,-106.9],[19.6,-105.3],P.manzanillo],
+      [P.guaymas,[26.5,-110.5],[24.2,-109.0],[22.6,-109.6]],[P.mazatlan,[22.4,-106.9],[21.4,-106.9]],
+      [P.coatza,[18.9,-95.2],P.veracruz],[P.progreso,[21.8,-90.6],[20.9,-93.3],P.veracruz],
+      [P.salinacruz,[15.2,-95.6],[14.0,-96.0]]]},
+  ];
+  const PROV = [
+    {n:'CDMX y Edomex', p:[19.43,-99.13], a:['veracruz','manzanillo'], t:'Consolidación central: barro, papel amate, cartonería'},
+    {n:'Puebla', p:[19.04,-98.20], a:['veracruz'], t:'Talavera, ónix, vidrio soplado'},
+    {n:'Oaxaca', p:[17.07,-96.72], a:['veracruz'], t:'Barro negro, alebrijes, textil de telar'},
+    {n:'Tlaquepaque y Tonalá (Jalisco)', p:[20.64,-103.31], a:['manzanillo','veracruz'], t:'Cerámica, vidrio, muebles'},
+    {n:'Michoacán', p:[19.70,-101.19], a:['lazaro','veracruz'], t:'Cobre martillado, laca, madera'},
+    {n:'Guanajuato y San Miguel', p:[21.02,-101.26], a:['altamira','veracruz'], t:'Mayólica, hojalata, latón'},
+    {n:'Taxco (Guerrero)', p:[18.56,-99.60], a:['veracruz'], t:'Plata'},
+  ];
+  const PUERTOS = [
+    ['veracruz','Veracruz',1,'Puerto principal hacia Europa. Servicios directos de MSC y Hapag-Lloyd al Mediterráneo y al norte de Europa.'],
+    ['altamira','Altamira',1,'Segundo puerto del Golfo con servicio directo a Europa. Ideal para el Bajío y el noreste.'],
+    ['coatza','Coatzacoalcos',0,'Golfo sur. Alimenta a Veracruz; extremo atlántico del Corredor Interoceánico.'],
+    ['progreso','Progreso',0,'Yucatán. Conexión feeder y Caribe.'],
+    ['manzanillo','Manzanillo',1,'Puerto con más contenedores de México, orientado a Asia. A Europa por el Canal de Panamá con transbordo.'],
+    ['lazaro','Lázaro Cárdenas',1,'Pacífico, con tren al centro del país. A Europa vía Panamá.'],
+    ['salinacruz','Salina Cruz',0,'Pacífico. Por tren del Corredor Interoceánico hacia Coatzacoalcos.'],
+    ['mazatlan','Mazatlán',0,'Pacífico norte. Feeder hacia Manzanillo.'],
+    ['guaymas','Guaymas',0,'Sonora. Feeder; carga a granel y minera.'],
+    ['ensenada','Ensenada',0,'Baja California. Conecta con la costa oeste de EUA; a Europa solo con transbordo.'],
+    ['balboa','Balboa · Canal de Panamá',2,'Entrada del Pacífico al Canal. Punto de transbordo.'],
+    ['colon','Colón / Manzanillo (Panamá)',2,'Salida al Caribe. Hub de transbordo.'],
+    ['kingston','Kingston (Jamaica)',2,'Hub de transbordo del Caribe.'],
+    ['caucedo','Caucedo (Rep. Dominicana)',2,'Hub de transbordo del Caribe.'],
+    ['algeciras','Algeciras',1,'Mayor puerto de España, junto a Gibraltar. Gran hub de transbordo.'],
+    ['valencia','Valencia',1,'Principal puerto de contenedores de España y del Mediterráneo occidental.'],
+    ['barcelona','Barcelona',1,'Puerta de Cataluña y del sur de Francia.'],
+    ['malaga','Málaga',0,'Andalucía; escala de algunos servicios.'],
+    ['sines','Sines (Portugal)',0,'Atlántico ibérico.'],
+    ['vigo','Vigo',0,'Galicia; escala atlántica.'],
+    ['lehavre','Le Havre',0,'Francia, norte de Europa.'],
+    ['amberes','Amberes',1,'Bélgica; gran puerto del norte de Europa.'],
+    ['rotterdam','Róterdam',1,'Países Bajos; mayor puerto de Europa.'],
+    ['bremerhaven','Bremerhaven',0,'Alemania.'],
+    ['genova','Génova',0,'Italia.'],['livorno','Livorno',0,'Italia.'],
+  ];
+
+  const box = document.getElementById('mapa');
+  if (!window.L) { document.getElementById('sinmapa').textContent = 'No se pudo cargar el mapa. Revisa tu conexión y recarga la página.'; return finRest(); }
+  box.innerHTML = '';
+  const mapa = L.map(box, {scrollWheelZoom:false, worldCopyJump:true, zoomSnap:0.5}).setView([30,-50], 3);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:12, attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · Rutas © VHRS'}).addTo(mapa);
+  mapa.on('click', () => mapa.scrollWheelZoom.enable());
+
+  const grupos = {};
+  LINEAS.forEach(l => {
+    const g = L.layerGroup();
+    l.tramos.forEach(t => L.polyline(t, {color:css(l.col), weight:l.id==='feeder'?3:4.5, opacity:.95, dashArray:l.dash||null, lineCap:'round', lineJoin:'round'})
+      .bindPopup('<b>'+l.nom+'</b><br>'+l.des).addTo(g));
+    g.addTo(mapa); grupos[l.id] = g;
+  });
+  const gp = L.layerGroup();
+  PROV.forEach(v => {
+    v.a.forEach(k => L.polyline([v.p, P[k]], {color:css('--recol'), weight:2.5, dashArray:'2 7', opacity:.9}).addTo(gp));
+    L.marker(v.p, {icon:L.divIcon({className:'', html:'<div style="width:12px;height:12px;background:'+css('--recol')+';transform:rotate(45deg);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.3)"></div>', iconSize:[12,12], iconAnchor:[6,6]})})
+      .bindPopup('<b>'+v.n+'</b><br>'+v.t+'<br><i>Envía a: '+v.a.map(k=>PUERTOS.find(p=>p[0]===k)[1]).join(', ')+'</i>').addTo(gp);
+  });
+  gp.addTo(mapa); grupos.prov = gp;
+  const gpt = L.layerGroup();
+  PUERTOS.forEach(([k,n,tipo,t]) => {
+    const op = tipo===2 ? {radius:6, color:'#0F2236', weight:2, fillColor:'#0F2236', fillOpacity:1}
+             : {radius:tipo?8:5.5, color:'#0F2236', weight:tipo?3:2, fillColor: (k==='veracruz'||k==='valencia'||k==='algeciras') ? '#F2B705' : '#fff', fillOpacity:1};
+    const m = L.circleMarker(P[k], op).bindPopup('<b>'+n+'</b><br>'+t);
+    if (tipo===1) m.bindTooltip(n, {permanent:true, direction:'right', offset:[8,0], className:'et'});
+    m.addTo(gpt);
+  });
+  gpt.addTo(mapa);
+  mapa.fitBounds([[8,-117],[54,11]], {padding:[10,10]});
+
+  const CAPAS = [['msc','MSC','--msc'],['mscn','MSC norte','--msc','dash'],['hl','Hapag-Lloyd','--hl'],['cma','CMA CGM','--cma'],['mk','Maersk','--mk'],['feeder','Feeder','--feeder','dash'],['prov','Proveedores','--recol','dot']];
+  document.getElementById('capas').innerHTML = CAPAS.map(c => '<label><input type="checkbox" id="c-'+c[0]+'" checked> <span class="sw '+(c[3]||'')+'" style="background:var('+c[2]+')"></span>'+c[1]+'</label>').join('') +
+    '<label><input type="checkbox" id="c-zoom"> Ver solo España</label>';
+  CAPAS.forEach(c => document.getElementById('c-'+c[0]).addEventListener('change', e => e.target.checked ? grupos[c[0]].addTo(mapa) : mapa.removeLayer(grupos[c[0]])));
+  document.getElementById('c-zoom').addEventListener('change', e => e.target.checked ? mapa.flyToBounds([[35.5,-10],[43.5,4]]) : mapa.flyToBounds([[8,-117],[54,11]]));
+  const st = document.createElement('style');
+  st.textContent = '.et{background:rgba(255,255,255,.92);border:1px solid #0F2236;color:#0F2236;font-weight:700;font-size:12px;padding:1px 6px;box-shadow:none}.et::before{display:none}';
+  document.head.appendChild(st);
+  finRest();
+
+  function finRest(){
+    /* ---------- CALCULADORA ---------- */
+    const $ = id => document.getElementById(id);
+    const f = n => '$' + Math.round(n).toLocaleString('es-MX');
+    function calc(){
+      const val=Math.max(0,+$('val').value||0), cbm=Math.max(.5,+$('cbm').value||1), kg=Math.max(1,+$('kg').value||1);
+      const pac=$('orig').value==='pac', ara=+$('ara').value, fx=+$('fx').value||18.5;
+      let mod, n=1;
+      if(cbm<=15) mod='LCL'; else if(cbm<=28) mod="FCL 20'"; else {mod="FCL 40' HC"; n=Math.ceil(cbm/62);}
+      const wm=Math.max(cbm,kg/1000); let aca, thO, fle, thD, ent;
+      if(mod==='LCL'){ aca=Math.max(250,60*cbm); thO=120+25*wm; fle=Math.max(1,wm)*(pac?110:85); thD=150+45*wm; ent=180+15*cbm; }
+      else { const g=mod!=="FCL 20'"; aca=(g?1900:1500)*n*(pac?1.05:1); thO=350*n; fle=(g?2900:1900)*n*(pac?1.45:1); thD=380*n; ent=750*n; }
+      const seg=.004*(val+fle), cif=val+fle+seg, arn=cif*ara, iva=.21*(cif+arn);
+      const filas=[['Camión del proveedor al puerto','Transportista en México',aca],['Agente aduanal, DTA y prevalidación','Agente aduanal / SAT',450],
+        ['Maniobras, terminal y documentos','Terminal / naviera',thO],['Flete marítimo'+(pac?' (con transbordo en Panamá)':''),'Naviera / transitario',fle],
+        ['Seguro de carga (0.4 %)','Aseguradora',seg],['Terminal y liberación en destino','Terminal en España',thD],
+        ['Agente de aduanas en España (DUA)','Representante aduanero',300],['Arancel UE ('+(ara*100).toFixed(1)+' %)','Aduana española',arn],
+        ['Entrega a bodega','Transportista en España',ent]];
+      const tot=filas.reduce((s,r)=>s+r[2],0);
+      $('r-mod').textContent=mod+(n>1?' ×'+n:''); $('r-tot').textContent=f(tot)+' USD'; $('r-mx').textContent='≈ '+f(tot*fx)+' MXN';
+      $('r-pct').textContent=val?(tot/val*100).toFixed(1)+' %':'—'; $('r-iva').textContent=f(iva)+' USD';
+      $('r-filas').innerHTML=filas.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td class="num">'+f(r[2])+'</td></tr>').join('')+'<tr><td><b>Total</b></td><td></td><td class="num"><b>'+f(tot)+'</b></td></tr>';
+    }
+    ['val','cbm','kg','orig','ara','fx'].forEach(id=>{$(id).addEventListener('input',calc);$(id).addEventListener('change',calc);}); calc();
+
+    /* ---------- LÍNEA DE TIEMPO ---------- */
+    const T=40, E=[['Producción y consolidación',0,10,'--recol'],['Camión a Veracruz',10,12,'--feeder'],['Despacho y corte',11,14,'--hl'],['Travesía directa',14,34,'--cma'],['Despacho en España',34,37,'--mk'],['Entrega a bodega',37,40,'--msc']];
+    $('lt').innerHTML=E.map(e=>'<div class="lt-f"><span>'+e[0]+'</span><div class="lt-p"><div class="lt-b" title="Días '+e[1]+' a '+e[2]+'" style="left:'+(e[1]/T*100)+'%;width:'+((e[2]-e[1])/T*100)+'%;background:var('+e[3]+')"></div></div></div>').join('')+
+      '<div class="lt-e"><span>Día</span><div><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span></div></div>';
+
+    /* ---------- BUSCADOR DEL GLOSARIO ---------- */
+    $('buscar').addEventListener('input', e => {
+      const q=e.target.value.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+      document.querySelectorAll('.gg').forEach(gg=>{
+        let vis=0; gg.querySelectorAll('dt').forEach(dt=>{const dd=dt.nextElementSibling;
+          const ok=!q||(dt.textContent+' '+dd.textContent).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().includes(q);
+          dt.hidden=!ok; dd.hidden=!ok; if(ok) vis++;});
+        gg.hidden=!vis;
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
