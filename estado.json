@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-03",
+  "actualizado": "2026-11-09",
   "titular": "Víctor Hugo Ramírez Salgado",
   "lema": "Comercio internacional, logística portuaria y desarrollo. Autor de El Cubo de la Comunicación (33)©.",
   "trayectoria": [
@@ -553,7 +553,7 @@
           "liga": null,
           "privado": false,
           "estatus": null,
-          "nota": ""
+          "nota": "Marca ante el IMPI: expediente 3741790 (clase 9, en trámite)"
         },
         {
           "nombre": "SOSistem™ versiones 3.9 – 6.6",
@@ -778,5 +778,15 @@
     }
   ],
   "en_registro": "3 obras enviadas a registro en Safe Creative el 2 nov 2026",
-  "orden_proyectos": "Del origen (negocio de contenedores, 2016) a la plataforma que integra todo (SOSistem™)."
+  "orden_proyectos": "Del origen (negocio de contenedores, 2016) a la plataforma que integra todo (SOSistem™).",
+  "impi": [
+    {
+      "signo": "SOSistem™ (marca mixta)",
+      "tramite": "Registro de marca",
+      "clase": "9",
+      "expediente": "3741790",
+      "fecha": "9 nov 2026",
+      "estatus": "En trámite"
+    }
+  ]
 }
