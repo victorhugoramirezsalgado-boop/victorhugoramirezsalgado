@@ -47,6 +47,18 @@
           "liga": "https://www.puertosantander.es/en/node/196051"
         },
         {
+          "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
+          "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
+        },
+        {
+          "titulo": "Autoridad Portuaria de Santander (España) · Informe de gestión / Memoria 2014 (XIV Curso Iberoamericano)",
+          "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf"
+        },
+        {
+          "titulo": "Autoridad Portuaria de Santander (España) · Clausura de la XIV edición: 19 técnicos de 11 países latinoamericanos (14 jun 2014)",
+          "liga": "https://www.puertosantander.es/en/node/196060"
+        },
+        {
           "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
           "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
         },
@@ -202,7 +214,7 @@
       "fecha": "2014-06-13",
       "medio": "Autoridad Portuaria de Santander (España)",
       "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
-      "nota": "Clausura del curso en el que participó.",
+      "nota": "Nota internacional de la clausura del curso al que asistió: 19 técnicos del sector portuario de 11 países latinoamericanos; no publica nombres ni lista de países.",
       "liga": "https://www.puertosantander.es/en/node/196060",
       "verificada": true
     },
@@ -586,6 +598,18 @@
     {
       "titulo": "LogiNews (España) · Noticias Logística y Transporte",
       "liga": "https://noticiaslogisticaytransporte.com/"
+    },
+    {
+      "titulo": "Autoridad Portuaria de Santander (España) · Clausura de la XIV edición: 19 técnicos de 11 países latinoamericanos (14 jun 2014)",
+      "liga": "https://www.puertosantander.es/en/node/196060"
+    },
+    {
+      "titulo": "Autoridad Portuaria de Santander (España) · Informe de gestión / Memoria 2014 (XIV Curso Iberoamericano)",
+      "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf"
+    },
+    {
+      "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
+      "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
     }
   ],
   "privado": [
