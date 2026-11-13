@@ -35,6 +35,33 @@
       "verificada": true
     },
     {
+      "periodo": "2015",
+      "texto": "Promotor y miembro del comité de coordinación del proyecto del primer Puerto Verde de México (API Ensenada), certificado por EcoPorts (PERS) el 29 de agosto de 2015; el proyecto surgió del diplomado de Santander que promovió para su Jefatura de Ecología. ASIPONA Ensenada recibió después el Premio Marítimo de las Américas 2023 (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria.",
+      "ligas": [
+        {
+          "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
+          "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
+        },
+        {
+          "titulo": "API Ensenada · 3.ª reunión del Comité de Operación 2015: certificación PERS en etapa final",
+          "liga": "https://es.puertoensenada.com.mx/upl/sec/Presentacion_3ra_Reunion_2015.pdf"
+        },
+        {
+          "titulo": "Zeta Tijuana · Certificación de Ensenada como primer Puerto Verde del país (29 ago 2015)",
+          "liga": "https://zetatijuana.com/2015/08/puerto-verde-y-pasarela-tricolor/"
+        },
+        {
+          "titulo": "MundoMarítimo · Ensenada es certificado como el primer puerto verde de México",
+          "liga": "https://www.mundomaritimo.cl/noticias/ensenada-es-certificado-como-el-primer-puerto-verde-de-mexico"
+        },
+        {
+          "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
+          "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
+        }
+      ],
+      "verificada": true
+    },
+    {
       "periodo": "2016 – hoy",
       "texto": "Fundador de ContenedorEns© y Arsa Bodegas©: venta, renta y modificación de contenedores."
     },
@@ -81,6 +108,10 @@
     {
       "periodo": "2009",
       "texto": "Licenciatura en Comercio Internacional — Universidad Xochicalco."
+    },
+    {
+      "periodo": "2021",
+      "texto": "Curso de Protección y Seguridad Radiológica en el Diagnóstico Médico con Rayos X (nivel: personal ocupacionalmente expuesto) — Asesores de Radiación S.A., México (40 h)."
     }
   ],
   "prensa": [
@@ -404,6 +435,26 @@
     {
       "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
       "liga": "http://t21.com.mx/index.php/puerto-ensenada"
+    },
+    {
+      "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
+      "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
+    },
+    {
+      "titulo": "API Ensenada · 3.ª reunión del Comité de Operación 2015: certificación PERS en etapa final",
+      "liga": "https://es.puertoensenada.com.mx/upl/sec/Presentacion_3ra_Reunion_2015.pdf"
+    },
+    {
+      "titulo": "Zeta Tijuana · Certificación de Ensenada como primer Puerto Verde del país (29 ago 2015)",
+      "liga": "https://zetatijuana.com/2015/08/puerto-verde-y-pasarela-tricolor/"
+    },
+    {
+      "titulo": "MundoMarítimo · Ensenada es certificado como el primer puerto verde de México",
+      "liga": "https://www.mundomaritimo.cl/noticias/ensenada-es-certificado-como-el-primer-puerto-verde-de-mexico"
+    },
+    {
+      "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
+      "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
     }
   ],
   "privado": [
