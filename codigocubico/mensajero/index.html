@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<base href="/cubo-base/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mensajero del Cubo y Receptor Morse · Código Cúbico©</title>
+<meta name="description" content="SOSistem™ (Sistema S.O.S.©): sensores y terminales (pantallas) de observación e información al momento, en interiores y exteriores, para la seguridad humana. Conteo de personas en tiempo real, detección sin cámaras, alerta temprana con luz, sonido y Morse, y aviso al 911 en formato CAP v1.2.">
+<meta name="theme-color" content="#005387">
+<meta property="og:title" content="SOSistem™ — Alerta temprana para salvaguardar la vida humana">
+<meta property="og:description" content="Sensores y terminales (pantallas) de observación e información al momento, en interiores y exteriores: alerta temprana sin cámaras para salvaguardar la vida humana en recintos confinados, con aviso al 911.">
+<meta property="og:url" content="https://sosistem.com/">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icono-180.png">
+<meta property="og:image" content="https://sosistem.com/assets/og-sosistem.png?v=7.4.0">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="SOSistem™">
+<meta property="og:image:alt" content="SOSistem™: Cubo Morse© naranja y terminal NODO S.O.S.© con alerta de persona en el suelo">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/estilo.css?v=6.9.0">
+<script>
+/* Apariencia elegida en el panel (fondo y logo): se aplica antes de pintar para evitar parpadeo */
+try { var ap = JSON.parse(localStorage.getItem("sos_apariencia") || "null"); if (ap && ap.fondo) document.documentElement.dataset.fondo = ap.fondo; } catch (e) {}
+if (!document.documentElement.dataset.fondo) document.documentElement.dataset.fondo = "gris";
+/* Fondo de las pantallas NODO S.O.S.© (automático por hora hasta que cargue el script) */
+try { var pt = JSON.parse(localStorage.getItem("sos_pantalla_tema") || "null"); var hh = new Date().getHours(); document.documentElement.dataset.ptema = pt && pt !== "auto" ? pt : (hh >= 20 || hh < 7 ? "noche" : "interior"); } catch (e) {}
+</script>
+<script>
+/* Modo «solo»: la versión B abre aquí una sola sección dentro de su lector, con la apariencia de la versión B */
+(function(){var m=location.search.match(/[?&]solo=([\w-]+)/);if(!m)return;var id=m[1],r=document.documentElement;r.classList.add('modo-solo');r.setAttribute('data-theme','light');r.dataset.fondo='blanco';
+var st=document.createElement('style');st.textContent=
+'html.modo-solo header.top,html.modo-solo footer,html.modo-solo .sel-diseno,html.modo-solo #ver-pestanas,html.modo-solo #pestanas,html.modo-solo #pest-cinta,html.modo-solo .sep-sec,html.modo-solo main>*:not(#'+id+'){display:none!important}'+
+'html.modo-solo main>#'+id+'{display:block!important;margin:0!important;padding-top:1.4rem!important;background:transparent!important}'+
+'html.modo-solo{--bg:#fff;--surface:#fff;--surface-2:#F4F4F2;--ink:#18191B;--ink-2:#55585E;--ink-3:#7A7D83;--line:#E1E1DD;--brand:#C0541A;--navy:#18191B;--s1:#18191B;--s2:#C0541A;--s3:#E5A27A;--radius:16px;--shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.06);--font:"Inter",system-ui,sans-serif}'+
+'html.modo-solo body{background:#fff!important;padding:0!important}html.modo-solo .eyebrow{color:#9C4314!important}'+
+'html.modo-solo h2,html.modo-solo h3{color:#18191B;letter-spacing:-.02em}';
+document.head.appendChild(st);
+document.addEventListener('click',function(ev){var x=ev.target.closest&&ev.target.closest('a[href^="#"]');if(!x)return;var d=x.getAttribute('href').slice(1);if(!d||!document.getElementById(d)||!/^[\w-]+$/.test(d))return;var s=document.getElementById(d).closest('main>section');if(!s||s.id===id)return;ev.preventDefault();location.search='?solo='+s.id;},true);
+try{parent.postMessage({sosSolo:id},'*');}catch(e){}})();
+</script>
+<style id="sel-diseno-css">
+.sel-diseno{position:fixed;left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9000;display:flex;gap:4px;align-items:center;background:#15191B;color:#fff;border-radius:999px;padding:4px;box-shadow:0 6px 20px rgba(0,0,0,.25);font:600 13px/1 Inter,system-ui,sans-serif}
+.sel-diseno span{padding:0 8px 0 10px;opacity:.75}
+.sel-diseno a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:999px;border:1.5px solid transparent}
+.sel-diseno a[aria-current]{background:#C0541A}
+.sel-diseno a:not([aria-current]){border-color:#5a5f66}
+@media print{.sel-diseno{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/codigocubico/"><span class="logo-text"><span class="mk">Código Cúbico©</span></span></a><nav><a class="btn" href="/codigocubico/">← Volver a Código Cúbico©</a></nav></div></header>
+<main data-nombre="Código Cúbico©">
+<section class="slide blk" id="mensajero">
+  <div class="wrap">
+    <span class="eyebrow">Código de comunicación del Cubo (33)©</span>
+    <h2>Mensajero del Cubo</h2>
+    <p class="lead fo-lead">Escriba un mensaje y conviértalo en Código de comunicación del Cubo (33)©, o pegue un código recibido para leerlo. Todo se procesa en este equipo: no se guarda ni se envía nada.</p>
+    <div class="grid g2 mc-grid">
+      <div class="card mc-c"><h3>Enviar</h3>
+        <label class="mc-l">Mensaje<textarea id="mc-msg" rows="4" maxlength="2000" autocomplete="off"></textarea></label>
+        <p><button class="btn primary" type="button" id="mc-cod-btn">Convertir a código</button></p>
+        <div id="mc-out-caja" hidden><label class="mc-l">Código del Cubo<textarea id="mc-out" class="mc-cod" rows="7" readonly></textarea></label>
+        <p><button class="btn" type="button" id="mc-copiar">Copiar</button> <button class="btn" type="button" id="mc-wa">Compartir por WhatsApp</button> <small id="mc-est1" role="status"></small></p></div>
+      </div>
+      <div class="card mc-c"><h3>Recibir</h3>
+        <label class="mc-l">Código del Cubo<textarea id="mc-in" class="mc-cod" rows="7" autocomplete="off" placeholder="CUBO·33 ◇ … ▸ … ◂ …"></textarea></label>
+        <p><button class="btn primary" type="button" id="mc-leer">Leer código</button></p>
+        <p class="mc-est" id="mc-est2" role="status"></p>
+        <p class="mc-texto" id="mc-texto" hidden></p>
+      </div>
+    </div>
+    <p class="note">Es un código de comunicación para leer y compartir, no un cifrado de seguridad. Su lectura por cámara (Código Cúbico©) queda para una interfaz futura.</p>
+  </div>
+</section>
+<section class="slide blk" id="receptor">
+  <div class="wrap">
+    <span class="eyebrow">Receptor Morse · a la escucha</span>
+    <h2>Su celular escucha el código Morse y lo convierte en texto.</h2>
+    <p>Capta por el micrófono la señal de una radio, de otro teléfono o de una sirena; también lee grabaciones y lo que usted teclee con el dedo. Si recibe «SOS», muestra un aviso rojo y vibra.</p>
+    <div class="grid g3">
+      <div class="card"><h3>Micrófono</h3><p>Detecta solo el tono (300–1300 Hz) y la velocidad (5–40 palabras por minuto), aunque haya ruido.</p></div>
+      <div class="card"><h3>Grabaciones</h3><p>Abra una nota de voz o un archivo WAV, MP3 o M4A y obtenga el texto.</p></div>
+      <div class="card"><h3>Con el dedo</h3><p>Mantenga presionado el recuadro para enviar Morse; se traduce al instante.</p></div>
+    </div>
+    <div class="card rx-host" id="rx-host" style="margin-top:16px"></div>
+    <p class="note">Herramienta de prueba: el audio se procesa en el propio equipo, sin grabarse ni enviarse. No sustituye al 911.</p>
+    <div class="fuentes-sec">
+      <b>Fuentes de esta sección</b>
+      <ol class="refs">
+        <li>Goertzel, G. (1958). An algorithm for the evaluation of finite trigonometric series. <i>The American Mathematical Monthly, 65</i>(1), 34–35. <a href="https://doi.org/10.2307/2310304" rel="noopener">https://doi.org/10.2307/2310304</a></li>
+        <li>International Telecommunication Union. (2009). <i>International Morse code</i> (Recommendation ITU-R M.1677-1). <a href="https://www.itu.int/rec/R-REC-M.1677-1-200910-I/" rel="noopener">https://www.itu.int/rec/R-REC-M.1677-1-200910-I/</a></li>
+        <li>World Wide Web Consortium. (2021). <i>Web Audio API</i> (W3C Recommendation). <a href="https://www.w3.org/TR/webaudio/" rel="noopener">https://www.w3.org/TR/webaudio/</a></li>
+        <li>World Wide Web Consortium. (s. f.). <i>Media Capture and Streams</i> (W3C Candidate Recommendation). <a href="https://www.w3.org/TR/mediacapture-streams/" rel="noopener">https://www.w3.org/TR/mediacapture-streams/</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="wrap" style="padding:24px 0;font-size:13px">© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Prohibida su reproducción total o parcial y su uso para entrenar inteligencia artificial sin autorización escrita del titular. Copia propia de esta página; el sistema integral está en <a href="https://sosistem.com">SOSistem™</a>.</footer>
+<script src="assets/cubo-rt.js?v=6.1" defer></script>
+<script src="assets/logo-giro.js?v=6.1" defer></script>
+<script src="assets/app.js?v=6.1" defer></script>
+<script src="assets/auditoria.js?v=7.1.0" defer></script>
+<script src="assets/cubo.js?v=6.1" defer></script>
+<script src="assets/morse.js?v=6.2.0" defer></script>
+<script src="assets/pantalla.js?v=6.1" defer></script>
+<script src="assets/pantalla-tema.js?v=6.1" defer></script>
+<script src="assets/colabora-avance.js?v=6.5.0" defer></script>
+<script src="assets/aprende.js?v=7.2.0" defer></script>
+<script src="assets/pronuncia.js?v=7.2.0" defer></script>
+<script src="assets/idiomas-aprende.js?v=7.2.0" defer></script>
+<script src="assets/cubo-juego.js?v=6.9.0" defer></script>
+<script src="assets/tablas.js?v=6.1" defer></script>
+<script src="assets/codigo-cubico.js?v=6.1" defer></script>
+<script src="assets/mensajero.js?v=6.1" defer></script>
+<script src="assets/cubo-morse.js?v=6.1" defer></script>
+<script src="assets/idiomas.js?v=6.1" defer></script>
+<script src="assets/banderas.js?v=7.3.0" defer></script>
+<script src="assets/lugar.js?v=6.1.0" defer></script>
+<script src="assets/configurador.js?v=6.1.0" defer></script>
+<script src="assets/servicios12.js?v=6.1" defer></script>
+<script src="assets/cabecera.js?v=6.1" defer></script>
+<script src="assets/mundo.js?v=6.3.0" defer></script>
+<script src="assets/pestanas.js?v=7.4.0" defer></script>
+<script src="assets/rastreo.js?v=6.1" defer></script>
+<script src="assets/morse-motor.js?v=6.1" defer></script>
+<script src="assets/receptor.js?v=6.1" defer></script>
+<script src="assets/marca.js?v=8.3.0" defer></script>
+</body>
+</html>

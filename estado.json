@@ -349,8 +349,8 @@
       "copia": "econotopia/",
       "orden": 5,
       "anio": "2026",
-      "entrar": "https://sosistem.com/#aprende",
-      "entrar_texto": "Aprender con el Cubo",
+      "entrar": "econotopia/",
+      "entrar_texto": "Ver Econotopía",
       "porque": "Sistema de comunicación que toma su nombre de Intertopía.",
       "espejos": [
         "econotopia.com"
@@ -364,8 +364,8 @@
       "copia": "cubo33/",
       "orden": 6,
       "anio": "2026",
-      "entrar": "cubo33/",
-      "entrar_texto": "Ver el Cubo",
+      "entrar": "cubo33/aprende/",
+      "entrar_texto": "Aprender con el Cubo",
       "porque": "Herramienta central de Econotopía."
     },
     {
@@ -376,7 +376,7 @@
       "copia": "codigocubico/",
       "orden": 7,
       "anio": "2026",
-      "entrar": "https://sosistem.com/#mensajero",
+      "entrar": "/codigocubico/mensajero/",
       "entrar_texto": "Escribir en Código Cúbico",
       "porque": "Modalidad de seguridad de Econotopía, basada en el Cubo."
     },
