@@ -39,6 +39,14 @@
       "texto": "Referencia simbólica: al regresar del XIV Curso Iberoamericano de Puertos (Santander, 2014), compartió con sus directivos superiores un resumen de lo aprendido, cuyo tema principal fue el Transporte Marítimo de Corta Distancia (TMCD; en inglés, Short Sea Shipping). Fue un granito de arena para que se retomara la idea de una ruta de corta distancia, que hoy avanza como el ferry binacional Ensenada–San Diego (el buque llegó a Ensenada en agosto de 2025). El mérito del ferry es de las autoridades e instituciones que lo han impulsado; a ellas, el reconocimiento.",
       "ligas": [
         {
+          "titulo": "CIP-OEA · Cursos anteriores: XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos (Santander, 19 may–13 jun 2014)",
+          "liga": "https://www.oas.org/cip/english/prevcourses.html"
+        },
+        {
+          "titulo": "Autoridad Portuaria de Santander · 19 profesionales en la XIV edición del Curso Iberoamericano (19 may 2014)",
+          "liga": "https://www.puertosantander.es/en/node/196051"
+        },
+        {
           "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
           "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
         },
@@ -160,7 +168,7 @@
   "prensa": [
     {
       "fecha": "",
-      "medio": "Universidad Xochicalco",
+      "medio": "Universidad Xochicalco (México)",
       "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada",
       "nota": "",
       "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
@@ -168,7 +176,7 @@
     },
     {
       "fecha": "2013-06-25",
-      "medio": "T21",
+      "medio": "T21 (México)",
       "titulo": "APIs proponen crear comité de recintos fiscalizados",
       "nota": "Nota sobre el 1er Simposio Nacional de Recintos Fiscalizados de las API, celebrado en el puerto de Ensenada, del que fue fundador y coordinador: las API de Tampico, Veracruz, Coatzacoalcos, Tuxpan, Progreso, Lázaro Cárdenas y Manzanillo, con la anfitriona API Ensenada, propusieron crear un comité de recintos fiscalizados.",
       "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/",
@@ -176,15 +184,23 @@
     },
     {
       "fecha": "2013-06-25",
-      "medio": "T21",
+      "medio": "T21 (México)",
       "titulo": "Sección Puerto Ensenada: «APIs proponen crear comité de recintos fiscalizados»",
       "nota": "Índice de T21 del Puerto de Ensenada donde aparece archivada la nota del 1er Simposio Nacional de Recintos Fiscalizados de las API.",
       "liga": "http://t21.com.mx/index.php/puerto-ensenada",
       "verificada": true
     },
     {
+      "fecha": "2014-05-19",
+      "medio": "Autoridad Portuaria de Santander (España)",
+      "titulo": "Un total de 19 profesionales participan en la XIV edición del Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos",
+      "nota": "Nota internacional del inicio del curso al que asistió (XIV edición, 19 may–13 jun 2014): 19 profesionales de Argentina, Brasil, Chile, Colombia, Costa Rica, Ecuador, El Salvador, México, Panamá y Uruguay. No publica nombres.",
+      "liga": "https://www.puertosantander.es/en/node/196051",
+      "verificada": true
+    },
+    {
       "fecha": "2014-06-13",
-      "medio": "Autoridad Portuaria de Santander",
+      "medio": "Autoridad Portuaria de Santander (España)",
       "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
       "nota": "Clausura del curso en el que participó.",
       "liga": "https://www.puertosantander.es/en/node/196060",
@@ -192,7 +208,7 @@
     },
     {
       "fecha": "2016-05-27",
-      "medio": "CETYS Universidad",
+      "medio": "CETYS Universidad (México)",
       "titulo": "Analizan logística y operación en Ensenada",
       "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.",
       "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/",
@@ -200,7 +216,7 @@
     },
     {
       "fecha": "2017-11-01",
-      "medio": "Universidad Xochicalco · La huella del coyote, núm. 69 (nov.–dic. 2017)",
+      "medio": "Universidad Xochicalco (México) · La huella del coyote, núm. 69 (nov.–dic. 2017)",
       "titulo": "Egresado con huella: Lic. Víctor Hugo Ramírez Salgado",
       "nota": "Entrevista en su oficina de API Ensenada. Lo presenta como egresado de la generación 2006–2009 de la Licenciatura en Comercio Internacional y Aduanas (campus Ensenada) y recoge su mensaje a los estudiantes: estar atentos a los cambios en el mundo y a los tratados económicos, y aportar valor agregado con su profesionalismo. Publicada en Issuu el 9 ene 2018.",
       "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065",
@@ -208,7 +224,7 @@
     },
     {
       "fecha": "2019",
-      "medio": "El Imparcial",
+      "medio": "El Imparcial (México)",
       "titulo": "Crece necesidad de expertos en logística en el puerto de Ensenada",
       "nota": "Réplica de la nota de CETYS.",
       "liga": "https://www.elimparcial.com/",
@@ -216,7 +232,7 @@
     },
     {
       "fecha": "2019-05-31",
-      "medio": "El Vigía",
+      "medio": "El Vigía (México)",
       "titulo": "Requiere Ensenada expertos en logística",
       "nota": "Incluida en la síntesis informativa de CETYS (El Mexicano, El Vigía, Infobaja, Radar Noticias, AGP).",
       "liga": "https://www.elvigia.net/general/2019/5/31/requiere-ensenada-expertos-en-logistica-316272.html",
@@ -224,7 +240,7 @@
     },
     {
       "fecha": "2019-06-05",
-      "medio": "CETYS Universidad",
+      "medio": "CETYS Universidad (México)",
       "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada",
       "nota": "Lo cita como Subgerente de Operaciones de la API Ensenada.",
       "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/",
@@ -232,9 +248,9 @@
     },
     {
       "fecha": "2019-06-11",
-      "medio": "LogiNews",
+      "medio": "LogiNews (España)",
       "titulo": "Puerto Ensenada necesita expertos en logística",
-      "nota": "Réplica de la nota de CETYS.",
+      "nota": "Medio especializado en logística y transporte de España (LogiNews, @LogiNewsEs); réplica de la nota de CETYS Universidad (México).",
       "liga": "https://noticiaslogisticaytransporte.com/",
       "verificada": true
     }
@@ -550,6 +566,26 @@
     {
       "titulo": "Universidad Xochicalco · La huella del coyote 69 (PDF del número completo)",
       "liga": "https://www.xochicalco.edu.mx/galeria/rhc/revistas/La-Huella-del-Coyote-69.pdf"
+    },
+    {
+      "titulo": "Autoridad Portuaria de Santander · 19 profesionales en la XIV edición del Curso Iberoamericano (19 may 2014)",
+      "liga": "https://www.puertosantander.es/en/node/196051"
+    },
+    {
+      "titulo": "CIP-OEA · Cursos anteriores: XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos (Santander, 19 may–13 jun 2014)",
+      "liga": "https://www.oas.org/cip/english/prevcourses.html"
+    },
+    {
+      "titulo": "La Moncloa · Consejo de Ministros 30 may 2014: convenio para el XIV Curso Iberoamericano 2014",
+      "liga": "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2014/refc20140530.aspx"
+    },
+    {
+      "titulo": "UIMP · Programa general Santander 2014 (XIV Curso Iberoamericano, 19 may–13 jun)",
+      "liga": "https://www.uimp.es/images/pdf/propuesta/ProgramaGeneral-Web-7Mayo.pdf"
+    },
+    {
+      "titulo": "LogiNews (España) · Noticias Logística y Transporte",
+      "liga": "https://noticiaslogisticaytransporte.com/"
     }
   ],
   "privado": [
