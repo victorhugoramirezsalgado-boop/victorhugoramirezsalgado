@@ -392,7 +392,12 @@
       "entrar": "https://sosistem.com",
       "entrar_texto": "Entrar a SOSistem™",
       "porque": "Plataforma que integra todo: las apps del Cubo y la prueba en ContenedorEns.",
-      "etapa": "Fin"
+      "etapa": "Fin",
+      "espejos": [
+        "767sos.com",
+        "767sos.org",
+        "sos767.com"
+      ]
     }
   ],
   "registros": [
