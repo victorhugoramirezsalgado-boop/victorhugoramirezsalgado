@@ -141,8 +141,9 @@
     },
     {
       "periodo": "2012",
-      "texto": "Seminario de Estadísticas Portuarias — Autoridad Portuaria Nacional del Perú y CIP-OEA, Lima, 29–30 nov 2012.",
-      "liga": "https://oas.org/cip/docs/cursos/Boletin%20Seminario%20Estadistica%20rev%203%20c%20hotel.pdf"
+      "texto": "Primer Seminario (Internacional) de Estadísticas Portuarias — Autoridad Portuaria Nacional del Perú (APN) y Comisión Interamericana de Puertos (CIP-OEA), Lima, 29–30 nov 2012. En él se formuló el Proyecto de Manual de Estadísticas e Indicadores de Productividad Portuaria para los países de la CIP-OEA; México presentó su sistema estadístico portuario como caso de país.",
+      "liga": "https://oas.org/cip/docs/cursos/Boletin%20Seminario%20Estadistica%20rev%203%20c%20hotel.pdf",
+      "verificada": true
     },
     {
       "periodo": "2016 · 2021",
@@ -185,6 +186,22 @@
       "nota": "",
       "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
       "verificada": false
+    },
+    {
+      "fecha": "2012-11-29",
+      "medio": "La República (Perú)",
+      "titulo": "APN realiza Seminario Internacional de Estadísticas Portuarias",
+      "nota": "Nota del inicio del seminario en Lima (29–30 nov 2012), organizado por la APN del Perú con la CIP-OEA, al que asistió.",
+      "liga": "https://larepublica.pe/economia/676959-apn-realiza-seminario-internacional-de-estadisticas-portuarias",
+      "verificada": true
+    },
+    {
+      "fecha": "2012-12-03",
+      "medio": "OEA · Comisión Interamericana de Puertos («Puertos esta Semana», vol. 30) (internacional)",
+      "titulo": "OEA apoya a funcionarios portuarios de las Américas para fortalecer sus capacidades estadísticas",
+      "nota": "Boletín de la CIP-OEA: la OEA y la APN del Perú realizaron el Primer Seminario de Estadísticas Portuarias (Lima).",
+      "liga": "https://www.oas.org/cip/ports/Fechas/3_diciembre.htm",
+      "verificada": true
     },
     {
       "fecha": "2013-06-25",
@@ -610,6 +627,30 @@
     {
       "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
       "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
+    },
+    {
+      "titulo": "CIP-OEA · Boletín informativo del Seminario de Estadísticas Portuarias (Lima, 29–30 nov 2012)",
+      "liga": "https://www.oas.org/cip/docs/cursos/Boletin%20Informativo%20Seminario%20Estadisticas%20Portuarias.pdf"
+    },
+    {
+      "titulo": "CIP-OEA · Proyecto de resolución: creación de un sistema de estadísticas portuarias uniformes (seminario de Lima 2012)",
+      "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Proyecto%20de%20Resolucioncip.pdf"
+    },
+    {
+      "titulo": "CIP-OEA · Proyecto de Manual de Estadísticas e Indicadores de Productividad Portuaria (Lima 2012)",
+      "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Proyecto%20de%20manual%20cip.pdf"
+    },
+    {
+      "titulo": "CIP-OEA · Presentación de México en Lima 2012: Estadística de los puertos de México (incluye Ensenada, B.C.)",
+      "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Francisco%20Pastrana.pdf"
+    },
+    {
+      "titulo": "La República (Perú) · APN realiza Seminario Internacional de Estadísticas Portuarias (29 nov 2012)",
+      "liga": "https://larepublica.pe/economia/676959-apn-realiza-seminario-internacional-de-estadisticas-portuarias"
+    },
+    {
+      "titulo": "OEA-CIP · Puertos esta Semana, 3 dic 2012 (Primer Seminario de Estadísticas Portuarias)",
+      "liga": "https://www.oas.org/cip/ports/Fechas/3_diciembre.htm"
     }
   ],
   "privado": [
