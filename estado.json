@@ -159,19 +159,51 @@
   ],
   "prensa": [
     {
-      "fecha": "2019-06-05",
-      "medio": "CETYS Universidad",
-      "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada",
-      "nota": "Lo cita como Subgerente de Operaciones de la API Ensenada.",
-      "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/",
+      "fecha": "",
+      "medio": "Universidad Xochicalco",
+      "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada",
+      "nota": "",
+      "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
+      "verificada": false
+    },
+    {
+      "fecha": "2013-06-25",
+      "medio": "T21",
+      "titulo": "APIs proponen crear comité de recintos fiscalizados",
+      "nota": "Nota sobre el 1er Simposio Nacional de Recintos Fiscalizados de las API, celebrado en el puerto de Ensenada, del que fue fundador y coordinador: las API de Tampico, Veracruz, Coatzacoalcos, Tuxpan, Progreso, Lázaro Cárdenas y Manzanillo, con la anfitriona API Ensenada, propusieron crear un comité de recintos fiscalizados.",
+      "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/",
       "verificada": true
     },
     {
-      "fecha": "2019-06-11",
-      "medio": "LogiNews",
-      "titulo": "Puerto Ensenada necesita expertos en logística",
-      "nota": "Réplica de la nota de CETYS.",
-      "liga": "https://noticiaslogisticaytransporte.com/",
+      "fecha": "2013-06-25",
+      "medio": "T21",
+      "titulo": "Sección Puerto Ensenada: «APIs proponen crear comité de recintos fiscalizados»",
+      "nota": "Índice de T21 del Puerto de Ensenada donde aparece archivada la nota del 1er Simposio Nacional de Recintos Fiscalizados de las API.",
+      "liga": "http://t21.com.mx/index.php/puerto-ensenada",
+      "verificada": true
+    },
+    {
+      "fecha": "2014-06-13",
+      "medio": "Autoridad Portuaria de Santander",
+      "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
+      "nota": "Clausura del curso en el que participó.",
+      "liga": "https://www.puertosantander.es/en/node/196060",
+      "verificada": true
+    },
+    {
+      "fecha": "2016-05-27",
+      "medio": "CETYS Universidad",
+      "titulo": "Analizan logística y operación en Ensenada",
+      "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.",
+      "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/",
+      "verificada": true
+    },
+    {
+      "fecha": "2017-11-01",
+      "medio": "Universidad Xochicalco · La huella del coyote, núm. 69 (nov.–dic. 2017)",
+      "titulo": "Egresado con huella: Lic. Víctor Hugo Ramírez Salgado",
+      "nota": "Entrevista en su oficina de API Ensenada. Lo presenta como egresado de la generación 2006–2009 de la Licenciatura en Comercio Internacional y Aduanas (campus Ensenada) y recoge su mensaje a los estudiantes: estar atentos a los cambios en el mundo y a los tratados económicos, y aportar valor agregado con su profesionalismo. Publicada en Issuu el 9 ene 2018.",
+      "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065",
       "verificada": true
     },
     {
@@ -191,44 +223,20 @@
       "verificada": true
     },
     {
-      "fecha": "2016-05-27",
+      "fecha": "2019-06-05",
       "medio": "CETYS Universidad",
-      "titulo": "Analizan logística y operación en Ensenada",
-      "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.",
-      "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/",
+      "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada",
+      "nota": "Lo cita como Subgerente de Operaciones de la API Ensenada.",
+      "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/",
       "verificada": true
     },
     {
-      "fecha": "2014-06-13",
-      "medio": "Autoridad Portuaria de Santander",
-      "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
-      "nota": "Clausura del curso en el que participó.",
-      "liga": "https://www.puertosantander.es/en/node/196060",
+      "fecha": "2019-06-11",
+      "medio": "LogiNews",
+      "titulo": "Puerto Ensenada necesita expertos en logística",
+      "nota": "Réplica de la nota de CETYS.",
+      "liga": "https://noticiaslogisticaytransporte.com/",
       "verificada": true
-    },
-    {
-      "fecha": "2013-06-25",
-      "medio": "T21",
-      "titulo": "APIs proponen crear comité de recintos fiscalizados",
-      "nota": "Nota sobre el 1er Simposio Nacional de Recintos Fiscalizados de las API, celebrado en el puerto de Ensenada, del que fue fundador y coordinador: las API de Tampico, Veracruz, Coatzacoalcos, Tuxpan, Progreso, Lázaro Cárdenas y Manzanillo, con la anfitriona API Ensenada, propusieron crear un comité de recintos fiscalizados.",
-      "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/",
-      "verificada": true
-    },
-    {
-      "fecha": "2013-06-25",
-      "medio": "T21",
-      "titulo": "Sección Puerto Ensenada: «APIs proponen crear comité de recintos fiscalizados»",
-      "nota": "Índice de T21 del Puerto de Ensenada donde aparece archivada la nota del 1er Simposio Nacional de Recintos Fiscalizados de las API.",
-      "liga": "http://t21.com.mx/index.php/puerto-ensenada",
-      "verificada": true
-    },
-    {
-      "fecha": "",
-      "medio": "Universidad Xochicalco",
-      "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada",
-      "nota": "",
-      "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
-      "verificada": false
     }
   ],
   "proyectos": [
@@ -534,6 +542,14 @@
     {
       "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
       "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
+    },
+    {
+      "titulo": "Universidad Xochicalco · La huella del coyote 69 · Egresado con huella: Lic. Víctor Hugo Ramírez Salgado (Issuu)",
+      "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065"
+    },
+    {
+      "titulo": "Universidad Xochicalco · La huella del coyote 69 (PDF del número completo)",
+      "liga": "https://www.xochicalco.edu.mx/galeria/rhc/revistas/La-Huella-del-Coyote-69.pdf"
     }
   ],
   "privado": [
