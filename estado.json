@@ -36,8 +36,12 @@
     },
     {
       "periodo": "2015",
-      "texto": "Promotor y miembro del comité de coordinación del proyecto del primer Puerto Verde de México (API Ensenada), certificado por EcoPorts (PERS) el 29 de agosto de 2015; el proyecto surgió del diplomado de Santander que promovió para su Jefatura de Ecología. ASIPONA Ensenada recibió después el Premio Marítimo de las Américas 2023 (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria.",
+      "texto": "Tras cursar el XIV Curso Iberoamericano de Puertos en Santander (2014), impulsó como Subgerente de Operaciones y Ecología el proyecto de certificación del primer Puerto Verde de México (API Ensenada), en marcha desde diciembre de 2014 y certificado por EcoPorts (PERS) el 29 de agosto de 2015; fue promotor y miembro del comité de coordinación. Después promovió que su Jefa de Ecología y su Gerente de Operaciones cursaran ediciones posteriores del mismo curso (API Ensenada participó en la edición XVI, 2016). ASIPONA Ensenada recibió el Premio Marítimo de las Américas 2023 (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria.",
       "ligas": [
+        {
+          "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
+          "liga": "https://www.puertoensenada.com.mx/upl/sec/Minuta_7ma_Reunion_2014.pdf"
+        },
         {
           "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
           "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
@@ -57,6 +61,10 @@
         {
           "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
           "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
+        },
+        {
+          "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
+          "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
         }
       ],
       "verificada": true
@@ -455,6 +463,14 @@
     {
       "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
       "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
+    },
+    {
+      "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
+      "liga": "https://www.puertoensenada.com.mx/upl/sec/Minuta_7ma_Reunion_2014.pdf"
+    },
+    {
+      "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
+      "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
     }
   ],
   "privado": [
