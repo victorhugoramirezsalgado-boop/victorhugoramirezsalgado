@@ -28,7 +28,7 @@
       }).join('');
       // Toda la tarjeta entra directo a la página o herramienta del proyecto, en la misma pestaña
       document.querySelectorAll('#lista-proyectos .tarjeta[data-ir]').forEach((t) => t.addEventListener('click', (ev) => { if (ev.target.closest('a,[data-morse]')) return; location.href = t.dataset.ir; }));
-      $('lista-trayectoria').innerHTML = (d.trayectoria || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}</span></li>`).join('');
+      $('lista-trayectoria').innerHTML = (d.trayectoria || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}${(t.ligas || []).map((f, k) => ` <a href="${esc(f.liga)}" target="_blank" rel="noopener" title="${esc(f.titulo)}">fuente ${k + 1} ↗</a>`).join('')}${t.verificada ? ' <span class="estatus ok">Verificada</span>' : ''}</span></li>`).join('');
       $('lista-registros').innerHTML = (d.registros || []).map((r) => `<li><span>${esc(r.obra)}</span><a href="https://www.safecreative.org/work/${esc(r.registro)}" target="_blank" rel="noopener"><code>${esc(r.registro)}</code> ↗</a></li>`).join('');
       if ($('lista-impi')) $('lista-impi').innerHTML = (d.impi || []).map((r) => `<li><span>${esc(r.signo)}<br><small>${esc(r.tramite)} · clase ${esc(r.clase)} · ${esc(r.fecha)}</small></span><span><code>Exp. ${esc(r.expediente)}</code> <span class="estatus prep">${esc(r.estatus)}</span></span></li>`).join('');
       $('lista-formacion').innerHTML = (d.formacion || []).map((t) => `<li><b>${esc(t.periodo)}</b><span>${esc(t.texto)}${t.liga ? ` <a href="${esc(t.liga)}" target="_blank" rel="noopener">fuente ↗</a>` : ''}</span></li>`).join('');

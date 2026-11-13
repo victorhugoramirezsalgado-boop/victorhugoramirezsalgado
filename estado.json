@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-09",
+  "actualizado": "2026-11-13",
   "titular": "Víctor Hugo Ramírez Salgado",
   "lema": "Comercio internacional, logística portuaria y desarrollo. Autor de El Cubo de la Comunicación (33)©.",
   "trayectoria": [
@@ -21,7 +21,18 @@
     },
     {
       "periodo": "2013",
-      "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada)."
+      "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada).",
+      "ligas": [
+        {
+          "titulo": "T21 · APIs proponen crear comité de recintos fiscalizados (25 jun 2013)",
+          "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/"
+        },
+        {
+          "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
+          "liga": "http://t21.com.mx/index.php/puerto-ensenada"
+        }
+      ],
+      "verificada": true
     },
     {
       "periodo": "2016 – hoy",
@@ -127,6 +138,14 @@
       "titulo": "APIs proponen crear comité de recintos fiscalizados",
       "nota": "Nota sobre el 1er Simposio Nacional de Recintos Fiscalizados de las API, celebrado en el puerto de Ensenada, del que fue fundador y coordinador: las API de Tampico, Veracruz, Coatzacoalcos, Tuxpan, Progreso, Lázaro Cárdenas y Manzanillo, con la anfitriona API Ensenada, propusieron crear un comité de recintos fiscalizados.",
       "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/",
+      "verificada": true
+    },
+    {
+      "fecha": "2013-06-25",
+      "medio": "T21",
+      "titulo": "Sección Puerto Ensenada: «APIs proponen crear comité de recintos fiscalizados»",
+      "nota": "Índice de T21 del Puerto de Ensenada donde aparece archivada la nota del 1er Simposio Nacional de Recintos Fiscalizados de las API.",
+      "liga": "http://t21.com.mx/index.php/puerto-ensenada",
       "verificada": true
     },
     {
@@ -377,6 +396,14 @@
     {
       "titulo": "Comisión Interamericana de Puertos (CIP-OEA)",
       "liga": "https://www.oas.org/cip/"
+    },
+    {
+      "titulo": "T21 · APIs proponen crear comité de recintos fiscalizados (25 jun 2013)",
+      "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/"
+    },
+    {
+      "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
+      "liga": "http://t21.com.mx/index.php/puerto-ensenada"
     }
   ],
   "privado": [
