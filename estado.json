@@ -35,8 +35,43 @@
       "verificada": true
     },
     {
+      "periodo": "2014",
+      "texto": "Al regresar del XIV Curso Iberoamericano de Puertos (Santander, 2014), presentó como Subgerente de Operaciones y Ecología un resumen de tres proyectos aprendidos; el principal, el Transporte Marítimo de Corta Distancia (TMCD; en inglés, Short Sea Shipping, SSS). Lo expuso al Gerente de Operaciones, al Director General de API Ensenada y al Director General de Fomento y Administración Portuaria (CGPMM, entonces SCT). La idea de una ruta de corta distancia, que ya existía años atrás, volvió a activarse y hoy se conoce como el ferry binacional Ensenada–San Diego: ASIPONA Ensenada y el Gobierno de Baja California lo tratan como ruta marítima de corta distancia (2022); el buque llegó a Ensenada el 12 de agosto de 2025 y, según autoridades estatales, el servicio podría iniciar a fines de 2026. Reconocimiento: el proyecto del ferry es resultado del trabajo de muchas instituciones y personas; esta referencia solo deja constancia de su aportación en la etapa de 2014. (Su exposición de 2014 es testimonio propio, pendiente de soporte documental.)",
+      "ligas": [
+        {
+          "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
+          "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
+        },
+        {
+          "titulo": "Zeta Tijuana · Proyectan ferri San Diego–Ensenada (2022)",
+          "liga": "https://zetatijuana.com/2022/04/proyectan-ferri-san-diego-ensenada/"
+        },
+        {
+          "titulo": "SanDiegoRed · Llegada del ferry a Ensenada (12 ago 2025)",
+          "liga": "https://www.sandiegored.com/en/news/baja-california-eyes-expansion-of-binational-ferry-with-new-routes"
+        },
+        {
+          "titulo": "SanDiegoRed · El ferry Ensenada–San Diego podría iniciar a fines de 2026 (28 may 2026)",
+          "liga": "https://www.sandiegored.com/en/news/long-awaited-ensenada-san-diego-ferry-could-launch-by-years-end/"
+        },
+        {
+          "titulo": "El Imparcial · Ferry Ensenada–San Diego vuelve a retrasarse; podría iniciar en diciembre (3 jul 2026)",
+          "liga": "https://www.elimparcial.com/tij/ensenada/2026/07/03/ferry-ensenadasan-diego-vuelve-a-retrasarse-podria-iniciar-operaciones-en-diciembre/"
+        },
+        {
+          "titulo": "MundoMarítimo · CGPMM define nueve rutas de cabotaje y TMCD en México (2022)",
+          "liga": "https://www.mundomaritimo.cl/noticias/definen-nueve-rutas-de-cabotaje-y-de-transporte-maritimo-de-corta-distancia-en-mexico"
+        },
+        {
+          "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
+          "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
+        }
+      ],
+      "verificada": false
+    },
+    {
       "periodo": "2015",
-      "texto": "Colaboró, como Subgerente de Operaciones y Ecología y miembro del comité de coordinación, en el proyecto colectivo de certificación del primer Puerto Verde de México (API Ensenada), liderado por el Director General en turno y desarrollado por la Gerencia de Operaciones en conjunto: Subgerencia de Operaciones y Ecología, Jefatura de Ecología, coordinadores, supervisor y auxiliares de operaciones y de ecología. El proyecto estaba en marcha desde diciembre de 2014 y fue certificado por EcoPorts (PERS) el 29 de agosto de 2015. Tres integrantes de la Gerencia de Operaciones cursaron el Curso Iberoamericano de Puertos en Santander: él en la XIV edición (2014) y, después, la Jefa de Ecología y el Gerente de Operaciones en ediciones posteriores (API Ensenada participó en la XVI, 2016); esa formación compartida dio al equipo un lenguaje común para poner en marcha el proyecto. ASIPONA Ensenada recibió el Premio Marítimo de las Américas 2023 (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria. Reconocimiento: el logro es de todo el equipo de API Ensenada que participó por algún motivo, razón o circunstancia; esta referencia lo reconoce y agradece.",
+      "texto": "Proyecto de certificación del primer Puerto Verde de México (API Ensenada), propuesto y encabezado por la Jefa de Ecología, con el liderazgo del Director General en turno y el trabajo conjunto de la Gerencia de Operaciones: Subgerencia de Operaciones y Ecología (en la que él colaboró como Subgerente y miembro del comité de coordinación), coordinadores, supervisor y auxiliares de operaciones y de ecología. En marcha desde diciembre de 2014; certificado por EcoPorts (PERS) el 29 de agosto de 2015. Tres integrantes de la Gerencia de Operaciones cursaron el Curso Iberoamericano de Puertos en Santander (él en la XIV edición, 2014; después la Jefa de Ecología y el Gerente de Operaciones), lo que dio al equipo un lenguaje común. ASIPONA Ensenada recibió el Premio Marítimo de las Américas 2023 (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria. Reconocimiento: el logro es de todo el equipo de API Ensenada que participó por algún motivo, razón o circunstancia; esta referencia lo reconoce y agradece.",
       "ligas": [
         {
           "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
@@ -471,6 +506,34 @@
     {
       "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
       "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
+    },
+    {
+      "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
+      "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
+    },
+    {
+      "titulo": "Zeta Tijuana · Proyectan ferri San Diego–Ensenada (2022)",
+      "liga": "https://zetatijuana.com/2022/04/proyectan-ferri-san-diego-ensenada/"
+    },
+    {
+      "titulo": "SanDiegoRed · Llegada del ferry a Ensenada (12 ago 2025)",
+      "liga": "https://www.sandiegored.com/en/news/baja-california-eyes-expansion-of-binational-ferry-with-new-routes"
+    },
+    {
+      "titulo": "SanDiegoRed · El ferry Ensenada–San Diego podría iniciar a fines de 2026 (28 may 2026)",
+      "liga": "https://www.sandiegored.com/en/news/long-awaited-ensenada-san-diego-ferry-could-launch-by-years-end/"
+    },
+    {
+      "titulo": "El Imparcial · Ferry Ensenada–San Diego vuelve a retrasarse; podría iniciar en diciembre (3 jul 2026)",
+      "liga": "https://www.elimparcial.com/tij/ensenada/2026/07/03/ferry-ensenadasan-diego-vuelve-a-retrasarse-podria-iniciar-operaciones-en-diciembre/"
+    },
+    {
+      "titulo": "MundoMarítimo · CGPMM define nueve rutas de cabotaje y TMCD en México (2022)",
+      "liga": "https://www.mundomaritimo.cl/noticias/definen-nueve-rutas-de-cabotaje-y-de-transporte-maritimo-de-corta-distancia-en-mexico"
+    },
+    {
+      "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
+      "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
     }
   ],
   "privado": [
