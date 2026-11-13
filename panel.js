@@ -23,7 +23,7 @@
           <p>${esc(p.nota)}</p>
           ${p.porque ? `<p class="porque">${esc(p.porque)}</p>` : ''}
           <div class="acciones"><a class="ir boton" href="${esc(entrar)}">${esc(p.entrar_texto || 'Entrar')} →</a>${p.copia && p.copia !== entrar ? `<a class="ficha" href="${esc(p.copia)}">Ficha del proyecto</a>` : ''}</div>
-          <small class="dominio">${esc(p.dominio)}${p.dominio_activo ? '' : ' · dominio en conexión'}${ext(entrar) ? ' · abre ' + esc(entrar.replace(/^https?:\/\//, '').split('/')[0]) : ''}</small>
+          <small class="dominio">${esc(p.dominio)}${(p.espejos || []).length ? ' · también: ' + p.espejos.map(esc).join(', ') : ''}${p.dominio_activo ? '' : ' · dominio en conexión'}${ext(entrar) ? ' · abre ' + esc(entrar.replace(/^https?:\/\//, '').split('/')[0]) : ''}</small>
         </article>`;
       }).join('');
       // Toda la tarjeta entra directo a la página o herramienta del proyecto, en la misma pestaña

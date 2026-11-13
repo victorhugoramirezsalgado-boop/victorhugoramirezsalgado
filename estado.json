@@ -334,7 +334,12 @@
       "anio": "2026",
       "entrar": "intertopia/",
       "entrar_texto": "Leer el concepto",
-      "porque": "Concepto propuesto a la RAE (feb 2026); da nombre a la familia «topía»."
+      "porque": "Concepto propuesto a la RAE (feb 2026); da nombre a la familia «topía».",
+      "espejos": [
+        "intertopia.com",
+        "1ntertopía.com",
+        "1ntertopia.com"
+      ]
     },
     {
       "nombre": "Econotopía©",
@@ -346,7 +351,10 @@
       "anio": "2026",
       "entrar": "https://sosistem.com/#aprende",
       "entrar_texto": "Aprender con el Cubo",
-      "porque": "Sistema de comunicación que toma su nombre de Intertopía."
+      "porque": "Sistema de comunicación que toma su nombre de Intertopía.",
+      "espejos": [
+        "econotopia.com"
+      ]
     },
     {
       "nombre": "Cubo 33©",
@@ -497,6 +505,21 @@
       "obra": "Cartera de dominios y sitios web del autor",
       "registro": "2611017524083",
       "fecha": "1 nov 2026"
+    },
+    {
+      "obra": "Cartera de dominios del autor · variantes técnicas sin tilde (intertopia.com, 1ntertopia.com, econotopia.com)",
+      "registro": "2611037540810",
+      "fecha": "3 nov 2026"
+    },
+    {
+      "obra": "Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)",
+      "registro": "2611097590053",
+      "fecha": "9 nov 2026"
+    },
+    {
+      "obra": "Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma",
+      "registro": "2611097590138",
+      "fecha": "9 nov 2026"
     }
   ],
   "fuentes": [
@@ -1051,7 +1074,7 @@
       ]
     }
   ],
-  "en_registro": "3 obras enviadas a registro en Safe Creative el 2 nov 2026",
+  "en_registro": null,
   "orden_proyectos": "Del origen (negocio de contenedores, 2016) a la plataforma que integra todo (SOSistem™).",
   "impi": [
     {
