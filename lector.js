@@ -54,7 +54,7 @@ L.onclick=e=>{
  if(t.hasAttribute('data-mas')){ir(k,'b',1);return}
  if(t.hasAttribute('data-ficha')){ir(k,'a',-1);return}
  if(t.tagName==='A')return;
- if(t.classList.contains('izq')&&k>=0)location.href=paginaObra(k);
+ if(t.classList.contains('izq')&&k>=0)verObra(k,true);
 };
 const amp=document.getElementById('ampliar');
 const ampliar=on=>{document.body.classList.toggle('ampliado',on);if(!on)history.replaceState(null,'',location.hash.includes('biblioteca')?'#biblioteca':location.pathname)};
@@ -70,3 +70,30 @@ let x0=null;L.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:
 L.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60)(dx<0?sig:ant)();x0=null});
 pinta();
 if(m)ampliar(true);
+// Obra completa dentro de la biblioteca: no recarga la página, así la música sigue sonando.
+const VO=document.createElement('div'); VO.id='vista-obra';
+VO.innerHTML='<nav class="migas"><button class="nav" data-vo="volver">‹ Volver al libro</button><span><button class="nav" data-vo="ant">‹ Anterior</button> <button class="nav oro" data-vo="sig">Siguiente ›</button></span></nav><article class="obra" id="vo-obra"></article>';
+document.body.appendChild(VO);
+let ko=-1;
+function verObra(nk,push){
+ ko=(nk+P.length)%P.length; document.getElementById('vo-obra').innerHTML=htmlObra(ko);
+ document.body.classList.add('en-obra'); VO.scrollTop=0;
+ document.title=`${P[ko][1]} · Víctor Hugo Ramírez Salgado`;
+ const url=`obra.html?id=${slugObra(P[ko][1])}`;
+ if(push)history.pushState({obra:ko},'',url); else history.replaceState({obra:ko},'',url);
+}
+function cerrarObra(){document.body.classList.remove('en-obra');document.title='Víctor Hugo Ramírez Salgado · Obras, sistemas y registros';if(ko>=0){k=ko;v='a';ampliar(true);pinta()}ko=-1}
+VO.addEventListener('click',e=>{
+ const b=e.target.closest('[data-vo]');
+ if(b){const a=b.dataset.vo; if(a==='volver')history.back(); else verObra(ko+(a==='sig'?1:-1),false); return}
+ const a=e.target.closest('a'); if(a&&a.target!=='_blank'){e.preventDefault();window.open(a.href,'_blank','noopener')}
+});
+window.addEventListener('popstate',e=>{if(e.state&&e.state.obra!=null)verObra(e.state.obra,false);else if(document.body.classList.contains('en-obra'))cerrarObra()});
+// En el libro: «Abrir obra» y la portada abren la obra aquí mismo; las demás ligas abren en otra pestaña.
+L.addEventListener('click',e=>{
+ const a=e.target.closest('a'); if(!a)return;
+ e.preventDefault(); e.stopImmediatePropagation();
+ if(a.getAttribute('href').startsWith('obra.html'))verObra(k,true); else window.open(a.href,'_blank','noopener');
+},true);
+// Ligas del pie y de la constancia que salen de la portada: en otra pestaña para no cortar la música.
+document.querySelectorAll('.pie a[href]:not([href^="#"]):not([href^="tel:"]):not([href^="mailto:"])').forEach(a=>{a.target='_blank';a.rel='noopener'});

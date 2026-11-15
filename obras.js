@@ -57,3 +57,19 @@ const MAS=[
 {t:'SOSistem™ detecta emergencias en sanitarios y espacios confinados sin usar cámaras. Sus versiones 1.0.0 a B.8.2.2 están registradas por series, y la marca está en trámite ante el IMPI (expediente 3741790).',rel:[['Sistema S.O.S.©','2609046908578'],['SOSistem™ 1.0.0–3.8','2610257442171'],['SOSistem™ 3.9–6.6','2610317507284'],['S.S.O.S.© expediente','2610317507475']],h:[['Ir a sosistem.com','https://sosistem.com']]},
 {t:'El sensor híper inteligente de SOSistem™ reúne en un solo equipo la detección de presencia, caída y tiempo de permanencia, para avisar de una emergencia sin cámara.',rel:[['SOSistem™','2611097590053']],h:[['Ir a sosistem.com','https://sosistem.com']]},
 {t:'Propone un registro mundial de buques varados y hundidos, con su posición en cartas náuticas, su señalización y su causa, para presentarlo a la Comisión Interamericana de Puertos y después a la Organización Marítima Internacional.',rel:[['Trazabilidad de contenedores','2610317507741']],h:[['Índice de obras','indice/']]}];
+// Página completa de cada obra (la usan obra.html y la biblioteca, sin recargar)
+const slugObra=n=>n.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[©™]/g,'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+function htmlObra(k){
+ const [g,n,d,i,t,r,f,tit,desde,vis,s]=P[k], m=MAS[k];
+ return `${CLIP}
+<div class="portada"><div class="cap">${g}</div><div class="img">${I[i]}</div><h1>${n}</h1><div class="dom">${d} · desde ${desde}</div></div>
+<div class="texto"><p>${t}</p><p>${m.t}</p></div>
+<h2>Ficha de registro</h2>
+<table class="ficha"><tr><th>Obra registrada</th><td><i>${tit}</i></td></tr><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr><tr><th>Verificación</th><td><a href="https://www.safecreative.org/work/${r}" target="_blank" rel="noopener">safecreative.org/work/${r}</a></td></tr></table>
+<h2>Referencia (APA 7.ª ed.)</h2>
+<p class="apa">Ramírez Salgado, V. H. (${anio(f)}). <i>${tit}</i> [Obra registrada n.º ${r}]. Safe Creative. https://www.safecreative.org/work/${r}</p>
+<h2>Obras relacionadas</h2><ul class="lista">${m.rel.map(([o,num])=>`<li><span>${o}</span><span>${num}</span></li>`).join('')}</ul>
+<h2>Herramientas</h2><ul class="lista">${m.h.map(([l,u])=>`<li><a href="${u}">${l}</a><span>›</span></li>`).join('')}</ul>
+<div class="acciones" style="margin-top:22px"><a class="btn" href="${vis}">Visitar ${d.includes('.')?d:'la obra'}</a><a class="btn ghost" href="${s}">Apoyar</a></div>
+<span class="folio" style="right:30px">${k+1}</span>`;
+}

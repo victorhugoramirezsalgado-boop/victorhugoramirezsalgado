@@ -6,22 +6,8 @@
 <title>Obra · Víctor Hugo Ramírez Salgado</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="fuentes.js?v=2026-11-15a"></script>
-<link rel="stylesheet" href="libro.css?v=2026-11-15h">
-<style>
-/* © 2026 Víctor Hugo Ramírez Salgado — página de cada obra. Asistencia-IA. */
-.obra{max-width:820px;margin:10px auto 0;background:var(--papel);border-radius:6px;box-shadow:var(--sombra),inset 0 0 0 1px var(--linea);padding:44px 56px 60px;position:relative}
-.obra .portada{text-align:center;padding-bottom:22px;border-bottom:1px solid var(--linea);margin-bottom:24px}
-.obra .img{color:var(--acento);width:220px;margin:0 auto}
-.obra h1{font:600 clamp(36px,6vw,54px)/1.05 var(--f-tit);margin:10px 0 4px}
-.obra .cap{font:600 11px var(--f-txt);letter-spacing:.14em;text-transform:uppercase;color:var(--acento)}
-.obra .dom{font:italic 500 18px var(--f-tit);color:var(--mut)}
-.obra .texto{text-align:justify;hyphens:auto;font-size:17px}
-.obra h2{font:600 24px var(--f-tit);margin:26px 0 8px;color:var(--acento)}
-.migas{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:6px 0 14px}
-.migas a{text-decoration:none}
-@media (max-width:760px){.obra{padding:24px 18px 36px;margin-top:4px}.obra .img{width:110px}.obra .portada{padding-bottom:12px;margin-bottom:14px}.obra h1{font-size:32px;margin:6px 0 2px}.obra h2{font-size:21px;margin:16px 0 4px}.obra .texto{font-size:16px}.obra .texto p{margin:0 0 10px}.migas{margin:2px 0 8px}.migas .nav{padding:7px 11px;font-size:12px}.lista li{padding:4px 0}}
-</style>
+<script src="fuentes.js?v=2026-11-15i"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-15i">
 </head>
 <body>
 <div class="libreria" aria-hidden="true"></div>
@@ -33,30 +19,17 @@
 <article class="obra" id="obra"></article>
 <footer>© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados.</footer>
 </div>
-<script src="obras.js?v=2026-11-15b"></script>
+<script src="obras.js?v=2026-11-15i"></script>
 <script>
-const slug=n=>n.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[©™]/g,'').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const id=new URLSearchParams(location.search).get('id');
-let k=P.findIndex(p=>slug(p[1])===id); if(k<0)k=0;
-const [g,n,d,i,t,r,f,tit,desde,vis,s]=P[k], m=MAS[k];
-document.title=`${n} · Víctor Hugo Ramírez Salgado`;
-document.getElementById('obra').innerHTML=`${CLIP}
-<div class="portada"><div class="cap">${g}</div><div class="img">${I[i]}</div><h1>${n}</h1><div class="dom">${d} · desde ${desde}</div></div>
-<div class="texto"><p>${t}</p><p>${m.t}</p></div>
-<h2>Ficha de registro</h2>
-<table class="ficha"><tr><th>Obra registrada</th><td><i>${tit}</i></td></tr><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr><tr><th>Verificación</th><td><a href="https://www.safecreative.org/work/${r}" target="_blank" rel="noopener">safecreative.org/work/${r}</a></td></tr></table>
-<h2>Referencia (APA 7.ª ed.)</h2>
-<p class="apa">Ramírez Salgado, V. H. (${anio(f)}). <i>${tit}</i> [Obra registrada n.º ${r}]. Safe Creative. https://www.safecreative.org/work/${r}</p>
-<h2>Obras relacionadas</h2><ul class="lista">${m.rel.map(([o,num])=>`<li><span>${o}</span><span>${num}</span></li>`).join('')}</ul>
-<h2>Herramientas</h2><ul class="lista">${m.h.map(([l,u])=>`<li><a href="${u}">${l}</a><span>›</span></li>`).join('')}</ul>
-<div class="acciones" style="margin-top:22px"><a class="btn" href="${vis}">Visitar ${d.includes('.')?d:'la obra'}</a><a class="btn ghost" href="${s}">Apoyar</a></div>
-<span class="folio" style="right:30px">${k+1}</span>`;
-const otra=j=>`obra.html?id=${slug(P[(j+P.length)%P.length][1])}`;
+let k=P.findIndex(p=>slugObra(p[1])===new URLSearchParams(location.search).get('id')); if(k<0)k=0;
+document.title=`${P[k][1]} · Víctor Hugo Ramírez Salgado`;
+document.getElementById('obra').innerHTML=htmlObra(k);
+const otra=j=>`obra.html?id=${slugObra(P[(j+P.length)%P.length][1])}`;
 document.getElementById('prev').href=otra(k-1);document.getElementById('next').href=otra(k+1);
 document.getElementById('volver').href=`./#obra-${k+1}`;
 const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');try{localStorage.setItem('vhrs-tema',t)}catch(e){}};
 t1.onclick=()=>set('a');t2.onclick=()=>set('b');let tm='a';try{tm=localStorage.getItem('vhrs-tema')||'a'}catch(e){}set(tm);
 </script>
-<script src="musica.js?v=2026-11-15b"></script>
+<script src="musica.js?v=2026-11-15i"></script>
 </body>
 </html>
