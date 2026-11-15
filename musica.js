@@ -16,7 +16,7 @@ const leer=()=>{try{return localStorage.getItem('vhrs-musica')}catch(e){return n
 const guardar=v=>{try{localStorage.setItem('vhrs-musica',v)}catch(e){}};
 
 const css=document.createElement('style');
-css.textContent=`.mus{position:fixed;left:14px;bottom:14px;z-index:40;display:flex;align-items:center;gap:8px;font:500 12px Inter,system-ui,sans-serif;opacity:.55;transition:opacity .3s}
+css.textContent=`.mus{position:fixed;left:14px;bottom:14px;z-index:40;display:flex;align-items:center;gap:8px;font:500 12px var(--f-txt,system-ui);opacity:.55;transition:opacity .3s}
 .mus:hover{opacity:1}
 .mus button{width:30px;height:30px;border-radius:50%;border:1px solid var(--linea,#E2D3B4);background:var(--papel,#FBF7EE);color:var(--tinta,#2B2620);cursor:pointer;font-size:12px;line-height:1;padding:0}
 .mus .tema-son{max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--mut,#6E6457);font-style:italic;letter-spacing:.02em;pointer-events:none}

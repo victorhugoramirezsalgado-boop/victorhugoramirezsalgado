@@ -8,7 +8,8 @@
 <link rel="canonical" href="https://victorhugoramirezsalgado.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="libro.css?v=2026-11-15b">
+<script src="fuentes.js?v=2026-11-15a"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-15e">
 </head>
 <body>
 <div class="libreria" aria-hidden="true"></div>
@@ -20,7 +21,7 @@
 
 <section class="intro">
 <h1>Obras, sistemas y registros</h1>
-<p>Toca un libro para abrirlo y pasar sus páginas. Desliza hacia abajo para ver todas las obras.</p>
+<p>Toca un libro para abrirlo y pasar sus páginas.<span class="larga"> Desliza hacia abajo para ver todas las obras.</span></p>
 </section>
 
 <section class="estante" id="estante" aria-label="Estante de obras"></section>
@@ -65,6 +66,7 @@ const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribu
 t1.onclick=()=>set('a');t2.onclick=()=>set('b');
 let tm='a';try{tm=localStorage.getItem('vhrs-tema')||'a'}catch(e){} if(location.hash.includes('biblioteca'))tm='b'; set(tm);
 </script>
+<script src="vista.js?v=2026-11-15a"></script>
 <script src="musica.js?v=2026-11-15a"></script>
 </body>
 </html>
