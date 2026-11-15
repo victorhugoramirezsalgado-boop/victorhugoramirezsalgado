@@ -1,0 +1,15 @@
+/* © 2026 Víctor Hugo Ramírez Salgado — tarjetas de apoyo y patrocinio */
+.progs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:18px 0}
+.prog{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1.5px solid var(--line);border-top:5px solid var(--senal);border-radius:10px;padding:18px}
+.prog h3{margin:0;font-size:20px;font-stretch:110%}
+.prog .monto{margin:0;font-size:24px;font-weight:800;color:var(--ink)}
+.prog .total{font-size:14px;color:var(--mut)}
+.prog .puntos{margin:6px 0 10px;padding-left:18px;font-size:15px;flex:1}
+.prog .nota{margin:0 0 8px}
+.pago{display:grid;gap:2px;text-align:center;text-decoration:none;font-weight:800;font-size:18px;color:#0F2236;background:var(--senal);border:2px solid #0F2236;border-radius:12px;padding:12px 14px;min-height:48px}
+.pago small{font-weight:500;font-size:12px}
+.pago:hover{filter:brightness(1.06)}
+.pago.wa{background:var(--card);color:var(--ink);border-color:var(--senal)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:16px 0}
+.kpi{display:grid;gap:2px;background:var(--card);border-left:4px solid var(--senal);padding:12px 14px}
+.kpi b{font-size:24px}.kpi span{font-size:15px;color:var(--ink)}.kpi small{font-size:12px;color:var(--mut)}

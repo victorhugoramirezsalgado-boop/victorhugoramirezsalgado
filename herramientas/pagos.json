@@ -1,0 +1,17 @@
+{
+  "_nota": "© 2026 Víctor Hugo Ramírez Salgado. Ligas de pago de Stripe (Payment Links). Mientras una liga esté vacía, el botón abre WhatsApp con el mensaje prellenado. Para activar el pago en línea: pegar aquí la liga https://buy.stripe.com/... y correr python3 herramientas/generar_apoyo.py",
+  "whatsapp": "526462270490",
+  "iva": 0.16,
+  "ligas": {
+    "casa15": "",
+    "casa30": "",
+    "m2": "",
+    "celular": "",
+    "linea": "",
+    "sosistem": "",
+    "investigacion": "",
+    "intertopia": "",
+    "econotopia": "",
+    "cubo33": ""
+  }
+}
