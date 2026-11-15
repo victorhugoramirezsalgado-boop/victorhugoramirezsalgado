@@ -1,0 +1,31 @@
+/* © 2026 Víctor Hugo Ramírez Salgado — currículum, diseño en tonos SOSistem™. Asistencia-IA. */
+:root{--naranja:#DB641C;--naranja-2:#F08A3E;--carbon:#1C1816;--tinta:#22201E;--mut:#5f5a55;--linea:#EADFD6;--suave:#FBF5F0}
+*{box-sizing:border-box}
+body{margin:0;background:#F4F1EE;color:var(--tinta);font:400 15px/1.55 Inter,"Segoe UI",Arial,sans-serif}
+.hoja{max-width:860px;margin:24px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(28,24,22,.10)}
+.cab{background:radial-gradient(600px 220px at 85% -40px,rgba(219,100,28,.35),transparent 70%),var(--carbon);color:#fff;padding:30px 34px 24px;position:relative}
+.cab:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--naranja),var(--naranja-2))}
+.cab .eti{display:inline-block;font:600 11px Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja-2);margin-bottom:8px}
+.cab h1{font:800 clamp(26px,5vw,36px)/1.1 Inter,Arial,sans-serif;margin:0;letter-spacing:-.01em}
+.cab h1 sup{font-size:.45em;color:var(--naranja-2);font-weight:700;margin-left:4px}
+.cab .rol{font-weight:600;color:#F3D7C2;margin:8px 0 6px}
+.cab .datos{font-size:13px;color:#cfc8c2}.cab .datos a{color:#fff}
+.cuerpo{padding:8px 34px 30px}
+h2{font:700 13px Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--carbon);margin:26px 0 10px;padding-left:10px;border-left:4px solid var(--naranja)}
+p{margin:4px 0}ul{padding-left:18px;margin:4px 0}li{margin:0 0 6px}li::marker{color:var(--naranja)}
+strong{color:var(--carbon)}
+a{color:#B4500F}
+table{width:100%;border-collapse:collapse;margin:6px 0;font-size:13px;table-layout:fixed}
+td,th{border-bottom:1px solid var(--linea);padding:5px 6px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{color:#8a4a1a;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--suave)}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums;width:128px}
+td.fec{white-space:nowrap;color:var(--mut);width:92px}
+.ref{padding-left:2em;text-indent:-2em;margin:0 0 8px;font-size:14px;list-style:none}
+.refs{padding-left:0}
+.nota{font-size:12px;color:var(--mut)}
+.pie{text-align:center;font-size:12px;color:var(--mut);padding:14px 20px 22px;border-top:1px solid var(--linea)}
+.acciones{display:flex;gap:8px;justify-content:flex-end;max-width:860px;margin:14px auto -8px;padding:0 4px}
+.acciones a,.acciones button{font:600 12px Inter,Arial,sans-serif;padding:7px 14px;border-radius:999px;border:1px solid var(--naranja);background:#fff;color:var(--naranja);text-decoration:none;cursor:pointer}
+@media (max-width:600px){.hoja{margin:10px 8px;border-radius:8px}.cab{padding:22px 18px 18px}.cuerpo{padding:4px 16px 22px}td.num{width:104px}td.fec{display:none}table{font-size:12px}body{font-size:14.5px}}
+@media print{@page{size:letter;margin:12mm}body{background:#fff;font-size:11px}.hoja{box-shadow:none;margin:0;max-width:none;border-radius:0}.acciones{display:none}.cab{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2{break-after:avoid}li,tr{break-inside:avoid}}
+@media (max-width:600px){.acciones{justify-content:center;flex-wrap:wrap;margin:10px 8px 0}.acciones a,.acciones button{font-size:11px;padding:5px 10px}}

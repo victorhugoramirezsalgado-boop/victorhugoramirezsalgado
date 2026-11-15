@@ -14,7 +14,7 @@ function vista(k,v){
  const [g,n,d,i,t,r,f,tit,desde,vis,s]=P[k], m=MAS[k];
  const izq=`<div class="cap">${g}</div><div class="img">${I[i]}</div><h3>${n}</h3><div class="dom">${d}</div><div class="dom">desde ${desde}</div>${fotoObra(n,'foto-pag')}<p class="abrir">Toca esta página para abrir la obra completa ›</p><span class="folio">${k*2+1}</span>`;
  if(v==='a') return [izq,`${CLIP}<p>${t}</p>
-  <table class="ficha"><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr></table>
+  <table class="ficha"><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Clave del proyecto</th><td>${CLAVE[n]}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr></table>
   <p class="apa-t">Referencia (APA 7.ª ed.)</p><p class="apa">${APA(r,f,tit)}</p>
   <div class="acciones"><button class="btn" data-mas>Ver más ›</button><a class="btn ghost" href="${paginaObra(k)}">Abrir obra</a><a class="btn ghost" href="${s}">Apoyar</a></div><span class="folio">${k*2+2}</span>`];
  return [izq,`${CLIP}<p class="apa-t">Más sobre la obra</p><p>${m.t}</p>

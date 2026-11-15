@@ -65,7 +65,7 @@ function htmlObra(k){
 <div class="portada"><div class="cap">${g}</div><div class="img">${I[i]}</div><h1>${n}</h1><div class="dom">${d} · desde ${desde}</div>${fotoObra(n,"foto-grande")}</div>
 <div class="texto"><p>${t}</p><p>${m.t}</p></div>
 <h2>Ficha de registro</h2>
-<table class="ficha"><tr><th>Obra registrada</th><td><i>${tit}</i></td></tr><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr><tr><th>Verificación</th><td><a href="https://www.safecreative.org/work/${r}" target="_blank" rel="noopener">safecreative.org/work/${r}</a></td></tr></table>
+<table class="ficha"><tr><th>Clave del proyecto</th><td>${CLAVE[n]}</td></tr><tr><th>Obra registrada</th><td><i>${tit}</i></td></tr><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr><tr><th>Verificación</th><td><a href="https://www.safecreative.org/work/${r}" target="_blank" rel="noopener">safecreative.org/work/${r}</a></td></tr></table>
 <h2>Referencia (APA 7.ª ed.)</h2>
 <p class="apa">Ramírez Salgado, V. H. (${anio(f)}). <i>${tit}</i> [Obra registrada n.º ${r}]. Safe Creative. https://www.safecreative.org/work/${r}</p>
 <h2>Obras relacionadas</h2><ul class="lista">${m.rel.map(([o,num])=>`<li><span>${o}</span><span>${num}</span></li>`).join('')}</ul>
@@ -90,3 +90,8 @@ I['logo-uno']=`<span class="logo-c"><img class="logo-obra" src="${RAIZ}logos/uno
  const par=P.map((p,i)=>[p,MAS[i]]); par.sort((a,b)=>ORDEN.indexOf(a[0][1])-ORDEN.indexOf(b[0][1]));
  P.length=0;MAS.length=0;par.forEach(([p,m])=>{P.push(p);MAS.push(m)});
 })();
+
+// Clave interna de cada proyecto (letra + número, en el orden del estante) para identificar apoyos y constancias
+const CLAVE={};P.forEach((p,i)=>{CLAVE[p[1]]=String.fromCharCode(65+i)+(i+1)});
+// El botón «Apoyar» lleva la clave del proyecto a Stripe (client_reference_id) para saber a qué obra fue el apoyo
+P.forEach(p=>{if(p[10]&&p[10].includes('buy.stripe.com'))p[10]=p[10].split('?')[0]+'?client_reference_id='+CLAVE[p[1]]});

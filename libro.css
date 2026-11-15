@@ -327,3 +327,8 @@ body.biblioteca .idioma-sel option{color:#2A2117}
 .cv-fila .nav{padding:4px 10px;font-size:12px}
 .pie .mini{font-size:11px;opacity:.8}
 @media (max-width:600px){.idioma-sel{max-width:96px;padding:5px 6px}}
+.tabla tr.cab td{font-weight:600;color:var(--acento);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tabla td.c{font-weight:600;color:var(--acento);white-space:nowrap;width:44px}
+.compromisos{margin:0 0 16px;padding-left:18px;text-align:left}
+.compromisos li{margin:0 0 8px}
+@media (max-width:600px){.wrap{padding:0 12px}.constancia{padding:22px 14px 18px}.constancia:before{inset:6px}.tabla td{padding:4px 2px}}

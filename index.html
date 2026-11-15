@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://victorhugoramirezsalgado.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="fuentes.js?v=2026-11-15p"></script>
-<link rel="stylesheet" href="libro.css?v=2026-11-15p">
+<script src="fuentes.js?v=2026-11-15q"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-15q">
 </head>
 <body class="biblioteca">
 <div class="libreria" aria-hidden="true"></div>
@@ -50,6 +50,11 @@
 <p class="subt">Si gusta apoyar alguna obra o proyecto, puede hacerlo desde aquí</p>
 <div class="apoyo">
  <p>Los apoyos se reciben a través de <b>Stripe</b>, una plataforma de pagos segura: los datos de su tarjeta los procesa Stripe con cifrado y nunca pasan por este sitio. Elija el proyecto que desea apoyar; cualquier duda, escríbanos en <a href="#contacto">Contacto</a>.</p>
+ <ul class="compromisos">
+  <li><b>Constancia de apoyo firmada.</b> Por cada aportación recibirá, en un máximo de 5 días hábiles, una constancia digital con folio consecutivo, la clave del proyecto apoyado y la firma digital de Víctor Hugo Ramírez Salgado, autor y titular de las obras.</li>
+  <li><b>Seguimiento por correo.</b> Recibirá un reporte ejecutivo mensual del avance del proyecto: 12 meses por su primer apoyo y 6 meses más por cada apoyo adicional.</li>
+  <li><b>Su aportación suma.</b> Cada apoyo se destina a que los proyectos lleguen a su correcta ejecución, en beneficio de las personas y de la comunidad.</li>
+ </ul>
  <div class="apoyo-b"><a class="btn" href="https://buy.stripe.com/28E5kF7c9dQwcDvgh4g7e05" target="_blank" rel="noopener">SOSistem™</a><a class="btn" href="https://buy.stripe.com/cNifZj0NLeUAdHz8OCg7e07" target="_blank" rel="noopener">Intertopía©</a><a class="btn" href="https://buy.stripe.com/9B64gBfIF13K0UNe8Wg7e08" target="_blank" rel="noopener">Econotopía©</a><a class="btn" href="https://buy.stripe.com/28E00l1RPeUAdHz1mag7e09" target="_blank" rel="noopener">Cubo 33©</a><a class="btn" href="https://buy.stripe.com/7sYeVf3ZX7s85b34ymg7e06" target="_blank" rel="noopener">Investigación y propuestas</a><a class="btn ghost" href="https://buy.stripe.com/dRm00laol13K8nfd4Sg7e04" target="_blank" rel="noopener">SOS767</a></div>
 </div>
 
@@ -73,11 +78,12 @@
 </footer>
 
 
-<script src="obras.js?v=2026-11-15p"></script>
-<script src="lector.js?v=2026-11-15p"></script>
+<script src="obras.js?v=2026-11-15q"></script>
+<script src="lector.js?v=2026-11-15q"></script>
 <script>
 const R=[["Intertopía©", "2602144563892", "feb 2026"], ["1ntertopía©", "2606096034080", "jun 2026"], ["Sistema S.O.S.©", "2609046908578", "sep 2026"], ["ContenedorEns© (nombre y logo)", "2609046908752", "sep 2026"], ["Arsa Bodegas© (nombre y logo)", "2609046908806", "sep 2026"], ["Econotopía©", "2610077261709", "oct 2026"], ["CuboPY©", "2610097275281", "oct 2026"], ["Código Cúbico© · Código de comunicación del Cubo (33)©", "2610097276721", "oct 2026"], ["Cubo Interior©", "2610097277049", "oct 2026"], ["Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)", "2610097277155", "9 oct 2026"], ["Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva", "2610097277377", "9 oct 2026"], ["Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara", "2610097277568", "9 oct 2026"], ["Cubo Morse©", "2610257441754", "25 oct 2026"], ["SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)", "2610257442171", "25 oct 2026"], ["SOSistem™ versiones 3.9 a 6.6", "2610317507284", "31 oct 2026"], ["Econotopía© 2.0 · sistema de comunicación del Cubo", "2610317507307", "31 oct 2026"], ["Estructura y Validación mediante Código Omnigráfico© (definitivo)", "2610317507444", "31 oct 2026"], ["S.S.O.S.© expediente técnico y modelo de negocio", "2610317507475", "31 oct 2026"], ["Sensor híper inteligente SOSistem™ (documento de diseño)", "2610317507499", "31 oct 2026"], ["Registro mundial de naufragios (propuesta CIP/OMI)", "2610317507550", "31 oct 2026"], ["Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)", "2610317507741", "31 oct 2026"], ["Cartera de dominios y sitios web del autor", "2611017524083", "1 nov 2026"], ["Cartera de dominios del autor · variantes técnicas sin tilde (intertopia.com, 1ntertopia.com, econotopia.com)", "2611037540810", "3 nov 2026"], ["Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)", "2611097590053", "9 nov 2026"], ["Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma", "2611097590138", "9 nov 2026"]];
-document.getElementById('total-reg').textContent=R.length;document.getElementById('tabla').innerHTML=R.map(([o,n,f],i)=>`<tr><td class="n">${i+1}</td><td>${o}</td><td>${n}</td><td class="f">${f}</td></tr>`).join('');
+const claveReg=(o,n)=>{const p=P.find(p=>p[5]===n);if(p)return CLAVE[p[1]];if(/S\.O\.S|SOSistem/.test(o))return CLAVE['SOSistem™'];if(/Econotop/.test(o))return CLAVE['Econotopía©'];if(/Omnigr/.test(o))return CLAVE['Código Cúbico©'];if(/Cubo Interior/.test(o))return CLAVE['Cubo Interior©'];return '—'};
+document.getElementById('total-reg').textContent=R.length;document.getElementById('tabla').innerHTML='<tr class="cab"><td class="n">#</td><td>Obra</td><td class="c">Clave</td><td>Safe Creative</td><td class="f">Fecha</td></tr>'+R.map(([o,n,f],i)=>`<tr><td class="n">${i+1}</td><td>${o}</td><td class="c">${claveReg(o,n)}</td><td>${n}</td><td class="f">${f}</td></tr>`).join('');
 
 // carpetas: sitios del autor y proyectos propuestos
 const SITIOS=[['Víctor Hugo Ramírez Salgado','victorhugoramirezsalgado.com','./','Biblioteca de obras · este sitio'],['ContenedorEns©','contenedorens.com','contenedorens/','Contenedores marítimos'],['Arsa Bodegas©','arsabodegas.com','https://arsabodegas.com','Mini bodegas · El Sauzal'],['SOSistem™','sosistem.com','https://sosistem.com','Sistema de alerta sin cámaras'],['SOS767','767sos.org · 767sos.com · sos767.com','sos767/','Número corto de auxilio 767'],['Intertopía©','intertopía.com · intertopia.com','intertopia/','Concepto ante la RAE'],['1ntertopía©','1ntertopía.com · 1ntertopia.com','intertopia/#valor','Generación de valor'],['Econotopía©','econotopía.com · econotopia.com','econotopia/','Sistema del Cubo'],['Cubo 33©','cubo33.com','cubo33/','Cubo de la Comunicación'],['Código Cúbico©','codigocubico.com','codigocubico/','Código del Cubo'],['Trazabilidad©','tcontenedores.com','tcontenedores/','Consulta ISO 6346'],['Panel de registros','victorhugoramirezsalgado.com/panel','panel/','Trayectoria, prensa e IMPI']];
@@ -90,6 +96,6 @@ t1.onclick=()=>set('a',1);t2.onclick=()=>set('b',1);
 let tm='b';try{tm=localStorage.getItem('vhrs-tema2')||'b'}catch(e){} if(location.hash.includes('biblioteca'))tm='b'; set(tm);
 </script>
 <script src="idiomas.js?v=2026-11-15a"></script>
-<script src="musica.js?v=2026-11-15p"></script>
+<script src="musica.js?v=2026-11-15q"></script>
 </body>
 </html>
