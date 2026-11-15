@@ -55,20 +55,6 @@
  <div class="pie-fin">© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Obras registradas en Safe Creative · SOSistem™ marca en trámite ante el IMPI (expediente 3741790).</div>
 </footer>
 
-<div class="musica" id="musica">
- <div class="musica-panel" role="dialog" aria-label="Música para leer">
-  <h4>Música para leer</h4>
-  <ol>
-   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Gibran%20Alcocer%20Idea%2010">Gibran Alcocer · Idea 10</a></li>
-   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Gibran%20Alcocer%20Idea%2012">Gibran Alcocer · Idea 12</a></li>
-   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Gibran%20Alcocer%20Idea%2022">Gibran Alcocer · Idea 22</a></li>
-   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Yann%20Tiersen%20Am%C3%A9lie">Yann Tiersen · <i>Amélie</i> (banda sonora)</a></li>
-   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Hans%20Zimmer%20Interstellar">Hans Zimmer · <i>Interstellar</i> (banda sonora)</a></li>
-  </ol>
-  <small>Se escucha en la plataforma oficial; los derechos son de sus autores y disqueras.</small>
- </div>
- <button class="musica-btn" id="musica-btn" aria-expanded="false">♪ Música</button>
-</div>
 
 <script src="obras.js?v=2026-11-15b"></script>
 <script src="lector.js?v=2026-11-15b"></script>
@@ -78,7 +64,7 @@ document.getElementById('tabla').innerHTML=R.map(([o,n])=>`<tr><td>${o}</td><td>
 const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');try{localStorage.setItem('vhrs-tema',t)}catch(e){}};
 t1.onclick=()=>set('a');t2.onclick=()=>set('b');
 let tm='a';try{tm=localStorage.getItem('vhrs-tema')||'a'}catch(e){} if(location.hash.includes('biblioteca'))tm='b'; set(tm);
-const mb=document.getElementById('musica-btn');mb.onclick=()=>{const a=document.getElementById('musica').classList.toggle('abierta');mb.setAttribute('aria-expanded',a)};
 </script>
+<script src="musica.js?v=2026-11-15a"></script>
 </body>
 </html>
