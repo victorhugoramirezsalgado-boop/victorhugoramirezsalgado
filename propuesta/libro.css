@@ -147,3 +147,34 @@ body.ampliado .puntos,body.ampliado .ayuda{display:none}
  .pag.izq{padding:26px 20px 36px}.pag .img{width:30%}.pag.der{padding:40px 22px 46px}
  .intro h1{font-size:34px}
 }
+/* estante de libros (portada) */
+.estante{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 24px;margin:6px auto 10px;perspective:1600px}
+.tapa{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:262px;padding:24px 18px 30px 34px;background:var(--papel);border-radius:3px 9px 9px 3px;box-shadow:var(--sombra),inset 0 0 0 1px var(--linea);cursor:pointer;text-align:center;transition:transform .35s,box-shadow .35s;transform-origin:left center}
+.tapa:before{content:"";position:absolute;left:0;top:0;bottom:0;width:16px;border-radius:3px 0 0 3px;background:linear-gradient(90deg,#6F552E,var(--acento) 60%,#6F552E);box-shadow:inset -2px 0 3px rgba(0,0,0,.25)}
+.tapa:after{content:"";position:absolute;left:26px;right:10px;top:10px;bottom:10px;border:1px solid var(--linea);border-radius:2px;pointer-events:none}
+.tapa:hover,.tapa:focus-visible{transform:translateY(-6px) rotateY(-8deg);box-shadow:0 22px 40px rgba(0,0,0,.28),inset 0 0 0 1px var(--luz);outline:none}
+.tapa .cap{font:600 10px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--acento)}
+.tapa .img{color:var(--acento);width:46%;margin:4px auto}
+.tapa h3{font:600 25px/1.05 "Cormorant Garamond",Georgia,serif;margin:4px 0 0;color:var(--tinta)}
+.tapa .dom{font:italic 500 15px "Cormorant Garamond",Georgia,serif;color:var(--mut)}
+.tapa .reg{font-size:11px;color:var(--mut);letter-spacing:.02em;margin-top:4px}
+.tapa .num{position:absolute;right:18px;bottom:12px;font:italic 500 14px "Cormorant Garamond",Georgia,serif;color:var(--mut)}
+.tapa .clip{top:-14px;right:22px;height:52px}
+.lector{display:none}
+body.ampliado .lector{display:flex}
+/* pie de página */
+.pie{position:relative;z-index:1;margin-top:60px;padding:40px 22px 26px;background:rgba(43,38,32,.05);border-top:1px solid var(--linea)}
+body.biblioteca .pie{background:rgba(0,0,0,.22);border-top-color:#4A5E52;color:#D9CBA8}
+.pie-in{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;font-size:13.5px;text-align:left}
+.pie h4{font:600 20px "Cormorant Garamond",Georgia,serif;margin:0 0 8px;color:var(--titulo)}
+.pie p{margin:0 0 8px;line-height:1.7}
+.pie a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}
+.pie a:hover{color:var(--luz)}
+.pie-fin{max-width:1000px;margin:26px auto 0;padding-top:16px;border-top:1px solid var(--linea);font-size:12px;text-align:center;color:var(--mut)}
+body.biblioteca .pie-fin{color:#BFAF8C;border-top-color:#4A5E52}
+@media (max-width:900px){.estante{grid-template-columns:repeat(2,1fr)}.pie-in{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){
+ .estante{gap:16px 12px}.tapa{min-height:196px;padding:16px 8px 22px 22px}.tapa:before{width:11px}.tapa:after{left:18px;right:6px;top:6px;bottom:6px}
+ .tapa h3{font-size:18px}.tapa .dom{font-size:12.5px}.tapa .reg{font-size:9.5px}.tapa .cap{font-size:8.5px}.tapa .img{width:52%}
+ .pie-in{grid-template-columns:1fr}.intro{padding:6px 0 16px}.intro h1{font-size:30px}.intro p{font-size:14px}
+}

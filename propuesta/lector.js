@@ -35,7 +35,7 @@ function pinta(){
  document.getElementById('ant').disabled=k<0&&v==='a';
  document.getElementById('sig').disabled=k===P.length-1&&v==='b';
  [...puntos.children].forEach((x,i)=>x.classList.toggle('on',i===k+1));
- history.replaceState(null,'',(location.hash.includes('biblioteca')?'#biblioteca':'')+(k>=0?`${location.hash.includes('biblioteca')?'&':'#'}obra-${k+1}`:''));
+ if(document.body.classList.contains('ampliado')||k>=0&&m) history.replaceState(null,'',(location.hash.includes('biblioteca')?'#biblioteca':'')+(k>=0?`${location.hash.includes('biblioteca')?'&':'#'}obra-${k+1}`:''));
 }
 function ir(nk,nv,dir){
  if(nk===k&&nv===v)return;
@@ -57,9 +57,16 @@ L.onclick=e=>{
  if(t.classList.contains('izq')&&k>=0)location.href=paginaObra(k);
 };
 const amp=document.getElementById('ampliar');
-const ampliar=on=>{document.body.classList.toggle('ampliado',on);amp.textContent=on?'‹ Regresar':'⤢ Ampliar';amp.setAttribute('aria-pressed',on)};
-amp.onclick=()=>ampliar(!document.body.classList.contains('ampliado'));
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')sig();if(e.key==='ArrowLeft')ant();if(e.key==='Escape')ampliar(false)});
+const ampliar=on=>{document.body.classList.toggle('ampliado',on);if(!on)history.replaceState(null,'',location.hash.includes('biblioteca')?'#biblioteca':location.pathname)};
+amp.onclick=()=>ampliar(false);
+// estante: cada obra como libro cerrado; al tocarlo se abre el libro en esa obra
+const est=document.getElementById('estante');
+est.innerHTML=P.map(([g,n,d,i,t,r],k)=>`<article class="tapa" tabindex="0" data-k="${k}" aria-label="Abrir ${n}">${k%3===1?CLIP:''}<div class="cap">${g}</div><div class="img">${I[i]}</div><h3>${n}</h3><div class="dom">${d}</div><div class="reg">Safe Creative n.º ${r}</div><span class="num">${k+1}</span></article>`).join('');
+const abrir=nk=>{k=nk;v='a';ampliar(true);pinta()};
+est.onclick=e=>{const t=e.target.closest('.tapa');if(t)abrir(+t.dataset.k)};
+est.onkeydown=e=>{const t=e.target.closest('.tapa');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();abrir(+t.dataset.k)}};
+document.addEventListener('keydown',e=>{if(!document.body.classList.contains('ampliado'))return;if(e.key==='ArrowRight')sig();if(e.key==='ArrowLeft')ant();if(e.key==='Escape')ampliar(false)});
 let x0=null;L.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
 L.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60)(dx<0?sig:ant)();x0=null});
 pinta();
+if(m)ampliar(true);
