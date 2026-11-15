@@ -12,7 +12,7 @@ function vista(k,v){
           `<ol class="indice-l">${lis}</ol>`];
  }
  const [g,n,d,i,t,r,f,tit,desde,vis,s]=P[k], m=MAS[k];
- const izq=`<div class="cap">${g}</div><div class="img">${I[i]}</div><h3>${n}</h3><div class="dom">${d}</div><div class="dom">desde ${desde}</div><p class="abrir">Toca esta página para abrir la obra completa ›</p><span class="folio">${k*2+1}</span>`;
+ const izq=`<div class="cap">${g}</div><div class="img">${I[i]}</div><h3>${n}</h3><div class="dom">${d}</div><div class="dom">desde ${desde}</div>${fotoObra(n,'foto-pag')}<p class="abrir">Toca esta página para abrir la obra completa ›</p><span class="folio">${k*2+1}</span>`;
  if(v==='a') return [izq,`${CLIP}<p>${t}</p>
   <table class="ficha"><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr></table>
   <p class="apa-t">Referencia (APA 7.ª ed.)</p><p class="apa">${APA(r,f,tit)}</p>
@@ -61,7 +61,7 @@ const ampliar=on=>{document.body.classList.toggle('ampliado',on);if(!on)history.
 amp.onclick=()=>ampliar(false);
 // estante: cada obra como libro cerrado; al tocarlo se abre el libro en esa obra
 const est=document.getElementById('estante');
-est.innerHTML=P.map(([g,n,d,i,t,r],k)=>`<article class="tapa" tabindex="0" data-k="${k}" aria-label="Abrir ${n}">${k%3===1?CLIP:''}<div class="cap">${g}</div><div class="img">${I[i]}</div><h3>${n}</h3><div class="dom">${d}</div><div class="reg">Safe Creative n.º ${r}</div><span class="num">${k+1}</span></article>`).join('');
+est.innerHTML=P.map(([g,n,d,i,t,r],k)=>`<article class="tapa" tabindex="0" data-k="${k}" aria-label="Abrir ${n}">${k%3===1?CLIP:''}<div class="cap">${g}</div><div class="img">${I[i]}</div><h3>${n}</h3><div class="dom">${d}</div><div class="reg">Safe Creative n.º ${r}</div>${fotoObra(n)}<span class="num">${k+1}</span></article>`).join('');
 const abrir=nk=>{k=nk;v='a';ampliar(true);pinta()};
 est.onclick=e=>{const t=e.target.closest('.tapa');if(t)abrir(+t.dataset.k)};
 est.onkeydown=e=>{const t=e.target.closest('.tapa');if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault();abrir(+t.dataset.k)}};

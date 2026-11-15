@@ -62,7 +62,7 @@ const slugObra=n=>n.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[©™]/g,'
 function htmlObra(k){
  const [g,n,d,i,t,r,f,tit,desde,vis,s]=P[k], m=MAS[k];
  return `${CLIP}
-<div class="portada"><div class="cap">${g}</div><div class="img">${I[i]}</div><h1>${n}</h1><div class="dom">${d} · desde ${desde}</div></div>
+<div class="portada"><div class="cap">${g}</div><div class="img">${I[i]}</div><h1>${n}</h1><div class="dom">${d} · desde ${desde}</div>${fotoObra(n,"foto-grande")}</div>
 <div class="texto"><p>${t}</p><p>${m.t}</p></div>
 <h2>Ficha de registro</h2>
 <table class="ficha"><tr><th>Obra registrada</th><td><i>${tit}</i></td></tr><tr><th>Registro</th><td>Safe Creative n.º ${r}</td></tr><tr><th>Fecha de registro</th><td>${f}</td></tr><tr><th>Autor y titular</th><td>Víctor Hugo Ramírez Salgado (100 %)</td></tr><tr><th>Derechos</th><td>Todos los derechos reservados</td></tr><tr><th>Verificación</th><td><a href="https://www.safecreative.org/work/${r}" target="_blank" rel="noopener">safecreative.org/work/${r}</a></td></tr></table>
@@ -76,4 +76,7 @@ function htmlObra(k){
 // Logotipos reales de cada obra (del repositorio de SOSistem™); las obras sin logotipo propio conservan su ícono de línea.
 const LOGO={'ContenedorEns©':'cont','Arsa Bodegas©':'arsa','Intertopía©':'inter','Econotopía©':'eco','Cubo 33©':'cubo33','Código Cúbico©':'ccub','Cubo Morse©':'cmor','Cubo Interior©':'cint','CuboPY©':'cpy','SOSistem™':'sos'};
 const RAIZ=(document.currentScript&&document.currentScript.src.includes('/propuesta/'))?'../':'';
-P.forEach(p=>{const l=LOGO[p[1]];if(l)I['logo-'+l]=`<img class="logo-obra" src="${RAIZ}logos/${l}.svg" alt="Logotipo de ${p[1]}" loading="lazy">`,p[3]='logo-'+l});
+P.forEach(p=>{const l=LOGO[p[1]];if(l)I['logo-'+l]=`<span class="logo-c"><img class="logo-obra" src="${RAIZ}logos/${l}.svg" alt="Logotipo de ${p[1]}" loading="lazy"><sup>${p[1].includes('™')?'™':'©'}</sup></span>`,p[3]='logo-'+l});
+// Imagen real de lo que se ve en cada obra (fotos de Arsa Bodegas©, capturas de las herramientas y figuras de SOSistem™)
+const FOTO={'ContenedorEns©':['contenedorens.jpg','Contenedor marítimo abierto'],'Arsa Bodegas©':['arsa.jpg','Hilera de mini bodegas en contenedores, El Sauzal'],'Trazabilidad de contenedores©':['trazabilidad.jpg','Puertas de contenedor con su número ISO 6346'],'Intertopía©':['intertopia.jpg','Gráfica del valor intertópico'],'Econotopía©':['econotopia.svg','Desarrollo del Cubo con la familia de obras'],'Cubo 33©':['cubo33.jpg','Cara del Cubo A–Z de 26 × 26'],'Cubo de Aprendizaje©':['aprende.jpg','Cubo de Aprendizaje en uso'],'Código Cúbico©':['codigo.jpg','Mensaje convertido en Código Cúbico'],'Lector Cúbico©':['codigo.jpg','Código Cúbico listo para leerse'],'Mensajero del Cubo':['mensajero.jpg','Mensajero del Cubo'],'Teclado Cubo©':['mensajero.jpg','Escritura en el formato del Cubo'],'Cubo Morse©':['morse.jpg','Cubo Morse en uso'],'Cubo Interior©':['interior.svg','Desarrollo interior del Cubo'],'SOSistem™':['sosistem.svg','Prototipo de sensores SOSistem™'],'Sensor SOSistem™':['sensor.svg','Nodo cúbico de 17 sensores']};
+const fotoObra=(n,cls)=>{const f=FOTO[n];return f?`<img class="${cls||'foto-obra'}" src="${RAIZ}fotos/${f[0]}" alt="${f[1]}" loading="lazy">`:''};

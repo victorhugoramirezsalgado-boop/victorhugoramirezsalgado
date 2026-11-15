@@ -270,3 +270,14 @@ body.en-obra #vista-obra{display:block}
 @media (max-width:600px){.tapa .img:has(.logo-obra){width:50%}.logo-obra{border-radius:9px}}
 @media (max-width:600px){.tapa h3{font-size:13.5px;overflow-wrap:normal;letter-spacing:-.01em}.tapa{padding:12px 3px 18px 13px}.estante{gap:12px 7px}}
 @media (max-width:600px){.tapa h3{overflow-wrap:break-word}}
+/* logotipos en tono de la biblioteca (el original a color queda en la página propia de cada proyecto) y foto real */
+.logo-c{position:relative;display:inline-block}
+.logo-c sup{position:absolute;right:-12px;top:-4px;font:600 11px var(--f-txt);color:var(--acento)}
+.logo-obra{max-width:64px;border-radius:12px;filter:grayscale(1) sepia(.75) saturate(.9) brightness(1.02) contrast(.92);opacity:.9;box-shadow:none}
+.tapa .img:has(.logo-obra){width:auto}
+.pag .img:has(.logo-obra){width:auto;max-width:none}.pag .logo-obra{max-width:96px}
+.obra .img:has(.logo-obra){width:auto}.obra .logo-obra{max-width:96px}
+.foto-obra{display:block;width:100%;height:64px;object-fit:cover;border-radius:3px;margin:8px 0 4px;border:1px solid var(--linea);filter:sepia(.25) saturate(.85)}
+.foto-pag{display:block;width:78%;max-height:150px;object-fit:cover;margin:10px auto 0;border-radius:4px;border:1px solid var(--linea);filter:sepia(.2) saturate(.9)}
+.foto-grande{display:block;width:100%;max-height:300px;object-fit:cover;margin:16px 0 0;border-radius:6px;border:1px solid var(--linea)}
+@media (max-width:600px){.logo-obra{max-width:40px;border-radius:8px}.logo-c sup{font-size:9px;right:-9px}.foto-obra{height:40px;margin:5px 0 2px}.tapa .reg{display:none}.foto-pag{max-height:110px}}
