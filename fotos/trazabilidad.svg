@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Trazabilidad de contenedores©: un contenedor sale de Ensenada por mar a Long Beach y regresa por la frontera; cada salida resta 1 y cada entrada suma 1 al país">
+<title>Trazabilidad de contenedores© · © Víctor Hugo Ramírez Salgado</title>
+<rect width="640" height="360" fill="#FBF7EE"/>
+<rect x="8" y="8" width="332" height="344" rx="10" fill="#DCE9EE"/>
+<clipPath id="m"><rect x="8" y="8" width="332" height="344" rx="10"/></clipPath>
+<g clip-path="url(#m)">
+ <path d="M206 0 C196 50 214 100 210 150 C206 200 222 260 236 300 C244 330 246 350 250 360 L340 360 L340 0 Z" fill="#EFE6D2" stroke="#CDBB93" stroke-width="1.5"/>
+ <line x1="210" y1="170" x2="340" y2="170" stroke="#9C5B3C" stroke-width="2.5" stroke-dasharray="7 5"/>
+ <text x="334" y="160" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#2F5C8A">EUA ▲</text>
+ <text x="334" y="190" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#2E6B4F">MX ▼</text>
+ <text x="22" y="132" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#5C7A88" letter-spacing="1.5">OCÉANO<tspan x="22" dy="17">PACÍFICO</tspan></text>
+ <polyline points="228,298 150,250 132,130 192,62" fill="none" stroke="#2F5C8A" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+ <polyline points="192,62 262,104 280,170 268,238 228,298" fill="none" stroke="#8A6A3B" stroke-width="3" stroke-dasharray="9 6" stroke-linecap="round"/>
+ <text x="60" y="200" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" fill="#2F5C8A">por mar</text>
+ <text x="336" y="262" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#8A6A3B">por tierra</text>
+ <circle cx="192" cy="62" r="8" fill="#2F5C8A" stroke="#fff" stroke-width="2.5"/>
+ <text x="180" y="48" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" fill="#2B2620">Long Beach</text>
+ <circle cx="228" cy="298" r="8" fill="#2E6B4F" stroke="#fff" stroke-width="2.5"/>
+ <text x="214" y="326" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" fill="#2B2620">Ensenada</text>
+ <rect x="272" y="162" width="16" height="16" rx="3" fill="#9C5B3C" stroke="#fff" stroke-width="2"/>
+ <g>
+  <g transform="translate(-15,-9)"><rect width="30" height="18" rx="2" fill="#C8642E" stroke="#7A3A17" stroke-width="1.5"/><path d="M6 3v12M11 3v12M16 3v12M21 3v12M26 3v12" stroke="#7A3A17" stroke-width="1.2"/></g>
+  <animateMotion dur="14.0s" repeatCount="indefinite" path="M228,298 L150,250 L132,130 L192,62 L262,104 L280,170 L268,238 L228,298" keyPoints="0;0;0.5104;0.5104;1;1" keyTimes="0;0.06;0.42;0.54;0.94;1" calcMode="linear"/>
+ </g>
+</g>
+<text x="356" y="44" font-family="Georgia,serif" font-size="23" font-weight="700" fill="#2B2620">Registro del contenedor</text>
+<text x="356" y="66" font-family="Inter,Arial,sans-serif" font-size="13.5" fill="#6E6457">Cada salida resta 1 · cada entrada suma 1</text>
+<g>
+ <rect x="356" y="88" width="268" height="42" rx="8" fill="#FBF7EE" stroke="#E2D3B4"/>
+ <rect x="356" y="88" width="268" height="42" rx="8" fill="#2E6B4F" opacity="0"><animate attributeName="opacity" values="0;.18;.18;0" keyTimes="0;.02;.25;.3" dur="14.0s" begin="0.84s" repeatCount="indefinite"/></rect>
+ <text x="370" y="116" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="800" fill="#2E6B4F">−1</text>
+ <rect x="398" y="97" width="36" height="24" rx="5" fill="#2E6B4F"/><text x="416" y="115" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#FBF7EE">MX</text>
+ <text x="444" y="115" font-family="Inter,Arial,sans-serif" font-size="16.5" font-weight="600" fill="#2B2620">Sale de Ensenada</text>
+</g><g>
+ <rect x="356" y="138" width="268" height="42" rx="8" fill="#FBF7EE" stroke="#E2D3B4"/>
+ <rect x="356" y="138" width="268" height="42" rx="8" fill="#2F5C8A" opacity="0"><animate attributeName="opacity" values="0;.18;.18;0" keyTimes="0;.02;.25;.3" dur="14.0s" begin="5.88s" repeatCount="indefinite"/></rect>
+ <text x="370" y="166" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="800" fill="#2F5C8A">+1</text>
+ <rect x="398" y="147" width="46" height="24" rx="5" fill="#2F5C8A"/><text x="421" y="165" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#FBF7EE">EUA</text>
+ <text x="454" y="165" font-family="Inter,Arial,sans-serif" font-size="16.5" font-weight="600" fill="#2B2620">Llega a Long Beach</text>
+</g><g>
+ <rect x="356" y="188" width="268" height="42" rx="8" fill="#FBF7EE" stroke="#E2D3B4"/>
+ <rect x="356" y="188" width="268" height="42" rx="8" fill="#2F5C8A" opacity="0"><animate attributeName="opacity" values="0;.18;.18;0" keyTimes="0;.02;.25;.3" dur="14.0s" begin="7.56s" repeatCount="indefinite"/></rect>
+ <text x="370" y="216" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="800" fill="#2F5C8A">−1</text>
+ <rect x="398" y="197" width="46" height="24" rx="5" fill="#2F5C8A"/><text x="421" y="215" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#FBF7EE">EUA</text>
+ <text x="454" y="215" font-family="Inter,Arial,sans-serif" font-size="16.5" font-weight="600" fill="#2B2620">Sale de Long Beach</text>
+</g><g>
+ <rect x="356" y="238" width="268" height="42" rx="8" fill="#FBF7EE" stroke="#E2D3B4"/>
+ <rect x="356" y="238" width="268" height="42" rx="8" fill="#2E6B4F" opacity="0"><animate attributeName="opacity" values="0;.18;.18;0" keyTimes="0;.02;.25;.3" dur="14.0s" begin="10.45s" repeatCount="indefinite"/></rect>
+ <text x="370" y="266" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="800" fill="#2E6B4F">+1</text>
+ <rect x="398" y="247" width="36" height="24" rx="5" fill="#2E6B4F"/><text x="416" y="265" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#FBF7EE">MX</text>
+ <text x="444" y="265" font-family="Inter,Arial,sans-serif" font-size="16.5" font-weight="600" fill="#2B2620">Cruza la frontera</text>
+</g>
+<rect x="356" y="302" width="268" height="40" rx="8" fill="#2C3A32"/>
+<text x="490" y="328" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#EADBB8">Saldo México: 0 · de regreso ✓</text>
+<text x="632" y="355" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="8.5" fill="#9A8E7C">© Víctor Hugo Ramírez Salgado</text>
+</svg>
