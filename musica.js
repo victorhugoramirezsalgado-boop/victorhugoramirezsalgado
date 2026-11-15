@@ -1,6 +1,7 @@
 /* © 2026 Víctor Hugo Ramírez Salgado — música de fondo suave para la biblioteca. Asistencia-IA.
    Se reproduce con el reproductor oficial de YouTube (videos publicados por cada disquera).
-   Empieza al primer toque en la página, con volumen 10 que sube poco a poco hasta 30.
+   Empieza al primer toque en la página, con volumen 2 que sube poco a poco hasta 30.
+   En iPhone y iPad el sistema no deja que una página baje el volumen, así que ahí solo suena al tocar ♪.
    Si el visitante la apaga, queda apagada en sus siguientes visitas. */
 (function(){
 const LISTA=[
@@ -10,7 +11,8 @@ const LISTA=[
  ['znfYwABeSZ0','Yann Tiersen','Comptine d’un autre été (Amélie)'],
  ['7GlsxNI4LVI','Hans Zimmer','Cornfield Chase (Interstellar)'],
  ['vPA6T0la6uI','Hans Zimmer','Day One (Interstellar)']];
-const VOL_INI=10, VOL_MAX=30, PASO_MS=2000;
+const VOL_INI=2, VOL_MAX=30, PASO_MS=4000; // empieza en 2 y sube 1 cada 4 s: llega a 30 en unos 2 minutos
+const IOS=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 let i=0, yt=null, listo=false, sonando=false, rampa=null, vol=VOL_INI;
 const leer=()=>{try{return localStorage.getItem('vhrs-musica')}catch(e){return null}};
 const guardar=v=>{try{localStorage.setItem('vhrs-musica',v)}catch(e){}};
@@ -41,11 +43,11 @@ window.onYouTubeIframeAPIReady=function(){
 let pendiente=false;
 function tocar(){if(!listo){pendiente=true;if(!yt&&!window.YT)cargar();return}pendiente=false;yt.setVolume(VOL_INI);yt.playVideo();subir();sonando=true;rotulo()}
 function detener(){if(yt&&listo)yt.pauseVideo();clearInterval(rampa);sonando=false;rotulo()}
-function siguiente(){i=(i+1)%LISTA.length;if(!yt)return;yt.loadVideoById(LISTA[i][0]);subir();rotulo()}
+function siguiente(){i=(i+1)%LISTA.length;if(!yt)return;yt.loadVideoById(LISTA[i][0]);yt.setVolume(vol);rotulo()}
 btn.onclick=e=>{e.stopPropagation();if(sonando){detener();guardar('off')}else{guardar('on');tocar()}};
 sigb.onclick=e=>{e.stopPropagation();siguiente()};
 // Los navegadores no dejan sonar música sin un toque: empieza al primer toque, suave, salvo que el visitante la haya apagado.
 cargar();
-const primerToque=e=>{if(e.target.closest&&e.target.closest('.mus'))return;document.removeEventListener('pointerdown',primerToque,true);document.removeEventListener('keydown',primerToque,true);if(leer()!=='off')tocar()};
+const primerToque=e=>{if(e.target.closest&&e.target.closest('.mus'))return;document.removeEventListener('pointerdown',primerToque,true);document.removeEventListener('keydown',primerToque,true);if(leer()!=='off'&&!IOS)tocar()};
 document.addEventListener('pointerdown',primerToque,true);document.addEventListener('keydown',primerToque,true);
 })();

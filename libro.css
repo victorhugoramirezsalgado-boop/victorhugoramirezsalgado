@@ -181,11 +181,7 @@ body.biblioteca .pie-fin{color:#BFAF8C;border-top-color:#4A5E52}
 }
 
 /* ajuste por tipo de pantalla — tableta, celular y celular chico */
-.vista-btn{font:500 12px var(--f-txt);padding:6px 10px;border-radius:999px;border:1px solid var(--linea);background:transparent;color:inherit;cursor:pointer;display:none}
-body.biblioteca .vista-btn{border-color:#4A5E52;color:#EADBB8}
-@media (max-width:1024px){.vista-btn{display:inline-block}}
-html.escritorio .vista-btn{display:inline-block}
-@media (min-width:1500px){.wrap{max-width:1100px}.lector{max-width:1100px}.tapa{min-height:290px}}
+body.biblioteca html.escritorio @media (min-width:1500px){.wrap{max-width:1100px}.lector{max-width:1100px}.tapa{min-height:290px}}
 @media (max-width:600px){
  header.top{gap:10px;padding:12px 0}
  .marca{font-size:17px;line-height:1.15;max-width:52%}
@@ -223,3 +219,28 @@ html.escritorio .vista-btn{display:inline-block}
 }
 .tapa h3,.tapa .dom{overflow-wrap:anywhere;hyphens:auto;max-width:100%}
 @media (max-width:600px){.tapa h3{font-size:15px}.tapa{padding-right:3px}}
+/* fichas y listas sin desbordarse; menos espacio vertical (15 nov 2026) */
+.ficha{table-layout:fixed}
+.ficha td,.ficha th,.lista li span,.lista a,.apa{overflow-wrap:anywhere;word-break:break-word}
+@media (max-width:600px){
+ body{line-height:1.5}
+ .ficha,.ficha tbody,.ficha tr,.ficha th,.ficha td{display:block;width:auto}
+ .ficha tr{padding:6px 0;border-bottom:1px dotted var(--linea)}
+ .ficha th{padding:0;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+ .ficha td{padding:1px 0 0;border:0}
+ .apa{padding-left:1.2em;text-indent:-1.2em}
+ .pag p{margin:0 0 8px}
+}
+body.ampliado .libro{flex-shrink:0}
+.lista li span:last-child{white-space:nowrap}
+@media (max-width:600px){
+ .lista li{flex-wrap:wrap;gap:2px 10px}
+ .lista li span:last-child{font-size:13px}
+ body.ampliado .lector{padding:10px 10px 70px}
+ body.ampliado .pag.izq{padding:18px 16px 26px;gap:4px}
+ body.ampliado .pag .img{width:24%}
+ body.ampliado .pag h3{font-size:26px}
+ body.ampliado .pag.der{padding:30px 18px 40px}
+ body.ampliado .barra{margin-bottom:8px}
+ .pag .abrir{margin-top:4px}
+}
