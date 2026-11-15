@@ -6,8 +6,8 @@
 <title>Obra · Víctor Hugo Ramírez Salgado</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="fuentes.js?v=2026-11-15i"></script>
-<link rel="stylesheet" href="libro.css?v=2026-11-15i">
+<script src="fuentes.js?v=2026-11-15k"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-15k">
 </head>
 <body>
 <div class="libreria" aria-hidden="true"></div>
@@ -19,7 +19,7 @@
 <article class="obra" id="obra"></article>
 <footer>© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados.</footer>
 </div>
-<script src="obras.js?v=2026-11-15i"></script>
+<script src="obras.js?v=2026-11-15k"></script>
 <script>
 let k=P.findIndex(p=>slugObra(p[1])===new URLSearchParams(location.search).get('id')); if(k<0)k=0;
 document.title=`${P[k][1]} · Víctor Hugo Ramírez Salgado`;
@@ -30,6 +30,6 @@ document.getElementById('volver').href=`./#obra-${k+1}`;
 const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');try{localStorage.setItem('vhrs-tema',t)}catch(e){}};
 t1.onclick=()=>set('a');t2.onclick=()=>set('b');let tm='a';try{tm=localStorage.getItem('vhrs-tema')||'a'}catch(e){}set(tm);
 </script>
-<script src="musica.js?v=2026-11-15i"></script>
+<script src="musica.js?v=2026-11-15k"></script>
 </body>
 </html>

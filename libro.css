@@ -263,3 +263,10 @@ body.biblioteca #vista-obra{background:linear-gradient(#34473C,#2C3A32 40%,#2633
 body.en-obra{overflow:hidden}
 body.en-obra #vista-obra{display:block}
 #vista-obra .migas{max-width:820px;margin:6px auto 10px}
+.logo-obra{display:block;width:100%;max-width:120px;height:auto;margin:0 auto;border-radius:14px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.12))}
+.tapa .img:has(.logo-obra){width:44%}
+.pag .img:has(.logo-obra){width:150px;max-width:40%}
+.obra .img:has(.logo-obra){width:130px}
+@media (max-width:600px){.tapa .img:has(.logo-obra){width:50%}.logo-obra{border-radius:9px}}
+@media (max-width:600px){.tapa h3{font-size:13.5px;overflow-wrap:normal;letter-spacing:-.01em}.tapa{padding:12px 3px 18px 13px}.estante{gap:12px 7px}}
+@media (max-width:600px){.tapa h3{overflow-wrap:break-word}}

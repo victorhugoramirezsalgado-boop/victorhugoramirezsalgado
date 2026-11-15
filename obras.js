@@ -73,3 +73,7 @@ function htmlObra(k){
 <div class="acciones" style="margin-top:22px"><a class="btn" href="${vis}">Visitar ${d.includes('.')?d:'la obra'}</a><a class="btn ghost" href="${s}">Apoyar</a></div>
 <span class="folio" style="right:30px">${k+1}</span>`;
 }
+// Logotipos reales de cada obra (del repositorio de SOSistem™); las obras sin logotipo propio conservan su ícono de línea.
+const LOGO={'ContenedorEns©':'cont','Arsa Bodegas©':'arsa','Intertopía©':'inter','Econotopía©':'eco','Cubo 33©':'cubo33','Código Cúbico©':'ccub','Cubo Morse©':'cmor','Cubo Interior©':'cint','CuboPY©':'cpy','SOSistem™':'sos'};
+const RAIZ=(document.currentScript&&document.currentScript.src.includes('/propuesta/'))?'../':'';
+P.forEach(p=>{const l=LOGO[p[1]];if(l)I['logo-'+l]=`<img class="logo-obra" src="${RAIZ}logos/${l}.svg" alt="Logotipo de ${p[1]}" loading="lazy">`,p[3]='logo-'+l});
