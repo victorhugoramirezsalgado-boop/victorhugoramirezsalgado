@@ -86,7 +86,7 @@ P.push(['Concepto y valor','1ntertopía©','1ntertopía.com','logo-uno','Sistema
 MAS.push({t:'1ntertopía© es una obra distinta de Intertopía©: toma el concepto del espacio entre la utopía y la distopía y lo lleva a la generación de valor, con un ciclo automático de inversión, reglas de riesgo y reparto de utilidades.',rel:[['Intertopía©','2602144563892'],['Econotopía©','2610317507307']],h:[['Gráfica del valor intertópico','intertopia/#valor']]});
 I['logo-uno']=`<span class="logo-c"><img class="logo-obra" src="${RAIZ}logos/uno.svg" alt="Logotipo de 1ntertopía©" loading="lazy"><sup>©</sup></span>`;
 (function(){
- const ORDEN=['ContenedorEns©','Arsa Bodegas©','Intertopía©','1ntertopía©','Econotopía©','CuboPY©','Código Cúbico©','Teclado Cubo©','Lector Cúbico©','Cubo de Aprendizaje©','Cubo Morse©','Mensajero del Cubo','Cubo Interior©','Cubo 33©','SOSistem™','Sensor SOSistem™','Trazabilidad de contenedores©','Registro mundial de naufragios'];
+ const ORDEN=['ContenedorEns©','Arsa Bodegas©','Intertopía©','SOSistem™','1ntertopía©','Econotopía©','CuboPY©','Código Cúbico©','Teclado Cubo©','Lector Cúbico©','Cubo de Aprendizaje©','Cubo Morse©','Mensajero del Cubo','Cubo Interior©','Cubo 33©','Sensor SOSistem™','Trazabilidad de contenedores©','Registro mundial de naufragios'];
  const par=P.map((p,i)=>[p,MAS[i]]); par.sort((a,b)=>ORDEN.indexOf(a[0][1])-ORDEN.indexOf(b[0][1]));
  P.length=0;MAS.length=0;par.forEach(([p,m])=>{P.push(p);MAS.push(m)});
 })();
