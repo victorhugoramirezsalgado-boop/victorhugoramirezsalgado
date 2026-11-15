@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Propuesta de diseño · Víctor Hugo Ramírez Salgado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* © 2026 Víctor Hugo Ramírez Salgado — propuesta de diseño de victorhugoramirezsalgado.com. Asistencia-IA. */
+:root{--bg:#F3EDE2;--papel:#FBF8F2;--tinta:#2B2620;--mut:#6E6457;--linea:#E2D8C7;--acento:#8A6A3B;--boton:#2B2620;--boton-t:#FBF8F2;--sello:#8A6A3B;--sombra:0 1px 2px rgba(43,38,32,.06)}
+body.biblioteca{--bg:#1F3A2E;--papel:#F4EBD8;--tinta:#2A2117;--mut:#6B5A42;--linea:#D9C9A8;--acento:#9C7A3C;--boton:#1F3A2E;--boton-t:#F4EBD8;--sello:#9C7A3C;--sombra:0 6px 18px rgba(0,0,0,.25)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tinta);font:400 16px/1.6 Inter,system-ui,sans-serif}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.marca{font:600 22px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:.04em;color:var(--tinta)}
+body.biblioteca .marca,body.biblioteca .intro h1,body.biblioteca .intro p,body.biblioteca h2.sec,body.biblioteca .subt{color:#EADBB8}
+.tema{display:flex;gap:6px}
+.tema button{font:500 13px Inter,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid var(--linea);background:var(--papel);color:var(--tinta);cursor:pointer}
+.tema button[aria-pressed=true]{background:var(--boton);color:var(--boton-t);border-color:var(--boton)}
+body.biblioteca .tema button{border-color:#3E5E4D}
+.intro{padding:44px 0 28px;text-align:center}
+.intro h1{font:600 clamp(36px,6vw,58px)/1.05 "Cormorant Garamond",Georgia,serif;margin:0}
+.intro p{color:var(--mut);max-width:56ch;margin:14px auto 0}
+.filete{width:64px;height:1px;background:var(--acento);margin:22px auto 0}
+h2.sec{font:600 30px/1.1 "Cormorant Garamond",Georgia,serif;margin:46px 0 6px;text-align:center}
+.subt{text-align:center;color:var(--mut);margin:0 0 22px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--papel);border:1px solid var(--linea);border-radius:14px;overflow:hidden;box-shadow:var(--sombra);display:flex;flex-direction:column}
+.card .img{aspect-ratio:16/10;display:grid;place-items:center;background:color-mix(in srgb,var(--acento) 8%,var(--papel));border-bottom:1px solid var(--linea)}
+.card .img svg{width:58%;height:auto}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font:600 22px/1.1 "Cormorant Garamond",Georgia,serif;margin:0}
+.card .dom{font-size:13px;color:var(--mut)}
+.reg{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px}
+.reg b{font-weight:600;color:var(--tinta);font-variant-numeric:tabular-nums}
+.acciones{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+.btn{flex:1;text-align:center;font:500 13px Inter,sans-serif;padding:9px 10px;border-radius:999px;text-decoration:none;border:1px solid var(--boton);background:var(--boton);color:var(--boton-t)}
+.btn.ghost{background:transparent;color:var(--tinta);border-color:var(--linea)}
+/* constancia */
+.constancia{max-width:760px;margin:0 auto;background:var(--papel);border:1px solid var(--linea);border-radius:6px;padding:34px 34px 28px;position:relative;box-shadow:var(--sombra)}
+.constancia:before{content:"";position:absolute;inset:10px;border:1px solid var(--linea);border-radius:3px;pointer-events:none}
+.constancia h3{font:600 30px/1.1 "Cormorant Garamond",Georgia,serif;text-align:center;margin:0}
+.constancia .quien{text-align:center;color:var(--mut);margin:6px 0 18px;font-size:14px}
+.tabla{width:100%;border-collapse:collapse;font-size:14px}
+.tabla td{padding:7px 4px;border-bottom:1px solid var(--linea)}
+.tabla td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sellos{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:22px}
+.sello{display:flex;align-items:center;gap:10px;border:1px solid var(--linea);border-radius:999px;padding:6px 14px 6px 6px;font-size:12px;color:var(--mut)}
+.sello svg{width:34px;height:34px}
+.nota{font-size:12px;color:var(--mut);text-align:center;margin-top:14px}
+/* diseños */
+.mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.mini figure{margin:0;background:var(--papel);border:1px solid var(--linea);border-radius:10px;padding:12px;text-align:center}
+.mini svg{width:70%;height:auto}
+.mini figcaption{font-size:12px;color:var(--mut);margin-top:6px}
+footer{padding:40px 0 50px;text-align:center;font-size:12px;color:var(--mut)}
+body.biblioteca footer{color:#BFAF8C}
+/* biblioteca: lámparas y estantes de fondo */
+body.biblioteca{background:radial-gradient(1200px 500px at 50% -120px,rgba(255,214,140,.22),transparent 60%),repeating-linear-gradient(90deg,rgba(0,0,0,.08) 0 2px,transparent 2px 120px),#1F3A2E}
+.lampara{display:none}
+body.biblioteca .lampara{display:block;margin:0 auto -6px;width:120px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="marca">Víctor Hugo Ramírez Salgado</div>
+<div class="tema" role="group" aria-label="Tema"><button id="t1" aria-pressed="true">Beige</button><button id="t2" aria-pressed="false">Biblioteca</button></div></header>
+
+<section class="intro">
+<svg class="lampara" viewBox="0 0 120 70" aria-hidden="true"><path d="M60 0v14" stroke="#C9A55A" stroke-width="2"/><path d="M30 40 L45 14 H75 L90 40 Z" fill="#2E6B4E" stroke="#C9A55A" stroke-width="2"/><rect x="56" y="40" width="8" height="18" fill="#C9A55A"/><ellipse cx="60" cy="62" rx="22" ry="5" fill="#C9A55A"/><ellipse cx="60" cy="44" rx="40" ry="10" fill="rgba(255,214,140,.25)"/></svg>
+<h1>Obras, sistemas y registros</h1>
+<p>Proyectos de autoría de Víctor Hugo Ramírez Salgado, cada uno con su registro en Safe Creative, su página y la forma de apoyarlo.</p>
+<div class="filete"></div>
+</section>
+
+<h2 class="sec">Proyectos</h2>
+<p class="subt">Imagen, registro, visita y apoyo</p>
+<div class="grid" id="grid"></div>
+
+<h2 class="sec">Constancia de obras registradas</h2>
+<p class="subt">Cada número se verifica en el sitio oficial de Safe Creative</p>
+<div class="constancia">
+<h3>Constancia de obras registradas</h3>
+<p class="quien">Autor y titular: Víctor Hugo Ramírez Salgado · Ensenada, Baja California, México</p>
+<table class="tabla" id="tabla"></table>
+<div class="sellos">
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><text x="20" y="24" font-size="10" text-anchor="middle" fill="currentColor" font-family="Georgia">SC</text></svg><span>Registrado en <b>Safe Creative</b><br>25 obras · verificables por número</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="24" font-size="9" text-anchor="middle" fill="currentColor" font-family="Georgia">IMPI</text></svg><span>Marca SOSistem™ en trámite<br>Expediente 3741790</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="25" font-size="13" text-anchor="middle" fill="currentColor" font-family="Georgia">VH</text></svg><span>Firma del autor<br>Víctor Hugo Ramírez Salgado</span></div>
+</div>
+<p class="nota">Constancia elaborada por el autor. Los sellos resumen dónde está cada registro; los logotipos oficiales se colocan con el distintivo que cada institución entrega al titular.</p>
+</div>
+
+<h2 class="sec">Diseños</h2>
+<p class="subt">Miniaturas de cada proyecto</p>
+<div class="mini" id="mini"></div>
+
+<footer>© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Propuesta de diseño, no publicada.</footer>
+</div>
+<script>
+const I={
+contenedor:'<svg viewBox="0 0 100 60"><rect x="8" y="14" width="84" height="36" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/><g stroke="currentColor" stroke-width="1.5">'+[20,30,40,50,60,70,80].map(x=>`<line x1="${x}" y1="18" x2="${x}" y2="46"/>`).join('')+'</g></svg>',
+bodega:'<svg viewBox="0 0 100 60"><path d="M10 50V24L50 8l40 16v26" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="34" y="30" width="32" height="20" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor"><line x1="34" y1="36" x2="66" y2="36"/><line x1="34" y1="42" x2="66" y2="42"/></g></svg>',
+ruta:'<svg viewBox="0 0 100 60"><path d="M12 48C30 44 32 18 52 22S78 14 88 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="12" cy="48" r="5" fill="currentColor"/><circle cx="88" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>',
+inter:'<svg viewBox="0 0 100 60"><line x1="10" y1="10" x2="90" y2="10" stroke="currentColor" opacity=".4"/><line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" opacity=".4"/><path d="M10 36C24 20 34 44 50 30S76 22 90 26" fill="none" stroke="currentColor" stroke-width="3"/></svg>',
+econo:'<svg viewBox="0 0 100 60"><circle cx="50" cy="30" r="22" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M50 14l12 7v14l-12 7-12-7V21z" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+cubo:'<svg viewBox="0 0 100 60"><path d="M50 6l26 13v26L50 58 24 45V19z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M24 19l26 13 26-13M50 32v26" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+codigo:'<svg viewBox="0 0 100 60"><g fill="currentColor">'+Array.from({length:30},(_,i)=>((i*7)%3?`<rect x="${26+(i%6)*8}" y="${8+Math.floor(i/6)*9}" width="6" height="7"/>`:'')).join('')+'</g></svg>',
+teclado:'<svg viewBox="0 0 100 60"><rect x="8" y="14" width="84" height="38" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/><g fill="currentColor">'+Array.from({length:24},(_,i)=>`<rect x="${14+(i%8)*9.6}" y="${20+Math.floor(i/8)*9}" width="7" height="6" rx="1"/>`).join('')+'</g></svg>',
+sos:'<svg viewBox="0 0 100 60"><circle cx="50" cy="30" r="8" fill="currentColor"/><circle cx="50" cy="30" r="17" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg>',
+morse:'<svg viewBox="0 0 100 60"><g fill="currentColor"><circle cx="20" cy="30" r="4"/><rect x="30" y="27" width="16" height="6" rx="3"/><circle cx="56" cy="30" r="4"/><rect x="66" y="27" width="16" height="6" rx="3"/></g></svg>',
+juego:'<svg viewBox="0 0 100 60"><rect x="30" y="12" width="36" height="36" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/><g fill="currentColor"><circle cx="40" cy="22" r="3"/><circle cx="56" cy="38" r="3"/><circle cx="48" cy="30" r="3"/></g></svg>'
+};
+const S={sos:'https://buy.stripe.com/28E5kF7c9dQwcDvgh4g7e05',inv:'https://buy.stripe.com/7sYeVf3ZX7s85b34ymg7e06',inter:'https://buy.stripe.com/cNifZj0NLeUAdHz8OCg7e07',econo:'https://buy.stripe.com/9B64gBfIF13K0UNe8Wg7e08',cubo:'https://buy.stripe.com/28E00l1RPeUAdHz1mag7e09'};
+const P=[
+['ContenedorEns©','contenedorens.com','contenedor','2609046908752','../contenedorens/',S.inv],
+['Arsa Bodegas©','arsabodegas.com','bodega','2609046908806','../arsabodegas/',S.inv],
+['Trazabilidad de contenedores','tcontenedores.com','ruta','2610317507741','../tcontenedores/',S.inv],
+['Intertopía©','intertopía.com','inter','2602144563892','../intertopia/',S.inter],
+['Econotopía©','econotopía.com','econo','2610317507307','../econotopia/',S.econo],
+['Cubo 33©','cubo33.com','cubo','2611097590138','../cubo33/',S.cubo],
+['Código Cúbico©','codigocubico.com','codigo','2610097276721','../codigocubico/',S.cubo],
+['Teclado Cubo©','Teclado del Cubo 33','teclado','2610097277155','../cubo33/',S.cubo],
+['SOSistem™','sosistem.com','sos','2611097590053','https://sosistem.com',S.sos]];
+document.getElementById('grid').innerHTML=P.map(([n,d,i,r,v,s])=>`<article class="card"><div class="img" style="color:var(--acento)">${I[i]}</div><div class="body"><h3>${n}</h3><div class="dom">${d}</div><div class="reg">Safe Creative <b>${r}</b></div><div class="acciones"><a class="btn" href="${v}">Visitar</a><a class="btn ghost" href="${s}">Apoyar</a></div></div></article>`).join('');
+const R=[['Intertopía©','2602144563892'],['1ntertopía©','2606096034080'],['ContenedorEns© (nombre y logo)','2609046908752'],['Arsa Bodegas© (nombre y logo)','2609046908806'],['Econotopía© 2.0','2610317507307'],['Código Cúbico©','2610097276721'],['Teclado Cubo©','2610097277155'],['Cubo Morse©','2610257441754'],['Juego del Cubo©','2611097590138'],['Plataforma SOSistem™ (series A y B)','2611097590053'],['…y 15 registros más','25 en total']];
+document.getElementById('tabla').innerHTML=R.map(([o,n])=>`<tr><td>${o}</td><td>${n}</td></tr>`).join('');
+const M=[['Contenedor','contenedor'],['Bodega','bodega'],['Ruta','ruta'],['Intertopía','inter'],['Econotopía','econo'],['Cubo 33','cubo'],['Código Cúbico','codigo'],['Teclado Cubo','teclado'],['Cubo Morse','morse'],['Juego del Cubo','juego'],['SOSistem','sos']];
+document.getElementById('mini').innerHTML=M.map(([n,i])=>`<figure style="color:var(--acento)">${I[i]}<figcaption>${n}</figcaption></figure>`).join('');
+const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b')};
+t1.onclick=()=>set('a');t2.onclick=()=>set('b');if(location.hash==='#biblioteca')set('b');
+</script>
+</body>
+</html>
