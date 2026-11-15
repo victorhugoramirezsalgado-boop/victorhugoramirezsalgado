@@ -9,7 +9,7 @@
 <script src="fuentes.js?v=2026-11-15m"></script>
 <link rel="stylesheet" href="libro.css?v=2026-11-15m">
 </head>
-<body>
+<body class="biblioteca">
 <div class="libreria" aria-hidden="true"></div>
 <div class="sillones" aria-hidden="true"></div>
 <div class="wrap">
@@ -27,8 +27,8 @@ document.getElementById('obra').innerHTML=htmlObra(k);
 const otra=j=>`obra.html?id=${slugObra(P[(j+P.length)%P.length][1])}`;
 document.getElementById('prev').href=otra(k-1);document.getElementById('next').href=otra(k+1);
 document.getElementById('volver').href=`./#obra-${k+1}`;
-const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');try{localStorage.setItem('vhrs-tema',t)}catch(e){}};
-t1.onclick=()=>set('a');t2.onclick=()=>set('b');let tm='a';try{tm=localStorage.getItem('vhrs-tema')||'a'}catch(e){}set(tm);
+const set=(t,g)=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');if(g)try{localStorage.setItem('vhrs-tema2',t)}catch(e){}};
+t1.onclick=()=>set('a',1);t2.onclick=()=>set('b',1);let tm='b';try{tm=localStorage.getItem('vhrs-tema2')||'b'}catch(e){}set(tm);
 </script>
 <script src="musica.js?v=2026-11-15m"></script>
 </body>
