@@ -1,1 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" style="color:#C9A55A"><ellipse cx="200" cy="336" rx="190" ry="14" fill="#C9A55A" opacity=".35"/><g transform="translate(90,0) scale(1,1)"><path d="M-60 300 C-62 240 -58 170 -40 150 C-28 138 -10 140 -6 160 L-4 250 L60 250 C78 250 84 262 84 276 L84 300 Z" fill="#C9A55A"/><path d="M-70 262 C-70 248 -56 240 -44 244 L70 244 C84 244 92 252 92 264 L92 280 L-70 280 Z" fill="#C9A55A" opacity=".85"/><path d="M-58 300 L-62 330 M80 300 L84 330" stroke="#C9A55A" stroke-width="5" stroke-linecap="round"/></g><rect x="168" y="250" width="64" height="8" rx="3" fill="#C9A55A"/><line x1="176" y1="258" x2="176" y2="322" stroke="#C9A55A" stroke-width="4"/><line x1="224" y1="258" x2="224" y2="322" stroke="#C9A55A" stroke-width="4"/><g><line x1="200" y1="96" x2="200" y2="300" stroke="#C9A55A" stroke-width="5"/><path d="M170 96 L182 60 L218 60 L230 96 Z" fill="#2F6B4F" stroke="#C9A55A" stroke-width="3"/><ellipse cx="200" cy="320" rx="26" ry="6" fill="#C9A55A"/><ellipse cx="200" cy="110" rx="70" ry="24" fill="#FFD98A" opacity=".35"/></g><g transform="translate(310,0) scale(-1,1)"><path d="M-60 300 C-62 240 -58 170 -40 150 C-28 138 -10 140 -6 160 L-4 250 L60 250 C78 250 84 262 84 276 L84 300 Z" fill="#C9A55A"/><path d="M-70 262 C-70 248 -56 240 -44 244 L70 244 C84 244 92 252 92 264 L92 280 L-70 280 Z" fill="#C9A55A" opacity=".85"/><path d="M-58 300 L-62 330 M80 300 L84 330" stroke="#C9A55A" stroke-width="5" stroke-linecap="round"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 420">
+<defs><radialGradient id="luz" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFD98A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></radialGradient>
+<linearGradient id="haz" x1="1" x2="0"><stop offset="0" stop-color="#FFD98A" stop-opacity=".30"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></linearGradient></defs>
+<!-- vista desde arriba: dos sillones mirando hacia la biblioteca (izquierda), lámpara verde al centro -->
+<rect x="40" y="6" width="210" height="408" rx="30" fill="none" stroke="#C9A55A" stroke-width="2" stroke-dasharray="2 6" opacity=".5"/>
+<path d="M150 210 L0 120 L0 300 Z" fill="url(#haz)"/>
+<g transform="translate(0,20)">
+<rect x="66" y="14" width="140" height="132" rx="22" fill="#C9A55A" opacity=".18"/>
+<rect x="168" y="14" width="38" height="132" rx="16" fill="#C9A55A" opacity=".85"/>
+<rect x="66" y="14" width="140" height="30" rx="14" fill="#C9A55A" opacity=".7"/>
+<rect x="66" y="116" width="140" height="30" rx="14" fill="#C9A55A" opacity=".7"/>
+<rect x="78" y="46" width="88" height="68" rx="12" fill="none" stroke="#C9A55A" stroke-width="3" opacity=".8"/>
+<path d="M90 80h64" stroke="#C9A55A" stroke-width="2" opacity=".5"/>
+</g>
+<g transform="translate(0,254)">
+<rect x="66" y="14" width="140" height="132" rx="22" fill="#C9A55A" opacity=".18"/>
+<rect x="168" y="14" width="38" height="132" rx="16" fill="#C9A55A" opacity=".85"/>
+<rect x="66" y="14" width="140" height="30" rx="14" fill="#C9A55A" opacity=".7"/>
+<rect x="66" y="116" width="140" height="30" rx="14" fill="#C9A55A" opacity=".7"/>
+<rect x="78" y="46" width="88" height="68" rx="12" fill="none" stroke="#C9A55A" stroke-width="3" opacity=".8"/>
+<path d="M90 80h64" stroke="#C9A55A" stroke-width="2" opacity=".5"/>
+</g>
+<circle cx="150" cy="210" r="70" fill="url(#luz)"/>
+<circle cx="150" cy="210" r="40" fill="none" stroke="#C9A55A" stroke-width="3" opacity=".8"/>
+<circle cx="150" cy="210" r="27" fill="#2F6B4F" opacity=".85"/>
+<circle cx="150" cy="210" r="27" fill="none" stroke="#C9A55A" stroke-width="2"/>
+<circle cx="150" cy="210" r="4" fill="#FFD98A"/>
+</svg>
