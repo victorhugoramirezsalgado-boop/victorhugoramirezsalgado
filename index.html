@@ -8,8 +8,8 @@
 <link rel="canonical" href="https://victorhugoramirezsalgado.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="fuentes.js?v=2026-11-15n"></script>
-<link rel="stylesheet" href="libro.css?v=2026-11-15n">
+<script src="fuentes.js?v=2026-11-15p"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-15p">
 </head>
 <body class="biblioteca">
 <div class="libreria" aria-hidden="true"></div>
@@ -36,36 +36,60 @@
 <p class="subt">Cada número se verifica en el sitio oficial de Safe Creative</p>
 <div class="constancia" id="constancia">
 <h3>Constancia de obras registradas</h3>
-<p class="quien">Autor y titular: Víctor Hugo Ramírez Salgado · Ensenada, Baja California, México</p>
+<p class="quien">Autor y titular: Víctor Hugo Ramírez Salgado · Ensenada, Baja California, México · <span id="total-reg"></span> obras registradas</p>
+<button class="nav imprimir" onclick="window.print()">🖨 Imprimir constancia</button>
 <table class="tabla" id="tabla"></table>
 <div class="sellos">
- <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><text x="20" y="24" font-size="10" text-anchor="middle" fill="currentColor" font-family="Georgia">SC</text></svg><span>Registrado en <b>Safe Creative</b><br>25 obras · verificables por número</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><text x="20" y="24" font-size="10" text-anchor="middle" fill="currentColor" font-family="Georgia">SC</text></svg><span>Registrado en <b>Safe Creative</b><br>Cada obra verificable por su número</span></div>
  <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="24" font-size="9" text-anchor="middle" fill="currentColor" font-family="Georgia">IMPI</text></svg><span>Marca SOSistem™ en trámite<br>Expediente 3741790</span></div>
  <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="25" font-size="13" text-anchor="middle" fill="currentColor" font-family="Georgia">VH</text></svg><span>Firma del autor<br>Víctor Hugo Ramírez Salgado</span></div>
 </div>
 <p class="nota">Constancia elaborada por el autor. Los logotipos oficiales se colocan con el distintivo que cada institución entrega al titular.</p>
 </div>
+<h2 class="sec">Apoyar una obra</h2>
+<p class="subt">Si gusta apoyar alguna obra o proyecto, puede hacerlo desde aquí</p>
+<div class="apoyo">
+ <p>Los apoyos se reciben a través de <b>Stripe</b>, una plataforma de pagos segura: los datos de su tarjeta los procesa Stripe con cifrado y nunca pasan por este sitio. Elija el proyecto que desea apoyar; cualquier duda, escríbanos en <a href="#contacto">Contacto</a>.</p>
+ <div class="apoyo-b"><a class="btn" href="https://buy.stripe.com/28E5kF7c9dQwcDvgh4g7e05" target="_blank" rel="noopener">SOSistem™</a><a class="btn" href="https://buy.stripe.com/cNifZj0NLeUAdHz8OCg7e07" target="_blank" rel="noopener">Intertopía©</a><a class="btn" href="https://buy.stripe.com/9B64gBfIF13K0UNe8Wg7e08" target="_blank" rel="noopener">Econotopía©</a><a class="btn" href="https://buy.stripe.com/28E00l1RPeUAdHz1mag7e09" target="_blank" rel="noopener">Cubo 33©</a><a class="btn" href="https://buy.stripe.com/7sYeVf3ZX7s85b34ymg7e06" target="_blank" rel="noopener">Investigación y propuestas</a><a class="btn ghost" href="https://buy.stripe.com/dRm00laol13K8nfd4Sg7e04" target="_blank" rel="noopener">SOS767</a></div>
+</div>
+
+<h2 class="sec">Sitios del autor</h2>
+<p class="subt">Cada carpeta abre la página de su proyecto</p>
+<div class="carpetas" id="sitios"></div>
+
+<h2 class="sec">Proyectos propuestos</h2>
+<p class="subt">Propuestas para la comunidad portuaria nacional e internacional · autoría de Víctor Hugo Ramírez Salgado</p>
+<div class="carpetas" id="propuestas"></div>
+
 </div>
 <footer class="pie">
  <div class="pie-in">
-  <div><h4>Víctor Hugo Ramírez Salgado</h4><p>Autor y titular de las obras de esta biblioteca. Ensenada, Baja California, México.</p><p><a href="cv/">Currículum</a> · <a href="cv/en/">CV in English</a></p></div>
+  <div><h4>Víctor Hugo Ramírez Salgado</h4><p>Autor y titular de las obras de esta biblioteca. Ensenada, Baja California, México.</p><p class="cv-fila">Currículum VHRS: <select id="cv-idioma" aria-label="Idioma del currículum"></select> <button type="button" class="nav" id="cv-abrir">Abrir</button></p><p class="mini">Español es el original; inglés tiene versión propia; los demás idiomas se abren con traducción automática.</p></div>
   <div><h4>Obras</h4><p><a href="#estante">Estante de obras</a><br><a href="#constancia">Constancia de registros</a><br><a href="indice/">Índice general</a><br><a href="panel/">Panel de registros</a><br><a href="safecreative/">Registros en Safe Creative</a></p></div>
-  <div><h4>Contacto</h4><p>Teléfono y WhatsApp: <a href="tel:+526462270490">646 227 0490</a><br><a href="https://wa.me/526462270490" target="_blank" rel="noopener">Escribir por WhatsApp</a><br>Correo: <a href="mailto:vh@victorhugoramirezsalgado.com">vh@victorhugoramirezsalgado.com</a><br>Información: <a href="mailto:info@victorhugoramirezsalgado.com">info@victorhugoramirezsalgado.com</a><br><a href="contenedorens/">ContenedorEns©</a> · <a href="arsabodegas/">Arsa Bodegas©</a></p></div>
+  <div id="contacto"><h4>Contacto</h4><p>Teléfono y WhatsApp: <a href="tel:+526462270490">646 227 0490</a><br><a href="https://wa.me/526462270490" target="_blank" rel="noopener">Escribir por WhatsApp</a><br>Correo: <a href="mailto:vh@victorhugoramirezsalgado.com">vh@victorhugoramirezsalgado.com</a><br>Información: <a href="mailto:info@victorhugoramirezsalgado.com">info@victorhugoramirezsalgado.com</a><br><a href="contenedorens/">ContenedorEns©</a> · <a href="arsabodegas/">Arsa Bodegas©</a></p></div>
   <div><h4>Legal</h4><p><a href="legal/privacidad.html">Aviso de privacidad</a><br><a href="legal/terminos.html">Términos y condiciones</a><br><a href="legal/reembolsos.html">Política de reembolsos</a></p></div>
  </div>
  <div class="pie-fin">© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Obras registradas en Safe Creative · SOSistem™ marca en trámite ante el IMPI (expediente 3741790).</div>
 </footer>
 
 
-<script src="obras.js?v=2026-11-15n"></script>
-<script src="lector.js?v=2026-11-15n"></script>
+<script src="obras.js?v=2026-11-15p"></script>
+<script src="lector.js?v=2026-11-15p"></script>
 <script>
-const R=[['Intertopía©','2602144563892'],['1ntertopía©','2606096034080'],['ContenedorEns© (nombre y logo)','2609046908752'],['Arsa Bodegas© (nombre y logo)','2609046908806'],['Econotopía© 2.0','2610317507307'],['Código Cúbico©','2610097276721'],['Teclado Cubo©','2610097277155'],['Cubo Morse©','2610257441754'],['Juego del Cubo©','2611097590138'],['Plataforma SOSistem™ (series A y B)','2611097590053'],['…y 15 registros más','25 en total']];
-document.getElementById('tabla').innerHTML=R.map(([o,n])=>`<tr><td>${o}</td><td>${n}</td></tr>`).join('');
+const R=[["Intertopía©", "2602144563892", "feb 2026"], ["1ntertopía©", "2606096034080", "jun 2026"], ["Sistema S.O.S.©", "2609046908578", "sep 2026"], ["ContenedorEns© (nombre y logo)", "2609046908752", "sep 2026"], ["Arsa Bodegas© (nombre y logo)", "2609046908806", "sep 2026"], ["Econotopía©", "2610077261709", "oct 2026"], ["CuboPY©", "2610097275281", "oct 2026"], ["Código Cúbico© · Código de comunicación del Cubo (33)©", "2610097276721", "oct 2026"], ["Cubo Interior©", "2610097277049", "oct 2026"], ["Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)", "2610097277155", "9 oct 2026"], ["Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva", "2610097277377", "9 oct 2026"], ["Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara", "2610097277568", "9 oct 2026"], ["Cubo Morse©", "2610257441754", "25 oct 2026"], ["SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)", "2610257442171", "25 oct 2026"], ["SOSistem™ versiones 3.9 a 6.6", "2610317507284", "31 oct 2026"], ["Econotopía© 2.0 · sistema de comunicación del Cubo", "2610317507307", "31 oct 2026"], ["Estructura y Validación mediante Código Omnigráfico© (definitivo)", "2610317507444", "31 oct 2026"], ["S.S.O.S.© expediente técnico y modelo de negocio", "2610317507475", "31 oct 2026"], ["Sensor híper inteligente SOSistem™ (documento de diseño)", "2610317507499", "31 oct 2026"], ["Registro mundial de naufragios (propuesta CIP/OMI)", "2610317507550", "31 oct 2026"], ["Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)", "2610317507741", "31 oct 2026"], ["Cartera de dominios y sitios web del autor", "2611017524083", "1 nov 2026"], ["Cartera de dominios del autor · variantes técnicas sin tilde (intertopia.com, 1ntertopia.com, econotopia.com)", "2611037540810", "3 nov 2026"], ["Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)", "2611097590053", "9 nov 2026"], ["Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma", "2611097590138", "9 nov 2026"]];
+document.getElementById('total-reg').textContent=R.length;document.getElementById('tabla').innerHTML=R.map(([o,n,f],i)=>`<tr><td class="n">${i+1}</td><td>${o}</td><td>${n}</td><td class="f">${f}</td></tr>`).join('');
+
+// carpetas: sitios del autor y proyectos propuestos
+const SITIOS=[['Víctor Hugo Ramírez Salgado','victorhugoramirezsalgado.com','./','Biblioteca de obras · este sitio'],['ContenedorEns©','contenedorens.com','contenedorens/','Contenedores marítimos'],['Arsa Bodegas©','arsabodegas.com','https://arsabodegas.com','Mini bodegas · El Sauzal'],['SOSistem™','sosistem.com','https://sosistem.com','Sistema de alerta sin cámaras'],['SOS767','767sos.org · 767sos.com · sos767.com','sos767/','Número corto de auxilio 767'],['Intertopía©','intertopía.com · intertopia.com','intertopia/','Concepto ante la RAE'],['1ntertopía©','1ntertopía.com · 1ntertopia.com','intertopia/#valor','Generación de valor'],['Econotopía©','econotopía.com · econotopia.com','econotopia/','Sistema del Cubo'],['Cubo 33©','cubo33.com','cubo33/','Cubo de la Comunicación'],['Código Cúbico©','codigocubico.com','codigocubico/','Código del Cubo'],['Trazabilidad©','tcontenedores.com','tcontenedores/','Consulta ISO 6346'],['Panel de registros','victorhugoramirezsalgado.com/panel','panel/','Trayectoria, prensa e IMPI']];
+const PROPUESTAS=[['Trazabilidad de contenedores©','Registrada · Safe Creative 2610317507741','En análisis','tcontenedores/'],['Registro mundial de naufragios','Registrada · Safe Creative 2610317507550','En revisión · propuesta CIP/OMI','obra.html?id=registro-mundial-de-naufragios'],['Biblioteca portuaria','Obra del autor · registro pendiente','En análisis',''],['Hidroponía en contenedores · El Sauzal','Obra del autor · registro pendiente','En revisión',''],['Biblioteca de obras (este sitio)','Diseño del autor · registro pendiente','En producción','./']];
+const CARP='<svg viewBox="0 0 48 38" aria-hidden="true"><path d="M2 6a3 3 0 0 1 3-3h12l4 4h22a3 3 0 0 1 3 3v24a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z" fill="currentColor" opacity=".25"/><path d="M2 12h44v22a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z" fill="currentColor" opacity=".55"/></svg>';
+document.getElementById('sitios').innerHTML=SITIOS.map(([n,d,u,t])=>`<a class="carpeta" href="${u}" target="_blank" rel="noopener">${CARP}<b>${n}</b><span>${d}</span><small>${t}</small></a>`).join('');
+document.getElementById('propuestas').innerHTML=PROPUESTAS.map(([n,r,e,u])=>`<${u?'a':'div'} class="carpeta prop" ${u?`href="${u}" target="_blank" rel="noopener"`:''}>${CARP}<b>${n}</b><span>${r}</span><em>${e}</em><small>© Víctor Hugo Ramírez Salgado · comunidad portuaria nacional e internacional</small></${u?'a':'div'}>`).join('');
 const set=(t,g)=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');if(g)try{localStorage.setItem('vhrs-tema2',t)}catch(e){}};
 t1.onclick=()=>set('a',1);t2.onclick=()=>set('b',1);
 let tm='b';try{tm=localStorage.getItem('vhrs-tema2')||'b'}catch(e){} if(location.hash.includes('biblioteca'))tm='b'; set(tm);
 </script>
-<script src="musica.js?v=2026-11-15n"></script>
+<script src="idiomas.js?v=2026-11-15a"></script>
+<script src="musica.js?v=2026-11-15p"></script>
 </body>
 </html>
