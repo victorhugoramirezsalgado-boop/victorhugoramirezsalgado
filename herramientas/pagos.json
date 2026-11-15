@@ -3,15 +3,15 @@
   "whatsapp": "526462270490",
   "iva": 0.16,
   "ligas": {
-    "casa15": "",
-    "casa30": "",
-    "m2": "",
-    "celular": "",
-    "linea": "",
-    "sosistem": "",
-    "investigacion": "",
-    "intertopia": "",
-    "econotopia": "",
-    "cubo33": ""
+    "casa15": "https://buy.stripe.com/9B628t1RP9Ag46Z3uig7e00",
+    "casa30": "https://buy.stripe.com/eVqbJ3aolh2IavnaWKg7e01",
+    "celular": "https://buy.stripe.com/aFaaEZgMJ5k0bzrd4Sg7e02",
+    "linea": "https://buy.stripe.com/aFa28t0NL3bSbzr1mag7e03",
+    "m2": "https://buy.stripe.com/dRm00laol13K8nfd4Sg7e04",
+    "sosistem": "https://buy.stripe.com/28E5kF7c9dQwcDvgh4g7e05",
+    "investigacion": "https://buy.stripe.com/7sYeVf3ZX7s85b34ymg7e06",
+    "intertopia": "https://buy.stripe.com/cNifZj0NLeUAdHz8OCg7e07",
+    "econotopia": "https://buy.stripe.com/9B64gBfIF13K0UNe8Wg7e08",
+    "cubo33": "https://buy.stripe.com/28E00l1RPeUAdHz1mag7e09"
   }
 }

@@ -25,13 +25,13 @@ RED = [('Víctor Hugo Ramírez Salgado', 'https://victorhugoramirezsalgado.com')
 
 
 def pesos(v):
-    return '$' + f'{v:,.0f}' + ' MXN'
+    return '$' + (f'{v:,.0f}' if abs(v-round(v))<0.005 else f'{v:,.2f}') + ' MXN'
 
 
 def boton(clave, texto, mensaje):
     liga = P['ligas'].get(clave, '')
     if liga:
-        return f'<a class="pago" href="{e(liga)}" target="_blank" rel="noopener">{e(texto)} <small>pago seguro con tarjeta, OXXO o transferencia</small></a>'
+        return f'<a class="pago" href="{e(liga)}" target="_blank" rel="noopener">{e(texto)} <small>pago seguro con Stripe · tarjeta u OXXO</small></a>'
     wa = f"https://wa.me/{P['whatsapp']}?text={quote(mensaje)}"
     return f'<a class="pago wa" href="{e(wa)}" target="_blank" rel="noopener">{e(texto)} <small>por WhatsApp · el pago en línea se activa en breve</small></a>'
 
