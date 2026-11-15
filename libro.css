@@ -332,3 +332,11 @@ body.biblioteca .idioma-sel option{color:#2A2117}
 .compromisos{margin:0 0 16px;padding-left:18px;text-align:left}
 .compromisos li{margin:0 0 8px}
 @media (max-width:600px){.wrap{padding:0 12px}.constancia{padding:22px 14px 18px}.constancia:before{inset:6px}.tabla td{padding:4px 2px}}
+/* Tema beige: cuadernos del estante en verde con letras crema y detalles dorados (© VHRS) */
+body:not(.biblioteca) .tapa{background:linear-gradient(160deg,#3C6B52,#2F5A44 60%,#284D3A);box-shadow:var(--sombra),inset 0 0 0 1px #1F3D2E}
+body:not(.biblioteca) .tapa:before{background:linear-gradient(90deg,#1C3628,#2F5A44 60%,#1C3628)}
+body:not(.biblioteca) .tapa:after{border-color:rgba(233,196,106,.55)}
+body:not(.biblioteca) .tapa h3{color:#FBF7EE}
+body:not(.biblioteca) .tapa .cap,body:not(.biblioteca) .tapa .img{color:#E9C46A}
+body:not(.biblioteca) .tapa .dom,body:not(.biblioteca) .tapa .reg,body:not(.biblioteca) .tapa .num{color:#D8E3D6}
+body:not(.biblioteca) .tapa:hover,body:not(.biblioteca) .tapa:focus-visible{box-shadow:0 22px 40px rgba(0,0,0,.28),inset 0 0 0 1px #E9C46A}
