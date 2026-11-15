@@ -277,7 +277,13 @@ body.en-obra #vista-obra{display:block}
 .tapa .img:has(.logo-obra){width:auto}
 .pag .img:has(.logo-obra){width:auto;max-width:none}.pag .logo-obra{max-width:96px}
 .obra .img:has(.logo-obra){width:auto}.obra .logo-obra{max-width:96px}
-.foto-obra{display:block;width:100%;height:64px;object-fit:cover;border-radius:3px;margin:8px 0 4px;border:1px solid var(--linea);filter:sepia(.25) saturate(.85)}
-.foto-pag{display:block;width:78%;max-height:150px;object-fit:cover;margin:10px auto 0;border-radius:4px;border:1px solid var(--linea);filter:sepia(.2) saturate(.9)}
-.foto-grande{display:block;width:100%;max-height:300px;object-fit:cover;margin:16px 0 0;border-radius:6px;border:1px solid var(--linea)}
-@media (max-width:600px){.logo-obra{max-width:40px;border-radius:8px}.logo-c sup{font-size:9px;right:-9px}.foto-obra{height:40px;margin:5px 0 2px}.tapa .reg{display:none}.foto-pag{max-height:110px}}
+@media (max-width:600px){.logo-obra{max-width:40px;border-radius:8px}.logo-c sup{font-size:9px;right:-9px}.tapa .reg{display:none}.foto-pag{max-height:110px}}
+
+/* imagen de cada obra: completa y a escala (las fotos llenan el cuadro; capturas y figuras se ven enteras) */
+.foto-obra,.foto-pag,.foto-grande{margin:8px 0 2px;width:100%;aspect-ratio:16/9;border-radius:4px;border:1px solid var(--linea);background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.foto-obra img,.foto-pag img,.foto-grande img{width:100%;height:100%;object-fit:contain;display:block}
+.cubre img{object-fit:cover}
+.foto-pag{width:82%;margin:10px auto 0}
+.foto-grande{aspect-ratio:auto;max-height:360px;margin-top:16px}.foto-grande img{max-height:360px;height:auto}
+.tapa .foto-obra{margin-top:auto}
+@media (max-width:600px){.foto-obra{margin:5px 0 0;border-radius:3px}}
