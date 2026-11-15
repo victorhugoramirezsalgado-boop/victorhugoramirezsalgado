@@ -63,9 +63,14 @@ body.biblioteca footer{color:#BFAF8C}
 body.biblioteca{background:radial-gradient(1200px 500px at 50% -120px,rgba(255,214,140,.20),transparent 60%),repeating-linear-gradient(90deg,rgba(0,0,0,.10) 0 2px,transparent 2px 140px),linear-gradient(#34473C,#2C3A32 40%,#26332C)}
 .lampara{display:none}
 body.biblioteca .lampara{display:block;margin:0 auto -6px;width:120px}
+.libreria{position:fixed;top:0;bottom:0;left:0;width:min(30vw,340px);background:url(libreria-infinita.svg) left center/cover no-repeat;opacity:.10;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}
+body.biblioteca .libreria{background-image:url(libreria-infinita-dorada.svg);opacity:.16}
+.wrap{position:relative;z-index:1}
+@media (max-width:700px){.libreria{width:55vw;opacity:.07}body.biblioteca .libreria{opacity:.11}}
 </style>
 </head>
 <body>
+<div class="libreria" aria-hidden="true"></div>
 <div class="wrap">
 <header class="top"><div class="marca">Víctor Hugo Ramírez Salgado</div>
 <div class="tema" role="group" aria-label="Tema"><button id="t1" aria-pressed="true">Beige</button><button id="t2" aria-pressed="false">Biblioteca</button></div></header>
