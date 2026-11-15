@@ -1,63 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Víctor Hugo Ramírez Salgado</title>
-<meta name="description" content="Víctor Hugo Ramírez Salgado: 21 años en la industria marítimo-portuaria, autor de El Cubo de la Comunicación (33)©, Econotopía©, SOSistem™ y la propuesta de trazabilidad de contenedores.">
-<meta name="author" content="Víctor Hugo Ramírez Salgado">
+<title>Víctor Hugo Ramírez Salgado · Obras, sistemas y registros</title>
+<meta name="description" content="Biblioteca de obras registradas de Víctor Hugo Ramírez Salgado: ContenedorEns©, Arsa Bodegas©, Intertopía©, Econotopía©, Cubo 33©, Código Cúbico© y SOSistem™.">
 <link rel="canonical" href="https://victorhugoramirezsalgado.com/">
-<meta property="og:type" content="profile"><meta property="og:url" content="https://victorhugoramirezsalgado.com/">
-<meta property="og:title" content="Víctor Hugo Ramírez Salgado"><meta property="og:description" content="Comercio internacional, logística portuaria y desarrollo.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="vhrs.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Víctor Hugo Ramírez Salgado","url":"https://victorhugoramirezsalgado.com","jobTitle":"Asesor portuario y consultor en logística, comercio exterior y estadística portuaria","sameAs":["https://orcid.org/0009-0002-7831-8433","https://www.linkedin.com/in/victor-hugo-ramirez-salgado-58389a52/"]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="libro.css?v=2026-11-15b">
 </head>
 <body>
-<header class="barra">
-  <a class="marca" data-morse="VHRS" title="Toca para oír en Morse">VHRS<b>.</b></a>
-  <nav aria-label="Secciones">
-    <a href="#proyectos">Proyectos</a><a href="#sistemas">Sistemas</a><a href="#trayectoria">Trayectoria</a><a href="#formacion">Formación</a><a href="#prensa">Prensa</a><a href="#registros">Registros ©</a><a href="#impi">IMPI</a><a href="indice/">Índice</a><a href="cv/">CV</a><a class="llave" href="privado/">Privado</a>
-  </nav>
-  <label class="idioma">
-    <select id="idioma" aria-label="Idioma">
-      <option value="">Español</option>
-      <optgroup label="ONU"><option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ru">Русский</option></optgroup>
-      <optgroup label="Europa"><option value="pt">Português</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="uk">Українська</option><option value="el">Ελληνικά</option><option value="sv">Svenska</option><option value="ro">Română</option><option value="ca">Català</option><option value="eu">Euskara</option><option value="gl">Galego</option></optgroup>
-      <optgroup label="Asia"><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="id">Bahasa Indonesia</option><option value="tr">Türkçe</option><option value="he">עברית</option><option value="fa">فارسی</option></optgroup>
-      <optgroup label="Regionales"><option value="yua">Maya yucateco</option><option value="nhe">Náhuatl</option></optgroup>
-    </select>
-  </label>
-</header>
+<div class="libreria" aria-hidden="true"></div>
+<div class="sillones" aria-hidden="true"></div>
+<svg class="rayos" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#F2C96B" stroke-width=".8"><polyline points="500,0 380,260 420,520 300,1000"/><polyline points="500,0 620,240 580,560 720,1000"/><polyline points="500,0 250,180 200,520 120,1000"/><polyline points="500,0 760,200 820,540 900,1000"/><polygon points="500,0 430,140 570,140" fill="#F2C96B" fill-opacity=".25"/></g></svg>
+<div class="wrap">
+<header class="top"><div class="marca">Víctor Hugo Ramírez Salgado</div>
+<div class="tema" role="group" aria-label="Tema"><button id="t1" aria-pressed="true">Beige</button><button id="t2" aria-pressed="false">Biblioteca</button></div></header>
 
-<section class="portada" aria-label="Portada">
-  <div class="portada-in">
-  <div class="titular">
-    <h1 data-morse="VICTOR HUGO RAMIREZ SALGADO" title="Toca para oír en Morse">Víctor Hugo<br>Ramírez Salgado</h1>
-    <p id="lema">Comercio internacional, logística portuaria y desarrollo. Autor de El Cubo de la Comunicación (33)©.</p>
-    <p class="morse-linea" id="morse" aria-live="polite"></p>
-  </div>
-  <div class="cara" id="cara" aria-hidden="true"></div>
-  </div>
+<section class="intro">
+<h1>Obras, sistemas y registros</h1>
+<p>Toca un libro para abrirlo y pasar sus páginas. Desliza hacia abajo para ver todas las obras.</p>
 </section>
 
-<main>
-  <section id="proyectos"><h2>Proyectos</h2><p class="nota" id="orden-proyectos">Del origen a la plataforma que integra todo.</p><div class="rejilla" id="lista-proyectos"></div></section>
-  <section id="sistemas"><h2>Sistemas y obras</h2><p class="nota">Toca un número para ver su certificado en Safe Creative. Los marcados con candado son repositorios privados.</p><div id="lista-sistemas"></div></section>
-  <section id="trayectoria"><h2>Trayectoria</h2><ol class="linea" id="lista-trayectoria"></ol></section>
-  <section id="formacion"><h2>Formación y cursos internacionales</h2><ol class="linea" id="lista-formacion"></ol></section>
-  <section id="prensa"><h2>Prensa y menciones</h2><ul class="tabla" id="lista-prensa"></ul></section>
-  <section id="registros"><h2>Registros © en Safe Creative</h2><p class="nota">Toca un número para ver su certificado.</p><ul class="tabla" id="lista-registros"></ul></section>
-  <section id="impi"><h2>Registros ante el IMPI</h2><p class="nota">Marcas y modelos de utilidad a nombre de Víctor Hugo Ramírez Salgado. El símbolo ® se usa solo después de la concesión.</p><ul class="tabla" id="lista-impi"></ul></section>
-  <section id="fuentes"><h2>Fuentes y perfiles</h2><ul class="tabla" id="lista-fuentes"></ul></section>
-  <section id="privado"><h2>Privado</h2><p class="nota">Tus archivos se abren en <a href="privado/">vhrs.com/privado</a> con tu clave. Nada privado se publica en este sitio.</p><ul class="tabla" id="lista-privado"></ul></section>
-  <footer>
-    <p>Actualizado: <span id="actualizado">—</span></p>
-    <p>© 2026 Víctor Hugo Ramírez Salgado. Obras registradas en Safe Creative. Todos los derechos reservados. Prohibido su uso para entrenar inteligencia artificial sin autorización escrita.</p>
-  </footer>
-</main>
-<script src="portada.js"></script>
-<script src="panel.js?v=2026-11-13c"></script>
+<section class="estante" id="estante" aria-label="Estante de obras"></section>
+<section class="lector" aria-label="Libro de obras">
+ <div class="barra"><button class="nav" id="ant">‹ Anterior</button><span class="cuenta" id="cuenta"></span><button class="nav" id="ampliar">✕ Cerrar libro</button><button class="nav oro" id="sig">Siguiente ›</button></div>
+ <div class="libro" id="libro"></div>
+ <div class="puntos" id="puntos"></div>
+ <p class="ayuda">También puedes usar las flechas del teclado o deslizar el dedo sobre el libro.</p>
+</section>
+
+<h2 class="sec">Constancia de obras registradas</h2>
+<p class="subt">Cada número se verifica en el sitio oficial de Safe Creative</p>
+<div class="constancia" id="constancia">
+<h3>Constancia de obras registradas</h3>
+<p class="quien">Autor y titular: Víctor Hugo Ramírez Salgado · Ensenada, Baja California, México</p>
+<table class="tabla" id="tabla"></table>
+<div class="sellos">
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><text x="20" y="24" font-size="10" text-anchor="middle" fill="currentColor" font-family="Georgia">SC</text></svg><span>Registrado en <b>Safe Creative</b><br>25 obras · verificables por número</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="24" font-size="9" text-anchor="middle" fill="currentColor" font-family="Georgia">IMPI</text></svg><span>Marca SOSistem™ en trámite<br>Expediente 3741790</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="25" font-size="13" text-anchor="middle" fill="currentColor" font-family="Georgia">VH</text></svg><span>Firma del autor<br>Víctor Hugo Ramírez Salgado</span></div>
+</div>
+<p class="nota">Constancia elaborada por el autor. Los logotipos oficiales se colocan con el distintivo que cada institución entrega al titular.</p>
+</div>
+</div>
+<footer class="pie">
+ <div class="pie-in">
+  <div><h4>Víctor Hugo Ramírez Salgado</h4><p>Autor y titular de las obras de esta biblioteca. Ensenada, Baja California, México.</p><p><a href="cv/">Currículum</a> · <a href="cv/en/">CV in English</a></p></div>
+  <div><h4>Obras</h4><p><a href="#estante">Estante de obras</a><br><a href="#constancia">Constancia de registros</a><br><a href="indice/">Índice general</a><br><a href="panel/">Panel de registros</a><br><a href="safecreative/">Registros en Safe Creative</a></p></div>
+  <div><h4>Contacto</h4><p>Teléfono y WhatsApp: <a href="tel:+526462270490">646 227 0490</a><br><a href="https://wa.me/526462270490" target="_blank" rel="noopener">Escribir por WhatsApp</a><br><a href="contenedorens/">ContenedorEns©</a> · <a href="arsabodegas/">Arsa Bodegas©</a></p></div>
+  <div><h4>Legal</h4><p><a href="legal/privacidad.html">Aviso de privacidad</a><br><a href="legal/terminos.html">Términos y condiciones</a><br><a href="legal/reembolsos.html">Política de reembolsos</a></p></div>
+ </div>
+ <div class="pie-fin">© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Obras registradas en Safe Creative · SOSistem™ marca en trámite ante el IMPI (expediente 3741790).</div>
+</footer>
+
+<div class="musica" id="musica">
+ <div class="musica-panel" role="dialog" aria-label="Música para leer">
+  <h4>Música para leer</h4>
+  <ol>
+   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Gibran%20Alcocer%20Idea%2010">Gibran Alcocer · Idea 10</a></li>
+   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Gibran%20Alcocer%20Idea%2012">Gibran Alcocer · Idea 12</a></li>
+   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Gibran%20Alcocer%20Idea%2022">Gibran Alcocer · Idea 22</a></li>
+   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Yann%20Tiersen%20Am%C3%A9lie">Yann Tiersen · <i>Amélie</i> (banda sonora)</a></li>
+   <li><a target="_blank" rel="noopener" href="https://open.spotify.com/search/Hans%20Zimmer%20Interstellar">Hans Zimmer · <i>Interstellar</i> (banda sonora)</a></li>
+  </ol>
+  <small>Se escucha en la plataforma oficial; los derechos son de sus autores y disqueras.</small>
+ </div>
+ <button class="musica-btn" id="musica-btn" aria-expanded="false">♪ Música</button>
+</div>
+
+<script src="obras.js?v=2026-11-15b"></script>
+<script src="lector.js?v=2026-11-15b"></script>
+<script>
+const R=[['Intertopía©','2602144563892'],['1ntertopía©','2606096034080'],['ContenedorEns© (nombre y logo)','2609046908752'],['Arsa Bodegas© (nombre y logo)','2609046908806'],['Econotopía© 2.0','2610317507307'],['Código Cúbico©','2610097276721'],['Teclado Cubo©','2610097277155'],['Cubo Morse©','2610257441754'],['Juego del Cubo©','2611097590138'],['Plataforma SOSistem™ (series A y B)','2611097590053'],['…y 15 registros más','25 en total']];
+document.getElementById('tabla').innerHTML=R.map(([o,n])=>`<tr><td>${o}</td><td>${n}</td></tr>`).join('');
+const set=t=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');try{localStorage.setItem('vhrs-tema',t)}catch(e){}};
+t1.onclick=()=>set('a');t2.onclick=()=>set('b');
+let tm='a';try{tm=localStorage.getItem('vhrs-tema')||'a'}catch(e){} if(location.hash.includes('biblioteca'))tm='b'; set(tm);
+const mb=document.getElementById('musica-btn');mb.onclick=()=>{const a=document.getElementById('musica').classList.toggle('abierta');mb.setAttribute('aria-expanded',a)};
+</script>
 </body>
 </html>
