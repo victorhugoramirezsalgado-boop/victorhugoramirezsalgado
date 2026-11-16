@@ -125,7 +125,7 @@ try{parent.postMessage({sosSolo:id},'*');}catch(e){}})();
     </div>
     <div class="card cj" id="cj">
       <h3>Juego del Cubo · de 2 a 4 personas</h3>
-      <p class="note">Juego 360: se tira el cubo al centro y cada jugador se queda con la cara que le cae enfrente; ese es su alfabeto (Morse, braille, señas, banderas o fonético). Inicia quien recibió Morse: pregunta la letra en turno, de la A a la Z, en su alfabeto a quien elija (izquierda, enfrente o derecha). Quien sabe gana 1 punto y toma el turno. Si nadie supo, quien preguntó se lleva 3 puntos (uno por rival) y el turno pasa al de al lado. Al llegar a la Z se vuelve a tirar. Gana quien llegue a la meta.</p>
+      <p class="note">Juego 360 con dos tiradas: <b>1)</b> cada jugador elige la cara que cree que caerá arriba; quien atina inicia (si nadie atina, se vuelve a tirar). <b>2)</b> Se vuelve a tirar y a cada jugador le toca la cara de su lado: ese es su alfabeto o idioma. Quien tiene el turno pregunta la letra a quien elija; se gana el punto con la <b>pronunciación</b> o con la <b>numeración</b> del Cubo 33©. Quien atina gana 1 punto y sigue preguntando; si nadie atina, sigue quien va ganando. Gana quien llegue a la meta. <a href="assets/manuales/Manual-Juego-del-Cubo-etapa-2.pdf" download>Manual con las reglas</a>.</p>
       <div class="cj-etapas"><p class="note"><b>Etapas del juego.</b> <b>Nivel 1 · prototipo:</b> el Cubo de la Comunicación (33)© en español, con la A–Z en los cuatro lados de cada cara y los números del 1 al 4056 (<a href="assets/cubo33-nivel1-prototipo-carta.pdf" download>descargar el prototipo, 7 hojas carta</a>). <b>Manuales:</b> <a href="assets/manuales/Manual-Juego-del-Cubo-etapa-1.pdf" download>etapa 1</a>, <a href="assets/manuales/Manual-Juego-del-Cubo-etapa-2.pdf" download>etapa 2</a> y <a href="assets/manuales/Manual-Juego-del-Cubo-etapa-3.pdf" download>etapa 3</a>. <b>Nivel 2:</b> el Cubo de Aprendizaje© impreso, con idiomas y sistemas en sus caras. <b>Haz tu propio cubo</b> (en preparación): cada quien elige qué idioma o sistema va en cada cara, lo diseña y lo imprime. <b>Inicio de cada partida:</b> dos tiradas; la primera decide quién inicia (quien atina a la cara de arriba) y la segunda asigna a cada jugador la cara de su lado. <b>Nivel 3 · tablas de aprendizaje:</b> primaria con los seis sistemas del Cubo de Aprendizaje; secundaria con al menos tres idiomas. Quien domina un idioma recibe su <b>Cubo del Idioma</b>: cara 1 abecedario y descripción; caras 2 a 4 las 159 palabras y frases por categorías; cara 5 libre para su práctica; cara 6 el Cubo 33 del idioma con números, Morse, braille y banderas (en preparación).</p></div>
       <form id="cj-form" class="cj-form">
         <div class="cj-nombres">
@@ -146,8 +146,8 @@ try{parent.postMessage({sosSolo:id},'*');}catch(e){}})();
         <div class="cj-acciones" id="cj-acciones">
           <button class="btn" type="button" id="cj-ver">Ver respuesta</button>
           <button class="btn" type="button" id="cj-oir" hidden>Escuchar en Morse</button>
-          <button class="btn primary" type="button" id="cj-ok">✓ Correcto (+1)</button>
-          <button class="btn cj-no" type="button" id="cj-no">✗ Falló (−1)</button>
+          <button class="btn primary" type="button" id="cj-ok">✓ Atinó (+1)</button>
+          <button class="btn cj-no" type="button" id="cj-no">✗ No atinó</button>
         </div>
         <div id="cj-fin" hidden><button class="btn primary" type="button" id="cj-otra">Otra partida</button></div>
         <ol class="cj-hist" id="cj-hist"></ol>
@@ -170,7 +170,7 @@ try{parent.postMessage({sosSolo:id},'*');}catch(e){}})();
 <script src="assets/aprende.js?v=7.2.0" defer></script>
 <script src="assets/pronuncia.js?v=7.2.0" defer></script>
 <script src="assets/idiomas-aprende.js?v=7.2.0" defer></script>
-<script src="assets/cubo-juego.js?v=6.9.0" defer></script>
+<script src="assets/cubo-juego.js?v=2026-11-15-6.9.0" defer></script>
 <script src="assets/tablas.js?v=6.1" defer></script>
 <script src="assets/codigo-cubico.js?v=6.1" defer></script>
 <script src="assets/mensajero.js?v=6.1" defer></script>
