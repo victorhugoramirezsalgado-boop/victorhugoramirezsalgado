@@ -44,6 +44,7 @@ body{margin:0;background:#2C3A32;color:#EADBB8;font:400 15px/1.5 Inter,system-ui
  .vf{padding:0;max-width:none}
  #visor{display:block!important;width:auto!important;height:auto!important}
  .cert{transform:none!important}
+ @page{size:letter landscape;margin:0}
 }
 .cert .hoja{position:absolute;inset:.3in;background:#FBF7EE;border:3px solid #2C3A32;padding:.12in}
 .cert .marco{height:100%;border:1.5px solid #C9A55A;display:grid;grid-template-columns:132px minmax(0,1fr) 132px;grid-template-rows:1fr auto;gap:0 14px;padding:12px 12px 0;position:relative}
@@ -120,6 +121,7 @@ async function abrir(folio,codigo){
  const k0=await crypto.subtle.importKey('raw',enc.encode(base),'PBKDF2',false,['deriveKey']);
  const k=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(r.salt),iterations:db.iter,hash:'SHA-256'},k0,{name:'AES-GCM',length:256},false,['decrypt']);
  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(r.iv)},k,b64(r.ct));
+ window.__reg={r,k};
  return JSON.parse(new TextDecoder().decode(pt));
 }
 function vali(d,modo){
@@ -169,7 +171,11 @@ $('#f').onsubmit=async e=>{e.preventDefault();const m=$('#msg');m.className='msg
   if(!d){m.className='msg no';m.textContent='No encontramos un certificado con ese número y código. Revise los datos o escriba a info@victorhugoramirezsalgado.com.';$('#visor').style.display='none';$('#acc').style.display='none';return}
   m.className='msg ok';m.textContent=`Certificado auténtico: ${d.folio} a nombre de ${d.nombre}, emitido por Víctor Hugo Ramírez Salgado.`;window.mostrar(d,'verificado');
  }catch(err){m.className='msg no';m.textContent='No se pudo verificar en este navegador. Intente con Chrome actualizado.'}};
-$('#pdf').onclick=()=>window.print();
+// Descarga el PDF original del certificado (tamaño carta horizontal): se imprime bien en carta, oficio o A4 porque el visor de PDF lo ajusta a la hoja
+$('#pdf').onclick=async()=>{const g=window.__reg;
+ if(g&&g.r.pdf){try{const b=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(g.r.pdf.iv)},g.k,b64(g.r.pdf.ct));
+  const url=URL.createObjectURL(new Blob([b],{type:'application/pdf'}));const a=document.createElement('a');a.href=url;a.download='Certificado-'+($('#folio').value||'VHRS').trim().toUpperCase()+'.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);return}catch(e){}}
+ window.print()};
 $('#otro').onclick=()=>{$('#f').reset();$('#visor').style.display='none';$('#acc').style.display='none';$('#msg').className='msg';scrollTo(0,0)};
 </script>
 <script src="../idiomas.js"></script>
