@@ -25,16 +25,16 @@ h2{font:700 26px Georgia,serif;color:#2C3A32;margin:34px 0 6px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:14px;margin-top:14px}
 .hc{margin:0;background:#FBF7EE;border:1px solid #E2D3B4;border-radius:12px;padding:10px 8px 12px;text-align:center}
 .hc svg{width:100%;max-width:120px;height:auto}
-.hc .t{fill:#3C5246}.hc .l{fill:#2C3A32}.hc .r{fill:#22302A}
-.hc path{stroke:#C9A55A;stroke-width:1.2;stroke-linejoin:round}
-.hc .n{font:700 15px Georgia,serif;fill:#EADBB8;text-anchor:middle}
-.hc .w{font:600 9px Inter,sans-serif;fill:#F2EBDC;text-anchor:middle}
-.hc .cc{font:700 12px Inter,sans-serif;fill:#C9A55A;text-anchor:middle;letter-spacing:.1em}
+.hc .aro{fill:#F3EDE2;stroke:#C9A55A;stroke-width:2}
+.hc .aro2{fill:none;stroke:#C9A55A;stroke-width:.7;stroke-dasharray:1 2}
+.hc .cubo{fill:none;stroke:#2C3A32;stroke-width:2.2;stroke-linejoin:round}
+.hc .n{font:700 11px Georgia,serif;fill:#8A6A3B;text-anchor:middle}
+.hc .w{font:600 10px Inter,sans-serif;fill:#2C3A32;text-anchor:middle}
+.hc .cc{font:700 9px Inter,sans-serif;fill:#8A6A3B;text-anchor:middle;letter-spacing:.1em}
 .hc figcaption b{display:block;font:700 14px Inter,sans-serif;color:#2C3A32}
 .hc figcaption span{display:block;font-size:14px;color:#8A6A3B}
 .hc.libre{border-style:dashed;border-color:#C9A55A;background:#fff}
-.hc.libre .t,.hc.libre .l,.hc.libre .r{fill:#FBF7EE}.hc.libre path{stroke-dasharray:4 3}
-.hc.libre .n{fill:#8A6A3B}
+.hc.libre .cubo{stroke:#C9A55A;stroke-dasharray:4 3}
 .desc{background:#FBF7EE;border:1px solid #E2D3B4;border-radius:12px;padding:16px 18px;margin-top:14px}
 .desc li{margin:4px 0}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
@@ -57,75 +57,100 @@ footer{text-align:center;font-size:13px;color:#6E6457;padding:20px 18px 40px;bor
 </div>
 
 <h2>Los 22 cubos de idioma</h2>
-<p>En la cara frontal de cada cubo va «ayuda» en su idioma; arriba, su número dentro del Hipercubo; a un lado, su código de idioma.</p>
+<p>Cada cubo es transparente, como el sello del Cubo: el ojo lo ve primero de un lado y luego del otro. Debajo del cubo va «ayuda» en su idioma, arriba su código de idioma y al pie su número dentro del Hipercubo.</p>
 <div class="grid">
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">1</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">ayuda</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">ES</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">1</text><text x="60" y="97" class="w">ayuda</text><text x="33" y="27" class="cc">ES</text></svg>
 <figcaption><b>Español</b><span lang="es">Español</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">2</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">help</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">EN</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">2</text><text x="60" y="97" class="w">help</text><text x="33" y="27" class="cc">EN</text></svg>
 <figcaption><b>Inglés</b><span lang="en">English</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">3</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">aide</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">FR</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">3</text><text x="60" y="97" class="w">aide</text><text x="33" y="27" class="cc">FR</text></svg>
 <figcaption><b>Francés</b><span lang="fr">Français</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">4</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">ajuda</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">PT</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">4</text><text x="60" y="97" class="w">ajuda</text><text x="33" y="27" class="cc">PT</text></svg>
 <figcaption><b>Portugués</b><span lang="pt">Português (Brasil)</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">5</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">aiuto</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">IT</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">5</text><text x="60" y="97" class="w">aiuto</text><text x="33" y="27" class="cc">IT</text></svg>
 <figcaption><b>Italiano</b><span lang="it">Italiano</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">6</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">Hilfe</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">DE</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">6</text><text x="60" y="97" class="w">Hilfe</text><text x="33" y="27" class="cc">DE</text></svg>
 <figcaption><b>Alemán</b><span lang="de">Deutsch</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">7</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">hulp</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">NL</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">7</text><text x="60" y="97" class="w">hulp</text><text x="33" y="27" class="cc">NL</text></svg>
 <figcaption><b>Neerlandés</b><span lang="nl">Nederlands</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">8</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">ajuda</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">CA</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">8</text><text x="60" y="97" class="w">ajuda</text><text x="33" y="27" class="cc">CA</text></svg>
 <figcaption><b>Catalán</b><span lang="ca">Català</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">9</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">axuda</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">GL</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">9</text><text x="60" y="97" class="w">axuda</text><text x="33" y="27" class="cc">GL</text></svg>
 <figcaption><b>Gallego</b><span lang="gl">Galego</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">10</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">laguntza</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">EU</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">10</text><text x="60" y="97" class="w">laguntza</text><text x="33" y="27" class="cc">EU</text></svg>
 <figcaption><b>Euskera</b><span lang="eu">Euskara</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">11</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">hjælp</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">DA</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">11</text><text x="60" y="97" class="w">hjælp</text><text x="33" y="27" class="cc">DA</text></svg>
 <figcaption><b>Danés</b><span lang="da">Dansk</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">12</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">hjälp</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">SV</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">12</text><text x="60" y="97" class="w">hjälp</text><text x="33" y="27" class="cc">SV</text></svg>
 <figcaption><b>Sueco</b><span lang="sv">Svenska</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">13</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">hjelp</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">NB</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">13</text><text x="60" y="97" class="w">hjelp</text><text x="33" y="27" class="cc">NB</text></svg>
 <figcaption><b>Noruego bokmål</b><span lang="nb">Norsk bokmål</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">14</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">cabhair</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">GA</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">14</text><text x="60" y="97" class="w">cabhair</text><text x="33" y="27" class="cc">GA</text></svg>
 <figcaption><b>Irlandés</b><span lang="ga">Gaeilge</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">15</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">βοήθεια</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">EL</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">15</text><text x="60" y="97" class="w">βοήθεια</text><text x="33" y="27" class="cc">EL</text></svg>
 <figcaption><b>Griego moderno</b><span lang="el">Ελληνικά</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">16</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">помощь</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">RU</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">16</text><text x="60" y="97" class="w">помощь</text><text x="33" y="27" class="cc">RU</text></svg>
 <figcaption><b>Ruso</b><span lang="ru">Русский</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">17</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">допомога</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">UK</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">17</text><text x="60" y="97" class="w">допомога</text><text x="33" y="27" class="cc">UK</text></svg>
 <figcaption><b>Ucraniano</b><span lang="uk">Українська</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">18</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">مساعدة</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">AR</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">18</text><text x="60" y="97" class="w">مساعدة</text><text x="33" y="27" class="cc">AR</text></svg>
 <figcaption><b>Árabe</b><span lang="ar">العربية</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">19</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">עזרה</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">HE</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">19</text><text x="60" y="97" class="w">עזרה</text><text x="33" y="27" class="cc">HE</text></svg>
 <figcaption><b>Hebreo</b><span lang="he">עברית</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">20</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">मदद</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">HI</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">20</text><text x="60" y="97" class="w">मदद</text><text x="33" y="27" class="cc">HI</text></svg>
 <figcaption><b>Hindi</b><span lang="hi">हिन्दी</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">21</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">帮助</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">ZH</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">21</text><text x="60" y="97" class="w">帮助</text><text x="33" y="27" class="cc">ZH</text></svg>
 <figcaption><b>Chino mandarín</b><span lang="zh">普通话 / 中文</span></figcaption></figure>
-<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/>
-<text x="60" y="37" class="n">22</text><text x="37" y="74" class="w" transform="skewY(27) translate(0,-19)">助け</text><text x="83" y="76" class="cc" transform="skewY(-27) translate(0,41)">JA</text></svg>
+<figure class="hc"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">22</text><text x="60" y="97" class="w">助け</text><text x="33" y="27" class="cc">JA</text></svg>
 <figcaption><b>Japonés</b><span lang="ja">日本語</span></figcaption></figure>
-<figure class="hc libre"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="t" d="M60 8l46 24-46 24-46-24z"/><path class="l" d="M14 32l46 24v56L14 88z"/><path class="r" d="M106 32L60 56v56l46-24z"/><text x="60" y="37" class="n">23</text></svg><figcaption><b>Tu idioma</b><span>cubo libre · en preparación</span></figcaption></figure>
+<figure class="hc libre"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" class="aro"/><circle cx="60" cy="60" r="50" class="aro2"/>
+<g class="cubo" transform="translate(0,-6)"><rect x="28" y="44" width="40" height="40"/><rect x="48" y="26" width="40" height="40"/><path d="M28 44L48 26M68 44L88 26M28 84L48 66M68 84L88 66"/></g>
+<text x="60" y="111" class="n">23</text></svg>
+<figcaption><b>Tu idioma</b><span lang="xx">cubo libre · en preparación</span></figcaption></figure>
 </div>
 
 <div class="desc">
@@ -137,6 +162,7 @@ footer{text-align:center;font-size:13px;color:#6E6457;padding:20px 18px 40px;bor
 <li>Cara 6: el Cubo 33© del idioma, con números, Morse, braille y banderas.</li>
 </ul>
 <div class="btns"><a href="/cubo-base/assets/idiomas/idiomas-22-bases-carta.pdf" download>Imprimir las bases de los 22 idiomas (PDF)</a><a class="sec" href="/cubo-base/assets/idiomas/idioma-en-carta.pdf" download>Ejemplo: inglés, 159 palabras (PDF)</a><a class="sec" href="/cubo33/aprende/">Consultar en línea</a></div>
+<div class="btns"><a class="sec" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-1.pdf" download>Manual etapa 1</a><a class="sec" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-2.pdf" download>Manual etapa 2</a><a class="sec" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-3.pdf" download>Manual etapa 3</a></div>
 </div>
 </main>
 <footer>© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Hipercubo 33© · Econotopía© 3.0 · Safe Creative 2611097590497.</footer>
