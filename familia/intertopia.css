@@ -1,0 +1,57 @@
+/* © 2026 Víctor Hugo Ramírez Salgado — Familia Intertopía©: formato común de todas las páginas. Asistencia-IA.
+   Paleta mate: beige, verde, negro, blanco, naranja y amarillo mostaza. Texto justificado con división silábica. */
+:root{
+ --it-beige:#F3EDE2;--it-papel:#FBF7EE;--it-blanco:#FFFFFF;
+ --it-verde:#2C3A32;--it-verde-2:#4E6B57;--it-salvia:#9DB3A3;
+ --it-negro:#1F1B16;--it-tinta:#2B2620;--it-gris:#6E6457;
+ --it-mostaza:#B8892B;--it-oro:#C9A55A;--it-naranja:#C46A1C;--it-naranja-2:#E9A65A;
+ --it-linea:#E2D3B4;
+ --it-tit:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+ --it-txt:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+ --it-radio:12px;--it-ancho:1080px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body.it{margin:0;background:var(--it-beige);color:var(--it-tinta);font:400 17px/1.65 var(--it-txt)}
+.it main,.it .it-wrap{max-width:var(--it-ancho);margin:0 auto;padding:24px 18px 56px}
+/* encabezado de la familia */
+.it-top{background:var(--it-verde);color:#EADBB8;border-bottom:3px solid var(--it-mostaza)}
+.it-top .in{max-width:var(--it-ancho);margin:0 auto;padding:12px 18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.it .it-top a{color:#EADBB8;text-decoration:none;font:700 17px var(--it-tit)}
+.it-top select,.it-top button{background:transparent;color:#EADBB8;border:1px solid var(--it-oro);border-radius:999px;padding:6px 12px;font:600 13px var(--it-txt)}
+/* títulos */
+.it h1,.it h2,.it h3{font-family:var(--it-tit);color:var(--it-verde);line-height:1.15;text-align:left;hyphens:manual}
+.it h1{font-size:clamp(32px,6vw,48px);margin:.2em 0 .3em}
+.it h2{font-size:clamp(24px,4.4vw,32px);margin:1.6em 0 .4em;border-left:4px solid var(--it-mostaza);padding-left:10px}
+.it h3{font-size:22px;margin:1.2em 0 .3em}
+.it .eyebrow{font:700 12px var(--it-txt);letter-spacing:.16em;text-transform:uppercase;color:var(--it-naranja)}
+/* texto justificado, también en celular */
+.it p,.it .just{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.it a{color:var(--it-verde);text-decoration-color:var(--it-oro);text-underline-offset:3px}
+.it li{text-align:left;overflow-wrap:anywhere;margin:.2em 0}
+.it code{overflow-wrap:anywhere}
+/* tarjetas y carpetas */
+.it-tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.it-tarjeta{background:var(--it-papel);border:1px solid var(--it-linea);border-radius:var(--it-radio);padding:16px;box-shadow:0 6px 18px rgba(44,58,50,.06)}
+.it-tarjeta b{display:block;font:700 19px var(--it-tit);color:var(--it-verde)}
+.it-tarjeta small{color:var(--it-gris)}
+.it-aviso{background:#FFF7E6;border-left:4px solid var(--it-naranja);padding:10px 14px;border-radius:8px}
+/* botones */
+.it-btn{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--it-verde);color:#F2EBDC!important;text-decoration:none;font:600 14px var(--it-txt);border:1px solid var(--it-verde)}
+.it-btn.mostaza{background:var(--it-mostaza);border-color:var(--it-mostaza);color:var(--it-negro)!important}
+.it-btn.linea{background:transparent;color:var(--it-verde)!important;border-color:var(--it-oro)}
+/* tablas con formato APA 7: número en negritas, título en cursiva, solo líneas horizontales */
+.it-apa-tabla{margin:18px 0}
+.it-apa-tabla .num{font-weight:700;margin:0}
+.it-apa-tabla .tit{font-style:italic;margin:0 0 6px}
+.it-apa-tabla table{border-collapse:collapse;width:100%;font-size:15px;background:transparent}
+.it-apa-tabla th{border-top:1.5px solid var(--it-negro);border-bottom:1px solid var(--it-negro);text-align:left;padding:6px 8px;font-weight:700}
+.it-apa-tabla td{padding:6px 8px;text-align:left}
+.it-apa-tabla tr:last-child td{border-bottom:1.5px solid var(--it-negro)}
+.it-apa-tabla .nota{font-size:13px;margin-top:4px}
+/* referencias APA 7: orden alfabético y sangría francesa */
+.it-ref{list-style:none;padding:0}
+.it-ref li{padding-left:2.2em;text-indent:-2.2em;text-align:left;margin:0 0 .5em}
+/* pie común */
+.it-pie{background:var(--it-verde);color:#D9CBA8;font-size:13px;text-align:center;padding:18px;border-top:3px solid var(--it-mostaza)}
+@media (max-width:600px){body.it{font-size:16px}.it main{padding:18px 14px 48px}}
+@media print{.it-top,.it-pie{background:#fff;color:#000;border-color:#000}body.it{background:#fff}}
