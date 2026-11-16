@@ -342,3 +342,8 @@ body:not(.biblioteca) .tapa .cap{font-weight:700}
 body:not(.biblioteca) .tapa .dom,body:not(.biblioteca) .tapa .reg,body:not(.biblioteca) .tapa .num{color:#E6DCC6}
 body:not(.biblioteca) .tapa .dom{font-weight:600}
 body:not(.biblioteca) .tapa:hover,body:not(.biblioteca) .tapa:focus-visible{box-shadow:0 22px 40px rgba(0,0,0,.28),inset 0 0 0 1px #EADBB8}
+/* Tema Biblioteca: fondo «Biblioteca infinita» (vista desde el sillón, lámpara verde y biblioteca sin fin) · © VHRS */
+body.biblioteca .libreria{left:0;right:0;width:auto;background:url(biblioteca-infinita.svg?v=1) center/cover no-repeat;opacity:.62;-webkit-mask-image:none;mask-image:none}
+body.biblioteca .sillones,body.biblioteca .rayos{display:none}
+body.biblioteca:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(20,32,25,.35),rgba(20,32,25,.15) 40%,rgba(20,32,25,.45))}
+@media (max-width:760px){body.biblioteca .libreria{width:auto;opacity:.5}}
