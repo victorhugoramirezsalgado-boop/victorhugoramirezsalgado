@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Sello del Cubo de Víctor Hugo Ramírez Salgado">
+<title>Sello del Cubo · © Víctor Hugo Ramírez Salgado</title>
+<defs>
+ <filter id="tinta" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" seed="7" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="0.55" result="d"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="3" result="g"/>
+  <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.4" result="m"/>
+  <feComposite in="d" in2="m" operator="in"/>
+ </filter>
+ <path id="aro" d="M50,50 m-39.5,0 a39.5,39.5 0 1,1 79,0 a39.5,39.5 0 1,1 -79,0"/>
+</defs>
+<g filter="url(#tinta)" fill="none" stroke="#9C8660" color="#9C8660">
+ <circle cx="50" cy="50" r="48" stroke-width="1.6"/>
+ <circle cx="50" cy="50" r="45.6" stroke-width=".5"/>
+ <circle cx="50" cy="50" r="34.2" stroke-width=".9"/>
+ <circle cx="50" cy="50" r="32.4" stroke-width=".55" stroke-dasharray=".6 1.4" stroke-linecap="round"/>
+ <text font-family="Georgia,serif" font-size="5.4" font-weight="700" fill="#9C8660" stroke="none"><textPath href="#aro" startOffset="0" textLength="244" lengthAdjust="spacing">VÍCTOR HUGO RAMÍREZ SALGADO ✦ OBRAS REGISTRADAS ✦ CUBO (33) ✦</textPath></text>
+ <g transform="translate(50,50) scale(1.18) translate(-50.5,-50.5)" stroke-width="1" stroke-linejoin="round" stroke-linecap="round">
+  <rect x="31" y="40" width="30" height="30"/>
+  <rect x="40" y="31" width="30" height="30"/>
+  <path d="M31 40L40 31M61 40L70 31M31 70L40 61M61 70L70 61"/>
+  <g font-family="Inter,Arial,sans-serif" font-weight="700" font-size="2.45" fill="#9C8660" stroke="none" text-anchor="middle" dominant-baseline="central">
+   <text x="46" y="65.6">SOSISTEM™</text>
+   <text x="55" y="35.6">CUBO 33©</text>
+   <text x="50.5" y="47.6">INTERTOPÍA©</text>
+   <text x="50.5" y="53.6">ECONOTOPÍA©</text>
+   <text transform="translate(35.5,53.6) rotate(-90)">CONTENEDORENS©</text>
+   <text transform="translate(65.5,47.6) rotate(90)">ARSA BODEGAS©</text>
+  </g>
+ </g>
+</g>
+</svg>
