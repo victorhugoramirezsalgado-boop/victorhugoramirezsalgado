@@ -27,7 +27,8 @@ vz.innerHTML='<div class="vz-bar"><button class="reg" data-a="cerrar">‹ Regres
 document.body.appendChild(vz);
 const tit=vz.querySelector('.t'),acc=vz.querySelector('.acc'),cuerpo=vz.querySelector('.vz-cuerpo');
 let y=0,abierto=false,actual=null,blob=null;
-const abs=u=>new URL(u,location.href).href;
+const PROXY=/translate\.goog$/.test(location.hostname);
+const abs=u=>(PROXY&&/^\//.test(u))?'https://victorhugoramirezsalgado.com'+u:new URL(u,location.href).href;
 const nombre=u=>decodeURIComponent(abs(u).split('/').pop().split('?')[0]);
 function mostrar(){if(!abierto){y=window.scrollY;abierto=true;try{history.pushState({vz:1},'',location.href.split('#')[0]+'#ver')}catch(e){}}vz.hidden=false;document.body.classList.add('vz-abierto');document.documentElement.style.overflow='hidden'}
 function cerrar(desdeHist){if(!abierto)return;abierto=false;vz.hidden=true;cuerpo.innerHTML='';blob=null;document.body.classList.remove('vz-abierto');document.documentElement.style.overflow='';window.scrollTo(0,y);if(!desdeHist)try{history.back()}catch(e){}}
@@ -65,7 +66,7 @@ async function abrirPDF(u,t){
  t=t||nombre(u).replace(/\.pdf$/i,'').replace(/[-_]/g,' ');actual=u;
  vz.classList.remove('pag');tit.textContent=t;barraPDF(u,t);cuerpo.innerHTML='<p class="vz-msg">Abriendo documento…</p>';mostrar();
  try{
-  const r=await fetch(u);if(!r.ok)throw 0;blob=await r.blob();if(actual!==u)return;
+  const r=await fetch(abs(u));if(!r.ok)throw 0;blob=await r.blob();if(actual!==u)return;
   const lib=await cargaPdfjs();const doc=await lib.getDocument({data:await blob.arrayBuffer()}).promise;if(actual!==u)return;
   cuerpo.innerHTML='';const ancho=Math.min(cuerpo.clientWidth-16,980),dpr=Math.min(window.devicePixelRatio||1,2);
   for(let i=1;i<=doc.numPages;i++){
@@ -74,7 +75,7 @@ async function abrirPDF(u,t){
    const c=document.createElement('canvas');c.width=v.width;c.height=v.height;c.style.width=(v.width/dpr)+'px';c.setAttribute('aria-label','Página '+i);cuerpo.appendChild(c);
    await p.render({canvasContext:c.getContext('2d'),viewport:v}).promise;
   }
- }catch(e){if(actual!==u)return;cuerpo.innerHTML='';const f=document.createElement('iframe');f.src=u;f.title=t;cuerpo.appendChild(f);cuerpo.style.padding='0'}
+ }catch(e){if(actual!==u)return;cuerpo.innerHTML='';const f=document.createElement('iframe');f.src=abs(u);f.title=t;cuerpo.appendChild(f);cuerpo.style.padding='0'}
 }
 function abrirPagina(u,t){
  actual=u;vz.classList.add('pag');tit.textContent=t||'';acc.innerHTML='';cuerpo.style.padding='';

@@ -60,7 +60,7 @@ footer{text-align:center;font-size:13px;color:#6E6457;padding:20px 18px 40px;bor
 <p class="lead">El cubo de cubos del Cubo de la Comunicación (33)©: <b>un cubo por cada idioma</b>, con su alfabeto, su escritura y sus 159 palabras y frases, y <b>un cubo libre</b> para que cada persona construya su propio idioma. Es la versión 3.0 de Econotopía©: un lenguaje multinumérico y multidimensional.</p>
 
 <div class="niveles">
- <div class="niv"><small>Nivel 1 · el juego empieza aquí</small><b>Cubo 33© en 2D</b>Una cara de 26 × 26 con la A–Z en los cuatro bordes y los números del 1 al 4056. <a href="/cubo-base/assets/cubo33-nivel1-prototipo-carta.pdf" download>Prototipo para imprimir</a></div>
+ <div class="niv"><small>Nivel 1 · el juego empieza aquí</small><b>Cubo 33© en 2D</b>Una cara de 26 × 26 con la A–Z en los cuatro bordes y los números del 1 al 4056. <a href="/cubo-base/assets/cubo33-nivel1-prototipo-carta.pdf" data-cubo-pdf="c33">Prototipo para imprimir · <span data-cubo-nombre>Español</span></a><br><label style="font-size:13px">Idioma del cubo: <select class="idioma-cubo"></select></label></div>
  <div class="niv"><small>Hermano educativo</small><b>Cubo de Aprendizaje©</b>Imprime, recorta, pega y juega: idiomas, braille, banderas, señas y Morse. <a href="/cubo33/aprende/">Abrir</a></div>
  <div class="niv"><small>Los 22 idiomas</small><b>Hipercubo 33©</b>Cada idioma es un cubo dentro del cubo; el orden empieza en el español (1) y sigue con el inglés (2), el francés (3) y el portugués (4).</div>
  <div class="niv"><small>Seguridad</small><b>SOSistem™</b>Pedir auxilio («SOS») corresponde al proyecto SOSistem™. <a href="https://sosistem.com">sosistem.com</a></div>
@@ -171,7 +171,7 @@ footer{text-align:center;font-size:13px;color:#6E6457;padding:20px 18px 40px;bor
 <li>Cara 5: libre, para su práctica.</li>
 <li>Cara 6: el Cubo 33© del idioma, con números, Morse, braille y banderas.</li>
 </ul>
-<div class="btns"><a href="/cubo-base/assets/idiomas/idiomas-22-bases-carta.pdf" download>Imprimir las bases de los 22 idiomas (PDF)</a><a class="sec" href="/cubo-base/assets/idiomas/idioma-en-carta.pdf" download>Ejemplo: inglés, 159 palabras (PDF)</a><a class="sec" href="/cubo33/aprende/">Consultar en línea</a></div>
+<div class="btns"><a href="/cubo-base/assets/idiomas/idiomas-22-bases-carta.pdf" download>Imprimir las bases de los 22 idiomas (PDF)</a><a class="sec" href="/cubo-base/assets/idiomas/idioma-es-carta.pdf" data-cubo-pdf="bases">Bases · <span data-cubo-nombre>Español</span>, 159 palabras (PDF)</a><a class="sec" href="/cubo33/aprende/">Consultar en línea</a></div>
 <div class="btns"><a class="sec" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-1.pdf" download>Manual etapa 1</a><a class="sec" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-2.pdf" download>Manual etapa 2</a><a class="sec" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-3.pdf" download>Manual etapa 3</a></div>
 </div>
 </main>
@@ -179,15 +179,16 @@ footer{text-align:center;font-size:13px;color:#6E6457;padding:20px 18px 40px;bor
 <script src="../idiomas.js"></script>
 <script src="../sitio.js"></script>
 <div class="hc-menu" id="hc-menu" hidden role="dialog" aria-modal="true"><div class="in"><h3 id="hm-n"></h3><p class="nat" id="hm-nat"></p>
-<button id="hm-cubo">Ver el Cubo del Idioma · para armar</button><button id="hm-bases">Ver las bases del idioma · 159 palabras</button><button class="sec" id="hm-x">Cerrar</button></div></div>
+<button id="hm-c33">Cubo 33© en 2D · para armar</button><button id="hm-cubo">Cubo del Idioma · para armar</button><button id="hm-bases">Ver las bases del idioma · 159 palabras</button><button class="sec" id="hm-x">Cerrar</button></div></div>
 <script src="../visor.js?v=2026-11-15a"></script>
+<script src="../cubos-idioma.js?v=2026-11-15a"></script>
 <script>
 /* © 2026 Víctor Hugo Ramírez Salgado — cada cubo del Hipercubo 33© abre su idioma. Asistencia-IA. */
 (function(){const M=document.getElementById('hc-menu');let c='',n='';
 document.querySelectorAll('.grid .hc:not(.libre)').forEach(f=>{const sp=f.querySelector('figcaption span');f.dataset.c=sp.getAttribute('lang');f.tabIndex=0;f.setAttribute('role','button');f.setAttribute('aria-label','Abrir '+f.querySelector('figcaption b').textContent);
  const abre=()=>{c=f.dataset.c;n=f.querySelector('figcaption b').textContent;document.getElementById('hm-n').textContent=n;const nt=document.getElementById('hm-nat');nt.textContent=sp.textContent;nt.lang=c;M.hidden=false};
  f.onclick=abre;f.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();abre()}}});
-const x=()=>M.hidden=true;document.getElementById('hm-x').onclick=x;M.onclick=e=>{if(e.target===M)x()};
+const x=()=>M.hidden=true;document.getElementById('hm-c33').onclick=()=>{x();VHRS_cubos.idioma=c;VHRS_visor.abrirPDF(VHRS_cubos.url.c33(c),'Cubo 33© en 2D · '+n)};document.getElementById('hm-x').onclick=x;M.onclick=e=>{if(e.target===M)x()};
 document.getElementById('hm-cubo').onclick=()=>{x();VHRS_visor.abrirPDF('/cubo-base/assets/cubos-idioma/cubo-idioma-'+c+'-carta.pdf','Cubo del Idioma · '+n)};
 document.getElementById('hm-bases').onclick=()=>{x();VHRS_visor.abrirPDF('/cubo-base/assets/idiomas/idioma-'+c+'-carta.pdf','Bases del idioma · '+n)};})();
 </script>
