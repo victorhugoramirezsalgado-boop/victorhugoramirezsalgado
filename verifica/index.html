@@ -4,182 +4,88 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Verificar certificado · Víctor Hugo Ramírez Salgado</title>
-<meta name="description" content="Verificación en línea de los certificados de patrocinio de las obras de Víctor Hugo Ramírez Salgado.">
+<meta name="description" content="Verificación de los certificados de patrocinio de las obras de Víctor Hugo Ramírez Salgado. El certificado se envía solo al correo registrado en el pago.">
 <meta name="robots" content="noindex">
 <style>
-/* © 2026 Víctor Hugo Ramírez Salgado — verificación de certificados de patrocinio. Asistencia-IA.
-   Los datos de cada certificado están cifrados (AES-GCM, clave derivada con PBKDF2 del número y del código Cubo 33).
-   Sin el número y el código impresos en el certificado no se puede leer nada. */
-@page{size:11in 8.5in;margin:0}
+/* © 2026 Víctor Hugo Ramírez Salgado — verificación de certificados de patrocinio con doble validación. Asistencia-IA.
+   Doble validación: proyecto apoyado + número de certificado + código Cubo (33). Si coinciden, el certificado
+   se envía SOLO al correo registrado en el pago, con copia al autor. Esta página nunca muestra datos de nadie. */
 *{box-sizing:border-box}
 body{margin:0;background:#2C3A32;color:#EADBB8;font:400 15px/1.5 Inter,system-ui,-apple-system,sans-serif}
-.vf{max-width:760px;margin:0 auto;padding:22px 16px 40px}
+.vf{max-width:640px;margin:0 auto;padding:22px 16px 40px}
 .vf-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .vf-top a{color:#EADBB8;text-decoration:none;font:600 15px Georgia,serif}
 .tema select{background:transparent;color:#EADBB8;border:1px solid #C9A55A;border-radius:999px;padding:5px 10px;font:500 13px Inter,sans-serif}
-.vf h1{font:700 30px Georgia,serif;margin:22px 0 4px;color:#F2EBDC;cursor:pointer}
-.vf p.sub{margin:0 0 18px;color:#D9CBA8}
-.vf form{background:#FBF7EE;color:#2B2620;border-radius:12px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
-.vf label{display:block;font:600 12px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8A6A3B;margin:0 0 6px}
-.vf input{font:600 18px Inter,sans-serif;padding:10px 12px;border:1.5px solid #D9C08A;border-radius:8px;background:#fff;color:#2B2620;width:100%}
-.vf .cod{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}
-.vf .cod input{text-align:center}
-.vf .fila{margin-bottom:14px}
-.vf small{display:block;color:#6E6457;font-size:12.5px}
-.vf button{font:700 15px Inter,sans-serif;padding:12px 20px;border-radius:999px;border:0;background:#2C3A32;color:#EADBB8;cursor:pointer}
-.vf button.sec{background:transparent;color:#EADBB8;border:1px solid #C9A55A}
-.vf .msg{margin-top:14px;padding:12px 14px;border-radius:10px;display:none}
-.vf .msg.ok{display:block;background:#E5EFE7;color:#1F4B33}
-.vf .msg.no{display:block;background:#F6E2DC;color:#7A2E1C}
-.vf .acc{display:none;gap:10px;flex-wrap:wrap;margin:16px 0}
-.vf .nota{font-size:12.5px;color:#C9BA95;margin-top:22px}
-#visor{display:none;margin:0 auto;overflow:hidden}
-.cert{width:11in;height:8.5in;position:relative;background:#F3EDE2;font-family:Inter,Arial,sans-serif;color:#2B2620;transform-origin:0 0}
-.cert .vali{flex:none;width:.9in;height:.9in;transform:rotate(7deg);margin:0 0 4px -16px;opacity:.95}
-.cert .col{min-width:0}.cert .centro{min-width:0}.cert .ver{width:auto;flex:1;min-width:0}.cert .firma{flex:none;width:2.4in}.cert .lib{min-height:0}
-.cert .codigo{font:700 9.5px Inter,Arial;color:#2C3A32;letter-spacing:.04em;white-space:nowrap}
-@media print{
- body{background:#fff}
- .vf>*:not(#visor){display:none!important}
- .vf{padding:0;max-width:none}
- #visor{display:block!important;width:auto!important;height:auto!important}
- .cert{transform:none!important}
- @page{size:letter landscape;margin:.25in}
- .cert,.cert *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
- .cert{zoom:.68}
-}
-.cert .hoja{position:absolute;inset:.3in;background:#FBF7EE;border:3px solid #2C3A32;padding:.12in}
-.cert .marco{height:100%;border:1.5px solid #C9A55A;display:grid;grid-template-columns:132px minmax(0,1fr) 132px;grid-template-rows:1fr auto;gap:0 14px;padding:12px 12px 0;position:relative}
-.cert .col{display:flex;flex-direction:column;gap:5px;justify-content:space-between;padding-bottom:6px}
-.cert .col h6{margin:0 0 1px;font:700 7.5px Inter,Arial;letter-spacing:.14em;text-transform:uppercase;color:#8A6A3B;text-align:center}
-.cert .lib{position:relative;flex:1;max-height:66px;background:linear-gradient(160deg,#34453B,#2C3A32 55%,#26332B);border-radius:2px 5px 5px 2px;padding:3px 4px 3px 11px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.cert .lib:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(90deg,#1E2822,#2C3A32 60%,#1E2822)}
-.cert .lib:after{content:"";position:absolute;left:9px;right:3px;top:3px;bottom:3px;border:.6px solid rgba(234,219,184,.45);pointer-events:none}
-.cert .lib i{position:absolute;right:5px;bottom:3px;font:italic 7px Georgia;color:#E6DCC6}
-.cert .lib .ic{width:26px;color:#EADBB8;line-height:0}
-.cert .lib .ic svg{width:100%;height:auto}
-.cert .lib b{font:700 9px/1.1 Georgia,serif;color:#F2EBDC}
-.cert .lib s{text-decoration:none;font:italic 6.5px/1.15 Georgia;color:#E6DCC6;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cert .lib u{text-decoration:none;font:600 5.8px Inter,Arial;color:#EADBB8;letter-spacing:.02em}
-.cert .centro{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 8px;position:relative}
-.cert .esq{position:absolute;width:30px;height:30px;border-color:#C9A55A;border-style:solid}
-.cert .e1{top:0;left:0;border-width:2.5px 0 0 2.5px}
-.cert .e2{top:0;right:0;border-width:2.5px 2.5px 0 0}
-.cert .sup{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:#8A6A3B;font-weight:600}
-.cert h1{font:700 40px Georgia,serif;margin:6px 0 2px;color:#2C3A32}
-.cert .folio{display:inline-block;margin-top:4px;background:#2C3A32;color:#EADBB8;font-weight:700;font-size:12px;letter-spacing:.12em;padding:5px 14px;border-radius:999px}
-.cert .otorga{margin-top:14px;font:italic 16px Georgia,serif;color:#6E6457}
-.cert .nombre{font:700 36px Georgia,serif;color:#2B2620;margin:4px 0 2px;padding:0 24px 4px;border-bottom:1.5px solid #C9A55A}
-.cert .texto{max-width:5.9in;font-size:13.5px;line-height:1.55;margin-top:10px}
-.cert .texto b{color:#2C3A32}
-.cert .datos{display:flex;gap:22px;margin-top:12px;font-size:10.5px;color:#6E6457}
-.cert .datos div b{display:block;color:#2B2620;font-size:12.5px;margin-top:1px}
-.cert .reporte{margin-top:10px;max-width:5.6in;font-size:9.5px;line-height:1.45;color:#6E6457;font-style:italic}
-.cert .pie{margin-top:auto;width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
-.cert .firma{width:2.6in;text-align:center}
-.cert .firma .rub{display:flex;align-items:flex-end;justify-content:center;height:92px;margin-bottom:2px}
-.cert .firma .rub img{height:90px}
-.cert .firma .lin{border-top:1.3px solid #2B2620;padding-top:4px;font-size:11.5px;font-weight:700}
-.cert .firma small{display:block;font-weight:400;color:#6E6457;font-size:9.5px;margin-top:1px}
-.cert .sello{flex:none;width:1.45in;height:1.45in;transform:rotate(-9deg);opacity:.92;margin-bottom:-6px}
-.cert .ver{width:2.2in;text-align:right;font-size:9px;color:#6E6457;line-height:1.5}
-.cert .piepag{grid-column:1/4;border-top:1.5px solid #C9A55A;margin:0 -12px;padding:6px 14px 6px;background:#F3EDE2;text-align:center}
-.cert .piepag .web{font:700 13px Georgia,serif;color:#2C3A32;letter-spacing:.04em}
-.cert .piepag .web em{font:600 8.5px Inter,Arial;font-style:normal;color:#8A6A3B;letter-spacing:.12em;text-transform:uppercase;margin-left:8px}
-.cert .piepag .regs{font-size:5.9px;line-height:1.45;color:#6E6457;margin-top:3px}
-.cert .piepag .regs b{color:#2B2620}
-.cert .piepag .copy{font-size:6.8px;color:#8A7E6C;margin-top:3px}
+h1{font:700 30px Georgia,serif;margin:22px 0 4px;color:#F2EBDC;cursor:pointer}
+.sub{margin:0 0 18px;color:#D9CBA8}
+.sellos{display:flex;justify-content:center;gap:6px;margin:0 auto 14px;background:#FBF7EE;border-radius:14px;padding:8px 14px;width:max-content}
+.sellos img{width:96px;height:96px}
+form{background:#FBF7EE;color:#2B2620;border-radius:12px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+label{display:block;font:600 12px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8A6A3B;margin:0 0 6px}
+input,select.campo{font:600 18px Inter,sans-serif;padding:10px 12px;border:1.5px solid #D9C08A;border-radius:8px;background:#fff;color:#2B2620;width:100%}
+.cod{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}
+.cod input{text-align:center}
+.fila{margin-bottom:14px}
+small{display:block;color:#6E6457;font-size:12.5px}
+button{font:700 15px Inter,sans-serif;padding:12px 20px;border-radius:999px;border:0;background:#2C3A32;color:#EADBB8;cursor:pointer}
+button[disabled]{opacity:.6}
+.msg{margin-top:14px;padding:12px 14px;border-radius:10px;display:none}
+.msg.ok{display:block;background:#E5EFE7;color:#1F4B33}
+.msg.no{display:block;background:#F6E2DC;color:#7A2E1C}
+.pasos{margin:22px 0 0;padding:0 0 0 18px;color:#D9CBA8;font-size:14px}
+.nota{font-size:12.5px;color:#C9BA95;margin-top:18px}
+.nota a{color:#EADBB8}
 </style>
 </head>
 <body>
 <div class="vf">
  <div class="vf-top"><a href="../">Víctor Hugo Ramírez Salgado</a><div class="tema"></div></div>
  <h1 data-morse="VERIFICAR">Verificar certificado</h1>
- <p class="sub">Escriba el número y el código Cubo (33) que vienen en su certificado de patrocinio. Si son correctos, aquí aparece el mismo certificado con el sello de doble validación para descargarlo.</p>
+ <p class="sub">Doble validación del certificado de patrocinio: elija el proyecto que apoyó y escriba el número y el código Cubo (33) de su certificado. Si los datos coinciden, le enviamos el certificado verificado <b>al correo con el que hizo el pago</b>.</p>
+ <div class="sellos"><img src="sello-cubo.svg" alt="Sello del Cubo"><img src="sello-validado.svg" alt="Sello de doble validación"></div>
  <form id="f" autocomplete="off">
+  <div class="fila"><label for="clave">Proyecto que apoyó</label>
+   <select class="campo" id="clave" required>
+    <option value="">Elija el proyecto…</option>
+    <option value="SOS">SOSistem™ (SOS)</option>
+    <option value="IP">Investigación y propuestas (IP)</option>
+    <option value="767">SOS767 (767)</option>
+    <option value="ITP">Intertopía© (ITP)</option>
+    <option value="ETP">Econotopía© (ETP)</option>
+    <option value="C33">El Cubo de la Comunicación (33)© (C33)</option>
+   </select></div>
   <div class="fila"><label for="folio">Número de certificado</label><input id="folio" placeholder="Ej. IP-001" required></div>
-  <div class="fila"><label>Código Cubo (33)</label><div class="cod"><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required></div><small>Cuatro números del 1 al 676, impresos junto al sello de validación.</small></div>
-  <button type="submit">Verificar</button>
+  <div class="fila"><label>Código Cubo (33)</label><div class="cod"><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required></div><small>Cuatro números del 1 al 676, impresos en su certificado junto al sello de validación.</small></div>
+  <button type="submit" id="btn">Verificar y enviar a mi correo</button>
   <div class="msg" id="msg"></div>
  </form>
- <div class="acc" id="acc"><a id="pdf" href="#" style="display:inline-block;font:700 15px Inter,sans-serif;padding:12px 20px;border-radius:999px;background:#C9A55A;color:#2C3A32;text-decoration:none">Descargar PDF</a><button type="button" class="sec" id="imp">Imprimir</button><button type="button" class="sec" id="otro">Verificar otro</button></div>
- <div id="visor"></div>
- <p class="nota">También puede pedir la verificación escribiendo a <b>info@victorhugoramirezsalgado.com</b> con su número de certificado. Los datos de cada certificado se guardan cifrados: solo quien tiene el número y el código puede verlos. © 2026 Víctor Hugo Ramírez Salgado.</p>
+ <ol class="pasos">
+  <li>Primera validación: el número de certificado corresponde al proyecto que usted apoyó.</li>
+  <li>Segunda validación: el código Cubo (33) coincide con el registrado al emitir el certificado.</li>
+  <li>Si ambas coinciden, el mismo certificado en PDF llega al correo registrado en el pago. Esta página no muestra datos de ninguna persona.</li>
+ </ol>
+ <p class="nota">¿No tiene acceso a ese correo? Escriba a <a href="mailto:info@victorhugoramirezsalgado.com">info@victorhugoramirezsalgado.com</a> con su número de certificado. © 2026 Víctor Hugo Ramírez Salgado.</p>
 </div>
-<script src="../obras.js"></script>
+<script src="config.js?v=1"></script>
 <script>
-const R=[["Intertopía©", "2602144563892", "feb 2026"], ["1ntertopía©", "2606096034080", "jun 2026"], ["Sistema S.O.S.©", "2609046908578", "sep 2026"], ["ContenedorEns© (nombre y logo)", "2609046908752", "sep 2026"], ["Arsa Bodegas© (nombre y logo)", "2609046908806", "sep 2026"], ["Econotopía©", "2610077261709", "oct 2026"], ["CuboPY©", "2610097275281", "oct 2026"], ["Código Cúbico© · Código de comunicación del Cubo (33)©", "2610097276721", "oct 2026"], ["Cubo Interior©", "2610097277049", "oct 2026"], ["Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)", "2610097277155", "9 oct 2026"], ["Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva", "2610097277377", "9 oct 2026"], ["Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara", "2610097277568", "9 oct 2026"], ["Cubo Morse©", "2610257441754", "25 oct 2026"], ["SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)", "2610257442171", "25 oct 2026"], ["SOSistem™ versiones 3.9 a 6.6", "2610317507284", "31 oct 2026"], ["Econotopía© 2.0 · sistema de comunicación del Cubo", "2610317507307", "31 oct 2026"], ["Estructura y Validación mediante Código Omnigráfico© (definitivo)", "2610317507444", "31 oct 2026"], ["S.S.O.S.© expediente técnico y modelo de negocio", "2610317507475", "31 oct 2026"], ["Sensor híper inteligente SOSistem™ (documento de diseño)", "2610317507499", "31 oct 2026"], ["Registro mundial de naufragios (propuesta CIP/OMI)", "2610317507550", "31 oct 2026"], ["Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)", "2610317507741", "31 oct 2026"], ["Cartera de dominios y sitios web del autor", "2611017524083", "1 nov 2026"], ["Cartera de dominios del autor · variantes técnicas sin tilde (intertopia.com, 1ntertopia.com, econotopia.com)", "2611037540810", "3 nov 2026"], ["Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)", "2611097590053", "9 nov 2026"], ["Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma", "2611097590138", "9 nov 2026"]];
-const MAP={'logo-cont':'contenedor','logo-arsa':'bodega','logo-inter':'inter','logo-eco':'econo','logo-cubo33':'cubo','logo-ccub':'codigo','logo-cmor':'morse','logo-cint':'interior','logo-cpy':'py','logo-sos':'sos','logo-uno':'inter'};
 const $=s=>document.querySelector(s);
-const b64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
-const hex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
-const enc=new TextEncoder();
-const norm=f=>f.trim().toUpperCase().replace(/\s+/g,'').replace(/–|—/g,'-');
-async function abrir(folio,codigo){
- const base=norm(folio)+'|'+codigo;
- const id=hex(await crypto.subtle.digest('SHA-256',enc.encode('vhrs-verifica|'+base)));
- const db=await (await fetch('registros.json?t='+Date.now())).json();
- const r=db.items[id]; if(!r) return null;
- const k0=await crypto.subtle.importKey('raw',enc.encode(base),'PBKDF2',false,['deriveKey']);
- const k=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(r.salt),iterations:db.iter,hash:'SHA-256'},k0,{name:'AES-GCM',length:256},false,['decrypt']);
- const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(r.iv)},k,b64(r.ct));
- window.__reg={r,k};
- return JSON.parse(new TextDecoder().decode(pt));
-}
-function vali(d,modo){
- const fecha=modo==='verificado'?'Verificado '+new Date().toLocaleDateString('es-MX',{day:'numeric',month:'short',year:'numeric'}):'Emitido '+d.emitidoCorto;
- return `<svg class="vali" viewBox="0 0 100 100" role="img" aria-label="Sello de doble validación"><defs><filter id="tinta2" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="0.6" result="d"/><feTurbulence type="fractalNoise" baseFrequency="0.9" seed="5" result="g"/><feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.4" result="m"/><feComposite in="d" in2="m" operator="in"/></filter><path id="aro2" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
- <g filter="url(#tinta2)" fill="none" stroke="#5F7566" color="#5F7566"><circle cx="50" cy="50" r="47" stroke-width="2.2"/><circle cx="50" cy="50" r="31" stroke-width="1"/>
- <text font-family="Inter,Arial,sans-serif" font-size="7.2" font-weight="800" fill="#5F7566" stroke="none"><textPath href="#aro2" textLength="236" lengthAdjust="spacing">DOBLE VALIDACIÓN ✦ VHRS ✦ VERIFICA EN LÍNEA ✦</textPath></text>
- <path d="M37 48l9 9 17-19" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
- <g fill="#5F7566" stroke="none" font-family="Inter,Arial,sans-serif" text-anchor="middle"><text x="50" y="69" font-size="8" font-weight="800" letter-spacing=".8">VALIDADO</text><text x="50" y="30" font-size="6.6" font-weight="700">${d.folio}</text><text x="50" y="76.5" font-size="4.6" font-weight="600">${fecha}</text></g></g></svg>`;
-}
-function lib(p,k){const [g,n,dom,ic,,r]=p;const svg=I[MAP[ic]||ic]||I.cubo;return `<div class="lib"><i>${k}</i><div class="ic">${svg}</div><b>${n}</b><s>${dom}</s><u>Safe Creative ${r}</u></div>`}
-function cert(d,modo){
- const h=Math.ceil(P.length/2),izq=P.slice(0,h).map((p,i)=>lib(p,i+1)).join(''),der=P.slice(h).map((p,i)=>lib(p,i+h+1)).join('');
- const regs=R.map(([o,n])=>o.split(' · ')[0]+' '+n).join(' · ');
- return `<div class="cert"><div class="hoja"><div class="marco">
-<div class="col"><h6>Obras del autor</h6>${izq}</div>
-<div class="centro"><i class="esq e1"></i><i class="esq e2"></i>
-<div class="sup">Víctor Hugo Ramírez Salgado · Obras, sistemas y registros</div>
-<h1>Certificado de patrocinio</h1>
-<div class="folio">CERTIFICADO N.º ${d.folio}</div>
-<div class="otorga">Se otorga el presente certificado a</div>
-<div class="nombre">${d.nombre}</div>
-<div class="texto">${d.texto}</div>
-<div class="datos"><div>Proyecto apoyado<b>${d.proyecto}</b></div><div>Monto<b>${d.monto}</b></div><div>Fecha del pago<b>${d.fecha}</b></div><div>Medio de pago<b>${d.medio}</b></div></div>
-<div class="reporte">${d.reporte}</div>
-<div class="pie">
- <div class="firma"><div class="rub"><img src="${d.firma}" alt="Firma de Víctor Hugo Ramírez Salgado"></div><div class="lin">Víctor Hugo Ramírez Salgado<small>Autor y titular de las obras · Ensenada, B.C., México</small></div></div>
- <img class="sello" src="sello-cubo.svg" alt="Sello del Cubo">${vali(d,modo)}
- <div class="ver">Verifique este certificado en<br><b>victorhugoramirezsalgado.com/verifica</b><br>con el n.º ${d.folio} y el código<br><span class="codigo">Cubo (33): ${d.codigo.split('-').join(' · ')}</span><br>o escriba a info@victorhugoramirezsalgado.com</div>
-</div></div>
-<div class="col"><h6>Obras del autor</h6>${der}<div class="lib" style="background:#F3EDE2;border:1px solid #C9A55A"><b style="color:#2C3A32;font-size:8.5px">${R.length} obras registradas</b><s style="color:#6E6457">Safe Creative · IMPI</s></div></div>
-<div class="piepag"><div class="web">victorhugoramirezsalgado.com<em>Biblioteca de obras registradas</em></div>
-<div class="regs"><b>Registros en Safe Creative (${R.length}):</b> ${regs} · <b>IMPI:</b> marca SOSistem™, clase 9, en trámite, expediente 3741790.</div>
-<div class="copy">© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Este certificado no es un comprobante fiscal (CFDI) ni un donativo deducible.</div></div>
-</div></div></div>`;
-}
-function ajusta(){const v=$('#visor'),c=v.querySelector('.cert');if(!c)return;const w=Math.min(v.parentElement.clientWidth,1056),s=w/1056;c.style.transform=`scale(${s})`;v.style.width=w+'px';v.style.height=(816*s)+'px'}
-window.mostrar=(d,modo)=>{$('#visor').innerHTML=cert(d,modo||'verificado');$('#visor').style.display='block';$('#acc').style.display='flex';ajusta()};
-addEventListener('resize',ajusta);
 const cajas=[...document.querySelectorAll('.cod input')];
 cajas.forEach((c,i)=>c.addEventListener('input',()=>{c.value=c.value.replace(/\D/g,'');if(c.value.length===3&&cajas[i+1])cajas[i+1].focus()}));
-// si el enlace trae ?n=IP-001&c=1-2-3-4 se llena solo
-const q=new URLSearchParams(location.search);if(q.get('n'))$('#folio').value=q.get('n');if(q.get('c'))q.get('c').split(/[-·. ]+/).slice(0,4).forEach((v,i)=>cajas[i].value=v);
-$('#f').onsubmit=async e=>{e.preventDefault();const m=$('#msg');m.className='msg';m.textContent='';
- const nums=cajas.map(c=>+c.value);if(nums.some(n=>!(n>=1&&n<=676))){m.className='msg no';m.textContent='Cada número del código va del 1 al 676.';return}
- try{const d=await abrir($('#folio').value,nums.join('-'));
-  if(!d){m.className='msg no';m.textContent='No encontramos un certificado con ese número y código. Revise los datos o escriba a info@victorhugoramirezsalgado.com.';$('#visor').style.display='none';$('#acc').style.display='none';return}
-  await prepararPDF(d.folio);m.className='msg ok';m.textContent=`Certificado auténtico: ${d.folio} a nombre de ${d.nombre}, emitido por Víctor Hugo Ramírez Salgado.`;window.mostrar(d,'verificado');
- }catch(err){m.className='msg no';m.textContent='No se pudo verificar en este navegador. Intente con Chrome actualizado.'}};
-// PDF original del certificado (carta horizontal, una hoja): el visor de PDF lo ajusta a carta, oficio o A4
-async function prepararPDF(folio){const a=$('#pdf'),g=window.__reg;a.removeAttribute('download');a.href='#';
- if(g&&g.r.pdf){try{const b=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(g.r.pdf.iv)},g.k,b64(g.r.pdf.ct));
-  a.href=URL.createObjectURL(new Blob([b],{type:'application/pdf'}));a.download='Certificado-'+folio+'.pdf';a.target='_blank';return}catch(e){}}}
-$('#pdf').onclick=e=>{if($('#pdf').getAttribute('href')==='#'){e.preventDefault();window.print()}};
-$('#imp').onclick=()=>window.print();
-$('#otro').onclick=()=>{$('#f').reset();$('#visor').style.display='none';$('#acc').style.display='none';$('#msg').className='msg';scrollTo(0,0)};
+const q=new URLSearchParams(location.search);
+if(q.get('p'))$('#clave').value=q.get('p').toUpperCase();
+if(q.get('n'))$('#folio').value=q.get('n');
+if(q.get('c'))q.get('c').split(/[-·. ]+/).slice(0,4).forEach((v,i)=>cajas[i]&&(cajas[i].value=v));
+$('#folio').addEventListener('input',()=>{const m=$('#folio').value.trim().toUpperCase().match(/^([A-Z0-9]+)-/);if(m&&!$('#clave').value&&[...$('#clave').options].some(o=>o.value===m[1]))$('#clave').value=m[1]});
+$('#f').onsubmit=async e=>{e.preventDefault();const m=$('#msg'),b=$('#btn');m.className='msg';
+ const clave=$('#clave').value,folio=$('#folio').value.trim().toUpperCase().replace(/\s+/g,''),nums=cajas.map(c=>+c.value);
+ if(nums.some(n=>!(n>=1&&n<=676))){m.className='msg no';m.textContent='Cada número del código va del 1 al 676.';return}
+ if(!folio.startsWith(clave+'-')){m.className='msg no';m.textContent='El número de certificado no corresponde al proyecto elegido. Revise ambos datos.';return}
+ if(!window.VERIFICA_URL){m.className='msg no';m.textContent='El servicio de verificación se está activando. Mientras tanto, escriba a info@victorhugoramirezsalgado.com con su número de certificado.';return}
+ b.disabled=true;b.textContent='Verificando…';
+ try{const r=await fetch(window.VERIFICA_URL,{method:'POST',body:JSON.stringify({clave,folio,codigo:nums.join('-')})});const d=await r.json();
+  m.className='msg '+(d.ok?'ok':'no');m.textContent=d.msg;
+ }catch(err){m.className='msg no';m.textContent='No se pudo conectar con el servicio de verificación. Intente de nuevo en unos minutos.'}
+ b.disabled=false;b.textContent='Verificar y enviar a mi correo'};
 </script>
 <script src="../idiomas.js"></script>
 <script src="../sitio.js"></script>
