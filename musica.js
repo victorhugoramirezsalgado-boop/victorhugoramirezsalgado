@@ -1,12 +1,12 @@
 /* © 2026 Víctor Hugo Ramírez Salgado — música de fondo suave para la biblioteca. Asistencia-IA.
    Se reproduce con el reproductor oficial de YouTube (videos publicados por cada disquera).
-   · Suena desde que se abre la página. Si el navegador no deja sonar sin un toque, arranca en silencio
-     y se oye al primer toque en cualquier parte (computadora, celular o tableta).
+   · Siempre empieza en STOP: no suena nada hasta que el visitante toca «▶ Activar música»
+     (así no interrumpe la música que ya esté escuchando en su teléfono o computadora).
    · Volumen 2 que sube poco a poco hasta 30.
    · Si se sale del sitio, la música se apaga. Si se va a otra página del sitio y se regresa a la principal,
      la música sigue en la misma canción y en el punto donde iba (como si no se hubiera detenido).
    · Solo suena una pestaña a la vez: si la principal ya está sonando, las demás páginas no se enciman.
-   · Si el visitante la apaga, queda apagada en sus siguientes visitas. */
+   · Con «■ Detener» se apaga; en la siguiente visita vuelve a empezar en stop. */
 (function(){
 const LISTA=[
  ['NfOg7uNLolA','Gibran Alcocer','Idea 10'],
@@ -32,20 +32,20 @@ if(previo&&previo.on&&Date.now()-previo.ts<VIGENCIA_MS){
 let pendiente=false, yt=null, listo=false, sonando=false, mudo=false, rampa=null, pausaNuestra=false, pausaAjena=false, otraSuena=false;
 
 const css=document.createElement('style');
-css.textContent=`.mus{position:fixed;left:14px;bottom:14px;z-index:40;display:flex;align-items:center;gap:8px;font:500 12px var(--f-txt,system-ui);opacity:.55;transition:opacity .3s}
+css.textContent=`.mus{position:fixed;left:14px;bottom:14px;z-index:40;display:flex;align-items:center;gap:8px;font:500 12px var(--f-txt,system-ui);opacity:.85;transition:opacity .3s}
 .mus:hover,.mus.resalta,.mus.espera{opacity:1}
 .mus.resalta #mus-btn,.mus.espera #mus-btn{background:var(--acento,#8A6A3B);color:#fff;border-color:var(--acento,#8A6A3B);box-shadow:0 0 0 4px rgba(201,165,90,.35)}
 .mus.espera #mus-btn{animation:mus-lat 1.6s ease-in-out infinite}
 @keyframes mus-lat{50%{box-shadow:0 0 0 8px rgba(201,165,90,.15)}}
-.mus #mus-btn{transition:background .8s,box-shadow .8s,color .8s}
-.mus button{width:30px;height:30px;border-radius:50%;border:1px solid var(--linea,#E2D3B4);background:var(--papel,#FBF7EE);color:var(--tinta,#2B2620);cursor:pointer;font-size:12px;line-height:1;padding:0}
+.mus #mus-btn{padding:0 12px;font-weight:600;white-space:nowrap;transition:background .8s,box-shadow .8s,color .8s}
+.mus button{min-width:30px;height:30px;border-radius:999px;border:1px solid var(--linea,#E2D3B4);background:var(--papel,#FBF7EE);color:var(--tinta,#2B2620);cursor:pointer;font-size:12px;line-height:1;padding:0}
 .mus .tema-son{max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--mut,#6E6457);font-style:italic;letter-spacing:.02em;pointer-events:none}
 body.biblioteca .mus .tema-son{color:#D9CBA8}
 .mus .tema-son:empty{display:none}
 #mus-yt{position:fixed;width:1px;height:1px;left:-10px;bottom:-10px;opacity:0;pointer-events:none}`;
 document.head.appendChild(css);
 const caja=document.createElement('div'); caja.className='mus';
-caja.innerHTML='<button id="mus-btn" aria-label="Música de fondo" title="Música de fondo">♪</button><button id="mus-sig" aria-label="Siguiente canción" title="Siguiente canción" hidden>›</button><span class="tema-son" id="mus-tema" aria-live="polite"></span><div id="mus-yt"></div>';
+caja.innerHTML='<button id="mus-btn" aria-label="Activar música para leer (play)" title="Activar música para leer (play)">▶ Activar música</button><button id="mus-sig" aria-label="Siguiente canción" title="Siguiente canción" hidden>›</button><span class="tema-son" id="mus-tema" aria-live="polite"></span><div id="mus-yt"></div>';
 document.body.appendChild(caja);
 const btn=caja.querySelector('#mus-btn'), sigb=caja.querySelector('#mus-sig'), tema=caja.querySelector('#mus-tema');
 
@@ -53,8 +53,8 @@ function rotulo(){
  const [,a,t]=LISTA[i];
  caja.classList.toggle('espera',sonando&&mudo);
  tema.textContent=!sonando?'':mudo?'♪ Toque la pantalla para escuchar':`♪ ${t} · ${a}`;
- btn.textContent=sonando&&!mudo?'❚❚':'♪';
- btn.title=sonando&&!mudo?'Detener la música':'Música de fondo';
+ btn.textContent=sonando&&!mudo?'■ Detener':'▶ Activar música';
+ btn.title=sonando&&!mudo?'Detener la música (stop)':'Activar música para leer (play)';btn.setAttribute('aria-label',btn.title);
  sigb.hidden=!sonando||mudo;
 }
 let tRes=null;function resalta(){caja.classList.add('resalta');clearTimeout(tRes);tRes=setTimeout(()=>caja.classList.remove('resalta'),5000)}
@@ -88,8 +88,8 @@ window.onYouTubeIframeAPIReady=function(){
   playerVars:{controls:0,disablekb:1,playsinline:1,rel:0,start:Math.floor(inicio)},
   events:{
    onReady:()=>{listo=true;if(pendiente){tocar();return}
-    // espera un instante por si otra pestaña ya está sonando
-    setTimeout(()=>{if(leer()!=='off'&&!otraSuena)arrancar()},350)},
+    // solo continúa sola si el visitante la activó en esta misma visita (y otra pestaña no suena)
+    if(reanuda)setTimeout(()=>{if(!otraSuena)arrancar()},350)},
    onStateChange:e=>{
     const S=YT.PlayerState;
     if(e.data===S.ENDED)siguiente();
@@ -124,21 +124,19 @@ function pausar(){pausaNuestra=true;if(yt&&listo)yt.pauseVideo();clearInterval(r
 function detener(){caja.classList.remove('resalta');pausar();pausaAjena=false;anota(false)}
 function siguiente(){i=(i+1)%LISTA.length;reanuda=false;inicio=0;if(!yt)return;yt.loadVideoById(LISTA[i][0]);yt.setVolume(vol);rotulo()}
 function retomar(){ // al volver a la pestaña o con el botón «atrás»
- if(!yt||!listo||leer()==='off'||!pausaAjena)return;
+ if(!yt||!listo||!pausaAjena)return;
  pausaAjena=false;yt.playVideo();sonando=true;if(!mudo)avisa({toma:true});rotulo();
 }
 
-btn.onclick=e=>{e.stopPropagation();if(sonando&&mudo){guardar('on');oir()}else if(sonando){detener();guardar('off')}else{guardar('on');tocar()}};
+btn.onclick=e=>{e.stopPropagation();if(sonando&&mudo){oir()}else if(sonando){detener()}else{tocar()}};
 sigb.onclick=e=>{e.stopPropagation();siguiente()};
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)retomar()});
-addEventListener('pageshow',e=>{if(e.persisted){pausaAjena=pausaAjena||(!!yt&&listo&&yt.getPlayerState()!==YT.PlayerState.PLAYING&&leer()!=='off');retomar()}});
-const primerToque=e=>{
+addEventListener('pageshow',e=>{if(e.persisted){pausaAjena=pausaAjena||(!!yt&&listo&&yt.getPlayerState()!==YT.PlayerState.PLAYING&&true);retomar()}});
+const primerToque=e=>{ // solo quita el silencio de una música que el visitante ya había activado
  if(e.target.closest&&e.target.closest('.mus'))return;
- if(leer()==='off')return;
  if(sonando&&mudo){oir();quitar()}
- else if(!sonando&&!otraSuena&&!pausaAjena){tocar();quitar()}
 };
 function quitar(){document.removeEventListener('pointerdown',primerToque,true);document.removeEventListener('keydown',primerToque,true)}
 document.addEventListener('pointerdown',primerToque,true);document.addEventListener('keydown',primerToque,true);
-cargar();
+if(reanuda)cargar();   // si no, el reproductor se carga hasta que se toque «Activar música»
 })();
