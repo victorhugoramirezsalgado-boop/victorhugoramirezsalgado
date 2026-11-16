@@ -44,7 +44,9 @@ body{margin:0;background:#2C3A32;color:#EADBB8;font:400 15px/1.5 Inter,system-ui
  .vf{padding:0;max-width:none}
  #visor{display:block!important;width:auto!important;height:auto!important}
  .cert{transform:none!important}
- @page{size:letter landscape;margin:0}
+ @page{size:letter landscape;margin:.25in}
+ .cert,.cert *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .cert{zoom:.68}
 }
 .cert .hoja{position:absolute;inset:.3in;background:#FBF7EE;border:3px solid #2C3A32;padding:.12in}
 .cert .marco{height:100%;border:1.5px solid #C9A55A;display:grid;grid-template-columns:132px minmax(0,1fr) 132px;grid-template-rows:1fr auto;gap:0 14px;padding:12px 12px 0;position:relative}
@@ -100,7 +102,7 @@ body{margin:0;background:#2C3A32;color:#EADBB8;font:400 15px/1.5 Inter,system-ui
   <button type="submit">Verificar</button>
   <div class="msg" id="msg"></div>
  </form>
- <div class="acc" id="acc"><button type="button" id="pdf" style="background:#C9A55A;color:#2C3A32">Descargar PDF</button><button type="button" class="sec" id="otro">Verificar otro</button></div>
+ <div class="acc" id="acc"><a id="pdf" href="#" style="display:inline-block;font:700 15px Inter,sans-serif;padding:12px 20px;border-radius:999px;background:#C9A55A;color:#2C3A32;text-decoration:none">Descargar PDF</a><button type="button" class="sec" id="imp">Imprimir</button><button type="button" class="sec" id="otro">Verificar otro</button></div>
  <div id="visor"></div>
  <p class="nota">También puede pedir la verificación escribiendo a <b>info@victorhugoramirezsalgado.com</b> con su número de certificado. Los datos de cada certificado se guardan cifrados: solo quien tiene el número y el código puede verlos. © 2026 Víctor Hugo Ramírez Salgado.</p>
 </div>
@@ -169,13 +171,14 @@ $('#f').onsubmit=async e=>{e.preventDefault();const m=$('#msg');m.className='msg
  const nums=cajas.map(c=>+c.value);if(nums.some(n=>!(n>=1&&n<=676))){m.className='msg no';m.textContent='Cada número del código va del 1 al 676.';return}
  try{const d=await abrir($('#folio').value,nums.join('-'));
   if(!d){m.className='msg no';m.textContent='No encontramos un certificado con ese número y código. Revise los datos o escriba a info@victorhugoramirezsalgado.com.';$('#visor').style.display='none';$('#acc').style.display='none';return}
-  m.className='msg ok';m.textContent=`Certificado auténtico: ${d.folio} a nombre de ${d.nombre}, emitido por Víctor Hugo Ramírez Salgado.`;window.mostrar(d,'verificado');
+  await prepararPDF(d.folio);m.className='msg ok';m.textContent=`Certificado auténtico: ${d.folio} a nombre de ${d.nombre}, emitido por Víctor Hugo Ramírez Salgado.`;window.mostrar(d,'verificado');
  }catch(err){m.className='msg no';m.textContent='No se pudo verificar en este navegador. Intente con Chrome actualizado.'}};
-// Descarga el PDF original del certificado (tamaño carta horizontal): se imprime bien en carta, oficio o A4 porque el visor de PDF lo ajusta a la hoja
-$('#pdf').onclick=async()=>{const g=window.__reg;
+// PDF original del certificado (carta horizontal, una hoja): el visor de PDF lo ajusta a carta, oficio o A4
+async function prepararPDF(folio){const a=$('#pdf'),g=window.__reg;a.removeAttribute('download');a.href='#';
  if(g&&g.r.pdf){try{const b=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(g.r.pdf.iv)},g.k,b64(g.r.pdf.ct));
-  const url=URL.createObjectURL(new Blob([b],{type:'application/pdf'}));const a=document.createElement('a');a.href=url;a.download='Certificado-'+($('#folio').value||'VHRS').trim().toUpperCase()+'.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);return}catch(e){}}
- window.print()};
+  a.href=URL.createObjectURL(new Blob([b],{type:'application/pdf'}));a.download='Certificado-'+folio+'.pdf';a.target='_blank';return}catch(e){}}}
+$('#pdf').onclick=e=>{if($('#pdf').getAttribute('href')==='#'){e.preventDefault();window.print()}};
+$('#imp').onclick=()=>window.print();
 $('#otro').onclick=()=>{$('#f').reset();$('#visor').style.display='none';$('#acc').style.display='none';$('#msg').className='msg';scrollTo(0,0)};
 </script>
 <script src="../idiomas.js"></script>
