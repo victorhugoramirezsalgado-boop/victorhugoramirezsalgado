@@ -115,3 +115,26 @@ tr.prom td{font-weight:700;border-top:2px solid #2C3A32}
 .fuentes li{margin-bottom:6px}
 #prod-escala,#prod-rend,#patios{min-width:0}
 #prod-escala td,#prod-escala th{padding:7px 6px}
+
+/* Gráficas, reporte ejecutivo y patio de vacíos */
+.g-svg{width:100%;height:auto;display:block}
+.g-t{font:11px Inter,sans-serif}
+.g-svg text:not([fill]){fill:#5E5547}
+.g-ley{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--mut);margin-top:4px}
+.g-ley i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px}
+.g-ley i.g-lin{height:0;border-top:2px dashed var(--rojo);border-radius:0}
+.g-ley i.g-mez{background:#fff;border:3px solid var(--rojo)}
+.caja h3{margin:8px 0 0;font:700 14.5px "Space Grotesk",sans-serif;color:var(--verde2)}
+.g-filtros{display:flex;flex-wrap:wrap;gap:10px}
+.g-filtros label,label.g-filtros{display:grid;gap:3px;font-size:12.5px;font-weight:600;color:var(--mut)}
+.g-filtros select,.g-filtros input{min-height:42px;border-radius:9px;border:1px solid var(--linea);background:var(--crema);color:var(--tinta);padding:0 8px;font:500 14px Inter,sans-serif}
+.g-hb{display:grid;gap:8px}
+.g-hf{display:grid;grid-template-columns:minmax(110px,170px) 1fr auto;gap:8px;align-items:center;font-size:13px}
+.g-hbar{position:relative;height:16px;background:var(--crema);border:1px solid var(--linea);border-radius:6px}
+.g-hbar i{position:absolute;left:0;top:0;bottom:0;background:var(--verde);border-radius:5px}
+.g-hbar u{position:absolute;top:-4px;bottom:-4px;width:3px;background:var(--oro);text-decoration:none}
+.g-hf b{font-weight:700;white-space:nowrap}.g-hf small{color:var(--mut);font-weight:500}
+#g-tabla td:first-child,#pt-tabla td:first-child{min-width:220px}
+@media(max-width:620px){.g-hf{grid-template-columns:1fr auto}.g-hf .g-hbar{grid-column:1/-1;grid-row:2}}
+@media print{.regreso,.pestanas,.cab .rol,.pie,.acciones,.g-filtros{display:none!important}.panel{break-inside:auto}.caja{break-inside:avoid}}
+.g-graf{min-width:0;overflow-x:auto}

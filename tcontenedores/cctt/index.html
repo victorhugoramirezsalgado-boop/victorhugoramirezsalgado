@@ -10,11 +10,11 @@
 <meta name="theme-color" content="#2C3A32">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="cctt.css?v=4">
+<link rel="stylesheet" href="cctt.css?v=5">
 </head>
 <body>
 <div class="regreso"><div class="cont">
-<a class="b3d mostaza" id="regresar" href="../">&larr; <span id="regresar-txt">Trazabilidad de contenedores</span></a>
+<a class="b3d mostaza" id="regresar" href="../">&larr; <span id="regresar-txt">tcontenedores.com</span></a>
 <small>Prototipo con datos simulados · nada de lo que captures sale de este teléfono o computadora</small>
 <label class="idioma"><span class="oculto">Idioma</span><select id="idioma" aria-label="Idioma"><option value="">Español</option>
 <optgroup label="ONU"><option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ru">Русский</option></optgroup>
@@ -50,6 +50,8 @@
 <button class="pest" role="tab" data-p="citas" aria-selected="false">Citas</button>
 <button class="pest" role="tab" data-p="recorrido" aria-selected="false">Recorrido</button>
 <button class="pest" role="tab" data-p="equidad" aria-selected="false">Equidad y cancelaciones</button>
+<button class="pest" role="tab" data-p="graficas" aria-selected="false">Gráficas y reporte ejecutivo</button>
+<button class="pest" role="tab" data-p="patio" aria-selected="false">Patio de vacíos</button>
 <button class="pest" role="tab" data-p="informes" aria-selected="false">Informes a autoridades</button>
 <button class="pest" role="tab" data-p="mejora" aria-selected="false">Capacidad y mejora anual</button>
 <button class="pest" role="tab" data-p="comparativo" aria-selected="false">Comparativo nacional</button>
@@ -121,6 +123,49 @@
 <div class="caja"><h2>Cancelaciones y cargos por responsable</h2><div class="tabla-c"><table id="eq-cargos"></table></div></div>
 </div>
 <div class="caja"><h2>Ventanas abiertas con poca anticipación</h2><p class="nota">Una ventana que se abre a última hora favorece a quien ya está listo. El sistema las marca y las informa.</p><ul id="eq-tardias" class="lista"></ul></div>
+</section>
+
+<section class="panel" id="p-graficas" role="tabpanel" hidden>
+<div class="caja"><h2>Reporte ejecutivo de accesos</h2>
+<div class="filtros g-filtros">
+<label>Periodo<select id="g-periodo"><option value="dia">Día</option><option value="semana">Semana</option><option value="mes">Mes</option><option value="anio" selected>Año</option></select></label>
+<label>Fecha<input type="date" id="g-fecha"></label>
+<label>Acceso<select id="g-acceso"><option value="puerto">Puerto (ASIPONA)</option><option value="aduana">Aduana</option><option value="terminal" selected>Terminal</option></select></label>
+<label>Sentido<select id="g-sentido"><option value="ambos">Entradas y salidas</option><option value="entrada">Entradas</option><option value="salida">Salidas</option></select></label>
+<label>Unidad<select id="g-uni"><option value="cont">Contenedores (camiones)</option><option value="teu" selected>TEU</option><option value="feu">FEU (40')</option><option value="v20">Contenedores de 20'</option></select></label>
+</div>
+<p class="nota" id="g-resumen"></p>
+<div class="acciones"><button class="b3d verde" id="g-imprimir">Imprimir reporte ejecutivo</button><button class="b3d" id="g-csv">Descargar CSV</button></div>
+</div>
+<div class="kpis" id="g-kpis"></div>
+<div class="caja"><h2>Hoja de reporte ejecutivo</h2><div class="tabla-c"><table id="g-tabla"></table></div></div>
+<div class="caja"><h2>Movimiento en el periodo</h2><div id="g-serie" class="g-graf"></div></div>
+<div class="caja"><h2>Perfil por hora · promedio por día hábil y por tipo de movimiento</h2><div id="g-horas" class="g-graf"></div></div>
+<div class="caja"><h2>Día de la semana × hora · promedio</h2><p class="nota">Más oscuro = más movimiento. Sirve para ver las horas valle y las horas pico de cada día.</p><div id="g-calor" class="g-graf"></div></div>
+<div class="fila2">
+<div class="caja"><h2>Tiempo promedio por recinto</h2><p class="nota">Barra = promedio; marca = percentil 90 (9 de cada 10 camiones tardan menos).</p><div id="g-tiempos"></div></div>
+<div class="caja"><h2>Con buque y sin buque operando</h2><div id="g-buque"></div></div>
+</div>
+<div class="caja"><h2>Retorno de vacíos: efecto de la importación</h2>
+<h3>Días entre la salida del lleno de importación y el retorno del vacío</h3><div id="g-ret-dias" class="g-graf"></div>
+<h3>Por día de la semana: sale el lleno, regresa el vacío</h3><div id="g-ret-sem" class="g-graf"></div>
+<h3>Retornos del viernes por hora</h3><div id="g-ret-vie" class="g-graf"></div></div>
+<div class="caja"><h2>Líneas de oportunidad: tiempos muertos y su motivo</h2><ul class="lista" id="g-oport"></ul></div>
+<div class="caja"><h2>Supuestos de la simulación</h2><p class="nota" id="g-supuestos"></p></div>
+</section>
+
+<section class="panel" id="p-patio" role="tabpanel" hidden>
+<div class="caja"><h2>Acomodo de vacíos en la terminal</h2>
+<p class="nota">Vista desde arriba de un bloque: cada cuadro es una pila, el número es cuántos contenedores tiene y el color es la línea del contenedor de arriba. Borde rojo = pila con líneas o tamaños mezclados, donde hay que mover cajas para sacar la que pide el buque.</p>
+<label class="g-filtros">Bloque <select id="pt-bloque"></select></label>
+<div class="g-ley" id="pt-ley"></div>
+<div class="fila2">
+<div><h3>Como llegan los camiones</h3><div id="pt-actual" class="g-graf"></div></div>
+<div><h3>Segregado por línea y tamaño</h3><div id="pt-propuesto" class="g-graf"></div></div>
+</div></div>
+<div class="caja"><h2>Vueltas y tiempos muertos al cargar vacíos al buque</h2><div class="tabla-c"><table id="pt-tabla"></table></div>
+<p class="nota">Simulación: 6 bloques de 10 bahías × 6 filas × 5 niveles al 78 %, 6 líneas, 2 equipos de patio de 2.4 min por movimiento, 6 tractores a 15 km/h y 2 grúas de 24 cajas/h. Con datos reales se usa la posición de cada contenedor que entrega el sistema de la terminal.</p></div>
+<div class="caja"><h2>Lectura</h2><ul class="lista" id="pt-lectura"></ul></div>
 </section>
 
 <section class="panel" id="p-informes" role="tabpanel" hidden>
@@ -201,6 +246,7 @@
 </div></footer>
 <script src="cubo-rt.js"></script>
 <script src="cctt.js?v=4"></script>
-<script src="sitio.js"></script>
+<script src="estadistica.js?v=1"></script>
+<script src="../sitio.js"></script>
 </body>
 </html>
