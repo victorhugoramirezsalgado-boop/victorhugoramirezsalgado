@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VHRS-118 · Corazón de la tabla periódica · Víctor Hugo Ramírez Salgado</title>
+<meta name="description" content="VHRS-118: prototipo conceptual de 118 cubos concéntricos, uno por elemento de la tabla periódica, dentro de un cilindro giratorio y una esfera fija, con observación panorámica de 360°. Obra de Víctor Hugo Ramírez Salgado.">
+<meta name="author" content="Víctor Hugo Ramírez Salgado">
+<meta name="robots" content="noai, noimageai">
+<link rel="canonical" href="https://victorhugoramirezsalgado.com/vhrs118/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--astro:#3A4048;--astro2:#4B525B;--azul:#1B2C3D;--mar:#1F5F8B;--tierra:#8B6B4A;--tierra2:#A47E58;--verde:#2F6B4F;--amarillo:#E3B23C;--rojo:#C62828;--beige:#EEE8DC;--concha:#F8F4EC;--negro:#2B2D2F;--gris:#8A8F8C;--grisc:#D9D6CF;--line:#CFC9BD}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--beige);color:var(--negro);font:16px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px clamp(14px,4vw,40px);background:var(--astro);color:var(--concha);border-bottom:3px solid var(--tierra2)}
+.barra .marca{color:var(--concha);text-decoration:none;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:24px}
+.barra select{background:var(--concha);color:var(--negro);border:1.5px solid var(--tierra2);border-radius:999px;padding:6px 10px;font:inherit;font-size:14px;width:auto}
+.idioma{color:var(--concha);font-size:14px;margin:0}
+header.port{padding:26px clamp(16px,4vw,48px) 22px;background:linear-gradient(180deg,var(--azul),var(--astro));color:var(--concha);border-bottom:4px solid var(--tierra)}
+.kicker{color:var(--amarillo);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+header.port h1{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,5vw,48px);line-height:1.08;margin:8px 0;cursor:pointer}
+header.port p{color:var(--grisc);max-width:900px;margin:8px 0 0;text-align:justify}
+.status{display:inline-block;border:1.5px solid var(--amarillo);color:var(--amarillo);border-radius:30px;padding:4px 12px;font-size:12px;font-weight:700;margin-top:12px}
+.morse-linea{font-family:ui-monospace,Menlo,monospace;color:var(--amarillo);min-height:1.2em;font-size:13px;margin-top:8px}
+nav.pest{display:flex;gap:8px;overflow-x:auto;padding:12px clamp(12px,4vw,48px);background:var(--concha);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);box-shadow:0 4px 12px rgba(43,45,47,.08)}
+nav.pest button{white-space:nowrap;background:var(--concha);border:1.5px solid var(--astro2);color:var(--astro);padding:9px 14px;border-radius:10px;cursor:pointer;font:inherit;font-size:14px;font-weight:600;box-shadow:0 3px 0 var(--grisc)}
+nav.pest button.active{background:var(--astro);color:var(--concha);border-color:var(--astro);box-shadow:0 3px 0 var(--negro)}
+main{max-width:1400px;margin:auto;padding:22px clamp(12px,3vw,36px) 40px}
+.tab{display:none}.tab.active{display:block}
+h2{font-family:"Cormorant Garamond",serif;font-size:28px;margin:0 0 12px;color:var(--azul)}h3{font-size:17px;margin:0 0 8px;color:var(--astro)}
+p,li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}h2{line-height:1.15}p{margin:7px 0;color:var(--negro)}.muted{color:var(--astro2)}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.panel{background:var(--concha);border:1px solid var(--line);border-left:6px solid var(--tierra);border-radius:14px;padding:18px;min-width:0;box-shadow:0 8px 20px rgba(43,45,47,.08)}
+.viewer{height:490px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#2A3F55 0,#121B26 70%);border-radius:12px;border:1px solid var(--astro2)}
+canvas{width:100%;height:100%;display:block;touch-action:none}
+.overlay{position:absolute;left:14px;top:12px;color:var(--grisc);font-size:12px;pointer-events:none}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.b3d{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;border:1px solid var(--astro);background:var(--astro);color:var(--concha);box-shadow:0 4px 0 var(--negro),0 8px 14px rgba(0,0,0,.18);transition:transform .12s}
+.b3d:hover{transform:translateY(-2px)}.b3d:active{transform:translateY(3px);box-shadow:0 1px 0 var(--negro)}
+input[type=range]{accent-color:var(--mar);width:140px}
+.metric{font-size:28px;font-weight:800;color:var(--mar);background:var(--beige);border-radius:10px;padding:10px 12px}.metric small{font-size:12px;color:var(--astro2);display:block;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{text-align:left;padding:9px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--concha);background:var(--astro);font-weight:600}
+.note{border-left:4px solid var(--amarillo);padding:10px 12px;background:#FBF1D9;border-radius:0;color:var(--negro);margin-top:12px;text-align:justify}
+.safe{border-left:4px solid var(--verde);padding:10px 12px;background:#E4EFE8;border-radius:0;color:var(--negro);margin-top:12px;text-align:justify}
+textarea,input[type=text],select{width:100%;background:#fff;color:var(--negro);border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit}
+textarea{min-height:100px}
+label{color:var(--astro2);font-size:13px;display:block;margin:8px 0 4px}
+ul,ol{padding-left:20px}li{margin:5px 0}.tag{display:inline-block;padding:3px 9px;border-radius:20px;background:var(--azul);color:var(--concha);font-size:12px;margin:2px}
+footer{border-top:3px solid var(--tierra2);padding:18px clamp(16px,4vw,48px);color:var(--astro2);font-size:13px;background:var(--concha)}footer p{margin:4px 0}
+@media(max-width:850px){table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:13px}td,th{min-width:120px}.grid{grid-template-columns:1fr}.viewer{height:380px}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../" title="Volver a victorhugoramirezsalgado.com">&larr; VHRS</a>
+  <label class="idioma">🌐 <select id="idioma" aria-label="Idioma"><option value="">Español</option>
+<optgroup label="ONU"><option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ru">Русский</option></optgroup>
+<optgroup label="Europa"><option value="pt">Português</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="uk">Українська</option><option value="el">Ελληνικά</option><option value="sv">Svenska</option><option value="ro">Română</option><option value="ca">Català</option><option value="eu">Euskara</option><option value="gl">Galego</option></optgroup>
+<optgroup label="Asia"><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="id">Bahasa Indonesia</option><option value="tr">Türkçe</option><option value="he">עברית</option><option value="fa">فارسی</option></optgroup>
+<optgroup label="Regionales"><option value="yua">Maya yucateco</option><option value="nhe">Náhuatl</option></optgroup></select></label>
+</div>
+<header class="port">
+ <div class="kicker">VHRS · Plataforma de diseño conceptual</div>
+ <h1 data-morse="VHRS 118" title="Toca para oír en Morse">VHRS-118 · Corazón de la tabla periódica</h1>
+ <p>Entorno de trabajo para el desarrollo del artefacto: 118 cubos concéntricos, uno por cada elemento de la tabla periódica, dentro de un cilindro giratorio y una esfera exterior fija, con un sistema de observación panorámica de 360°.</p>
+ <span class="status">Prototipo conceptual · no validado para vuelo ni para uso nuclear</span>
+ <p class="morse-linea" id="morse" aria-live="polite"></p>
+</header>
+<nav class="pest" id="tabs">
+ <button class="active" data-tab="arquitectura">01 · Arquitectura 3D</button>
+ <button data-tab="quimica">02 · Química</button>
+ <button data-tab="fisica">03 · Física y nuclear</button>
+ <button data-tab="entorno">04 · Atmósfera y espacio</button>
+ <button data-tab="camara">05 · Cámara 360°</button>
+ <button data-tab="ingenieria">06 · Ingeniería y seguridad</button>
+ <button data-tab="bitacora">07 · Bitácora</button>
+</nav>
+<main>
+<section class="tab active" id="arquitectura">
+ <div class="grid">
+  <div class="panel">
+   <h2>Modelo tridimensional interactivo</h2>
+   <div class="viewer"><canvas id="scene"></canvas><div class="overlay">VISTA ESQUEMÁTICA · arrastra para rotar · rueda para acercar</div></div>
+   <div class="controls">
+    <button class="b3d" id="toggle">Pausar rotación</button>
+    <label style="margin:0">Velocidad <input id="speed" type="range" min="0" max="2" step=".05" value=".55"></label>
+    <label style="margin:0">Capas visibles <input id="layers" type="range" min="1" max="118" value="118"></label>
+    <button class="b3d" id="reset">Restablecer vista</button>
+   </div>
+   <p class="muted" id="layerReadout">118 / 118 capas representadas. La geometría es ilustrativa, no una escala dimensional.</p>
+  </div>
+  <div class="panel">
+   <h2>Definición del corazón</h2>
+   <div class="cards">
+    <div class="metric">118<small>capas cúbicas concéntricas</small></div>
+    <div class="metric">360°<small>campo de observación objetivo</small></div>
+    <div class="metric">1<small>esfera exterior fija</small></div>
+    <div class="metric">1<small>cilindro portador giratorio</small></div>
+   </div>
+   <h3 style="margin-top:18px">Secuencia geométrica propuesta</h3>
+   <ol>
+    <li>Esfera exterior fija: protección y referencia estructural.</li>
+    <li>Cilindro interior: soporte del conjunto y eje de giro.</li>
+    <li>118 cubos anidados: módulos simbólicos, uno por elemento químico.</li>
+    <li>Control de giro: movimiento independiente, limitado y medible.</li>
+   </ol>
+   <div class="note">La visualización muestra cubos anidados como representación matemática. En un dispositivo físico, 118 cubos sólidos no caben unos dentro de otros sin holguras, soportes y mecanismos específicos; se deberá definir si serán cascarones, marcos o capas virtuales.</div>
+  </div>
+ </div>
+</section>
+<section class="tab" id="quimica">
+ <div class="panel">
+  <h2>Diseño químico y materiales</h2>
+  <p>La tabla periódica organiza elementos por número atómico. El número 118 corresponde a oganesón; eso no significa que el artefacto deba contener los 118 elementos como sustancias.</p>
+  <table><thead><tr><th>Subsistema</th><th>Alternativa inicial de estudio</th><th>Verificación pendiente</th></tr></thead><tbody>
+   <tr><td>Estructura portante</td><td>Aleación de aluminio aeroespacial o titanio, según cargas y temperatura.</td><td>Resistencia, fatiga, uniones, corrosión y masa.</td></tr>
+   <tr><td>Carcasas/cubos</td><td>Marcos ligeros, polímero técnico o panel sándwich.</td><td>Expansión térmica, desgasificación y vibración.</td></tr>
+   <tr><td>Ventana óptica</td><td>Vidrio técnico o polímero óptico seleccionado para el entorno.</td><td>Radiación, impacto, vacío, abrasión y transmisión.</td></tr>
+   <tr><td>Aislamiento</td><td>Capas térmicas y barreras compatibles con el entorno.</td><td>Rango térmico y gestión de calor.</td></tr>
+   <tr><td>Lubricación</td><td>Rodamientos y lubricantes compatibles con vacío, si aplica.</td><td>Desgasificación, vida útil y contaminación.</td></tr>
+  </tbody></table>
+  <div class="safe">Criterio químico: usar materiales comerciales caracterizados y seguros. No incorporar sustancias radiactivas ni elementos superpesados al prototipo.</div>
+  <h3 style="margin-top:16px">Ficha de material editable</h3>
+  <div class="cards"><div><label>Componente</label><input type="text" placeholder="Ej. marco del cubo 01"></div><div><label>Material propuesto</label><input type="text" placeholder="Ej. aluminio 6061-T6"></div><div><label>Propiedad a evaluar</label><input type="text" placeholder="Masa, módulo, temperatura..."></div><div><label>Estado</label><select><option>Por investigar</option><option>Preseleccionado</option><option>Ensayado</option><option>Descartado</option></select></div></div>
+ </div>
+</section>
+<section class="tab" id="fisica">
+ <div class="grid">
+  <div class="panel"><h2>Física clásica y dinámica</h2>
+   <ul><li><b>Cinemática:</b> velocidad angular, aceleración y límites de giro.</li><li><b>Dinámica rotacional:</b> torque, momento de inercia, balanceo y vibraciones.</li><li><b>Termodinámica:</b> conducción, radiación y disipación de calor.</li><li><b>Óptica:</b> campo de visión, distorsión, resolución y sincronización.</li><li><b>Control:</b> sensores redundantes, telemetría y parada segura.</li></ul>
+   <div class="note">No se ha demostrado ningún mecanismo de propulsión, antigravedad o generación de energía. La rotación de los cubos por sí sola no produce sustentación ni acceso al espacio.</div>
+  </div>
+  <div class="panel"><h2>Física nuclear: límites de diseño</h2>
+   <p>En esta fase, “nuclear” se incorpora como disciplina de análisis de radiación ambiental y protección de electrónica, sensores y personas; no como fuente de energía ni como reactor.</p>
+   <table><tr><th>Aspecto</th><th>Trabajo permitido en el concepto</th></tr><tr><td>Radiación ionizante</td><td>Estudiar medición, blindaje y tolerancia de componentes.</td></tr><tr><td>Materiales</td><td>Evaluar degradación por radiación con laboratorios acreditados.</td></tr><tr><td>Seguridad</td><td>Excluir fuentes radiactivas del prototipo.</td></tr><tr><td>Normativa</td><td>Revisión especializada y permisos antes de cualquier ensayo.</td></tr></table>
+  </div>
+ </div>
+</section>
+<section class="tab" id="entorno">
+ <div class="panel">
+  <h2>Entornos de operación: de la atmósfera al espacio</h2>
+  <p>La capa más externa de la atmósfera es la <b>exosfera</b>. Cada capa presenta condiciones muy distintas y exige plataformas, ensayos y certificaciones específicos.</p>
+  <table><thead><tr><th>Región</th><th>Altitud aproximada</th><th>Condiciones y reto principal</th><th>Ruta de validación</th></tr></thead><tbody>
+   <tr><td>Troposfera</td><td>0–8/18 km</td><td>Clima, humedad, turbulencia y presión.</td><td>Pruebas terrestres y plataforma cautiva autorizada.</td></tr>
+   <tr><td>Estratosfera</td><td>~12–50 km</td><td>Baja presión, frío, radiación UV y condiciones de vuelo.</td><td>Ensayo con globo científico o vehículo autorizado; análisis de recuperación.</td></tr>
+   <tr><td>Mesosfera</td><td>~50–85 km</td><td>Entorno extremo y acceso difícil.</td><td>Investigación con instituciones y vehículos especializados.</td></tr>
+   <tr><td>Termosfera</td><td>~85–500/600 km</td><td>Atmósfera extremadamente tenue, radiación y calentamiento orbital.</td><td>Diseño espacial, calificación y misión autorizada.</td></tr>
+   <tr><td>Exosfera</td><td>Desde ~500/600 km; transición gradual</td><td>Transición al espacio interplanetario.</td><td>Satélite/sonda; navegación, comunicaciones y protección espacial.</td></tr>
+  </tbody></table>
+  <div class="note">No existe un solo diseño que pueda pasar de suelo a exosfera por el simple hecho de añadir una cámara. Cada banda exige transporte, estructura, energía, control térmico, comunicaciones y certificación específicos.</div>
+ </div>
+</section>
+<section class="tab" id="camara">
+ <div class="grid">
+  <div class="panel"><h2>Arquitectura de observación 360°</h2>
+   <div class="viewer" style="height:300px;display:grid;place-items:center"><div style="text-align:center;padding:20px"><div style="font-size:70px;color:var(--cyan)">◎</div><h3>Vista panorámica 360°</h3><p>Interfaz de previsualización / cámara aún no conectada</p><span class="tag">TV en vivo</span><span class="tag">Proyector</span><span class="tag">Cine inmersivo</span></div></div>
+   <p>Propuesta: conjunto de cámaras sincronizadas con cobertura solapada, calibración geométrica, unión panorámica y transmisión comprimida. La cámara real, lentes, sensores y codificador se seleccionarán según masa, temperatura, vibración y ancho de banda.</p>
+  </div>
+  <div class="panel"><h2>Cadena de vídeo</h2>
+   <ol><li>Captura sincronizada de varias cámaras.</li><li>Corrección de lente y unión de imágenes.</li><li>Codificación de vídeo y metadatos de orientación.</li><li>Enlace de datos con telemetría y almacenamiento local.</li><li>Estación en tierra: pantalla, TV, proyector o sala de cine.</li></ol>
+   <label>Fuente de vídeo (cuando exista)</label><input type="text" placeholder="URL de stream autorizado / endpoint propio" id="streamUrl">
+   <button class="b3d" id="previewBtn" style="margin-top:9px">Preparar vista de stream</button>
+   <p class="muted" id="streamMsg">No hay cámara ni transmisión conectada. No se genera vídeo en vivo desde esta maqueta.</p>
+   <div class="note">Para transmisión real se requiere cámara física, codificador, enlace de comunicaciones, servidor/servicio de streaming y permisos. La interfaz no accede por sí sola a cámaras del artefacto.</div>
+  </div>
+ </div>
+</section>
+<section class="tab" id="ingenieria">
+ <div class="panel">
+  <h2>Ingeniería de sistemas, pruebas y seguridad</h2>
+  <table><thead><tr><th>Fase</th><th>Entregable</th><th>Criterio para avanzar</th></tr></thead><tbody>
+   <tr><td>0. Requisitos</td><td>Dimensiones, masa objetivo, misión, usuarios y entorno.</td><td>Requisitos medibles y revisados.</td></tr>
+   <tr><td>1. Modelo digital</td><td>CAD paramétrico, tolerancias, materiales y análisis preliminar.</td><td>Revisión de diseño independiente.</td></tr>
+   <tr><td>2. Maqueta de mesa</td><td>Esfera fija, cilindro y cubos ligeros no peligrosos.</td><td>Giro estable, resguardos y parada de emergencia.</td></tr>
+   <tr><td>3. Ensayos ambientales</td><td>Vibración, temperatura, vacío y compatibilidad electromagnética.</td><td>Laboratorio competente y plan de ensayo.</td></tr>
+   <tr><td>4. Demostrador de cámara</td><td>Panorámica sincronizada, telemetría y transmisión.</td><td>Latencia, continuidad, calidad y recuperación de señal.</td></tr>
+   <tr><td>5. Plataforma de vuelo</td><td>Integración con vehículo certificado y operador autorizado.</td><td>Permisos, análisis de riesgos y revisión aeroespacial.</td></tr>
+  </tbody></table>
+  <div class="safe">Seguridad: primero una maqueta de baja energía, con piezas ligeras, resguardos, límites de velocidad y paro físico. No lanzar, presurizar ni operar en altura sin especialistas, permisos y evaluación formal de riesgos.</div>
+  <h3 style="margin-top:18px">Riesgos iniciales a cerrar</h3>
+  <div class="cards"><div><span class="tag">Mecánico</span><p>Desprendimiento de capas, desbalanceo, atrapamiento y fatiga.</p></div><div><span class="tag">Térmico</span><p>Expansión diferencial, sobrecalentamiento y pérdida de lubricación.</p></div><div><span class="tag">Aeroespacial</span><p>Vacío, vibración, presión, radiación y recuperación.</p></div><div><span class="tag">Datos</span><p>Pérdida de enlace, latencia, ciberseguridad y almacenamiento.</p></div></div>
+ </div>
+</section>
+<section class="tab" id="bitacora">
+ <div class="panel">
+  <h2>Bitácora de desarrollo VHRS-118</h2>
+  <p>Registra decisiones, hipótesis, cambios y pruebas. La información se guarda localmente en este navegador mientras no se borren sus datos.</p>
+  <label>Nombre de la entrada</label><input id="entryTitle" type="text" placeholder="Ej. Definición de cubos como marcos huecos">
+  <label>Detalle / decisión / pregunta técnica</label><textarea id="entryText" placeholder="Describe qué se modifica, por qué y qué falta verificar..."></textarea>
+  <button class="b3d" id="saveEntry">Guardar entrada</button>
+  <button class="b3d" id="exportLog">Exportar bitácora .txt</button>
+  <div id="entries" style="margin-top:15px"></div>
+ </div>
+</section>
+</main>
+<footer>
+ <p>© 2026 Víctor Hugo Ramírez Salgado · VHRS-118. Todos los derechos reservados. Obra en preparación para su registro en Safe Creative.</p>
+ <p>Documento de trabajo editable. Las altitudes son aproximadas. Esta página es una maqueta de diseño y no constituye planos de fabricación, certificación aeroespacial, evaluación nuclear ni autorización de lanzamiento.</p>
+ <p>Prohibida su reproducción total o parcial y su uso para entrenar inteligencia artificial sin autorización escrita del titular. Asistencia-IA: Claude (herramienta de asistencia, no coautor).</p>
+</footer>
+<script>
+const tabs=[...document.querySelectorAll('nav.pest button')];
+tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')}));
+const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d');
+let yaw=.6,pitch=-.35,zoom=1,rotating=true,speed=.55,last=0,visible=118,drag=null;
+function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}
+new ResizeObserver(resize).observe(canvas);resize();
+function project(p,cx,cy,s){let [x,y,z]=p;let a=yaw,b=pitch;let x1=x*Math.cos(a)-z*Math.sin(a),z1=x*Math.sin(a)+z*Math.cos(a);let y1=y*Math.cos(b)-z1*Math.sin(b),z2=y*Math.sin(b)+z1*Math.cos(b);return [cx+x1*s*zoom,cy+y1*s*zoom,z2]}
+function cubePoints(r){return [[-r,-r,-r],[r,-r,-r],[r,r,-r],[-r,r,-r],[-r,-r,r],[r,-r,r],[r,r,r],[-r,r,r]]}
+const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+function draw(t){let w=canvas.clientWidth,h=canvas.clientHeight,cx=w/2,cy=h/2;if(rotating&&last)yaw+=(t-last)*.00018*speed;last=t;ctx.clearRect(0,0,w,h);
+ // soft grid
+ ctx.strokeStyle='rgba(164,126,88,.18)';ctx.lineWidth=1;for(let i=-4;i<=4;i++){let p=project([i*.24,0,-1],cx,cy,150);let q=project([i*.24,0,1],cx,cy,150);ctx.beginPath();ctx.moveTo(...p);ctx.lineTo(...q);ctx.stroke()}
+ // sphere fixed
+ ctx.beginPath();ctx.ellipse(cx,cy,Math.min(w,h)*.37*zoom,Math.min(w,h)*.37*zoom,0,0,Math.PI*2);ctx.strokeStyle='rgba(214,226,236,.75)';ctx.lineWidth=1.5;ctx.stroke();
+ ctx.beginPath();ctx.ellipse(cx,cy,Math.min(w,h)*.37*zoom,Math.min(w,h)*.13*zoom,-.3,0,Math.PI*2);ctx.strokeStyle='rgba(214,226,236,.22)';ctx.stroke();
+ // cylinder representation
+ ctx.beginPath();ctx.ellipse(cx,cy-105*zoom,75*zoom,24*zoom,0,0,Math.PI*2);ctx.ellipse(cx,cy+105*zoom,75*zoom,24*zoom,0,0,Math.PI*2);ctx.moveTo(cx-75*zoom,cy-105*zoom);ctx.lineTo(cx-75*zoom,cy+105*zoom);ctx.moveTo(cx+75*zoom,cy-105*zoom);ctx.lineTo(cx+75*zoom,cy+105*zoom);ctx.strokeStyle='rgba(227,178,60,.6)';ctx.stroke();
+ // draw up to 118 nested wireframe cubes
+ let n=visible;for(let k=n;k>=1;k--){let r=.025+(k/n)*.72;let pts=cubePoints(r).map(p=>project(p,cx,cy,Math.min(w,h)*.28));ctx.beginPath();edges.forEach(([a,b],i)=>{ctx.moveTo(pts[a][0],pts[a][1]);ctx.lineTo(pts[b][0],pts[b][1])});ctx.strokeStyle=`rgba(${120+Math.floor(k/n*100)},${150+Math.floor(k/n*70)},${170+Math.floor(k/n*50)},${.16+(1-k/n)*.42})`;ctx.lineWidth=.55+(1-k/n)*.65;ctx.stroke()}
+ ctx.fillStyle='#D6E2EC';ctx.font='12px system-ui';ctx.fillText('ESFERA FIJA',12,h-18);ctx.fillStyle='#E3B23C';ctx.fillText('CILINDRO / SOPORTE',12,h-36);
+ requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch+=(e.clientY-drag[1])*.008;pitch=Math.max(-1.4,Math.min(1.4,pitch));drag=[e.clientX,e.clientY]});
+canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('wheel',e=>{zoom=Math.max(.55,Math.min(1.8,zoom-e.deltaY*.001));e.preventDefault()},{passive:false});
+document.getElementById('toggle').onclick=()=>{rotating=!rotating;document.getElementById('toggle').textContent=rotating?'Pausar rotación':'Reanudar rotación'};
+document.getElementById('speed').oninput=e=>speed=+e.target.value;
+document.getElementById('layers').oninput=e=>{visible=+e.target.value;document.getElementById('layerReadout').textContent=`${visible} / 118 capas representadas. La geometría es ilustrativa, no una escala dimensional.`};
+document.getElementById('reset').onclick=()=>{yaw=.6;pitch=-.35;zoom=1};
+document.getElementById('previewBtn').onclick=()=>{let u=document.getElementById('streamUrl').value.trim();document.getElementById('streamMsg').textContent=u?'Dirección registrada en el campo. Para reproducirla habrá que integrar un reproductor compatible y validar el endpoint.':'Introduce una dirección de stream autorizada cuando exista.'};
+let log=[];try{log=JSON.parse(localStorage.getItem('vhrs118log')||'[]')}catch(e){}
+function renderLog(){document.getElementById('entries').innerHTML=log.map((e,i)=>`<div class="panel" style="margin-top:8px"><b>${i+1}. ${escapeHtml(e.title)}</b><p>${escapeHtml(e.text)}</p><small class="muted">${e.date}</small></div>`).join('')||'<p class="muted">Todavía no hay entradas.</p>'}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('saveEntry').onclick=()=>{let title=document.getElementById('entryTitle').value.trim(),text=document.getElementById('entryText').value.trim();if(!title||!text){alert('Completa el título y el detalle.');return}log.unshift({title,text,date:new Date().toLocaleString('es-MX')});try{localStorage.setItem('vhrs118log',JSON.stringify(log))}catch(e){}document.getElementById('entryTitle').value='';document.getElementById('entryText').value='';renderLog()};
+document.getElementById('exportLog').onclick=()=>{let body=log.map(e=>`${e.date}\n${e.title}\n${e.text}\n`).join('\n');let a=document.createElement('a'),blob=new Blob([body||'Bitácora vacía'],{type:'text/plain'});a.href=URL.createObjectURL(blob);a.download='VHRS-118-bitacora.txt';a.click();URL.revokeObjectURL(a.href)};
+renderLog();
+</script>
+<script src="../sitio.js"></script>
+</body>
+</html>
