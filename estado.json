@@ -1,1094 +1,1099 @@
 {
-  "actualizado": "2026-11-13",
-  "titular": "Víctor Hugo Ramírez Salgado",
-  "lema": "Comercio internacional, logística portuaria y desarrollo. Autor de El Cubo de la Comunicación (33)©.",
-  "trayectoria": [
+ "actualizado": "2026-11-13",
+ "titular": "Víctor Hugo Ramírez Salgado",
+ "lema": "Comercio internacional, logística portuaria y desarrollo. Autor de El Cubo de la Comunicación (33)©.",
+ "trayectoria": [
+  {
+   "periodo": "2005 – hoy",
+   "texto": "21 años en la industria marítimo-portuaria."
+  },
+  {
+   "periodo": "2005 – 2009",
+   "texto": "Coordinador de trámites aduanales, Agencia Aduanal Soriano y Rivera."
+  },
+  {
+   "periodo": "2009 – 2022",
+   "texto": "API / ASIPONA Ensenada: control y almacenaje, estadística, operaciones e ingeniería, subgerencia de operaciones y ecología."
+  },
+  {
+   "periodo": "2012 – 2022",
+   "texto": "Estadísticas portuarias de Ensenada, El Sauzal y Costa Azul para la Coordinación General de Puertos y Marina Mercante y los Comités de Operación."
+  },
+  {
+   "periodo": "2013",
+   "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada).",
+   "ligas": [
     {
-      "periodo": "2005 – hoy",
-      "texto": "21 años en la industria marítimo-portuaria."
+     "titulo": "T21 · APIs proponen crear comité de recintos fiscalizados (25 jun 2013)",
+     "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/"
     },
     {
-      "periodo": "2005 – 2009",
-      "texto": "Coordinador de trámites aduanales, Agencia Aduanal Soriano y Rivera."
-    },
-    {
-      "periodo": "2009 – 2022",
-      "texto": "API / ASIPONA Ensenada: control y almacenaje, estadística, operaciones e ingeniería, subgerencia de operaciones y ecología."
-    },
-    {
-      "periodo": "2012 – 2022",
-      "texto": "Estadísticas portuarias de Ensenada, El Sauzal y Costa Azul para la Coordinación General de Puertos y Marina Mercante y los Comités de Operación."
-    },
-    {
-      "periodo": "2013",
-      "texto": "Fundador y coordinador del 1er Simposio Nacional de Recintos Fiscalizados de las API (Ensenada).",
-      "ligas": [
-        {
-          "titulo": "T21 · APIs proponen crear comité de recintos fiscalizados (25 jun 2013)",
-          "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/"
-        },
-        {
-          "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
-          "liga": "http://t21.com.mx/index.php/puerto-ensenada"
-        }
-      ],
-      "verificada": true
-    },
-    {
-      "periodo": "2014",
-      "texto": "Referencia simbólica: al regresar del XIV Curso Iberoamericano de Puertos (Santander, 2014), compartió con sus directivos superiores un resumen de lo aprendido, cuyo tema principal fue el Transporte Marítimo de Corta Distancia (TMCD; en inglés, Short Sea Shipping). Fue un granito de arena para que se retomara la idea de una ruta de corta distancia, que hoy avanza como el ferry binacional Ensenada–San Diego (el buque llegó a Ensenada en agosto de 2025). El mérito del ferry es de las autoridades e instituciones que lo han impulsado; a ellas, el reconocimiento.",
-      "ligas": [
-        {
-          "titulo": "CIP-OEA · Cursos anteriores: XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos (Santander, 19 may–13 jun 2014)",
-          "liga": "https://www.oas.org/cip/english/prevcourses.html"
-        },
-        {
-          "titulo": "Autoridad Portuaria de Santander · 19 profesionales en la XIV edición del Curso Iberoamericano (19 may 2014)",
-          "liga": "https://www.puertosantander.es/en/node/196051"
-        },
-        {
-          "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
-          "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
-        },
-        {
-          "titulo": "Autoridad Portuaria de Santander (España) · Informe de gestión / Memoria 2014 (XIV Curso Iberoamericano)",
-          "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf"
-        },
-        {
-          "titulo": "Autoridad Portuaria de Santander (España) · Clausura de la XIV edición: 19 técnicos de 11 países latinoamericanos (14 jun 2014)",
-          "liga": "https://www.puertosantander.es/en/node/196060"
-        },
-        {
-          "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
-          "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
-        },
-        {
-          "titulo": "Zeta Tijuana · Proyectan ferri San Diego–Ensenada (2022)",
-          "liga": "https://zetatijuana.com/2022/04/proyectan-ferri-san-diego-ensenada/"
-        },
-        {
-          "titulo": "SanDiegoRed · Llegada del ferry a Ensenada (12 ago 2025)",
-          "liga": "https://www.sandiegored.com/en/news/baja-california-eyes-expansion-of-binational-ferry-with-new-routes"
-        },
-        {
-          "titulo": "SanDiegoRed · El ferry Ensenada–San Diego podría iniciar a fines de 2026 (28 may 2026)",
-          "liga": "https://www.sandiegored.com/en/news/long-awaited-ensenada-san-diego-ferry-could-launch-by-years-end/"
-        },
-        {
-          "titulo": "El Imparcial · Ferry Ensenada–San Diego vuelve a retrasarse; podría iniciar en diciembre (3 jul 2026)",
-          "liga": "https://www.elimparcial.com/tij/ensenada/2026/07/03/ferry-ensenadasan-diego-vuelve-a-retrasarse-podria-iniciar-operaciones-en-diciembre/"
-        },
-        {
-          "titulo": "MundoMarítimo · CGPMM define nueve rutas de cabotaje y TMCD en México (2022)",
-          "liga": "https://www.mundomaritimo.cl/noticias/definen-nueve-rutas-de-cabotaje-y-de-transporte-maritimo-de-corta-distancia-en-mexico"
-        },
-        {
-          "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
-          "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
-        }
-      ],
-      "verificada": false
-    },
-    {
-      "periodo": "2015",
-      "texto": "Referencia simbólica: colaboró con un granito de arena, como Subgerente de Operaciones y Ecología y miembro del comité de coordinación, en el proyecto del primer Puerto Verde de México (API Ensenada), propuesto por la Jefa de Ecología y encabezado por el Director General en turno y los directivos superiores; certificado por EcoPorts (PERS) el 29 de agosto de 2015. Reconocimiento a todo el equipo de API Ensenada que lo hizo posible. En 2023, ASIPONA Ensenada recibió el Premio Marítimo de las Américas (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria.",
-      "ligas": [
-        {
-          "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
-          "liga": "https://www.puertoensenada.com.mx/upl/sec/Minuta_7ma_Reunion_2014.pdf"
-        },
-        {
-          "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
-          "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
-        },
-        {
-          "titulo": "API Ensenada · 3.ª reunión del Comité de Operación 2015: certificación PERS en etapa final",
-          "liga": "https://es.puertoensenada.com.mx/upl/sec/Presentacion_3ra_Reunion_2015.pdf"
-        },
-        {
-          "titulo": "Zeta Tijuana · Certificación de Ensenada como primer Puerto Verde del país (29 ago 2015)",
-          "liga": "https://zetatijuana.com/2015/08/puerto-verde-y-pasarela-tricolor/"
-        },
-        {
-          "titulo": "MundoMarítimo · Ensenada es certificado como el primer puerto verde de México",
-          "liga": "https://www.mundomaritimo.cl/noticias/ensenada-es-certificado-como-el-primer-puerto-verde-de-mexico"
-        },
-        {
-          "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
-          "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
-        },
-        {
-          "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
-          "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
-        }
-      ],
-      "verificada": true
-    },
-    {
-      "periodo": "2016 – hoy",
-      "texto": "Fundador de ContenedorEns© y Arsa Bodegas©: venta, renta y modificación de contenedores."
-    },
-    {
-      "periodo": "Docencia",
-      "texto": "Licenciatura en Universidad Xochicalco y Universidad Autónoma de Durango (campus Ensenada); profesor en programas de CETYS Universidad."
+     "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
+     "liga": "http://t21.com.mx/index.php/puerto-ensenada"
     }
-  ],
-  "formacion": [
+   ],
+   "verificada": true
+  },
+  {
+   "periodo": "2014",
+   "texto": "Referencia simbólica: al regresar del XIV Curso Iberoamericano de Puertos (Santander, 2014), compartió con sus directivos superiores un resumen de lo aprendido, cuyo tema principal fue el Transporte Marítimo de Corta Distancia (TMCD; en inglés, Short Sea Shipping). Fue un granito de arena para que se retomara la idea de una ruta de corta distancia, que hoy avanza como el ferry binacional Ensenada–San Diego (el buque llegó a Ensenada en agosto de 2025). El mérito del ferry es de las autoridades e instituciones que lo han impulsado; a ellas, el reconocimiento.",
+   "ligas": [
     {
-      "periodo": "2014",
-      "texto": "XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos — Puertos del Estado (España) y CIP-OEA; Universidad de Cantabria / UIMP, Santander, 19 may – 13 jun 2014 (175 h, 7 ECTS). 19 profesionales de países iberoamericanos, entre ellos México.",
-      "liga": "https://www.puertosantander.es/en/node/196060"
+     "titulo": "CIP-OEA · Cursos anteriores: XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos (Santander, 19 may–13 jun 2014)",
+     "liga": "https://www.oas.org/cip/english/prevcourses.html"
     },
     {
-      "periodo": "2012",
-      "texto": "Primer Seminario (Internacional) de Estadísticas Portuarias — Autoridad Portuaria Nacional del Perú (APN) y Comisión Interamericana de Puertos (CIP-OEA), Lima, 29–30 nov 2012. En él se formuló el Proyecto de Manual de Estadísticas e Indicadores de Productividad Portuaria para los países de la CIP-OEA; México presentó su sistema estadístico portuario como caso de país. Asistió como participante (constancia en su archivo personal; confirmado por el titular). Los datos de Ensenada, B.C., incluidos en la presentación de México provinieron de las estadísticas portuarias que él generaba en API Ensenada para la Coordinación General de Puertos y Marina Mercante (confirmado por el titular).",
-      "liga": "https://oas.org/cip/docs/cursos/Boletin%20Seminario%20Estadistica%20rev%203%20c%20hotel.pdf",
-      "verificada": true
+     "titulo": "Autoridad Portuaria de Santander · 19 profesionales en la XIV edición del Curso Iberoamericano (19 may 2014)",
+     "liga": "https://www.puertosantander.es/en/node/196051"
     },
     {
-      "periodo": "2016 · 2021",
-      "texto": "Curso Básico de Terminales de Contenedores (2016) y El Contenedor en el Puerto (2021) — CIP-OEA / APN Perú, en línea (57 h c/u)."
+     "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
+     "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
     },
     {
-      "periodo": "2016",
-      "texto": "Operations Management: Asia Approach — Northwestern Polytechnical University / CETYS, Xi'an, China (30 h)."
+     "titulo": "Autoridad Portuaria de Santander (España) · Informe de gestión / Memoria 2014 (XIV Curso Iberoamericano)",
+     "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf"
     },
     {
-      "periodo": "2016",
-      "texto": "Certificación EC0217 Impartición de Cursos de Formación del Capital Humano — CONOCER."
+     "titulo": "Autoridad Portuaria de Santander (España) · Clausura de la XIV edición: 19 técnicos de 11 países latinoamericanos (14 jun 2014)",
+     "liga": "https://www.puertosantander.es/en/node/196060"
     },
     {
-      "periodo": "2011",
-      "texto": "Logística del Contenedor — Fundación Valenciaport, España (20 h)."
+     "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
+     "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
     },
     {
-      "periodo": "OMI",
-      "texto": "Cursos marítimos avalados por la Organización Marítima Internacional."
+     "titulo": "Zeta Tijuana · Proyectan ferri San Diego–Ensenada (2022)",
+     "liga": "https://zetatijuana.com/2022/04/proyectan-ferri-san-diego-ensenada/"
     },
     {
-      "periodo": "2017",
-      "texto": "MBA con especialidad en Mercadotecnia — CETYS Universidad."
+     "titulo": "SanDiegoRed · Llegada del ferry a Ensenada (12 ago 2025)",
+     "liga": "https://www.sandiegored.com/en/news/baja-california-eyes-expansion-of-binational-ferry-with-new-routes"
     },
     {
-      "periodo": "2009",
-      "texto": "Licenciatura en Comercio Internacional — Universidad Xochicalco."
+     "titulo": "SanDiegoRed · El ferry Ensenada–San Diego podría iniciar a fines de 2026 (28 may 2026)",
+     "liga": "https://www.sandiegored.com/en/news/long-awaited-ensenada-san-diego-ferry-could-launch-by-years-end/"
     },
     {
-      "periodo": "2021",
-      "texto": "Curso de Protección y Seguridad Radiológica en el Diagnóstico Médico con Rayos X (nivel: personal ocupacionalmente expuesto) — Asesores de Radiación S.A., México (40 h)."
+     "titulo": "El Imparcial · Ferry Ensenada–San Diego vuelve a retrasarse; podría iniciar en diciembre (3 jul 2026)",
+     "liga": "https://www.elimparcial.com/tij/ensenada/2026/07/03/ferry-ensenadasan-diego-vuelve-a-retrasarse-podria-iniciar-operaciones-en-diciembre/"
+    },
+    {
+     "titulo": "MundoMarítimo · CGPMM define nueve rutas de cabotaje y TMCD en México (2022)",
+     "liga": "https://www.mundomaritimo.cl/noticias/definen-nueve-rutas-de-cabotaje-y-de-transporte-maritimo-de-corta-distancia-en-mexico"
+    },
+    {
+     "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
+     "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
     }
-  ],
-  "prensa": [
+   ],
+   "verificada": false
+  },
+  {
+   "periodo": "2015",
+   "texto": "Referencia simbólica: colaboró con un granito de arena, como Subgerente de Operaciones y Ecología y miembro del comité de coordinación, en el proyecto del primer Puerto Verde de México (API Ensenada), propuesto por la Jefa de Ecología y encabezado por el Director General en turno y los directivos superiores; certificado por EcoPorts (PERS) el 29 de agosto de 2015. Reconocimiento a todo el equipo de API Ensenada que lo hizo posible. En 2023, ASIPONA Ensenada recibió el Premio Marítimo de las Américas (CIP-OEA) en Gestión Verde y Sostenibilidad Portuaria.",
+   "ligas": [
     {
-      "fecha": "",
-      "medio": "Universidad Xochicalco (México)",
-      "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada",
-      "nota": "",
-      "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
-      "verificada": false
+     "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
+     "liga": "https://www.puertoensenada.com.mx/upl/sec/Minuta_7ma_Reunion_2014.pdf"
     },
     {
-      "fecha": "2012-11-29",
-      "medio": "La República (Perú)",
-      "titulo": "APN realiza Seminario Internacional de Estadísticas Portuarias",
-      "nota": "Nota del inicio del seminario en Lima (29–30 nov 2012), organizado por la APN del Perú con la CIP-OEA, al que asistió.",
-      "liga": "https://larepublica.pe/economia/676959-apn-realiza-seminario-internacional-de-estadisticas-portuarias",
-      "verificada": true
+     "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
+     "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
     },
     {
-      "fecha": "2012-12-03",
-      "medio": "OEA · Comisión Interamericana de Puertos («Puertos esta Semana», vol. 30) (internacional)",
-      "titulo": "OEA apoya a funcionarios portuarios de las Américas para fortalecer sus capacidades estadísticas",
-      "nota": "Boletín de la CIP-OEA: la OEA y la APN del Perú realizaron el Primer Seminario de Estadísticas Portuarias (Lima).",
-      "liga": "https://www.oas.org/cip/ports/Fechas/3_diciembre.htm",
-      "verificada": true
+     "titulo": "API Ensenada · 3.ª reunión del Comité de Operación 2015: certificación PERS en etapa final",
+     "liga": "https://es.puertoensenada.com.mx/upl/sec/Presentacion_3ra_Reunion_2015.pdf"
     },
     {
-      "fecha": "2013-06-25",
-      "medio": "T21 (México)",
-      "titulo": "APIs proponen crear comité de recintos fiscalizados",
-      "nota": "Nota sobre el 1er Simposio Nacional de Recintos Fiscalizados de las API, celebrado en el puerto de Ensenada, del que fue fundador y coordinador: las API de Tampico, Veracruz, Coatzacoalcos, Tuxpan, Progreso, Lázaro Cárdenas y Manzanillo, con la anfitriona API Ensenada, propusieron crear un comité de recintos fiscalizados.",
-      "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/",
-      "verificada": true
+     "titulo": "Zeta Tijuana · Certificación de Ensenada como primer Puerto Verde del país (29 ago 2015)",
+     "liga": "https://zetatijuana.com/2015/08/puerto-verde-y-pasarela-tricolor/"
     },
     {
-      "fecha": "2013-06-25",
-      "medio": "T21 (México)",
-      "titulo": "Sección Puerto Ensenada: «APIs proponen crear comité de recintos fiscalizados»",
-      "nota": "Índice de T21 del Puerto de Ensenada donde aparece archivada la nota del 1er Simposio Nacional de Recintos Fiscalizados de las API.",
-      "liga": "http://t21.com.mx/index.php/puerto-ensenada",
-      "verificada": true
+     "titulo": "MundoMarítimo · Ensenada es certificado como el primer puerto verde de México",
+     "liga": "https://www.mundomaritimo.cl/noticias/ensenada-es-certificado-como-el-primer-puerto-verde-de-mexico"
     },
     {
-      "fecha": "2014-05-19",
-      "medio": "Autoridad Portuaria de Santander (España)",
-      "titulo": "Un total de 19 profesionales participan en la XIV edición del Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos",
-      "nota": "Nota internacional del inicio del curso al que asistió (XIV edición, 19 may–13 jun 2014): 19 profesionales de Argentina, Brasil, Chile, Colombia, Costa Rica, Ecuador, El Salvador, México, Panamá y Uruguay. No publica nombres.",
-      "liga": "https://www.puertosantander.es/en/node/196051",
-      "verificada": true
+     "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
+     "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
     },
     {
-      "fecha": "2014-06-13",
-      "medio": "Autoridad Portuaria de Santander (España)",
-      "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
-      "nota": "Nota internacional de la clausura del curso al que asistió: 19 técnicos del sector portuario de 11 países latinoamericanos; no publica nombres ni lista de países.",
-      "liga": "https://www.puertosantander.es/en/node/196060",
-      "verificada": true
-    },
-    {
-      "fecha": "2016-05-27",
-      "medio": "CETYS Universidad (México)",
-      "titulo": "Analizan logística y operación en Ensenada",
-      "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.",
-      "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/",
-      "verificada": true
-    },
-    {
-      "fecha": "2017-11-01",
-      "medio": "Universidad Xochicalco (México) · La huella del coyote, núm. 69 (nov.–dic. 2017)",
-      "titulo": "Egresado con huella: Lic. Víctor Hugo Ramírez Salgado",
-      "nota": "Entrevista en su oficina de API Ensenada. Lo presenta como egresado de la generación 2006–2009 de la Licenciatura en Comercio Internacional y Aduanas (campus Ensenada) y recoge su mensaje a los estudiantes: estar atentos a los cambios en el mundo y a los tratados económicos, y aportar valor agregado con su profesionalismo. Publicada en Issuu el 9 ene 2018.",
-      "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065",
-      "verificada": true
-    },
-    {
-      "fecha": "2019",
-      "medio": "El Imparcial (México)",
-      "titulo": "Crece necesidad de expertos en logística en el puerto de Ensenada",
-      "nota": "Réplica de la nota de CETYS.",
-      "liga": "https://www.elimparcial.com/",
-      "verificada": true
-    },
-    {
-      "fecha": "2019-05-31",
-      "medio": "El Vigía (México)",
-      "titulo": "Requiere Ensenada expertos en logística",
-      "nota": "Incluida en la síntesis informativa de CETYS (El Mexicano, El Vigía, Infobaja, Radar Noticias, AGP).",
-      "liga": "https://www.elvigia.net/general/2019/5/31/requiere-ensenada-expertos-en-logistica-316272.html",
-      "verificada": true
-    },
-    {
-      "fecha": "2019-06-05",
-      "medio": "CETYS Universidad (México)",
-      "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada",
-      "nota": "Lo cita como Subgerente de Operaciones de la API Ensenada.",
-      "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/",
-      "verificada": true
-    },
-    {
-      "fecha": "2019-06-11",
-      "medio": "LogiNews (España)",
-      "titulo": "Puerto Ensenada necesita expertos en logística",
-      "nota": "Medio especializado en logística y transporte de España (LogiNews, @LogiNewsEs); réplica de la nota de CETYS Universidad (México).",
-      "liga": "https://noticiaslogisticaytransporte.com/",
-      "verificada": true
+     "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
+     "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
     }
-  ],
-  "proyectos": [
+   ],
+   "verificada": true
+  },
+  {
+   "periodo": "2016 – hoy",
+   "texto": "Fundador de ContenedorEns© y Arsa Bodegas©: venta, renta y modificación de contenedores."
+  },
+  {
+   "periodo": "Docencia",
+   "texto": "Licenciatura en Universidad Xochicalco y Universidad Autónoma de Durango (campus Ensenada); profesor en programas de CETYS Universidad."
+  }
+ ],
+ "formacion": [
+  {
+   "periodo": "2014",
+   "texto": "XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos — Puertos del Estado (España) y CIP-OEA; Universidad de Cantabria / UIMP, Santander, 19 may – 13 jun 2014 (175 h, 7 ECTS). 19 profesionales de países iberoamericanos, entre ellos México.",
+   "liga": "https://www.puertosantander.es/en/node/196060"
+  },
+  {
+   "periodo": "2012",
+   "texto": "Primer Seminario (Internacional) de Estadísticas Portuarias — Autoridad Portuaria Nacional del Perú (APN) y Comisión Interamericana de Puertos (CIP-OEA), Lima, 29–30 nov 2012. En él se formuló el Proyecto de Manual de Estadísticas e Indicadores de Productividad Portuaria para los países de la CIP-OEA; México presentó su sistema estadístico portuario como caso de país. Asistió como participante (constancia en su archivo personal; confirmado por el titular). Los datos de Ensenada, B.C., incluidos en la presentación de México provinieron de las estadísticas portuarias que él generaba en API Ensenada para la Coordinación General de Puertos y Marina Mercante (confirmado por el titular).",
+   "liga": "https://oas.org/cip/docs/cursos/Boletin%20Seminario%20Estadistica%20rev%203%20c%20hotel.pdf",
+   "verificada": true
+  },
+  {
+   "periodo": "2016 · 2021",
+   "texto": "Curso Básico de Terminales de Contenedores (2016) y El Contenedor en el Puerto (2021) — CIP-OEA / APN Perú, en línea (57 h c/u)."
+  },
+  {
+   "periodo": "2016",
+   "texto": "Operations Management: Asia Approach — Northwestern Polytechnical University / CETYS, Xi'an, China (30 h)."
+  },
+  {
+   "periodo": "2016",
+   "texto": "Certificación EC0217 Impartición de Cursos de Formación del Capital Humano — CONOCER."
+  },
+  {
+   "periodo": "2011",
+   "texto": "Logística del Contenedor — Fundación Valenciaport, España (20 h)."
+  },
+  {
+   "periodo": "OMI",
+   "texto": "Cursos marítimos avalados por la Organización Marítima Internacional."
+  },
+  {
+   "periodo": "2017",
+   "texto": "MBA con especialidad en Mercadotecnia — CETYS Universidad."
+  },
+  {
+   "periodo": "2009",
+   "texto": "Licenciatura en Comercio Internacional — Universidad Xochicalco."
+  },
+  {
+   "periodo": "2021",
+   "texto": "Curso de Protección y Seguridad Radiológica en el Diagnóstico Médico con Rayos X (nivel: personal ocupacionalmente expuesto) — Asesores de Radiación S.A., México (40 h)."
+  }
+ ],
+ "prensa": [
+  {
+   "fecha": "",
+   "medio": "Universidad Xochicalco (México)",
+   "titulo": "Alumnos de Comercio Internacional y Aduanas acuden a Maniobras Nocturnas en Puerto de Ensenada",
+   "nota": "",
+   "liga": "https://noticias.xochicalco.edu.mx/noticia/556",
+   "verificada": false
+  },
+  {
+   "fecha": "2012-11-29",
+   "medio": "La República (Perú)",
+   "titulo": "APN realiza Seminario Internacional de Estadísticas Portuarias",
+   "nota": "Nota del inicio del seminario en Lima (29–30 nov 2012), organizado por la APN del Perú con la CIP-OEA, al que asistió.",
+   "liga": "https://larepublica.pe/economia/676959-apn-realiza-seminario-internacional-de-estadisticas-portuarias",
+   "verificada": true
+  },
+  {
+   "fecha": "2012-12-03",
+   "medio": "OEA · Comisión Interamericana de Puertos («Puertos esta Semana», vol. 30) (internacional)",
+   "titulo": "OEA apoya a funcionarios portuarios de las Américas para fortalecer sus capacidades estadísticas",
+   "nota": "Boletín de la CIP-OEA: la OEA y la APN del Perú realizaron el Primer Seminario de Estadísticas Portuarias (Lima).",
+   "liga": "https://www.oas.org/cip/ports/Fechas/3_diciembre.htm",
+   "verificada": true
+  },
+  {
+   "fecha": "2013-06-25",
+   "medio": "T21 (México)",
+   "titulo": "APIs proponen crear comité de recintos fiscalizados",
+   "nota": "Nota sobre el 1er Simposio Nacional de Recintos Fiscalizados de las API, celebrado en el puerto de Ensenada, del que fue fundador y coordinador: las API de Tampico, Veracruz, Coatzacoalcos, Tuxpan, Progreso, Lázaro Cárdenas y Manzanillo, con la anfitriona API Ensenada, propusieron crear un comité de recintos fiscalizados.",
+   "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/",
+   "verificada": true
+  },
+  {
+   "fecha": "2013-06-25",
+   "medio": "T21 (México)",
+   "titulo": "Sección Puerto Ensenada: «APIs proponen crear comité de recintos fiscalizados»",
+   "nota": "Índice de T21 del Puerto de Ensenada donde aparece archivada la nota del 1er Simposio Nacional de Recintos Fiscalizados de las API.",
+   "liga": "http://t21.com.mx/index.php/puerto-ensenada",
+   "verificada": true
+  },
+  {
+   "fecha": "2014-05-19",
+   "medio": "Autoridad Portuaria de Santander (España)",
+   "titulo": "Un total de 19 profesionales participan en la XIV edición del Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos",
+   "nota": "Nota internacional del inicio del curso al que asistió (XIV edición, 19 may–13 jun 2014): 19 profesionales de Argentina, Brasil, Chile, Colombia, Costa Rica, Ecuador, El Salvador, México, Panamá y Uruguay. No publica nombres.",
+   "liga": "https://www.puertosantander.es/en/node/196051",
+   "verificada": true
+  },
+  {
+   "fecha": "2014-06-13",
+   "medio": "Autoridad Portuaria de Santander (España)",
+   "titulo": "Clausurada la XIV edición del Curso Iberoamericano",
+   "nota": "Nota internacional de la clausura del curso al que asistió: 19 técnicos del sector portuario de 11 países latinoamericanos; no publica nombres ni lista de países.",
+   "liga": "https://www.puertosantander.es/en/node/196060",
+   "verificada": true
+  },
+  {
+   "fecha": "2016-05-27",
+   "medio": "CETYS Universidad (México)",
+   "titulo": "Analizan logística y operación en Ensenada",
+   "nota": "Como profesor, acompañó a 15 estudiantes de la Maestría en Ingeniería al Puerto de Ensenada.",
+   "liga": "https://www.cetys.mx/noticias/analizan-logistica-y-operacion-en-ensenada/",
+   "verificada": true
+  },
+  {
+   "fecha": "2017-11-01",
+   "medio": "Universidad Xochicalco (México) · La huella del coyote, núm. 69 (nov.–dic. 2017)",
+   "titulo": "Egresado con huella: Lic. Víctor Hugo Ramírez Salgado",
+   "nota": "Entrevista en su oficina de API Ensenada. Lo presenta como egresado de la generación 2006–2009 de la Licenciatura en Comercio Internacional y Aduanas (campus Ensenada) y recoge su mensaje a los estudiantes: estar atentos a los cambios en el mundo y a los tratados económicos, y aportar valor agregado con su profesionalismo. Publicada en Issuu el 9 ene 2018.",
+   "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065",
+   "verificada": true
+  },
+  {
+   "fecha": "2019",
+   "medio": "El Imparcial (México)",
+   "titulo": "Crece necesidad de expertos en logística en el puerto de Ensenada",
+   "nota": "Réplica de la nota de CETYS.",
+   "liga": "https://www.elimparcial.com/",
+   "verificada": true
+  },
+  {
+   "fecha": "2019-05-31",
+   "medio": "El Vigía (México)",
+   "titulo": "Requiere Ensenada expertos en logística",
+   "nota": "Incluida en la síntesis informativa de CETYS (El Mexicano, El Vigía, Infobaja, Radar Noticias, AGP).",
+   "liga": "https://www.elvigia.net/general/2019/5/31/requiere-ensenada-expertos-en-logistica-316272.html",
+   "verificada": true
+  },
+  {
+   "fecha": "2019-06-05",
+   "medio": "CETYS Universidad (México)",
+   "titulo": "Crece la necesidad de expertos en Logística Internacional en el puerto de Ensenada",
+   "nota": "Lo cita como Subgerente de Operaciones de la API Ensenada.",
+   "liga": "https://www.cetys.mx/noticias/crece-la-necesidad-de-expertos-en-logistica-internacional-en-el-puerto-de-ensenada/",
+   "verificada": true
+  },
+  {
+   "fecha": "2019-06-11",
+   "medio": "LogiNews (España)",
+   "titulo": "Puerto Ensenada necesita expertos en logística",
+   "nota": "Medio especializado en logística y transporte de España (LogiNews, @LogiNewsEs); réplica de la nota de CETYS Universidad (México).",
+   "liga": "https://noticiaslogisticaytransporte.com/",
+   "verificada": true
+  }
+ ],
+ "proyectos": [
+  {
+   "nombre": "ContenedorEns©",
+   "dominio": "contenedorens.com",
+   "estatus": "Activo",
+   "nota": "Venta, renta y modificación de contenedores: configurador 3D/2D y cotizaciones con folio.",
+   "copia": "contenedorens/",
+   "dominio_activo": true,
+   "orden": 1,
+   "anio": "2016",
+   "entrar": "contenedorens/configurador/",
+   "entrar_texto": "Configurar y cotizar",
+   "porque": "Origen de todo: el negocio de contenedores, activo desde 2016.",
+   "etapa": "Inicio"
+  },
+  {
+   "nombre": "Arsa Bodegas©",
+   "dominio": "arsabodegas.com",
+   "estatus": "Activo",
+   "nota": "Mini bodegas en El Sauzal: patio 3D de 20 bodegas, contratos con firma electrónica, recibos y cobranza.",
+   "copia": "arsabodegas/",
+   "orden": 2,
+   "anio": "2018",
+   "entrar": "arsabodegas/",
+   "entrar_texto": "Ver el patio 3D",
+   "porque": "Renta de mini bodegas en contenedores de 20 pies; opera desde 2018.",
+   "dominio_activo": true
+  },
+  {
+   "nombre": "Trazabilidad de contenedores",
+   "dominio": "tcontenedores.com",
+   "estatus": "En desarrollo",
+   "nota": "Trazabilidad binacional de contenedores, corredor Ensenada – Long Beach. Consulta por número ISO 6346.",
+   "copia": "tcontenedores/",
+   "orden": 3,
+   "anio": "2026",
+   "entrar": "tcontenedores/consulta/",
+   "entrar_texto": "Consultar un contenedor",
+   "porque": "Nace de los 21 años en puertos y del negocio de contenedores."
+  },
+  {
+   "nombre": "Intertopía©",
+   "dominio": "intertopía.com",
+   "estatus": "Activo",
+   "nota": "El espacio intermedio entre la utopía y la distopía. Propuesta a la RAE (13 feb 2026) en estudio.",
+   "copia": "intertopia/",
+   "orden": 4,
+   "anio": "2026",
+   "entrar": "intertopia/",
+   "entrar_texto": "Leer el concepto",
+   "porque": "Concepto propuesto a la RAE (feb 2026); da nombre a la familia «topía».",
+   "espejos": [
+    "intertopia.com",
+    "1ntertopía.com",
+    "1ntertopia.com"
+   ]
+  },
+  {
+   "nombre": "Econotopía©",
+   "dominio": "econotopía.com",
+   "estatus": "En desarrollo",
+   "nota": "Sistema de comunicación del Cubo.",
+   "copia": "econotopia/",
+   "orden": 5,
+   "anio": "2026",
+   "entrar": "econotopia/",
+   "entrar_texto": "Ver Econotopía",
+   "porque": "Sistema de comunicación que toma su nombre de Intertopía.",
+   "espejos": [
+    "econotopia.com"
+   ]
+  },
+  {
+   "nombre": "Cubo 33©",
+   "dominio": "cubo33.com",
+   "estatus": "Activo",
+   "nota": "El Cubo de la Comunicación A–Z.",
+   "copia": "cubo33/",
+   "orden": 6,
+   "anio": "2026",
+   "entrar": "cubo33/aprende/",
+   "entrar_texto": "Aprender con el Cubo",
+   "porque": "Herramienta central de Econotopía."
+  },
+  {
+   "nombre": "Código Cúbico©",
+   "dominio": "codigocubico.com",
+   "estatus": "Activo",
+   "nota": "Código de comunicación del Cubo (33).",
+   "copia": "codigocubico/",
+   "orden": 7,
+   "anio": "2026",
+   "entrar": "/codigocubico/mensajero/",
+   "entrar_texto": "Escribir en Código Cúbico",
+   "porque": "Modalidad de seguridad de Econotopía, basada en el Cubo."
+  },
+  {
+   "nombre": "SOSistem™ / S.S.O.S.©",
+   "dominio": "sosistem.com",
+   "estatus": "En desarrollo",
+   "nota": "Monitoreo sin cámaras para espacios confinados.",
+   "copia": "https://sosistem.com",
+   "dominio_activo": true,
+   "orden": 8,
+   "anio": "2026",
+   "entrar": "https://sosistem.com",
+   "entrar_texto": "Entrar a SOSistem™",
+   "porque": "Plataforma que integra todo: las apps del Cubo y la prueba en ContenedorEns.",
+   "etapa": "Fin",
+   "espejos": [
+    "767sos.com",
+    "767sos.org",
+    "sos767.com"
+   ]
+  }
+ ],
+ "registros": [
+  {
+   "obra": "Intertopía©",
+   "registro": "2602144563892",
+   "fecha": "feb 2026"
+  },
+  {
+   "obra": "1ntertopía©",
+   "registro": "2606096034080",
+   "fecha": "jun 2026"
+  },
+  {
+   "obra": "Sistema S.O.S.©",
+   "registro": "2609046908578",
+   "fecha": "sep 2026"
+  },
+  {
+   "obra": "ContenedorEns© (nombre y logo)",
+   "registro": "2609046908752",
+   "fecha": "sep 2026"
+  },
+  {
+   "obra": "Arsa Bodegas© (nombre y logo)",
+   "registro": "2609046908806",
+   "fecha": "sep 2026"
+  },
+  {
+   "obra": "Econotopía©",
+   "registro": "2610077261709",
+   "fecha": "oct 2026"
+  },
+  {
+   "obra": "CuboPY©",
+   "registro": "2610097275281",
+   "fecha": "oct 2026"
+  },
+  {
+   "obra": "Código Cúbico© · Código de comunicación del Cubo (33)©",
+   "registro": "2610097276721",
+   "fecha": "oct 2026"
+  },
+  {
+   "obra": "Cubo Interior©",
+   "registro": "2610097277049",
+   "fecha": "oct 2026"
+  },
+  {
+   "obra": "Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)",
+   "registro": "2610097277155",
+   "fecha": "9 oct 2026"
+  },
+  {
+   "obra": "Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva",
+   "registro": "2610097277377",
+   "fecha": "9 oct 2026"
+  },
+  {
+   "obra": "Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara",
+   "registro": "2610097277568",
+   "fecha": "9 oct 2026"
+  },
+  {
+   "obra": "Cubo Morse©",
+   "registro": "2610257441754",
+   "fecha": "25 oct 2026"
+  },
+  {
+   "obra": "SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)",
+   "registro": "2610257442171",
+   "fecha": "25 oct 2026"
+  },
+  {
+   "obra": "SOSistem™ versiones 3.9 a 6.6",
+   "registro": "2610317507284",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "Econotopía© 2.0 · sistema de comunicación del Cubo",
+   "registro": "2610317507307",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "Estructura y Validación mediante Código Omnigráfico© (definitivo)",
+   "registro": "2610317507444",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "S.S.O.S.© expediente técnico y modelo de negocio",
+   "registro": "2610317507475",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "Sensor híper inteligente SOSistem™ (documento de diseño)",
+   "registro": "2610317507499",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "Registro mundial de naufragios (propuesta CIP/OMI)",
+   "registro": "2610317507550",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)",
+   "registro": "2610317507741",
+   "fecha": "31 oct 2026"
+  },
+  {
+   "obra": "Cartera de dominios y sitios web del autor",
+   "registro": "2611017524083",
+   "fecha": "1 nov 2026"
+  },
+  {
+   "obra": "Cartera de dominios del autor · variantes técnicas sin tilde (intertopia.com, 1ntertopia.com, econotopia.com)",
+   "registro": "2611037540810",
+   "fecha": "3 nov 2026"
+  },
+  {
+   "obra": "Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)",
+   "registro": "2611097590053",
+   "fecha": "9 nov 2026"
+  },
+  {
+   "obra": "Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma",
+   "registro": "2611097590138",
+   "fecha": "9 nov 2026"
+  },
+  {
+   "obra": "VHRS-118 · El Corazón de la tabla periódica",
+   "registro": "2611187687748",
+   "fecha": "18 nov 2026"
+  }
+ ],
+ "fuentes": [
+  {
+   "titulo": "CV de consultor (español)",
+   "liga": "cv/"
+  },
+  {
+   "titulo": "Consultant CV (English)",
+   "liga": "cv/en/"
+  },
+  {
+   "titulo": "ORCID 0009-0002-7831-8433",
+   "liga": "https://orcid.org/0009-0002-7831-8433"
+  },
+  {
+   "titulo": "Repositorios públicos en GitHub",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop"
+  },
+  {
+   "titulo": "Perfil profesional en LinkedIn",
+   "liga": "https://www.linkedin.com/in/victor-hugo-ramirez-salgado-58389a52/"
+  },
+  {
+   "titulo": "Comisión Interamericana de Puertos (CIP-OEA)",
+   "liga": "https://www.oas.org/cip/"
+  },
+  {
+   "titulo": "T21 · APIs proponen crear comité de recintos fiscalizados (25 jun 2013)",
+   "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/"
+  },
+  {
+   "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
+   "liga": "http://t21.com.mx/index.php/puerto-ensenada"
+  },
+  {
+   "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
+   "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
+  },
+  {
+   "titulo": "API Ensenada · 3.ª reunión del Comité de Operación 2015: certificación PERS en etapa final",
+   "liga": "https://es.puertoensenada.com.mx/upl/sec/Presentacion_3ra_Reunion_2015.pdf"
+  },
+  {
+   "titulo": "Zeta Tijuana · Certificación de Ensenada como primer Puerto Verde del país (29 ago 2015)",
+   "liga": "https://zetatijuana.com/2015/08/puerto-verde-y-pasarela-tricolor/"
+  },
+  {
+   "titulo": "MundoMarítimo · Ensenada es certificado como el primer puerto verde de México",
+   "liga": "https://www.mundomaritimo.cl/noticias/ensenada-es-certificado-como-el-primer-puerto-verde-de-mexico"
+  },
+  {
+   "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
+   "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
+  },
+  {
+   "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
+   "liga": "https://www.puertoensenada.com.mx/upl/sec/Minuta_7ma_Reunion_2014.pdf"
+  },
+  {
+   "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
+   "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
+  },
+  {
+   "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
+   "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
+  },
+  {
+   "titulo": "Zeta Tijuana · Proyectan ferri San Diego–Ensenada (2022)",
+   "liga": "https://zetatijuana.com/2022/04/proyectan-ferri-san-diego-ensenada/"
+  },
+  {
+   "titulo": "SanDiegoRed · Llegada del ferry a Ensenada (12 ago 2025)",
+   "liga": "https://www.sandiegored.com/en/news/baja-california-eyes-expansion-of-binational-ferry-with-new-routes"
+  },
+  {
+   "titulo": "SanDiegoRed · El ferry Ensenada–San Diego podría iniciar a fines de 2026 (28 may 2026)",
+   "liga": "https://www.sandiegored.com/en/news/long-awaited-ensenada-san-diego-ferry-could-launch-by-years-end/"
+  },
+  {
+   "titulo": "El Imparcial · Ferry Ensenada–San Diego vuelve a retrasarse; podría iniciar en diciembre (3 jul 2026)",
+   "liga": "https://www.elimparcial.com/tij/ensenada/2026/07/03/ferry-ensenadasan-diego-vuelve-a-retrasarse-podria-iniciar-operaciones-en-diciembre/"
+  },
+  {
+   "titulo": "MundoMarítimo · CGPMM define nueve rutas de cabotaje y TMCD en México (2022)",
+   "liga": "https://www.mundomaritimo.cl/noticias/definen-nueve-rutas-de-cabotaje-y-de-transporte-maritimo-de-corta-distancia-en-mexico"
+  },
+  {
+   "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
+   "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
+  },
+  {
+   "titulo": "Universidad Xochicalco · La huella del coyote 69 · Egresado con huella: Lic. Víctor Hugo Ramírez Salgado (Issuu)",
+   "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065"
+  },
+  {
+   "titulo": "Universidad Xochicalco · La huella del coyote 69 (PDF del número completo)",
+   "liga": "https://www.xochicalco.edu.mx/galeria/rhc/revistas/La-Huella-del-Coyote-69.pdf"
+  },
+  {
+   "titulo": "Autoridad Portuaria de Santander · 19 profesionales en la XIV edición del Curso Iberoamericano (19 may 2014)",
+   "liga": "https://www.puertosantander.es/en/node/196051"
+  },
+  {
+   "titulo": "CIP-OEA · Cursos anteriores: XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos (Santander, 19 may–13 jun 2014)",
+   "liga": "https://www.oas.org/cip/english/prevcourses.html"
+  },
+  {
+   "titulo": "La Moncloa · Consejo de Ministros 30 may 2014: convenio para el XIV Curso Iberoamericano 2014",
+   "liga": "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2014/refc20140530.aspx"
+  },
+  {
+   "titulo": "UIMP · Programa general Santander 2014 (XIV Curso Iberoamericano, 19 may–13 jun)",
+   "liga": "https://www.uimp.es/images/pdf/propuesta/ProgramaGeneral-Web-7Mayo.pdf"
+  },
+  {
+   "titulo": "LogiNews (España) · Noticias Logística y Transporte",
+   "liga": "https://noticiaslogisticaytransporte.com/"
+  },
+  {
+   "titulo": "Autoridad Portuaria de Santander (España) · Clausura de la XIV edición: 19 técnicos de 11 países latinoamericanos (14 jun 2014)",
+   "liga": "https://www.puertosantander.es/en/node/196060"
+  },
+  {
+   "titulo": "Autoridad Portuaria de Santander (España) · Informe de gestión / Memoria 2014 (XIV Curso Iberoamericano)",
+   "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf"
+  },
+  {
+   "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
+   "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
+  },
+  {
+   "titulo": "CIP-OEA · Boletín informativo del Seminario de Estadísticas Portuarias (Lima, 29–30 nov 2012)",
+   "liga": "https://www.oas.org/cip/docs/cursos/Boletin%20Informativo%20Seminario%20Estadisticas%20Portuarias.pdf"
+  },
+  {
+   "titulo": "CIP-OEA · Proyecto de resolución: creación de un sistema de estadísticas portuarias uniformes (seminario de Lima 2012)",
+   "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Proyecto%20de%20Resolucioncip.pdf"
+  },
+  {
+   "titulo": "CIP-OEA · Proyecto de Manual de Estadísticas e Indicadores de Productividad Portuaria (Lima 2012)",
+   "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Proyecto%20de%20manual%20cip.pdf"
+  },
+  {
+   "titulo": "CIP-OEA · Presentación de México en Lima 2012: Estadística de los puertos de México (incluye Ensenada, B.C.) — los datos de Ensenada provienen de las estadísticas generadas por VHRS en API Ensenada (confirmado por el titular)",
+   "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Francisco%20Pastrana.pdf"
+  },
+  {
+   "titulo": "La República (Perú) · APN realiza Seminario Internacional de Estadísticas Portuarias (29 nov 2012)",
+   "liga": "https://larepublica.pe/economia/676959-apn-realiza-seminario-internacional-de-estadisticas-portuarias"
+  },
+  {
+   "titulo": "OEA-CIP · Puertos esta Semana, 3 dic 2012 (Primer Seminario de Estadísticas Portuarias)",
+   "liga": "https://www.oas.org/cip/ports/Fechas/3_diciembre.htm"
+  }
+ ],
+ "privado": [
+  {
+   "titulo": "Expedientes: Rizoma, ORCID, SECIHTI, CIP-OEA, BID, INDAUTOR, IMPI",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/expedientes"
+  },
+  {
+   "titulo": "Archivo de ligas, fuentes y evidencias",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-"
+  },
+  {
+   "titulo": "Panel de sitios (código)",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs"
+  },
+  {
+   "titulo": "Inventario y pedimentos ContenedorEns©",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas"
+  },
+  {
+   "titulo": "Estadísticas portuarias",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias"
+  },
+  {
+   "titulo": "Trazabilidad de contenedores",
+   "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-"
+  },
+  {
+   "titulo": "Safe Creative — registros y pendientes",
+   "liga": "https://www.safecreative.org/"
+  },
+  {
+   "titulo": "Dropbox — SAFE CREATIVE VHRS REGISTRAR",
+   "liga": "https://www.dropbox.com/home"
+  },
+  {
+   "titulo": "Panel Arsa Bodegas: contratos, recibos, cobranza y constancias fiscales",
+   "liga": "https://claude.ai/artifact/SHsR7Ycv14hdTyYsBm5uKi"
+  }
+ ],
+ "registros_en_proceso": 3,
+ "sistemas": [
+  {
+   "familia": "El Cubo de la Comunicación · Econotopía©",
+   "items": [
     {
-      "nombre": "ContenedorEns©",
-      "dominio": "contenedorens.com",
-      "estatus": "Activo",
-      "nota": "Venta, renta y modificación de contenedores: configurador 3D/2D y cotizaciones con folio.",
-      "copia": "contenedorens/",
-      "dominio_activo": true,
-      "orden": 1,
-      "anio": "2016",
-      "entrar": "contenedorens/configurador/",
-      "entrar_texto": "Configurar y cotizar",
-      "porque": "Origen de todo: el negocio de contenedores, activo desde 2016.",
-      "etapa": "Inicio"
+     "nombre": "El Cubo de la Comunicación (33)©",
+     "registros": [
+      "2610077261709"
+     ],
+     "liga": "cubo33/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "Arsa Bodegas©",
-      "dominio": "arsabodegas.com",
-      "estatus": "Activo",
-      "nota": "Mini bodegas en El Sauzal: patio 3D de 20 bodegas, contratos con firma electrónica, recibos y cobranza.",
-      "copia": "arsabodegas/",
-      "orden": 2,
-      "anio": "2018",
-      "entrar": "arsabodegas/",
-      "entrar_texto": "Ver el patio 3D",
-      "porque": "Renta de mini bodegas en contenedores de 20 pies; opera desde 2018.",
-      "dominio_activo": true
+     "nombre": "Econotopía© 2.0 · comunicación, aprendizaje y escritura cifrada",
+     "registros": [
+      "2610317507307"
+     ],
+     "liga": "econotopia/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "Trazabilidad de contenedores",
-      "dominio": "tcontenedores.com",
-      "estatus": "En desarrollo",
-      "nota": "Trazabilidad binacional de contenedores, corredor Ensenada – Long Beach. Consulta por número ISO 6346.",
-      "copia": "tcontenedores/",
-      "orden": 3,
-      "anio": "2026",
-      "entrar": "tcontenedores/consulta/",
-      "entrar_texto": "Consultar un contenedor",
-      "porque": "Nace de los 21 años en puertos y del negocio de contenedores."
+     "nombre": "Econotopía Segura© · memoria técnica",
+     "registros": [
+      "2610097277377"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "Intertopía©",
-      "dominio": "intertopía.com",
-      "estatus": "Activo",
-      "nota": "El espacio intermedio entre la utopía y la distopía. Propuesta a la RAE (13 feb 2026) en estudio.",
-      "copia": "intertopia/",
-      "orden": 4,
-      "anio": "2026",
-      "entrar": "intertopia/",
-      "entrar_texto": "Leer el concepto",
-      "porque": "Concepto propuesto a la RAE (feb 2026); da nombre a la familia «topía».",
-      "espejos": [
-        "intertopia.com",
-        "1ntertopía.com",
-        "1ntertopia.com"
-      ]
+     "nombre": "Código Cúbico©",
+     "registros": [
+      "2610097276721"
+     ],
+     "liga": "codigocubico/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "Econotopía©",
-      "dominio": "econotopía.com",
-      "estatus": "En desarrollo",
-      "nota": "Sistema de comunicación del Cubo.",
-      "copia": "econotopia/",
-      "orden": 5,
-      "anio": "2026",
-      "entrar": "econotopia/",
-      "entrar_texto": "Ver Econotopía",
-      "porque": "Sistema de comunicación que toma su nombre de Intertopía.",
-      "espejos": [
-        "econotopia.com"
-      ]
+     "nombre": "Lector Cúbico© · lectura con cámara",
+     "registros": [
+      "2610097277568"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "Cubo 33©",
-      "dominio": "cubo33.com",
-      "estatus": "Activo",
-      "nota": "El Cubo de la Comunicación A–Z.",
-      "copia": "cubo33/",
-      "orden": 6,
-      "anio": "2026",
-      "entrar": "cubo33/aprende/",
-      "entrar_texto": "Aprender con el Cubo",
-      "porque": "Herramienta central de Econotopía."
+     "nombre": "Teclado Cubo© · memoria y código fuente",
+     "registros": [
+      "2610097277155"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "Código Cúbico©",
-      "dominio": "codigocubico.com",
-      "estatus": "Activo",
-      "nota": "Código de comunicación del Cubo (33).",
-      "copia": "codigocubico/",
-      "orden": 7,
-      "anio": "2026",
-      "entrar": "/codigocubico/mensajero/",
-      "entrar_texto": "Escribir en Código Cúbico",
-      "porque": "Modalidad de seguridad de Econotopía, basada en el Cubo."
+     "nombre": "Cubo Morse©",
+     "registros": [
+      "2610257441754"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "nombre": "SOSistem™ / S.S.O.S.©",
-      "dominio": "sosistem.com",
-      "estatus": "En desarrollo",
-      "nota": "Monitoreo sin cámaras para espacios confinados.",
-      "copia": "https://sosistem.com",
-      "dominio_activo": true,
-      "orden": 8,
-      "anio": "2026",
-      "entrar": "https://sosistem.com",
-      "entrar_texto": "Entrar a SOSistem™",
-      "porque": "Plataforma que integra todo: las apps del Cubo y la prueba en ContenedorEns.",
-      "etapa": "Fin",
-      "espejos": [
-        "767sos.com",
-        "767sos.org",
-        "sos767.com"
-      ]
+     "nombre": "Cubo Interior©",
+     "registros": [
+      "2610097277049"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
+    },
+    {
+     "nombre": "CuboPY©",
+     "registros": [
+      "2610097275281"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
+    },
+    {
+     "nombre": "Estructura y Validación mediante Código Omnigráfico©",
+     "registros": [
+      "2610317507444"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
+    },
+    {
+     "nombre": "Página pública del Cubo (versión inicial)",
+     "registros": [],
+     "liga": "https://victorhugoramirezsalgado-boop.github.io/Econotop-a-cubo/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     }
-  ],
-  "registros": [
+   ]
+  },
+  {
+   "familia": "SOSistem™ · Sistema S.O.S.©",
+   "items": [
     {
-      "obra": "Intertopía©",
-      "registro": "2602144563892",
-      "fecha": "feb 2026"
+     "nombre": "Sistema S.O.S.© · arquitectura electrónica",
+     "registros": [
+      "2609046908578"
+     ],
+     "liga": "https://sosistem.com",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "obra": "1ntertopía©",
-      "registro": "2606096034080",
-      "fecha": "jun 2026"
+     "nombre": "SOSistem™ plataforma 1.0.0 – 3.8",
+     "registros": [
+      "2610257442171"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": "Marca ante el IMPI: expediente 3741790 (clase 9, en trámite)"
     },
     {
-      "obra": "Sistema S.O.S.©",
-      "registro": "2609046908578",
-      "fecha": "sep 2026"
+     "nombre": "SOSistem™ versiones 3.9 – 6.6",
+     "registros": [
+      "2610317507284"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "obra": "ContenedorEns© (nombre y logo)",
-      "registro": "2609046908752",
-      "fecha": "sep 2026"
+     "nombre": "S.S.O.S.© · expediente técnico y modelo de negocio",
+     "registros": [
+      "2610317507475"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "obra": "Arsa Bodegas© (nombre y logo)",
-      "registro": "2609046908806",
-      "fecha": "sep 2026"
+     "nombre": "Sensor híper inteligente SOSistem™ · diseño",
+     "registros": [
+      "2610317507499"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "obra": "Econotopía©",
-      "registro": "2610077261709",
-      "fecha": "oct 2026"
+     "nombre": "Desarrollo y firmware",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/sistema-sos",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "obra": "CuboPY©",
-      "registro": "2610097275281",
-      "fecha": "oct 2026"
-    },
-    {
-      "obra": "Código Cúbico© · Código de comunicación del Cubo (33)©",
-      "registro": "2610097276721",
-      "fecha": "oct 2026"
-    },
-    {
-      "obra": "Cubo Interior©",
-      "registro": "2610097277049",
-      "fecha": "oct 2026"
-    },
-    {
-      "obra": "Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)",
-      "registro": "2610097277155",
-      "fecha": "9 oct 2026"
-    },
-    {
-      "obra": "Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva",
-      "registro": "2610097277377",
-      "fecha": "9 oct 2026"
-    },
-    {
-      "obra": "Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara",
-      "registro": "2610097277568",
-      "fecha": "9 oct 2026"
-    },
-    {
-      "obra": "Cubo Morse©",
-      "registro": "2610257441754",
-      "fecha": "25 oct 2026"
-    },
-    {
-      "obra": "SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)",
-      "registro": "2610257442171",
-      "fecha": "25 oct 2026"
-    },
-    {
-      "obra": "SOSistem™ versiones 3.9 a 6.6",
-      "registro": "2610317507284",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "Econotopía© 2.0 · sistema de comunicación del Cubo",
-      "registro": "2610317507307",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "Estructura y Validación mediante Código Omnigráfico© (definitivo)",
-      "registro": "2610317507444",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "S.S.O.S.© expediente técnico y modelo de negocio",
-      "registro": "2610317507475",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "Sensor híper inteligente SOSistem™ (documento de diseño)",
-      "registro": "2610317507499",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "Registro mundial de naufragios (propuesta CIP/OMI)",
-      "registro": "2610317507550",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)",
-      "registro": "2610317507741",
-      "fecha": "31 oct 2026"
-    },
-    {
-      "obra": "Cartera de dominios y sitios web del autor",
-      "registro": "2611017524083",
-      "fecha": "1 nov 2026"
-    },
-    {
-      "obra": "Cartera de dominios del autor · variantes técnicas sin tilde (intertopia.com, 1ntertopia.com, econotopia.com)",
-      "registro": "2611037540810",
-      "fecha": "3 nov 2026"
-    },
-    {
-      "obra": "Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)",
-      "registro": "2611097590053",
-      "fecha": "9 nov 2026"
-    },
-    {
-      "obra": "Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma",
-      "registro": "2611097590138",
-      "fecha": "9 nov 2026"
+     "nombre": "App de iPhone para SOSistem",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/iphone-para-sosistem",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     }
-  ],
-  "fuentes": [
+   ]
+  },
+  {
+   "familia": "Contenedores, puertos y logística",
+   "items": [
     {
-      "titulo": "CV de consultor (español)",
-      "liga": "cv/"
+     "nombre": "ContenedorEns© · venta, renta y modificación",
+     "registros": [
+      "2609046908752"
+     ],
+     "liga": "https://contenedorens.com",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "Consultant CV (English)",
-      "liga": "cv/en/"
+     "nombre": "Arsa Bodegas© · mini bodegas self storage",
+     "registros": [
+      "2609046908806"
+     ],
+     "liga": "arsabodegas/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "ORCID 0009-0002-7831-8433",
-      "liga": "https://orcid.org/0009-0002-7831-8433"
+     "nombre": "Regulación de contenedores de segundo uso · trazabilidad nacional",
+     "registros": [
+      "2610317507741"
+     ],
+     "liga": "tcontenedores/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "Repositorios públicos en GitHub",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop"
+     "nombre": "Registro mundial de buques varados y hundidos (propuesta CIP-OEA / OMI)",
+     "registros": [
+      "2610317507550"
+     ],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "Perfil profesional en LinkedIn",
-      "liga": "https://www.linkedin.com/in/victor-hugo-ramirez-salgado-58389a52/"
+     "nombre": "Estadísticas portuarias",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "Comisión Interamericana de Puertos (CIP-OEA)",
-      "liga": "https://www.oas.org/cip/"
+     "nombre": "Trazabilidad · desarrollo de la propuesta",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "T21 · APIs proponen crear comité de recintos fiscalizados (25 jun 2013)",
-      "liga": "https://t21.com.mx/maritimo-2013-06-25-apis-proponen-crear-comite-recintos-fiscalizados/"
+     "nombre": "Inventario de contenedores y pedimentos",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "T21 · Sección Puerto Ensenada (nota archivada el 25 jun 2013)",
-      "liga": "http://t21.com.mx/index.php/puerto-ensenada"
+     "nombre": "Cotizaciones ContenedorEns / Arsa (folio por sede)",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "ASIPONA Ensenada · Puerto Verde de Ensenada (certificación EcoPorts PERS)",
-      "liga": "https://en.puertoensenada.com.mx/puerto-verde-de-ensenada"
+     "nombre": "Contratos, recibos y cobranza Arsa (panel)",
+     "registros": [],
+     "liga": "https://claude.ai/artifact/SHsR7Ycv14hdTyYsBm5uKi",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "API Ensenada · 3.ª reunión del Comité de Operación 2015: certificación PERS en etapa final",
-      "liga": "https://es.puertoensenada.com.mx/upl/sec/Presentacion_3ra_Reunion_2015.pdf"
+     "nombre": "Configurador 3D de contenedores modificados",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/configurador",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "Zeta Tijuana · Certificación de Ensenada como primer Puerto Verde del país (29 ago 2015)",
-      "liga": "https://zetatijuana.com/2015/08/puerto-verde-y-pasarela-tricolor/"
+     "nombre": "Traslado de agua potable",
+     "registros": [],
+     "liga": null,
+     "privado": false,
+     "estatus": null,
+     "nota": "Servicio con logo propio."
     },
     {
-      "titulo": "MundoMarítimo · Ensenada es certificado como el primer puerto verde de México",
-      "liga": "https://www.mundomaritimo.cl/noticias/ensenada-es-certificado-como-el-primer-puerto-verde-de-mexico"
+     "nombre": "Firma electrónica de contratos Arsa",
+     "registros": [],
+     "liga": "https://arsabodegas.com/firma/",
+     "privado": false,
+     "estatus": "Activo",
+     "nota": "El cliente firma desde su teléfono; PDF con constancia y huella SHA-256."
     },
     {
-      "titulo": "ASIPONA Ensenada · Premio Marítimo de las Américas 2023, Gestión Verde y Sostenibilidad Portuaria (7 jun 2023)",
-      "liga": "https://en.puertoensenada.com.mx/gana-puerto-de-ensenada-premio-maritimo-de-la-oea"
-    },
-    {
-      "titulo": "API Ensenada · Minuta del Comité de Operación del 18 dic 2014: proyecto de certificación Puerto Verde en marcha",
-      "liga": "https://www.puertoensenada.com.mx/upl/sec/Minuta_7ma_Reunion_2014.pdf"
-    },
-    {
-      "titulo": "SCT · Puertos nacionales con presencia global: API Ensenada participó en el XVI Curso Iberoamericano (16 may–10 jun 2016)",
-      "liga": "https://www.sct.gob.mx/puertos-y-marina/fomento-y-administracion-portuaria/puertos-nacionales-con-presencia-global/"
-    },
-    {
-      "titulo": "ASIPONA Ensenada · Avances del proyecto ferri (ruta de corta distancia San Diego–Ensenada)",
-      "liga": "https://en.puertoensenada.com.mx/avances-de-proyecto-ferri"
-    },
-    {
-      "titulo": "Zeta Tijuana · Proyectan ferri San Diego–Ensenada (2022)",
-      "liga": "https://zetatijuana.com/2022/04/proyectan-ferri-san-diego-ensenada/"
-    },
-    {
-      "titulo": "SanDiegoRed · Llegada del ferry a Ensenada (12 ago 2025)",
-      "liga": "https://www.sandiegored.com/en/news/baja-california-eyes-expansion-of-binational-ferry-with-new-routes"
-    },
-    {
-      "titulo": "SanDiegoRed · El ferry Ensenada–San Diego podría iniciar a fines de 2026 (28 may 2026)",
-      "liga": "https://www.sandiegored.com/en/news/long-awaited-ensenada-san-diego-ferry-could-launch-by-years-end/"
-    },
-    {
-      "titulo": "El Imparcial · Ferry Ensenada–San Diego vuelve a retrasarse; podría iniciar en diciembre (3 jul 2026)",
-      "liga": "https://www.elimparcial.com/tij/ensenada/2026/07/03/ferry-ensenadasan-diego-vuelve-a-retrasarse-podria-iniciar-operaciones-en-diciembre/"
-    },
-    {
-      "titulo": "MundoMarítimo · CGPMM define nueve rutas de cabotaje y TMCD en México (2022)",
-      "liga": "https://www.mundomaritimo.cl/noticias/definen-nueve-rutas-de-cabotaje-y-de-transporte-maritimo-de-corta-distancia-en-mexico"
-    },
-    {
-      "titulo": "SEMAR-CGPMM · Servicios de transporte marítimo regular en México 2022 (impulso al TMCD)",
-      "liga": "https://www.gob.mx/cms/uploads/attachment/file/832129/Prontuario_2022_DGMM.pdf"
-    },
-    {
-      "titulo": "Universidad Xochicalco · La huella del coyote 69 · Egresado con huella: Lic. Víctor Hugo Ramírez Salgado (Issuu)",
-      "liga": "https://issuu.com/helladelcoyote/docs/la-huella-del-coyote-69/s/12960065"
-    },
-    {
-      "titulo": "Universidad Xochicalco · La huella del coyote 69 (PDF del número completo)",
-      "liga": "https://www.xochicalco.edu.mx/galeria/rhc/revistas/La-Huella-del-Coyote-69.pdf"
-    },
-    {
-      "titulo": "Autoridad Portuaria de Santander · 19 profesionales en la XIV edición del Curso Iberoamericano (19 may 2014)",
-      "liga": "https://www.puertosantander.es/en/node/196051"
-    },
-    {
-      "titulo": "CIP-OEA · Cursos anteriores: XIV Curso Iberoamericano de Tecnología, Operaciones y Gestión Ambiental en Puertos (Santander, 19 may–13 jun 2014)",
-      "liga": "https://www.oas.org/cip/english/prevcourses.html"
-    },
-    {
-      "titulo": "La Moncloa · Consejo de Ministros 30 may 2014: convenio para el XIV Curso Iberoamericano 2014",
-      "liga": "https://www.lamoncloa.gob.es/consejodeministros/referencias/Paginas/2014/refc20140530.aspx"
-    },
-    {
-      "titulo": "UIMP · Programa general Santander 2014 (XIV Curso Iberoamericano, 19 may–13 jun)",
-      "liga": "https://www.uimp.es/images/pdf/propuesta/ProgramaGeneral-Web-7Mayo.pdf"
-    },
-    {
-      "titulo": "LogiNews (España) · Noticias Logística y Transporte",
-      "liga": "https://noticiaslogisticaytransporte.com/"
-    },
-    {
-      "titulo": "Autoridad Portuaria de Santander (España) · Clausura de la XIV edición: 19 técnicos de 11 países latinoamericanos (14 jun 2014)",
-      "liga": "https://www.puertosantander.es/en/node/196060"
-    },
-    {
-      "titulo": "Autoridad Portuaria de Santander (España) · Informe de gestión / Memoria 2014 (XIV Curso Iberoamericano)",
-      "liga": "https://www.puertosantander.es/sites/default/files/memorias/informegestion2014.pdf"
-    },
-    {
-      "titulo": "Ministerio de Asuntos Exteriores de España · Informe sobre la cooperación multilateral 2014 (financiamiento del XIV Curso Iberoamericano con la CIP-OEA)",
-      "liga": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Documents/Cooperacion/Planificacion/Planificacion-estrategica-multilateral/Informe-cooperacion-multilateral-2014.pdf"
-    },
-    {
-      "titulo": "CIP-OEA · Boletín informativo del Seminario de Estadísticas Portuarias (Lima, 29–30 nov 2012)",
-      "liga": "https://www.oas.org/cip/docs/cursos/Boletin%20Informativo%20Seminario%20Estadisticas%20Portuarias.pdf"
-    },
-    {
-      "titulo": "CIP-OEA · Proyecto de resolución: creación de un sistema de estadísticas portuarias uniformes (seminario de Lima 2012)",
-      "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Proyecto%20de%20Resolucioncip.pdf"
-    },
-    {
-      "titulo": "CIP-OEA · Proyecto de Manual de Estadísticas e Indicadores de Productividad Portuaria (Lima 2012)",
-      "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Proyecto%20de%20manual%20cip.pdf"
-    },
-    {
-      "titulo": "CIP-OEA · Presentación de México en Lima 2012: Estadística de los puertos de México (incluye Ensenada, B.C.) — los datos de Ensenada provienen de las estadísticas generadas por VHRS en API Ensenada (confirmado por el titular)",
-      "liga": "https://www.oas.org/cip/docs/cursos/PRESENTACIONES%20CURSO%20DE%20ESTADISTICA%20PERU/Francisco%20Pastrana.pdf"
-    },
-    {
-      "titulo": "La República (Perú) · APN realiza Seminario Internacional de Estadísticas Portuarias (29 nov 2012)",
-      "liga": "https://larepublica.pe/economia/676959-apn-realiza-seminario-internacional-de-estadisticas-portuarias"
-    },
-    {
-      "titulo": "OEA-CIP · Puertos esta Semana, 3 dic 2012 (Primer Seminario de Estadísticas Portuarias)",
-      "liga": "https://www.oas.org/cip/ports/Fechas/3_diciembre.htm"
+     "nombre": "Patio 3D Arsa Bodegas",
+     "registros": [],
+     "liga": "arsabodegas/#patio",
+     "privado": false,
+     "estatus": "Activo",
+     "nota": "20 bodegas, oficina, andén, acceso y estacionamiento."
     }
-  ],
-  "privado": [
+   ]
+  },
+  {
+   "familia": "Intertopía©",
+   "items": [
     {
-      "titulo": "Expedientes: Rizoma, ORCID, SECIHTI, CIP-OEA, BID, INDAUTOR, IMPI",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/expedientes"
+     "nombre": "Intertopía© · concepto propuesto a la RAE",
+     "registros": [
+      "2602144563892"
+     ],
+     "liga": "intertopia/",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "titulo": "Archivo de ligas, fuentes y evidencias",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-"
-    },
-    {
-      "titulo": "Panel de sitios (código)",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop/sitios-vhrs"
-    },
-    {
-      "titulo": "Inventario y pedimentos ContenedorEns©",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas"
-    },
-    {
-      "titulo": "Estadísticas portuarias",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias"
-    },
-    {
-      "titulo": "Trazabilidad de contenedores",
-      "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-"
-    },
-    {
-      "titulo": "Safe Creative — registros y pendientes",
-      "liga": "https://www.safecreative.org/"
-    },
-    {
-      "titulo": "Dropbox — SAFE CREATIVE VHRS REGISTRAR",
-      "liga": "https://www.dropbox.com/home"
-    },
-    {
-      "titulo": "Panel Arsa Bodegas: contratos, recibos, cobranza y constancias fiscales",
-      "liga": "https://claude.ai/artifact/SHsR7Ycv14hdTyYsBm5uKi"
+     "nombre": "1ntertopía© · sistema de generación de valor",
+     "registros": [
+      "2606096034080"
+     ],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/1ntertop-a",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     }
-  ],
-  "registros_en_proceso": 3,
-  "sistemas": [
+   ]
+  },
+  {
+   "familia": "Autor",
+   "items": [
     {
-      "familia": "El Cubo de la Comunicación · Econotopía©",
-      "items": [
-        {
-          "nombre": "El Cubo de la Comunicación (33)©",
-          "registros": [
-            "2610077261709"
-          ],
-          "liga": "cubo33/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Econotopía© 2.0 · comunicación, aprendizaje y escritura cifrada",
-          "registros": [
-            "2610317507307"
-          ],
-          "liga": "econotopia/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Econotopía Segura© · memoria técnica",
-          "registros": [
-            "2610097277377"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Código Cúbico©",
-          "registros": [
-            "2610097276721"
-          ],
-          "liga": "codigocubico/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Lector Cúbico© · lectura con cámara",
-          "registros": [
-            "2610097277568"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Teclado Cubo© · memoria y código fuente",
-          "registros": [
-            "2610097277155"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Cubo Morse©",
-          "registros": [
-            "2610257441754"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Cubo Interior©",
-          "registros": [
-            "2610097277049"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "CuboPY©",
-          "registros": [
-            "2610097275281"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Estructura y Validación mediante Código Omnigráfico©",
-          "registros": [
-            "2610317507444"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Página pública del Cubo (versión inicial)",
-          "registros": [],
-          "liga": "https://victorhugoramirezsalgado-boop.github.io/Econotop-a-cubo/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        }
-      ]
+     "nombre": "Cartera de dominios y sitios web del autor",
+     "registros": [
+      "2611017524083"
+     ],
+     "liga": "#proyectos",
+     "privado": false,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "familia": "SOSistem™ · Sistema S.O.S.©",
-      "items": [
-        {
-          "nombre": "Sistema S.O.S.© · arquitectura electrónica",
-          "registros": [
-            "2609046908578"
-          ],
-          "liga": "https://sosistem.com",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "SOSistem™ plataforma 1.0.0 – 3.8",
-          "registros": [
-            "2610257442171"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": "Marca ante el IMPI: expediente 3741790 (clase 9, en trámite)"
-        },
-        {
-          "nombre": "SOSistem™ versiones 3.9 – 6.6",
-          "registros": [
-            "2610317507284"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "S.S.O.S.© · expediente técnico y modelo de negocio",
-          "registros": [
-            "2610317507475"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Sensor híper inteligente SOSistem™ · diseño",
-          "registros": [
-            "2610317507499"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Desarrollo y firmware",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/sistema-sos",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "App de iPhone para SOSistem",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/iphone-para-sosistem",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        }
-      ]
+     "nombre": "CV, Rizoma, ORCID y expedientes institucionales",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/expedientes",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     },
     {
-      "familia": "Contenedores, puertos y logística",
-      "items": [
-        {
-          "nombre": "ContenedorEns© · venta, renta y modificación",
-          "registros": [
-            "2609046908752"
-          ],
-          "liga": "https://contenedorens.com",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Arsa Bodegas© · mini bodegas self storage",
-          "registros": [
-            "2609046908806"
-          ],
-          "liga": "arsabodegas/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Regulación de contenedores de segundo uso · trazabilidad nacional",
-          "registros": [
-            "2610317507741"
-          ],
-          "liga": "tcontenedores/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Registro mundial de buques varados y hundidos (propuesta CIP-OEA / OMI)",
-          "registros": [
-            "2610317507550"
-          ],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Estadísticas portuarias",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/Estadisticas-Portuarias",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Trazabilidad · desarrollo de la propuesta",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/trazabilidad-",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Inventario de contenedores y pedimentos",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Cotizaciones ContenedorEns / Arsa (folio por sede)",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/ContenedorEns-Arsa-Bodegas",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Contratos, recibos y cobranza Arsa (panel)",
-          "registros": [],
-          "liga": "https://claude.ai/artifact/SHsR7Ycv14hdTyYsBm5uKi",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Configurador 3D de contenedores modificados",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/configurador",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Traslado de agua potable",
-          "registros": [],
-          "liga": null,
-          "privado": false,
-          "estatus": null,
-          "nota": "Servicio con logo propio."
-        },
-        {
-          "nombre": "Firma electrónica de contratos Arsa",
-          "registros": [],
-          "liga": "https://arsabodegas.com/firma/",
-          "privado": false,
-          "estatus": "Activo",
-          "nota": "El cliente firma desde su teléfono; PDF con constancia y huella SHA-256."
-        },
-        {
-          "nombre": "Patio 3D Arsa Bodegas",
-          "registros": [],
-          "liga": "arsabodegas/#patio",
-          "privado": false,
-          "estatus": "Activo",
-          "nota": "20 bodegas, oficina, andén, acceso y estacionamiento."
-        }
-      ]
-    },
-    {
-      "familia": "Intertopía©",
-      "items": [
-        {
-          "nombre": "Intertopía© · concepto propuesto a la RAE",
-          "registros": [
-            "2602144563892"
-          ],
-          "liga": "intertopia/",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "1ntertopía© · sistema de generación de valor",
-          "registros": [
-            "2606096034080"
-          ],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/1ntertop-a",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        }
-      ]
-    },
-    {
-      "familia": "Autor",
-      "items": [
-        {
-          "nombre": "Cartera de dominios y sitios web del autor",
-          "registros": [
-            "2611017524083"
-          ],
-          "liga": "#proyectos",
-          "privado": false,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "CV, Rizoma, ORCID y expedientes institucionales",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/cv-rizoma/tree/main/expedientes",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        },
-        {
-          "nombre": "Archivo de ligas, fuentes y evidencias",
-          "registros": [],
-          "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-",
-          "privado": true,
-          "estatus": null,
-          "nota": ""
-        }
-      ]
+     "nombre": "Archivo de ligas, fuentes y evidencias",
+     "registros": [],
+     "liga": "https://github.com/victorhugoramirezsalgado-boop/ligas-y-fuentes-de-proyectos-",
+     "privado": true,
+     "estatus": null,
+     "nota": ""
     }
-  ],
-  "en_registro": null,
-  "orden_proyectos": "Del origen (negocio de contenedores, 2016) a la plataforma que integra todo (SOSistem™).",
-  "impi": [
-    {
-      "signo": "SOSistem™ (marca mixta)",
-      "tramite": "Registro de marca",
-      "clase": "9",
-      "expediente": "3741790",
-      "fecha": "9 nov 2026",
-      "estatus": "En trámite"
-    }
-  ]
+   ]
+  }
+ ],
+ "en_registro": null,
+ "orden_proyectos": "Del origen (negocio de contenedores, 2016) a la plataforma que integra todo (SOSistem™).",
+ "impi": [
+  {
+   "signo": "SOSistem™ (marca mixta)",
+   "tramite": "Registro de marca",
+   "clase": "9",
+   "expediente": "3741790",
+   "fecha": "9 nov 2026",
+   "estatus": "En trámite"
+  }
+ ]
 }
