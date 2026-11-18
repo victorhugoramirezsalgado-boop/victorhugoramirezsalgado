@@ -138,3 +138,12 @@ tr.prom td{font-weight:700;border-top:2px solid #2C3A32}
 @media(max-width:620px){.g-hf{grid-template-columns:1fr auto}.g-hf .g-hbar{grid-column:1/-1;grid-row:2}}
 @media print{.regreso,.pestanas,.cab .rol,.pie,.acciones,.g-filtros{display:none!important}.panel{break-inside:auto}.caja{break-inside:avoid}}
 .g-graf{min-width:0;overflow-x:auto}
+
+/* Buque y puerto */
+.pt-b{font:700 13px Inter,sans-serif;fill:#1F2A24}
+.pt-s{font:500 11.5px Inter,sans-serif;fill:#3E4A42}
+.pt-agua{font:italic 600 22px "Space Grotesk",sans-serif;fill:#4D7389}
+.b-det summary{cursor:pointer;font-weight:700;color:var(--verde);padding:6px 0}
+.b-params label{display:grid;gap:3px;font-size:12.5px;font-weight:600;color:var(--mut)}
+.b-params input{min-height:42px;border-radius:9px;border:1px solid var(--linea);background:var(--crema);padding:0 8px;font:500 15px Inter,sans-serif}
+#b-tabla tr.resalta td{background:#FDF6E3;font-weight:700}
