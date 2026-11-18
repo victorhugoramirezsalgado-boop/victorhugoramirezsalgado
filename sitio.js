@@ -32,3 +32,16 @@
     location.href = `https://${host}.translate.goog${location.pathname}?_x_tr_sl=es&_x_tr_tl=${l}&_x_tr_hl=${l}`;
   });
 })();
+
+// © 2026 Víctor Hugo Ramírez Salgado — Ligas a CUBO33: se abren en otra pestaña con botón para regresar a esta página
+(() => {
+  document.querySelectorAll('a[href*="cubo33.com"]').forEach((a) => {
+    try {
+      const u = new URL(a.href);
+      if (u.hostname.replace(/^www\./, '') !== 'cubo33.com') return;
+      if (!u.searchParams.get('origen')) u.searchParams.set('origen', 'vhrs');
+      if (!u.searchParams.get('volver')) u.searchParams.set('volver', location.href.split('#')[0]);
+      a.href = u.href; a.target = '_blank'; a.rel = 'noopener';
+    } catch (e) {}
+  });
+})();

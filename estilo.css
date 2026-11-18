@@ -64,3 +64,8 @@ footer{margin-top:40px;font-size:14px;color:var(--mut)}
 .t-datos th{font-weight:700}
 .apa{list-style:none;padding:0;margin:8px 0}
 .apa li{padding-left:2em;text-indent:-2em;margin:0 0 10px;overflow-wrap:anywhere}
+/* Botones en relieve (3D) y acceso a CUBO33 */
+.herr-i{box-shadow:inset 0 1px 0 #fff,0 4px 0 color-mix(in srgb,var(--line) 70%,#000),0 8px 14px rgba(0,0,0,.12);margin-bottom:4px;transition:transform .14s,box-shadow .14s}
+.herr-i:hover{transform:translateY(-2px)}.herr-i:active{transform:translateY(3px);box-shadow:0 1px 0 color-mix(in srgb,var(--line) 70%,#000)}
+.abrir-c33{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:12px;background:#F2C96B;color:#2C3A32!important;font-weight:800;text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 5px 0 #B98F2C,0 10px 18px rgba(0,0,0,.3);transition:transform .14s,box-shadow .14s}
+.abrir-c33:hover{transform:translateY(-2px)}.abrir-c33:active{transform:translateY(4px);box-shadow:0 1px 0 #B98F2C,0 2px 6px rgba(0,0,0,.25)}
