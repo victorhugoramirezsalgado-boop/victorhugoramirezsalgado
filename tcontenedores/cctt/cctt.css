@@ -113,3 +113,5 @@ tr.resalta td{background:#FFF7DD}
 tr.prom td{font-weight:700;border-top:2px solid #2C3A32}
 .fuentes ol{padding-left:20px;font-size:13px;line-height:1.5;word-break:break-word}
 .fuentes li{margin-bottom:6px}
+#prod-escala,#prod-rend,#patios{min-width:0}
+#prod-escala td,#prod-escala th{padding:7px 6px}
