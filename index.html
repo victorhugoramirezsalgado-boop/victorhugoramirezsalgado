@@ -45,13 +45,25 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/logos/vhrs/vhrs-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/logos/vhrs/vhrs-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/logos/vhrs/vhrs-180.png">
+<style>
+/* © Víctor Hugo Ramírez Salgado — Cubo Gran Intertopía · VH que gira */
+.marca{display:flex;align-items:center;gap:14px}
+.cubo-gi{width:52px;height:52px;perspective:420px;flex:none}
+.cubo-gi .c{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:giraGI 14s linear infinite}
+.cubo-gi img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;display:block}
+.cubo-gi .f1{transform:translateZ(26px)}.cubo-gi .f2{transform:rotateY(90deg) translateZ(26px)}
+.cubo-gi .f3{transform:rotateX(90deg) translateZ(26px)}.cubo-gi .f4{transform:rotateY(180deg) translateZ(26px)}
+.cubo-gi .f5{transform:rotateY(-90deg) translateZ(26px)}.cubo-gi .f6{transform:rotateX(-90deg) translateZ(26px)}
+@keyframes giraGI{0%{transform:rotateX(-24deg) rotateY(0deg)}50%{transform:rotateX(-34deg) rotateY(180deg)}100%{transform:rotateX(-24deg) rotateY(360deg)}}
+@media (prefers-reduced-motion:reduce){.cubo-gi .c{animation:none;transform:rotateX(-24deg) rotateY(-35deg)}}
+</style>
 </head>
 <body class="biblioteca">
 <div class="libreria" aria-hidden="true"></div>
 <div class="sillones" aria-hidden="true"></div>
 <svg class="rayos" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#F2C96B" stroke-width=".8"><polyline points="500,0 380,260 420,520 300,1000"/><polyline points="500,0 620,240 580,560 720,1000"/><polyline points="500,0 250,180 200,520 120,1000"/><polyline points="500,0 760,200 820,540 900,1000"/><polygon points="500,0 430,140 570,140" fill="#F2C96B" fill-opacity=".25"/></g></svg>
 <div class="wrap">
-<header class="top"><div class="marca">Víctor Hugo Ramírez Salgado</div>
+<header class="top"><div class="marca"><a class="cubo-gi" href="logos/vhrs/cubo-gran-intertopia-vh.html" target="_blank" rel="noopener" aria-label="© Cubo Gran Intertopía · VH, de Víctor Hugo Ramírez Salgado"><div class="c"><img class="f1" src="logos/vhrs/caras/cara-frente.svg" alt=""><img class="f2" src="logos/vhrs/caras/cara-derecha.svg" alt=""><img class="f3" src="logos/vhrs/caras/cara-arriba.svg" alt=""><img class="f4" src="logos/vhrs/caras/cara-atras.svg" alt=""><img class="f5" src="logos/vhrs/caras/cara-izquierda.svg" alt=""><img class="f6" src="logos/vhrs/caras/cara-abajo.svg" alt=""></div></a>Víctor Hugo Ramírez Salgado</div>
 <div class="tema" role="group" aria-label="Tema"><button id="t1" aria-pressed="true">Beige</button><button id="t2" aria-pressed="false">Biblioteca</button></div></header>
 
 <nav class="plegables" aria-label="Índice y documentos">
