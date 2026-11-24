@@ -46,3 +46,6 @@ li.fuente{list-style:none;font-size:12px;color:var(--mut);margin-top:-4px}
  .tabla td:first-child{font-weight:700;color:var(--carbon)}
  .tabla td[data-l]:not(:first-child)::before{content:attr(data-l) ": ";font-weight:600;color:#8a4a1a;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
 }
+html[lang^="zh"] body{font-family:Inter,"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif}
+html[lang^="zh"] .cuerpo p,html[lang^="zh"] .cuerpo li{hyphens:none}
+.acciones{flex-wrap:wrap}
