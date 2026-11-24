@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verificar certificado · Víctor Hugo Ramírez Salgado</title>
+<meta name="description" content="Verificación de los certificados de patrocinio de las obras de Víctor Hugo Ramírez Salgado. El certificado se envía solo al correo registrado en el pago.">
+<meta name="robots" content="noindex">
+<style>
+/* © 2026 Víctor Hugo Ramírez Salgado — verificación de certificados de patrocinio con doble validación. Asistencia-IA.
+   Doble validación: proyecto apoyado + número de certificado + código Cubo (33). Si coinciden, el certificado
+   se envía SOLO al correo registrado en el pago, con copia al autor. Esta página nunca muestra datos de nadie. */
+*{box-sizing:border-box}
+body{margin:0;background:#2C3A32;color:#EADBB8;font:400 15px/1.5 Inter,system-ui,-apple-system,sans-serif}
+.vf{max-width:640px;margin:0 auto;padding:22px 16px 40px}
+.vf-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.vf-top a{color:#EADBB8;text-decoration:none;font:600 15px Georgia,serif}
+.tema select{background:transparent;color:#EADBB8;border:1px solid #C9A55A;border-radius:999px;padding:5px 10px;font:500 13px Inter,sans-serif}
+h1{font:700 30px Georgia,serif;margin:22px 0 4px;color:#F2EBDC;cursor:pointer}
+.sub{margin:0 0 18px;color:#D9CBA8}
+.sellos{display:flex;justify-content:center;gap:6px;margin:0 auto 14px;background:#FBF7EE;border-radius:14px;padding:8px 14px;width:max-content}
+.sellos img{width:96px;height:96px}
+form{background:#FBF7EE;color:#2B2620;border-radius:12px;padding:18px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+label{display:block;font:600 12px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8A6A3B;margin:0 0 6px}
+input,select.campo{font:600 18px Inter,sans-serif;padding:10px 12px;border:1.5px solid #D9C08A;border-radius:8px;background:#fff;color:#2B2620;width:100%}
+.cod{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}
+.cod input{text-align:center}
+.fila{margin-bottom:14px}
+small{display:block;color:#6E6457;font-size:12.5px}
+button{font:700 15px Inter,sans-serif;padding:12px 20px;border-radius:999px;border:0;background:#2C3A32;color:#EADBB8;cursor:pointer}
+button[disabled]{opacity:.6}
+.msg{margin-top:14px;padding:12px 14px;border-radius:10px;display:none}
+.msg.ok{display:block;background:#E5EFE7;color:#1F4B33}
+.msg.no{display:block;background:#F6E2DC;color:#7A2E1C}
+.pasos{margin:22px 0 0;padding:0 0 0 18px;color:#D9CBA8;font-size:14px}
+.nota{font-size:12.5px;color:#C9BA95;margin-top:18px}
+.nota a{color:#EADBB8}
+</style>
+</head>
+<body>
+<div class="vf">
+ <div class="vf-top"><a href="../">Víctor Hugo Ramírez Salgado</a><div class="tema"></div></div>
+ <h1 data-morse="VERIFICAR">Verificar certificado</h1>
+ <p class="sub">Doble validación del certificado de patrocinio: elija el proyecto que apoyó y escriba el número y el código Cubo (33) de su certificado. Si los datos coinciden, le enviamos el certificado verificado <b>al correo con el que hizo el pago</b>.</p>
+ <div class="sellos"><img src="sello-cubo.svg" alt="Sello del Cubo"><img src="sello-validado.svg" alt="Sello de doble validación"></div>
+ <form id="f" autocomplete="off">
+  <div class="fila"><label for="clave">Proyecto que apoyó</label>
+   <select class="campo" id="clave" required>
+    <option value="">Elija el proyecto…</option>
+    <option value="SOS">SOSistem™ (SOS)</option>
+    <option value="IP">Investigación y propuestas (IP)</option>
+    <option value="767">SOS767 (767)</option>
+    <option value="ITP">Intertopía© (ITP)</option>
+    <option value="ETP">Econotopía© (ETP)</option>
+    <option value="C33">El Cubo de la Comunicación (33)© (C33)</option>
+   </select></div>
+  <div class="fila"><label for="folio">Número de certificado</label><input id="folio" placeholder="Ej. IP-001" required></div>
+  <div class="fila"><label>Código Cubo (33)</label><div class="cod"><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required><input inputmode="numeric" pattern="[0-9]*" maxlength="3" required></div><small>Cuatro números del 1 al 676, impresos en su certificado junto al sello de validación.</small></div>
+  <button type="submit" id="btn">Verificar y enviar a mi correo</button>
+  <div class="msg" id="msg"></div>
+ </form>
+ <ol class="pasos">
+  <li>Primera validación: el número de certificado corresponde al proyecto que usted apoyó.</li>
+  <li>Segunda validación: el código Cubo (33) coincide con el registrado al emitir el certificado.</li>
+  <li>Si ambas coinciden, el mismo certificado en PDF llega al correo registrado en el pago. Esta página no muestra datos de ninguna persona.</li>
+ </ol>
+ <p class="nota">¿No tiene acceso a ese correo? Escriba a <a href="mailto:info@victorhugoramirezsalgado.com">info@victorhugoramirezsalgado.com</a> con su número de certificado. © 2026 Víctor Hugo Ramírez Salgado.</p>
+</div>
+<script src="config.js?v=1"></script>
+<script>
+const $=s=>document.querySelector(s);
+const cajas=[...document.querySelectorAll('.cod input')];
+cajas.forEach((c,i)=>c.addEventListener('input',()=>{c.value=c.value.replace(/\D/g,'');if(c.value.length===3&&cajas[i+1])cajas[i+1].focus()}));
+const q=new URLSearchParams(location.search);
+if(q.get('p'))$('#clave').value=q.get('p').toUpperCase();
+if(q.get('n'))$('#folio').value=q.get('n');
+if(q.get('c'))q.get('c').split(/[-·. ]+/).slice(0,4).forEach((v,i)=>cajas[i]&&(cajas[i].value=v));
+$('#folio').addEventListener('input',()=>{const m=$('#folio').value.trim().toUpperCase().match(/^([A-Z0-9]+)-/);if(m&&!$('#clave').value&&[...$('#clave').options].some(o=>o.value===m[1]))$('#clave').value=m[1]});
+$('#f').onsubmit=async e=>{e.preventDefault();const m=$('#msg'),b=$('#btn');m.className='msg';
+ const clave=$('#clave').value,folio=$('#folio').value.trim().toUpperCase().replace(/\s+/g,''),nums=cajas.map(c=>+c.value);
+ if(nums.some(n=>!(n>=1&&n<=676))){m.className='msg no';m.textContent='Cada número del código va del 1 al 676.';return}
+ if(!folio.startsWith(clave+'-')){m.className='msg no';m.textContent='El número de certificado no corresponde al proyecto elegido. Revise ambos datos.';return}
+ if(!window.VERIFICA_URL){m.className='msg no';m.textContent='El servicio de verificación se está activando. Mientras tanto, escriba a info@victorhugoramirezsalgado.com con su número de certificado.';return}
+ b.disabled=true;b.textContent='Verificando…';
+ try{const r=await fetch(window.VERIFICA_URL,{method:'POST',body:JSON.stringify({clave,folio,codigo:nums.join('-')})});const d=await r.json();
+  m.className='msg '+(d.ok?'ok':'no');m.textContent=d.msg;
+ }catch(err){m.className='msg no';m.textContent='No se pudo conectar con el servicio de verificación. Intente de nuevo en unos minutos.'}
+ b.disabled=false;b.textContent='Verificar y enviar a mi correo'};
+</script>
+<script src="../idiomas.js"></script>
+<script src="../sitio.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Opciones de tipografía · Víctor Hugo Ramírez Salgado</title>
+<script src="../fuentes.js?v=2026-11-15a"></script>
+<style>
+/* © 2026 Víctor Hugo Ramírez Salgado — comparador de tipografías. Asistencia-IA. */
+body{margin:0;background:#2C3A32;color:#2A2117;font:400 16px/1.6 system-ui,sans-serif;padding:18px}
+h1{color:#EADBB8;font:600 26px Georgia,serif;text-align:center;margin:6px 0 4px}
+.sub{color:#C9BA95;text-align:center;margin:0 0 20px;font-size:14px}
+.ops{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;max-width:1100px;margin:0 auto}
+.op{background:#F4EBD8;border-radius:4px 8px 8px 4px;padding:20px 20px 18px 30px;position:relative;box-shadow:0 14px 30px rgba(0,0,0,.3)}
+.op:before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:linear-gradient(90deg,#6F552E,#9C7A3C 60%,#6F552E);border-radius:4px 0 0 4px}
+.op .et{font:600 11px system-ui;letter-spacing:.12em;text-transform:uppercase;color:#9C7A3C}
+.op h2{margin:8px 0 2px;font-size:34px;line-height:1.05}
+.op .dom{font-style:italic;color:#6B5A42;font-size:18px}
+.op p{text-align:justify;hyphens:auto;margin:10px 0}
+.op .ref{font-size:14px;padding-left:2em;text-indent:-2em}
+.op .nom{font-size:12px;color:#6B5A42;margin-top:10px}
+.op button{margin-top:12px;width:100%;padding:10px;border-radius:999px;border:0;background:#2C3A32;color:#F4EBD8;font:500 14px system-ui;cursor:pointer}
+.op.sel{outline:3px solid #C9A55A}
+.op.sel button{background:#C9A55A;color:#2C3A32}
+.volver{display:block;text-align:center;margin:22px auto;color:#EADBB8}
+</style>
+</head>
+<body>
+<h1>Elige la letra del sitio</h1>
+<p class="sub">Cada tarjeta muestra la tipografía real. «Probar en el sitio» la aplica en tu navegador para que veas todo el sitio con ella.</p>
+<div class="ops" id="ops"></div>
+<a class="volver" href="../">‹ Volver a la biblioteca para ver cómo quedó</a>
+<script>
+const F=VHRS_FUENTES; let act='actual'; try{act=localStorage.getItem('vhrs-fuente')||VHRS_FUENTE_FIJA}catch(e){}
+const css=Object.values(F).map(f=>f.q).join('&family=');
+const l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family='+css+'&display=swap';document.head.appendChild(l);
+document.getElementById('ops').innerHTML=Object.entries(F).map(([k,f])=>`<div class="op${k===act?' sel':''}" data-k="${k}">
+<div class="et" style="font-family:'${f.txt}'">Familia del Cubo · ${f.n}</div>
+<h2 style="font-family:'${f.tit}'">Código Cúbico©</h2>
+<div class="dom" style="font-family:'${f.txt}'">codigocubico.com · desde 2026</div>
+<p style="font-family:'${f.txt}'">El código de barras cúbico: el mensaje se escribe cara tras cara sobre el Cubo y solo se lee conociendo el orden de giro y el idioma.</p>
+<p class="ref" style="font-family:'${f.txt}'">Ramírez Salgado, V. H. (2026). <i>Código Cúbico©: código de comunicación del Cubo (33)</i> [Obra registrada n.º 2610097276721]. Safe Creative.</p>
+<div class="nom">Títulos: ${f.tit} · Texto: ${f.txt}</div>
+<button>${k===act?'✓ En uso en tu navegador':'Probar en el sitio'}</button></div>`).join('');
+document.getElementById('ops').onclick=e=>{const o=e.target.closest('.op');if(!o||e.target.tagName!=='BUTTON')return;try{localStorage.setItem('vhrs-fuente',o.dataset.k)}catch(_){}location.reload()};
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CCTT · Centro de Control de Tráfico Terrestre · Víctor Hugo Ramírez Salgado</title>
+<meta name="description" content="Imágenes del prototipo del CCTT, Centro de Control de Tráfico Terrestre del módulo de trazabilidad de contenedores. Obra de Víctor Hugo Ramírez Salgado.">
+<meta name="author" content="Víctor Hugo Ramírez Salgado">
+<link rel="canonical" href="https://victorhugoramirezsalgado.com/cctt/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<style>
+.acciones{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.b3d{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:12px;font-weight:800;text-decoration:none;border:1px solid #E2D3B4;background:#fff;color:#2C3A32;box-shadow:inset 0 1px 0 #fff,0 4px 0 #CDB98E,0 8px 14px rgba(0,0,0,.14);transition:transform .14s}
+.b3d.verde{background:#2C3A32;color:#FBF7EE;border-color:#2C3A32;box-shadow:0 4px 0 #141C17,0 8px 14px rgba(0,0,0,.22)}
+.b3d.mostaza{background:#F2C96B;color:#2C3A32;border-color:#F2C96B;box-shadow:0 4px 0 #B98F2C,0 8px 14px rgba(0,0,0,.2)}
+.b3d:hover{transform:translateY(-2px)}.b3d:active{transform:translateY(3px)}
+.galeria{display:grid;gap:26px;margin-top:10px}
+.galeria figure{margin:0;display:grid;gap:8px}
+.galeria img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.10)}
+.galeria figure:last-child img{max-width:390px}
+.galeria figcaption{font-size:15px;color:var(--mut)}.galeria figcaption b{color:var(--ink);display:block;font-size:17px}
+
+/* Paleta de la biblioteca VHRS: verde y beige */
+:root{--bg:#F4EBD8;--ink:#2C3A32;--mut:#5E6A5F;--line:#D8C7A3;--card:#FBF7EE;--marino:#2C3A32;--senal:#F2C96B}
+@media(prefers-color-scheme:dark){:root{--bg:#F4EBD8;--ink:#2C3A32;--mut:#5E6A5F}}
+body{background:#F4EBD8;color:#2C3A32;font-family:"Inter",system-ui,sans-serif}
+.barra{background:rgba(44,58,50,.96);color:#F4EBD8;border-bottom:3px solid #B0893F}
+.barra .marca{color:#F4EBD8;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:24px}
+.barra select{background:#FBF7EE;color:#2C3A32;border:1.5px solid #B0893F;border-radius:999px}
+.portada{background:#2C3A32;color:#F4EBD8;border-bottom:4px solid #B0893F;border-radius:0 0 22px 22px}
+.portada code{color:#E2D3B4}
+.portada .estatus.dev{color:#F2C96B}
+h1{font-family:"Cormorant Garamond",serif;font-weight:700;font-stretch:normal;letter-spacing:0;color:#F4EBD8}
+h2{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:30px;color:#2C3A32}
+.lema{color:#E2D3B4!important}
+.galeria figure{background:#FBF7EE;border:1px solid #D8C7A3;border-left:8px solid #8A6A2E;border-radius:10px;padding:12px;box-shadow:0 8px 20px rgba(44,58,50,.12)}
+.galeria img{border-color:#D8C7A3}
+.galeria figcaption b{font-family:"Cormorant Garamond",serif;font-size:21px;color:#2C3A32}
+footer{color:#5E6A5F;border-top:2px solid #B0893F;padding-top:12px}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Registro de actualizaciones · Víctor Hugo Ramírez Salgado" href="https://victorhugoramirezsalgado.com/registro.xml">
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="../" title="Volver a victorhugoramirezsalgado.com">&larr; VHRS</a>
+  <label class="idioma">🌐 <select id="idioma" aria-label="Idioma"><option value="">Español</option>
+<optgroup label="ONU"><option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ru">Русский</option></optgroup>
+<optgroup label="Europa"><option value="pt">Português</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="uk">Українська</option><option value="el">Ελληνικά</option><option value="sv">Svenska</option><option value="ro">Română</option><option value="ca">Català</option><option value="eu">Euskara</option><option value="gl">Galego</option></optgroup>
+<optgroup label="Asia"><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="id">Bahasa Indonesia</option><option value="tr">Türkçe</option><option value="he">עברית</option><option value="fa">فارسی</option></optgroup>
+<optgroup label="Regionales"><option value="yua">Maya yucateco</option><option value="nhe">Náhuatl</option></optgroup></select></label>
+</header>
+<main data-nombre="CCTT · Centro de Control de Tráfico Terrestre">
+  <section class="portada">
+    <p><code>Módulo de Trazabilidad de contenedores©</code> <span class="estatus dev">Prototipo</span></p>
+    <h1 data-morse="CCTT" title="Toca para oír en Morse">CCTT · Centro de Control de Tráfico Terrestre</h1>
+    <p class="lema">Citas de contenedores vacíos con la capacidad real de la terminal, el horario de la aduana y el acceso portuario de ASIPONA, con informe al momento a las autoridades.</p>
+    <p class="morse-linea" id="morse" aria-live="polite"></p>
+  </section>
+  <section>
+    <div class="acciones">
+      <a class="b3d verde" href="https://tcontenedores.com/cctt/?origen=vhrs" target="_blank" rel="noopener">Abrir el sistema &#8599;</a>
+      <a class="b3d mostaza" href="../tcontenedores/cctt/marco/CCTT-Marco-regulatorio-internacional-VHRS.pdf" target="_blank" rel="noopener">Marco regulatorio (PDF)</a>
+      <a class="b3d" href="https://www.safecreative.org/work/2610317507741" target="_blank" rel="noopener">Registro Safe Creative</a>
+    </div>
+    <p class="nota">El sistema se abre en otra pestaña con el botón «Regresar a VHRS». Las imágenes son del prototipo con datos simulados; tócalas para verlas en grande.</p>
+  </section>
+  <section><h2>Imágenes del programa</h2>
+  <div class="galeria">
+<figure><a href="img/portada-pc.webp" target="_blank" rel="noopener"><img src="img/portada-pc.webp" alt="CCTT · Vista general" loading="lazy"></a><figcaption><b>Vista general</b> Rol de usuario, pestañas e indicadores del día.</figcaption></figure>
+<figure><a href="img/tablero-pc.webp" target="_blank" rel="noopener"><img src="img/tablero-pc.webp" alt="CCTT · Tablero" loading="lazy"></a><figcaption><b>Tablero</b> Citas por hora contra la capacidad real y dónde están los camiones: CRT, acceso ASIPONA, terminal y salida.</figcaption></figure>
+<figure><a href="img/ventanas-pc.webp" target="_blank" rel="noopener"><img src="img/ventanas-pc.webp" alt="CCTT · Ventanas y capacidad" loading="lazy"></a><figcaption><b>Ventanas y capacidad</b> La capacidad sale de una fórmula con el rendimiento real; todo ajuste pide motivo y se avisa a ASIPONA y a la Aduana.</figcaption></figure>
+<figure><a href="img/citas-pc.webp" target="_blank" rel="noopener"><img src="img/citas-pc.webp" alt="CCTT · Citas" loading="lazy"></a><figcaption><b>Citas</b> Agenda con validación ISO 6346, carta de asignación de la naviera y política de cancelación igual para todos.</figcaption></figure>
+<figure><a href="img/recorrido-pc.webp" target="_blank" rel="noopener"><img src="img/recorrido-pc.webp" alt="CCTT · Recorrido" loading="lazy"></a><figcaption><b>Recorrido</b> Cada paso con hora y con quién lo registró.</figcaption></figure>
+<figure><a href="img/equidad-pc.webp" target="_blank" rel="noopener"><img src="img/equidad-pc.webp" alt="CCTT · Equidad y cancelaciones" loading="lazy"></a><figcaption><b>Equidad y cancelaciones</b> Cupos de la flota de la terminal frente a los transportistas, cargos por responsable y ventanas abiertas a última hora.</figcaption></figure>
+<figure><a href="img/graficas-pc.webp" target="_blank" rel="noopener"><img src="img/graficas-pc.webp" alt="CCTT · Gráficas y reporte ejecutivo" loading="lazy"></a><figcaption><b>Gráficas y reporte ejecutivo</b> Accesos al puerto, a la aduana y a la terminal; entradas y salidas en contenedores, TEU y FEU por minuto, hora, día, semana, mes y año; con buque y sin buque; tiempo por recinto; retorno de vacíos y líneas de oportunidad.</figcaption></figure>
+<figure><a href="img/patio-pc.webp" target="_blank" rel="noopener"><img src="img/patio-pc.webp" alt="CCTT · Patio de vacíos" loading="lazy"></a><figcaption><b>Patio de vacíos</b> Acomodo de los vacíos en la terminal: remociones, vueltas de tractor y ritmo al buque, como llegan contra segregado por línea y tamaño.</figcaption></figure>
+<figure><a href="img/buque-pc.webp" target="_blank" rel="noopener"><img src="img/buque-pc.webp" alt="CCTT · Buque y puerto" loading="lazy"></a><figcaption><b>Buque y puerto</b> Simulación de un buque que pide 400 vacíos: 150 en la terminal y 250 de El Sauzal en camiones full con 2 FEU; camiones necesarios y hora de término.</figcaption></figure>
+<figure><a href="img/puerto-esquema.webp" target="_blank" rel="noopener"><img src="img/puerto-esquema.webp" alt="CCTT · Esquema del Puerto de Ensenada" loading="lazy"></a><figcaption><b>Esquema del Puerto de Ensenada</b> Canal, dársena de ciaboga, muelle 1 lineal de 390 m y muelle 2 de 210 m en ángulo hacia el sureste, según el plano del PMDP 2023-2028, buque, grúas y propuesta de segregación del patio.</figcaption></figure>
+<figure><a href="img/informes-pc.webp" target="_blank" rel="noopener"><img src="img/informes-pc.webp" alt="CCTT · Informes a autoridades" loading="lazy"></a><figcaption><b>Informes a autoridades</b> Informe diario para la Aduana, ASIPONA, la Capitanía y el Comité de Operación, y bitácora con huella digital.</figcaption></figure>
+<figure><a href="img/mejora-pc.webp" target="_blank" rel="noopener"><img src="img/mejora-pc.webp" alt="CCTT · Capacidad y mejora anual" loading="lazy"></a><figcaption><b>Capacidad y mejora anual</b> Meta anual de mejora de la capacidad real, medida por el CCTT y validada por ASIPONA.</figcaption></figure>
+<figure><a href="img/comparativo-pc.webp" target="_blank" rel="noopener"><img src="img/comparativo-pc.webp" alt="CCTT · Comparativo nacional" loading="lazy"></a><figcaption><b>Comparativo nacional</b> Referencia con otros puertos del país.</figcaption></figure>
+<figure><a href="img/interfaces-pc.webp" target="_blank" rel="noopener"><img src="img/interfaces-pc.webp" alt="CCTT · Interfaces" loading="lazy"></a><figcaption><b>Interfaces</b> Conexiones con ASIPONA (PIS), la terminal, la Aduana y las navieras.</figcaption></figure>
+<figure><a href="img/roles-pc.webp" target="_blank" rel="noopener"><img src="img/roles-pc.webp" alt="CCTT · Usuarios y roles" loading="lazy"></a><figcaption><b>Usuarios y roles</b> Quién ve y quién hace qué en el sistema.</figcaption></figure>
+<figure><a href="img/portada-cel.webp" target="_blank" rel="noopener"><img src="img/portada-cel.webp" alt="CCTT · En el celular" loading="lazy"></a><figcaption><b>En el celular</b> Así se ve en un iPhone.</figcaption></figure>
+  </div></section>
+  <footer>
+    <p>© 2026 Víctor Hugo Ramírez Salgado · Trazabilidad de contenedores©, Safe Creative 2610317507741. Todos los derechos reservados.</p>
+    <p>Prohibida su reproducción total o parcial y su uso para entrenar inteligencia artificial sin autorización escrita del titular.</p>
+  </footer>
+</main>
+<script src="../sitio.js"></script>
+</body>
+</html>

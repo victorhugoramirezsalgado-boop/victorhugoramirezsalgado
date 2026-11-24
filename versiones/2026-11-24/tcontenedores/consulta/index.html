@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TContenedores · Trazabilidad</title>
+<meta name="description" content="Consulta pública de trazabilidad de contenedores marítimos de segundo uso en México: movimientos por número ISO 6346 y padrón de empresas con clave única.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="comun.css">
+<script src="comun.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div style="min-width:0">
+      <span class="eyebrow">ContenedorEns© · Código Cúbico© · ISO 6346</span>
+      <h1 data-t="h_traza">Trazabilidad de contenedores</h1>
+      <p class="sub">Movimientos de contenedores marítimos de segundo uso por número ISO 6346: venta, entrega, renta y traslado, registrados por empresas con clave única.</p>
+    </div>
+    <div class="tools">
+      <button type="button" class="morse" id="morse">TCONTENEDORES</button>
+      <select id="lang" aria-label="Idioma"></select>
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Secciones">
+    <a href="./" aria-current="page" data-t="nav_traza">Trazabilidad</a>
+  </nav>
+
+  <div class="kpis" id="kpis">
+    <div class="kpi"><b id="kCn">–</b><span>Contenedores con historial</span></div>
+    <div class="kpi"><b id="kMov">–</b><span>Movimientos registrados</span></div>
+    <div class="kpi"><b id="kEmp">–</b><span>Empresas en el padrón</span></div>
+    <div class="kpi"><b id="kAct" class="mono" style="font-size:1rem">–</b><span>Última actualización</span></div>
+  </div>
+
+  <section class="panel">
+    <h2>Consultar un contenedor</h2>
+    <form class="row" id="fq" autocomplete="off">
+      <label class="f grow">Número del contenedor (4 letras y 7 dígitos)<input id="q" class="mono" maxlength="13" placeholder="TCKU 956628 4" autocapitalize="characters" spellcheck="false"></label>
+      <button class="btn" type="submit" data-t="buscar">Buscar</button>
+    </form>
+    <p class="msg" id="qmsg" aria-live="polite"></p>
+    <div id="res"></div>
+  </section>
+
+  <div class="grid">
+    <section class="panel">
+      <h2 data-t="ultimos">Movimientos recientes</h2>
+      <div class="tbl"><table><thead><tr><th>Fecha</th><th>Movimiento</th><th class="n hs">Contenedores</th><th>Empresa</th></tr></thead><tbody id="rec"></tbody></table></div>
+    </section>
+    <section class="panel">
+      <h2 data-t="padron">Padrón de empresas con clave única</h2>
+      <div id="emp" style="display:grid;gap:8px"></div>
+      <p class="sub" style="font-size:.8rem">La certificación la otorga la autoridad. Mientras no exista, la empresa aparece «en trámite».</p>
+    </section>
+  </div>
+
+  <footer>
+    <span>TContenedores · ContenedorEns© · Código Cúbico© · © Víctor Hugo Ramírez Salgado. Todos los derechos reservados.</span>
+    <span>Esta consulta no muestra clientes, facturas ni pedimentos.</span>
+  </footer>
+</div>
+<script>
+const MOT={venta:['Venta','good'],entrega:['Entrega parcial','good'],renta:['Renta','warn'],traslado:['Traslado','mut'],alta:['Alta en inventario','mut']};
+let D=null;
+document.addEventListener('DOMContentLoaded',async()=>{
+  TC.langSelect(document.getElementById('lang'));TC.morse(document.getElementById('morse'),'TCONTENEDORES');
+  try{const r=await fetch('datos/traza.json',{cache:'no-store'});D=await r.json();}catch(e){D=null;}
+  if(!D){document.getElementById('rec').innerHTML='<tr><td colspan="4"><div class="empty"><b>Sin datos todavía</b>La consulta se llena con la primera publicación.</div></td></tr>';return;}
+  const $=id=>document.getElementById(id);
+  $('kCn').textContent=Object.keys(D.contenedores||{}).length.toLocaleString('es-MX');
+  $('kMov').textContent=(D.stats?.mov||0).toLocaleString('es-MX');
+  $('kEmp').textContent=(D.empresas||[]).length;
+  $('kAct').textContent=TC.fecha(D.generado);
+  $('rec').innerHTML=(D.recientes||[]).length?D.recientes.map(m=>`<tr><td style="white-space:nowrap">${TC.fecha(m.d)}</td><td><span class="chip ${(MOT[m.m]||['','mut'])[1]}">${TC.esc((MOT[m.m]||[m.m])[0])}</span><span class="mono" style="display:block;font-size:.74rem;color:var(--ink-3)">${TC.esc(m.f)}</span></td><td class="n mono hs">${m.n}</td><td>${TC.esc(m.e)}</td></tr>`).join(''):'<tr><td colspan="4"><div class="empty"><b>Sin movimientos todavía</b>Aparecen al recibir el primer paquete del inventario.</div></td></tr>';
+  $('emp').innerHTML=(D.empresas||[]).length?D.empresas.map(e=>`<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:8px"><div style="min-width:0"><b>${TC.esc(e.razon)}</b><span class="mono" style="display:block;font-size:.76rem;color:var(--ink-3)">${TC.esc(e.clave)} · ${TC.esc(e.tipo)}</span></div><span class="chip ${e.cert?'good':'warn'}">${e.cert?'Certificada':'En trámite'}</span></div>`).join(''):'<div class="empty"><b>Padrón vacío</b></div>';
+  const q=new URLSearchParams(location.search).get('cn');if(q){$('q').value=q;buscar();}
+  TC.resize();
+});
+function buscar(){const $=id=>document.getElementById(id);const s=TC.clean($('q').value);$('res').innerHTML='';
+  if(!/^[A-Z]{4}\d{7}$/.test(s)){$('qmsg').className='msg bad';$('qmsg').textContent='Escribe 4 letras y 7 dígitos, por ejemplo TCKU9566284.';return;}
+  if(!TC.valid(s)){$('qmsg').className='msg bad';$('qmsg').textContent=`El dígito de control no corresponde: para ${s.slice(0,10)} debe ser ${TC.digit(s)}. Revisa el número.`;return;}
+  const h=(D&&D.contenedores&&D.contenedores[s])||[];
+  if(!h.length){$('qmsg').className='msg';$('qmsg').textContent='Número válido. Sin movimientos registrados en el sistema.';return;}
+  $('qmsg').className='msg ok';$('qmsg').textContent=`${h.length} registro(s).`;
+  const ult=h[h.length-1],st=MOT[ult.m]||[ult.m,'mut'];
+  $('res').innerHTML=`<div style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center"><span class="cn">${TC.showCN(s)}</span><span class="chip ${st[1]}">Último: ${TC.esc(st[0])}</span>${ult.tipo?`<span class="chip mut">${TC.esc(ult.tipo)}</span>`:''}</div>
+   <ol class="tl" style="margin-top:12px">${h.slice().reverse().map(x=>`<li><span class="dt">${TC.fecha(x.d)}</span><span class="dot"></span><span><b>${TC.esc((MOT[x.m]||[x.m])[0])}</b> · <span class="mono">${TC.esc(x.f||'')}</span><small>${TC.esc(x.e||'')}${x.c?' · '+TC.esc(x.c):''}${x.rol?' · '+TC.esc(x.rol):''}</small></span></li>`).join('')}</ol>`;
+  TC.resize();}
+document.getElementById('fq').addEventListener('submit',e=>{e.preventDefault();buscar();});
+</script>
+</body>
+</html>

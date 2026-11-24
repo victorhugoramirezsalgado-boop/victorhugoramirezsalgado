@@ -1,0 +1,12 @@
+# © 2026 Víctor Hugo Ramírez Salgado · victorhugoramirezsalgado.com
+User-agent: *
+Disallow: /versiones/
+Disallow: /privado/
+Disallow: /firma/
+Disallow: /propuesta/
+Disallow: /tipografia/
+Disallow: /safecreative/aviso/
+Disallow: /safecreative/autorizado/
+Disallow: /codigocubico/vhrs118/
+
+Sitemap: https://victorhugoramirezsalgado.com/sitemap.xml
