@@ -3,67 +3,115 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SOS767</title>
-<meta name="description" content="SOS767: programa de ciudadanía de SOSistem. Casas en contenedor para quien perdió su vivienda y celulares SOS para personas mayores.">
+<title>SOS767 · Tres números para pedir ayuda</title>
+<meta name="description" content="SOS767, programa de ciudadanía de SOSistem™: en el teclado, 767 forma SOS. Aviso inmediato a la familia y canal al 9-1-1.">
 <meta name="author" content="Víctor Hugo Ramírez Salgado">
-<meta property="og:type" content="website"><meta property="og:title" content="SOS767"><meta property="og:description" content="Un techo digno y un celular que avisa: ciudadanía para quien más lo necesita">
-<meta name="twitter:card" content="summary">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../estilo.css">
-<link rel="stylesheet" href="../apoyo.css">
+<meta name="theme-color" content="#2A2C2E">
+<meta property="og:type" content="website"><meta property="og:title" content="SOS767 · Tres números para pedir ayuda"><meta property="og:description" content="SOS767, programa de ciudadanía de SOSistem™: en el teclado, 767 forma SOS. Aviso inmediato a la familia y canal al 9-1-1.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../sos767/sos767.css?v=1">
 </head>
 <body>
+<!-- © 2026 Víctor Hugo Ramírez Salgado. SOS767, programa de SOSistem™. Autor y titular al 100 %. Asistencia-IA. -->
 <header class="barra">
-  <a class="marca" href="https://victorhugoramirezsalgado.com" title="Panel del autor">VHRS</a>
+  <a class="logo" href="../sos767/" data-morse="SOS767" title="Toca para oír SOS767 en Morse"><b>SOS</b>767 <i>sos767.com</i></a>
   <label class="idioma">🌐 <select id="idioma" aria-label="Idioma"><option value="">Español</option>
 <optgroup label="ONU"><option value="en">English</option><option value="fr">Français</option><option value="ar">العربية</option><option value="zh-CN">中文</option><option value="ru">Русский</option></optgroup>
 <optgroup label="Europa"><option value="pt">Português</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="uk">Українська</option><option value="el">Ελληνικά</option><option value="sv">Svenska</option><option value="ro">Română</option><option value="ca">Català</option><option value="eu">Euskara</option><option value="gl">Galego</option></optgroup>
 <optgroup label="Asia"><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="vi">Tiếng Việt</option><option value="th">ไทย</option><option value="id">Bahasa Indonesia</option><option value="tr">Türkçe</option><option value="he">עברית</option><option value="fa">فارسی</option></optgroup>
 <optgroup label="Regionales"><option value="yua">Maya yucateco</option><option value="nhe">Náhuatl</option></optgroup></select></label>
 </header>
-<main data-nombre="SOS767">
-  <section class="portada">
-    <div class="esc"><div class="cubo"><div class="cara"></div><div class="cara"></div><div class="cara"></div><div class="cara"></div><div class="cara"></div><div class="cara"></div></div></div>
-    <p><span class="estatus prep">En preparación</span></p>
-    <h1 data-morse="SOS767" title="Toca para oír en Morse">SOS767</h1>
-    <p class="lema">Un techo digno y un celular que avisa: ciudadanía para quien más lo necesita</p>
+<main>
+  <section class="hero">
+    <span class="eti">Programa de ciudadanía de SOSistem™</span>
+    <h1 data-morse="SOS" title="Toca para oír SOS en Morse"><span>SOS</span>767</h1>
+    <p class="lema">Tres números para pedir ayuda, en cualquier idioma, desde cualquier teléfono.</p>
+    <div class="teclado" aria-label="En el teclado, 7 6 7 forman SOS">
+      <div class="tecla" data-morse="S" title="Toca: S en Morse"><span><b>7</b><small>PQRS</small></span></div>
+      <div class="tecla" data-morse="O" title="Toca: O en Morse"><span><b>6</b><small>MNO</small></span></div>
+      <div class="tecla" data-morse="S" title="Toca: S en Morse"><span><b>7</b><small>PQRS</small></span></div>
+      <span class="igual">=</span><span class="sos" data-morse="SOS">SOS</span>
+    </div>
     <p class="morse-linea" id="morse" aria-live="polite"></p>
+    <div class="acciones">
+      <a class="btn naranja" href="https://sosistem.com/sos/?origen=sos767">Activar SOS ahora<small>Terminal SOSistem™ en este teléfono</small></a>
+      <a class="btn blanco" href="apoyo/">Apoyar un programa<small>sos767.org</small></a>
+    </div>
+    <p><span class="estatus dev">Número 767: en gestión</span></p>
   </section>
+
   <section><h2>Qué es SOS767</h2>
-    <p>SOS767 es el programa de ciudadanía de SOSistem™. En el teclado del teléfono, 767 equivale a «SOS». Reúne a personas y empresas que patrocinan soluciones concretas para quien más lo necesita: un techo digno y un celular que avise en una emergencia.</p>
-    <div class="kpis"><div class="kpi"><b>8.33 millones</b><span>viviendas en rezago habitacional en México</span><small>Sedatu y Conavi, Encuesta Intercensal 2025</small></div><div class="kpi"><b>4.º lugar</b><span>Ensenada, entre los municipios con mayor rezago habitacional absoluto</span><small>Conavi, 2023</small></div><div class="kpi"><b>19.2 millones</b><span>personas de 60 años o más</span><small>INEGI, Encuesta Intercensal 2025</small></div></div>
+    <p>SOS767 es el programa de ciudadanía de SOSistem™. Su objetivo es mejorar la prevención, la atención y la identificación de emergencias de personas y familias. En el teclado de cualquier teléfono, los números 7, 6 y 7 corresponden a las letras S, O y S, por lo que el número es fácil de recordar en cualquier idioma, incluso para niñas, niños y personas con capacidades diferentes.</p>
+    <p>SOS767 no sustituye al 9-1-1. En una emergencia, la persona usuaria debe llamar al 9-1-1; SOS767 suma un aviso inmediato a sus familiares y una red de apoyo.</p>
   </section>
-  <section><h2>Casa Contenedor SOS767</h2>
-    <p>Casas habitables en contenedor marítimo para personas sin vivienda o que la perdieron por un desastre o una situación de emergencia. Las construye ContenedorEns©, con 10 años de experiencia en venta, renta y modificación de contenedores en Ensenada.</p>
-    <div class="progs">
-      <article class="prog"><h3>Casa de hasta 15 m²</h3><p class="monto">$120,000 MXN + IVA</p><span class="total">Total con IVA de 16 %: $139,200 MXN</span><ul class="puntos"><li>Contenedor de 20 pies</li><li>Superficie exterior ≈ 14.8 m²; interior útil ≈ 13.8 m²</li><li>Folio único de la casa (Casa 001, 002…)</li><li>Certificado de patrocinio con el folio</li></ul><a class="pago" href="https://buy.stripe.com/9B628t1RP9Ag46Z3uig7e00" target="_blank" rel="noopener">Patrocinar <small>pago seguro con Stripe · tarjeta u OXXO</small></a></article>
-      <article class="prog"><h3>Casa de hasta 30 m²</h3><p class="monto">$180,000 MXN + IVA</p><span class="total">Total con IVA de 16 %: $208,800 MXN</span><ul class="puntos"><li>Contenedor de 40 pies, de preferencia High Cube (2.69 m de altura interior)</li><li>Superficie exterior ≈ 29.7 m²; interior útil ≈ 28.3 m²</li><li>Folio único de la casa</li><li>Certificado de patrocinio con el folio</li></ul><a class="pago" href="https://buy.stripe.com/eVqbJ3aolh2IavnaWKg7e01" target="_blank" rel="noopener">Patrocinar <small>pago seguro con Stripe · tarjeta u OXXO</small></a></article>
-      <article class="prog"><h3>Patrocina por metro cuadrado</h3><p class="monto">Tú eliges el monto</p><ul class="puntos"><li>Cualquier persona aporta desde $100 MXN</li><li>Cada aportación suma a la casa en construcción</li><li>Barra de avance pública por folio</li><li>Certificado de patrocinio con el monto aportado</li></ul><a class="pago" href="https://buy.stripe.com/dRm00laol13K8nfd4Sg7e04" target="_blank" rel="noopener">Patrocinar <small>pago seguro con Stripe · tarjeta u OXXO</small></a></article>
+
+  <section><h2>Cómo funcionará</h2>
+    <ol class="pasos">
+      <li><b>Enviar un SOS.</b> Desde la Terminal SOSistem™ del teléfono, o con un mensaje al 767 (vacío o con un solo carácter, en cualquier idioma).</li>
+      <li><b>Aviso a la familia.</b> El mensaje llega a un chat de la plataforma con los familiares registrados, con la ubicación del teléfono.</li>
+      <li><b>Canal al 9-1-1.</b> En una emergencia real, la plataforma indica de inmediato la llamada al 9-1-1.</li>
+      <li><b>Confirmación «recibido».</b> El teléfono responde con la letra R en Morse (· − ·) por vibración.</li>
+    </ol>
+    <p class="nota">SOSistem™ no graba voz, video ni imágenes. Solo conserva el registro del evento de emergencia, conforme a su aviso de privacidad.</p>
+  </section>
+
+  <section><h2>Tres sitios, una sola red</h2>
+    <div class="rejilla">
+      <article class="tarjeta n"><h3>sos767.com</h3><p>Portada pública: qué es SOS767, cómo pedir ayuda y acceso directo a la Terminal SOSistem™.</p><span class="estatus ok">Este sitio</span></article>
+      <article class="tarjeta v"><h3>sos767.org</h3><p>Programas de apoyo: Casa Contenedor SOS767, Celular SOS para personas mayores y padrinos de línea, con transparencia por folio.</p><a class="btn verde" href="apoyo/">Ver programas</a></article>
+      <article class="tarjeta m"><h3>767sos.com</h3><p>Laboratorio privado de pruebas: actualizaciones por etapas antes de pasar a sosistem.com. Acceso solo con autorización del administrador.</p><a class="btn mar" href="laboratorio/">Entrar al laboratorio</a></article>
     </div>
-    <p class="nota">Lo que incluye cada casa (aislamiento, ventanas, puerta, instalación eléctrica, baño, cocineta y flete) se publicará en su ficha técnica antes de abrir el primer folio.</p>
   </section>
-  <section><h2>Celular SOS para personas mayores</h2>
-    <p>Un celular Android configurado con SOSistem™, letra grande y los contactos de su familia, para que ninguna persona mayor esté sola en una emergencia. SOSistem no graba voz ni video.</p>
-    <div class="progs">
-      <article class="prog"><h3>Celular SOS</h3><p class="monto">$2,000 MXN + IVA</p><span class="total">Total con IVA de 16 %: $2,320 MXN</span><ul class="puntos"><li>Celular Android nuevo, con acelerómetro y GPS</li><li>Funda, mica y cordón</li><li>Chip y 6 meses de línea</li><li>Configuración de SOSistem™ y de los contactos familiares</li></ul><a class="pago" href="https://buy.stripe.com/aFaaEZgMJ5k0bzrd4Sg7e02" target="_blank" rel="noopener">Patrocinar <small>pago seguro con Stripe · tarjeta u OXXO</small></a></article>
-      <article class="prog"><h3>Padrino de línea</h3><p class="monto">$35 MXN + IVA</p><span class="total">Total con IVA de 16 %: $40.60 MXN</span><ul class="puntos"><li>Paga la línea mensual de un Celular SOS</li><li>El celular nunca se queda sin servicio</li><li>Certificado de padrino</li></ul><a class="pago" href="https://buy.stripe.com/aFa28t0NL3bSbzr1mag7e03" target="_blank" rel="noopener">Patrocinar <small>pago seguro con Stripe · tarjeta u OXXO</small></a></article>
+
+  <section><h2>Para quién es</h2>
+    <div class="rejilla">
+      <article class="tarjeta a"><h3>Personas mayores</h3><p>Un celular que avisa a su familia en caso de caída o de una palabra de auxilio.</p></article>
+      <article class="tarjeta a"><h3>Niñas, niños y jóvenes</h3><p>Un número fácil de recordar y un aviso inmediato a quienes los cuidan.</p></article>
+      <article class="tarjeta a"><h3>Capacidades diferentes</h3><p>Activación por toque, por Morse dibujado en la pantalla o por golpes en la parte de atrás del teléfono.</p></article>
+      <article class="tarjeta a"><h3>Desastres naturales</h3><p>Aviso de sismo y comunicación con la familia cuando las redes están saturadas.</p></article>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>19.2 millones</b><span>personas de 60 años o más en México</span><span class="fuente">Fuente: INEGI, Encuesta Intercensal 2025.</span></div>
+      <div class="kpi"><b>8.33 millones</b><span>viviendas en rezago habitacional en México</span><span class="fuente">Fuente: Sedatu y Conavi, con base en la Encuesta Intercensal 2025.</span></div>
     </div>
   </section>
-  <section><h2>Transparencia</h2>
-    <ul class="puntos"><li>Cada casa y cada celular llevan un folio público.</li><li>Fotos del antes, del durante y de la entrega, con el consentimiento de la familia.</li><li>Acta de entrega firmada por la persona beneficiaria.</li><li>Informe público de ingresos y destino de cada peso.</li><li>Las personas beneficiarias se validan con un aliado institucional (DIF, Protección Civil o Cruz Roja).</li></ul>
+
+  <section><h2>Estado del proyecto</h2>
+    <ul>
+      <li><b>Terminal SOSistem™ (sosistem.com/sos/):</b> <span class="estatus ok">En operación de prueba</span></li>
+      <li><b>Número corto 767:</b> <span class="estatus dev">En gestión</span>. Todavía no está asignado; al marcarlo hoy no conecta.</li>
+      <li><b>Programas de apoyo (sos767.org):</b> <span class="estatus dev">Abiertos al patrocinio</span></li>
+      <li><b>Laboratorio (767sos.com):</b> <span class="estatus prep">Privado</span></li>
+    </ul>
   </section>
-  <section><h2>Cómo funciona el patrocinio</h2>
-    <ol class="puntos"><li>Eliges un programa y pagas el monto más IVA.</li><li>Recibes tu certificado de patrocinio con el folio. Si necesitas factura (CFDI), la pides con tus datos fiscales.</li><li>Las casas las factura y construye la persona moral que opera ContenedorEns©. Los demás programas los factura Víctor Hugo Ramírez Salgado, persona física con actividad empresarial.</li><li>La casa se entrega a la familia en comodato, con contrato; el celular, con acta de entrega.</li></ol>
-    <p class="nota">El patrocinio no es un donativo deducible de impuestos. Cuando SOS767 se constituya como asociación civil autorizada por el SAT, se abrirá la opción de donativo deducible.</p>
-  </section>
-  <nav class="red" aria-label="Proyectos relacionados"><a href="https://victorhugoramirezsalgado.com">Víctor Hugo Ramírez Salgado</a><a href="/apoya/">Apoya los proyectos</a><a href="https://sosistem.com">SOSistem™</a><a href="/contenedorens/">ContenedorEns©</a><a href="/intertopia/">Intertopía©</a><a href="/econotopia/">Econotopía©</a><a href="/cubo33/">El Cubo de la Comunicación (33)©</a><a href="/codigocubico/">Código Cúbico©</a></nav>
-  <p style="margin:18px 0;padding:14px 16px;border:1px solid currentColor;border-radius:12px;text-align:center">¿Ya apoyó a SOS767? <a href="/verifica/?p=767"><b>Verifique su certificado</b></a>: se lo enviamos al correo con el que pagó.</p>
+
+  <h2>Índice de nomenclaturas</h2>
+  <table class="nomen"><tr><th>Sigla</th><th>Significado</th></tr>
+  <tr><td>SOS</td><td>Señal internacional de auxilio; en Morse, · · · − − − · · ·</td></tr>
+  <tr><td>767</td><td>Números del teclado telefónico que forman «SOS» (7 = PQRS, 6 = MNO)</td></tr>
+  <tr><td>SOSistem™</td><td>Plataforma de alerta sin cámaras de Víctor Hugo Ramírez Salgado (sosistem.com)</td></tr>
+  <tr><td>CFDI</td><td>Comprobante Fiscal Digital por Internet (factura electrónica, SAT)</td></tr>
+  <tr><td>IMPI</td><td>Instituto Mexicano de la Propiedad Industrial</td></tr>
+  <tr><td>INEGI</td><td>Instituto Nacional de Estadística y Geografía</td></tr>
+  <tr><td>Conavi · Sedatu</td><td>Comisión Nacional de Vivienda · Secretaría de Desarrollo Agrario, Territorial y Urbano</td></tr>
+  <tr><td>DIF</td><td>Sistema para el Desarrollo Integral de la Familia</td></tr>
+  <tr><td>Beta</td><td>Versión de prueba, en revisión, antes de publicarse como oficial</td></tr>
+  </table>
+
+  <h2>Referencias (APA 7)</h2>
+  <ul class="refs">
+    <li>Instituto Nacional de Estadística y Geografía. (2025). <i>Encuesta Intercensal 2025</i>. INEGI. https://www.inegi.org.mx/</li>
+    <li>Secretaría de Desarrollo Agrario, Territorial y Urbano y Comisión Nacional de Vivienda. (2025). <i>Rezago habitacional</i>. Gobierno de México. https://www.gob.mx/conavi</li>
+  </ul>
+
+  <nav class="red" aria-label="Proyectos relacionados">
+    <a href="../sos767/">SOS767 · sos767.com</a><a href="../sos767/apoyo/">Apoyos · sos767.org</a><a href="../sos767/laboratorio/">Laboratorio · 767sos.com</a><a href="https://sosistem.com">SOSistem™</a><a href="https://victorhugoramirezsalgado.com">Víctor Hugo Ramírez Salgado</a><a href="../contenedorens/">ContenedorEns©</a><a href="https://cubo33.com">El Cubo de la Comunicación (33)©</a>
+  </nav>
   <footer>
     <p><a href="../legal/terminos.html">Términos</a> · <a href="../legal/privacidad.html">Aviso de privacidad</a> · <a href="../legal/reembolsos.html">Reembolsos</a> · Contacto: <a href="https://wa.me/526462270490">WhatsApp 646 227 0490</a> · <a href="mailto:sos@sosistem.com">sos@sosistem.com</a></p>
-    <p>© 2026 Víctor Hugo Ramírez Salgado. SOSistem™ · Sistema S.O.S.© (Safe Creative 2609046908578) · ContenedorEns© (2609046908752) · Econotopía© (2610077261709). Todos los derechos reservados. Prohibida su reproducción total o parcial y su uso para entrenar inteligencia artificial sin autorización escrita del titular.</p>
+    <p>© 2026 Víctor Hugo Ramírez Salgado. SOS767 y SOSistem™ · Sistema S.O.S.© (Safe Creative 2609046908578) · Cubo Morse© (2610257441754) · ContenedorEns© (2609046908752). SOSistem™: modelo de utilidad y marca en trámite ante el IMPI. Todos los derechos reservados. Prohibida su reproducción total o parcial y su uso para entrenar inteligencia artificial sin autorización escrita del titular.</p>
   </footer>
 </main>
-<script src="../cubo.js"></script>
 <script src="../sitio.js"></script>
 </body>
 </html>
