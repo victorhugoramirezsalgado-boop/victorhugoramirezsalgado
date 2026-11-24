@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Obra · Víctor Hugo Ramírez Salgado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="fuentes.js?v=2026-11-15q"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-15q">
+</head>
+<body class="biblioteca">
+<div class="libreria" aria-hidden="true"></div>
+<div class="sillones" aria-hidden="true"></div>
+<div class="wrap">
+<header class="top"><a class="marca" href="./" style="text-decoration:none">Víctor Hugo Ramírez Salgado</a>
+<div class="tema" role="group" aria-label="Tema"><button id="t1" aria-pressed="true">Beige</button><button id="t2" aria-pressed="false">Biblioteca</button></div></header>
+<nav class="migas"><a class="nav" id="volver" href="./">‹ Volver a la biblioteca</a><span><a class="nav" id="prev">‹ Obra anterior</a> <a class="nav oro" id="next">Obra siguiente ›</a></span></nav>
+<article class="obra" id="obra"></article>
+<footer>© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados.</footer>
+</div>
+<script src="obras.js?v=2026-11-18mod"></script>
+<script>
+let k=P.findIndex(p=>slugObra(p[1])===new URLSearchParams(location.search).get('id')); if(k<0)k=0;
+document.title=`${P[k][1]} · Víctor Hugo Ramírez Salgado`;
+document.getElementById('obra').innerHTML=htmlObra(k);
+const otra=j=>`obra.html?id=${slugObra(P[(j+P.length)%P.length][1])}`;
+document.getElementById('prev').href=otra(k-1);document.getElementById('next').href=otra(k+1);
+document.getElementById('volver').href=`./#obra-${k+1}`;
+const set=(t,g)=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');if(g)try{localStorage.setItem('vhrs-tema2',t)}catch(e){}};
+t1.onclick=()=>set('a',1);t2.onclick=()=>set('b',1);let tm='b';try{tm=localStorage.getItem('vhrs-tema2')||'b'}catch(e){}set(tm);
+</script>
+<script src="idiomas.js?v=2026-11-15a"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Víctor Hugo Ramírez Salgado · Obras, sistemas y registros</title>
+<meta name="description" content="Biblioteca de obras registradas de Víctor Hugo Ramírez Salgado: ContenedorEns©, Arsa Bodegas©, Intertopía©, Econotopía©, Cubo 33©, Código Cúbico© y SOSistem™.">
+<link rel="canonical" href="https://victorhugoramirezsalgado.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="fuentes.js?v=2026-11-15q"></script>
+<link rel="stylesheet" href="libro.css?v=2026-11-18a">
+<style>
+.plegables{display:grid;gap:10px;margin:14px 0 6px}
+.pleg{background:var(--papel,#FBF7EE);border:1px solid var(--linea,#E2D3B4);border-radius:12px;padding:0 14px;color:var(--tinta,#2B2620)}
+.pleg>summary{cursor:pointer;list-style:none;padding:12px 0;font:600 17px "Cormorant Garamond",Georgia,serif;letter-spacing:.02em;color:#2C3A32}
+.pleg>summary::-webkit-details-marker{display:none}
+.pleg>summary:after{content:"▾";float:right;color:#8A6A3B;transition:transform .2s}.pleg[open]>summary:after{transform:rotate(180deg)}
+.pleg .ind{margin:0 0 12px 20px;padding:0;line-height:1.6;font-size:14px}
+.pleg a{color:#2C3A32;font-weight:600}
+.pleg .mini{font-size:13px;color:#6E6457;margin:0 0 8px}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 18px;padding-bottom:12px;font-size:14px}
+.docs .ancho{grid-column:1/-1}
+.docs h4{margin:6px 0 4px;font:700 11px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#8A6A3B}
+.docs ul{margin:0;padding-left:18px;line-height:1.6}
+.docs ul.idi{columns:2 260px;column-gap:18px}
+.docs a{text-decoration:underline;text-decoration-color:#C9A55A;text-underline-offset:3px}
+.carpeta{position:relative}
+.sel-cubo{margin:-4px 0 10px;font-size:14px}.sel-cubo select{margin-left:6px;padding:5px 10px;border-radius:999px;border:1px solid #C9A55A;background:#FBF7EE;color:#2C3A32;font:600 14px Inter,sans-serif}
+.carpeta .cubito{position:absolute;top:8px;right:8px;width:30px;height:30px;transition:transform .3s}
+.carpeta:hover .cubito{transform:rotate(-12deg) scale(1.08)}
+</style>
+<link rel="alternate" type="application/rss+xml" title="Registro de actualizaciones · Víctor Hugo Ramírez Salgado" href="https://victorhugoramirezsalgado.com/registro.xml">
+<style>
+.dominios{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin:8px 0 6px}
+.dom{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:12px;background:#f3eee4;border:2px solid #2f6b4f;box-shadow:0 3px 0 #2f6b4f;text-decoration:none;color:#3a3a3a;transition:transform .1s}
+.dom:active{transform:translateY(2px);box-shadow:0 1px 0 #2f6b4f}
+.dom b{font-size:1.02em;color:#24533d;word-break:break-all}.dom span{font-size:.85em}
+.dom em{font-style:normal;font-size:.75em;align-self:flex-start;padding:2px 9px;border-radius:10px}
+.dom .ok{background:#d9efe2;color:#24533d}.dom .no{background:#f7dada;color:#b3261e}
+.dom.err{border-color:#b3261e;box-shadow:0 3px 0 #b3261e}
+</style>
+</head>
+<body class="biblioteca">
+<div class="libreria" aria-hidden="true"></div>
+<div class="sillones" aria-hidden="true"></div>
+<svg class="rayos" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#F2C96B" stroke-width=".8"><polyline points="500,0 380,260 420,520 300,1000"/><polyline points="500,0 620,240 580,560 720,1000"/><polyline points="500,0 250,180 200,520 120,1000"/><polyline points="500,0 760,200 820,540 900,1000"/><polygon points="500,0 430,140 570,140" fill="#F2C96B" fill-opacity=".25"/></g></svg>
+<div class="wrap">
+<header class="top"><div class="marca">Víctor Hugo Ramírez Salgado</div>
+<div class="tema" role="group" aria-label="Tema"><button id="t1" aria-pressed="true">Beige</button><button id="t2" aria-pressed="false">Biblioteca</button></div></header>
+
+<nav class="plegables" aria-label="Índice y documentos">
+<details class="pleg" id="indice-top"><summary>☰ Índice de la página</summary>
+<ol class="ind">
+ <li><a href="#estante">Obras, sistemas y registros</a> · estante de obras y libro para hojear</li>
+ <li><a href="#sec-material">Material del Cubo de Aprendizaje©</a> · imprimir el cubo, Nivel 1, consulta en línea, idiomas, Hipercubo 33©, Cubo Morse© y manuales</li>
+ <li><a href="#documentos">Documentos para descarga</a> · todos los PDF para ver, guardar, enviar o imprimir</li>
+ <li><a href="#sec-constancia">Constancia de obras registradas</a> · <span class="r-total"></span> registros en Safe Creative</li>
+ <li><a href="#sec-apoyo">Apoyar una obra</a> · apoyos por Stripe y verificación de certificados</li>
+ <li><a href="#sec-dominios">Cartera de dominios</a> · dominios registrados y su estado</li>
+ <li><a href="#sec-sitios">Sitios del autor</a> · cada cubito abre la página del proyecto</li>
+ <li><a href="#sec-propuestas">Proyectos propuestos</a> · comunidad portuaria nacional e internacional</li>
+ <li><a href="#contacto">Contacto</a> · teléfono, WhatsApp y correos · <a href="#legal">Legal</a></li>
+ <li><a href="indice/">Índice general del sitio ↗</a> · <a href="panel/">Panel de registros ↗</a></li>
+</ol></details>
+<details class="pleg" id="documentos"><summary>⬇ Documentos para descarga</summary>
+<p class="mini">Toque un documento para verlo aquí mismo, sin guardarlo. Desde el visor puede <b>guardarlo</b>, <b>compartirlo</b>, enviarlo por <b>correo</b> o por <b>WhatsApp</b>, o <b>imprimirlo</b>.</p>
+<div class="docs">
+<div><h4>Cubo de Aprendizaje© para imprimir</h4><ul>
+ <li><a href="/cubo-base/assets/cubo-aprendizaje-carta.pdf" data-titulo="Cubo de Aprendizaje© · carta">Cubo de Aprendizaje© · carta</a></li>
+ <li><a href="/cubo-base/assets/cubo-aprendizaje-oficio.pdf" data-titulo="Cubo de Aprendizaje© · oficio">Cubo de Aprendizaje© · oficio</a></li>
+ <li><a href="/cubo-base/assets/cubo-aprendizaje-a4.pdf" data-titulo="Cubo de Aprendizaje© · A4">Cubo de Aprendizaje© · A4</a></li>
+ <li><a href="/cubo-base/assets/cubo-aprendizaje-doble-carta.pdf" data-titulo="Cubo de Aprendizaje© · doble carta">Cubo de Aprendizaje© · doble carta</a></li>
+ <li><a href="/cubo-base/assets/cubo-aprendizaje-gigante-carta.pdf" data-titulo="Cubo de Aprendizaje© · gigante">Cubo de Aprendizaje© · gigante</a></li>
+ <li><a href="/cubo-base/assets/cubo33-nivel1-prototipo-carta.pdf" data-titulo="Nivel 1 · Cubo 33© en 2D · español">Nivel 1 · Cubo 33© en 2D · español (7 hojas)</a> · <a href="/cubo-base/assets/versiones/cubo33-nivel1-prototipo-v1-espanol-2026-11.pdf" data-titulo="Cubo 33© en 2D · versión 1">versión 1</a></li>
+ <li><a href="/cubo-base/assets/cubo-morse-armable.pdf" data-titulo="Cubo Morse© armable">Cubo Morse© armable</a></li>
+</ul></div>
+<div><h4>Manuales del Juego del Cubo©</h4><ul>
+ <li><a href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-1.pdf" data-titulo="Manual · etapa 1">Manual · etapa 1</a></li>
+ <li><a href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-2.pdf" data-titulo="Manual · etapa 2">Manual · etapa 2</a></li>
+ <li><a href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-3.pdf" data-titulo="Manual · etapa 3">Manual · etapa 3</a></li>
+</ul><h4>Registros</h4><ul>
+ <li><a href="/constancia-obras-vhrs.pdf" data-titulo="Constancia de obras registradas">Constancia de obras registradas</a></li>
+</ul></div>
+<div class="ancho"><h4>Idiomas del Hipercubo 33© · bases, Cubo del Idioma y Cubo 33© en 2D</h4>
+<p class="mini"><a href="/cubo-base/assets/idiomas/idiomas-22-bases-carta.pdf" data-titulo="Bases de los 22 idiomas en un solo PDF">Bases de los 22 idiomas en un solo PDF</a></p>
+<ul class="idi"><li><b>Español</b> · <a href="/cubo-base/assets/idiomas/idioma-es-carta.pdf" data-titulo="Bases del idioma · Español">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-es-carta.pdf" data-titulo="Cubo del Idioma · Español">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubo33-nivel1-prototipo-carta.pdf" data-titulo="Cubo 33© en 2D · Español">Cubo 33© 2D</a></li><li><b>Inglés</b> · <a href="/cubo-base/assets/idiomas/idioma-en-carta.pdf" data-titulo="Bases del idioma · Inglés">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-en-carta.pdf" data-titulo="Cubo del Idioma · Inglés">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-en-carta.pdf" data-titulo="Cubo 33© en 2D · Inglés">Cubo 33© 2D</a></li><li><b>Francés</b> · <a href="/cubo-base/assets/idiomas/idioma-fr-carta.pdf" data-titulo="Bases del idioma · Francés">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-fr-carta.pdf" data-titulo="Cubo del Idioma · Francés">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-fr-carta.pdf" data-titulo="Cubo 33© en 2D · Francés">Cubo 33© 2D</a></li><li><b>Portugués</b> · <a href="/cubo-base/assets/idiomas/idioma-pt-carta.pdf" data-titulo="Bases del idioma · Portugués">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-pt-carta.pdf" data-titulo="Cubo del Idioma · Portugués">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-pt-carta.pdf" data-titulo="Cubo 33© en 2D · Portugués">Cubo 33© 2D</a></li><li><b>Italiano</b> · <a href="/cubo-base/assets/idiomas/idioma-it-carta.pdf" data-titulo="Bases del idioma · Italiano">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-it-carta.pdf" data-titulo="Cubo del Idioma · Italiano">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-it-carta.pdf" data-titulo="Cubo 33© en 2D · Italiano">Cubo 33© 2D</a></li><li><b>Alemán</b> · <a href="/cubo-base/assets/idiomas/idioma-de-carta.pdf" data-titulo="Bases del idioma · Alemán">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-de-carta.pdf" data-titulo="Cubo del Idioma · Alemán">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-de-carta.pdf" data-titulo="Cubo 33© en 2D · Alemán">Cubo 33© 2D</a></li><li><b>Neerlandés</b> · <a href="/cubo-base/assets/idiomas/idioma-nl-carta.pdf" data-titulo="Bases del idioma · Neerlandés">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-nl-carta.pdf" data-titulo="Cubo del Idioma · Neerlandés">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-nl-carta.pdf" data-titulo="Cubo 33© en 2D · Neerlandés">Cubo 33© 2D</a></li><li><b>Catalán</b> · <a href="/cubo-base/assets/idiomas/idioma-ca-carta.pdf" data-titulo="Bases del idioma · Catalán">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-ca-carta.pdf" data-titulo="Cubo del Idioma · Catalán">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-ca-carta.pdf" data-titulo="Cubo 33© en 2D · Catalán">Cubo 33© 2D</a></li><li><b>Gallego</b> · <a href="/cubo-base/assets/idiomas/idioma-gl-carta.pdf" data-titulo="Bases del idioma · Gallego">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-gl-carta.pdf" data-titulo="Cubo del Idioma · Gallego">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-gl-carta.pdf" data-titulo="Cubo 33© en 2D · Gallego">Cubo 33© 2D</a></li><li><b>Euskera</b> · <a href="/cubo-base/assets/idiomas/idioma-eu-carta.pdf" data-titulo="Bases del idioma · Euskera">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-eu-carta.pdf" data-titulo="Cubo del Idioma · Euskera">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-eu-carta.pdf" data-titulo="Cubo 33© en 2D · Euskera">Cubo 33© 2D</a></li><li><b>Danés</b> · <a href="/cubo-base/assets/idiomas/idioma-da-carta.pdf" data-titulo="Bases del idioma · Danés">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-da-carta.pdf" data-titulo="Cubo del Idioma · Danés">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-da-carta.pdf" data-titulo="Cubo 33© en 2D · Danés">Cubo 33© 2D</a></li><li><b>Sueco</b> · <a href="/cubo-base/assets/idiomas/idioma-sv-carta.pdf" data-titulo="Bases del idioma · Sueco">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-sv-carta.pdf" data-titulo="Cubo del Idioma · Sueco">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-sv-carta.pdf" data-titulo="Cubo 33© en 2D · Sueco">Cubo 33© 2D</a></li><li><b>Noruego bokmål</b> · <a href="/cubo-base/assets/idiomas/idioma-nb-carta.pdf" data-titulo="Bases del idioma · Noruego bokmål">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-nb-carta.pdf" data-titulo="Cubo del Idioma · Noruego bokmål">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-nb-carta.pdf" data-titulo="Cubo 33© en 2D · Noruego bokmål">Cubo 33© 2D</a></li><li><b>Irlandés</b> · <a href="/cubo-base/assets/idiomas/idioma-ga-carta.pdf" data-titulo="Bases del idioma · Irlandés">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-ga-carta.pdf" data-titulo="Cubo del Idioma · Irlandés">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-ga-carta.pdf" data-titulo="Cubo 33© en 2D · Irlandés">Cubo 33© 2D</a></li><li><b>Griego moderno</b> · <a href="/cubo-base/assets/idiomas/idioma-el-carta.pdf" data-titulo="Bases del idioma · Griego moderno">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-el-carta.pdf" data-titulo="Cubo del Idioma · Griego moderno">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-el-carta.pdf" data-titulo="Cubo 33© en 2D · Griego moderno">Cubo 33© 2D</a></li><li><b>Ruso</b> · <a href="/cubo-base/assets/idiomas/idioma-ru-carta.pdf" data-titulo="Bases del idioma · Ruso">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-ru-carta.pdf" data-titulo="Cubo del Idioma · Ruso">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-ru-carta.pdf" data-titulo="Cubo 33© en 2D · Ruso">Cubo 33© 2D</a></li><li><b>Ucraniano</b> · <a href="/cubo-base/assets/idiomas/idioma-uk-carta.pdf" data-titulo="Bases del idioma · Ucraniano">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-uk-carta.pdf" data-titulo="Cubo del Idioma · Ucraniano">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-uk-carta.pdf" data-titulo="Cubo 33© en 2D · Ucraniano">Cubo 33© 2D</a></li><li><b>Árabe</b> · <a href="/cubo-base/assets/idiomas/idioma-ar-carta.pdf" data-titulo="Bases del idioma · Árabe">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-ar-carta.pdf" data-titulo="Cubo del Idioma · Árabe">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-ar-carta.pdf" data-titulo="Cubo 33© en 2D · Árabe">Cubo 33© 2D</a></li><li><b>Hebreo</b> · <a href="/cubo-base/assets/idiomas/idioma-he-carta.pdf" data-titulo="Bases del idioma · Hebreo">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-he-carta.pdf" data-titulo="Cubo del Idioma · Hebreo">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-he-carta.pdf" data-titulo="Cubo 33© en 2D · Hebreo">Cubo 33© 2D</a></li><li><b>Hindi</b> · <a href="/cubo-base/assets/idiomas/idioma-hi-carta.pdf" data-titulo="Bases del idioma · Hindi">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-hi-carta.pdf" data-titulo="Cubo del Idioma · Hindi">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-hi-carta.pdf" data-titulo="Cubo 33© en 2D · Hindi">Cubo 33© 2D</a></li><li><b>Chino mandarín</b> · <a href="/cubo-base/assets/idiomas/idioma-zh-carta.pdf" data-titulo="Bases del idioma · Chino mandarín">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-zh-carta.pdf" data-titulo="Cubo del Idioma · Chino mandarín">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-zh-carta.pdf" data-titulo="Cubo 33© en 2D · Chino mandarín">Cubo 33© 2D</a></li><li><b>Japonés</b> · <a href="/cubo-base/assets/idiomas/idioma-ja-carta.pdf" data-titulo="Bases del idioma · Japonés">bases</a> · <a href="/cubo-base/assets/cubos-idioma/cubo-idioma-ja-carta.pdf" data-titulo="Cubo del Idioma · Japonés">Cubo del Idioma</a> · <a href="/cubo-base/assets/cubos33-idioma/cubo33-2d-ja-carta.pdf" data-titulo="Cubo 33© en 2D · Japonés">Cubo 33© 2D</a></li></ul></div>
+</div></details>
+</nav>
+
+<section class="intro">
+<h1>Obras, sistemas y registros</h1>
+<p>Toca un libro para abrirlo y pasar sus páginas.<span class="larga"> Desliza hacia abajo para ver todas las obras.</span></p>
+</section>
+
+<section class="estante" id="estante" aria-label="Estante de obras"></section>
+<section class="lector" aria-label="Libro de obras">
+ <div class="barra"><button class="nav" id="ant">‹ Anterior</button><span class="cuenta" id="cuenta"></span><button class="nav" id="ampliar">✕ Cerrar libro</button><button class="nav oro" id="sig">Siguiente ›</button></div>
+ <div class="libro" id="libro"></div>
+ <div class="puntos" id="puntos"></div>
+ <p class="ayuda">También puedes usar las flechas del teclado o deslizar el dedo sobre el libro.</p>
+</section>
+
+<h2 class="sec" id="sec-material">Material del Cubo de Aprendizaje©</h2>
+<p class="subt">Para imprimir, recortar, pegar y jugar · consulta rápida en 22 idiomas</p>
+<p class="sel-cubo"><label>Idioma de los cubos para imprimir: <select class="idioma-cubo" aria-label="Idioma de los cubos"></select></label></p>
+<div class="carpetas" id="material">
+ <a class="carpeta" href="/cubo-base/assets/cubo-aprendizaje-carta.pdf" download><b>1 · Imprime el cubo</b><span>Cubo de Aprendizaje© · carta</span><small>También <u data-href="/cubo-base/assets/cubo-aprendizaje-oficio.pdf">oficio</u>, <u data-href="/cubo-base/assets/cubo-aprendizaje-a4.pdf">A4</u>, <u data-href="/cubo-base/assets/cubo-aprendizaje-doble-carta.pdf">doble carta</u> y <u data-href="/cubo-base/assets/cubo-aprendizaje-gigante-carta.pdf">gigante</u></small></a>
+ <a class="carpeta" href="/cubo-base/assets/cubo33-nivel1-prototipo-carta.pdf" data-cubo-pdf="c33"><b>2 · Nivel 1 del juego</b><span>Cubo 33© en 2D para armar · <span data-cubo-nombre>Español</span></span><small>7 hojas carta · el alfabeto del idioma en los cuatro bordes · <u data-cubo-pdf="cubo" data-href="/cubo-base/assets/cubos-idioma/cubo-idioma-es-carta.pdf">Cubo del Idioma</u></small></a>
+ <a class="carpeta" href="/cubo33/aprende/"><b>3 · Consulta en línea</b><span>Abecedarios, braille, banderas, señas y Morse</span><small>Traductor de referencia y Juego del Cubo 360</small></a>
+ <a class="carpeta" href="/cubo-base/assets/idiomas/idiomas-22-bases-carta.pdf" download><b>4 · Archivos y anexos</b><span>Bases de los 22 idiomas · PDF</span><small>159 palabras y frases por idioma (<u data-href="/cubo-base/assets/idiomas/idioma-en-carta.pdf">ejemplo: inglés</u>)</small></a>
+ <a class="carpeta" href="hipercubo33/"><b>5 · Hipercubo 33©</b><span>Los 22 cubos de idioma</span><small>Un cubo por idioma y un cubo libre para crear el tuyo</small></a>
+ <a class="carpeta" href="/cubo-base/assets/cubo-morse-armable.pdf" download><b>6 · Cubo Morse© armable</b><span>Para imprimir y armar</span><small>Morse sonoro y luminoso en cubo33.com/morse</small></a>
+ <a class="carpeta" href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-1.pdf" download><b>7 · Manuales del juego</b><span>Etapa 1, 2 y 3 · PDF carta</span><small><u data-href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-1.pdf">Etapa 1</u> · <u data-href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-2.pdf">Etapa 2</u> · <u data-href="/cubo-base/assets/manuales/Manual-Juego-del-Cubo-etapa-3.pdf">Etapa 3</u></small></a>
+</div>
+
+<h2 class="sec" id="sec-constancia">Constancia de obras registradas</h2>
+<p class="subt">Cada número se verifica en el sitio oficial de Safe Creative</p>
+<div class="constancia" id="constancia">
+<h3>Constancia de obras registradas</h3>
+<p class="quien">Autor y titular: Víctor Hugo Ramírez Salgado · Ensenada, Baja California, México · <span id="total-reg"></span> obras registradas</p>
+<button class="nav imprimir" onclick="window.print()">🖨 Imprimir constancia</button>
+<table class="tabla" id="tabla"></table>
+<div class="sellos">
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><text x="20" y="24" font-size="10" text-anchor="middle" fill="currentColor" font-family="Georgia">SC</text></svg><span>Registrado en <b>Safe Creative</b><br>Cada obra verificable por su número</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="24" font-size="9" text-anchor="middle" fill="currentColor" font-family="Georgia">IMPI</text></svg><span>Marca SOSistem™ en trámite<br>Expediente 3741790</span></div>
+ <div class="sello"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor"/><text x="20" y="25" font-size="13" text-anchor="middle" fill="currentColor" font-family="Georgia">VH</text></svg><span>Firma del autor<br>Víctor Hugo Ramírez Salgado</span></div>
+</div>
+<p class="nota">Constancia elaborada por el autor. Los logotipos oficiales se colocan con el distintivo que cada institución entrega al titular.</p>
+</div>
+<h2 class="sec" id="sec-apoyo">Apoyar una obra</h2>
+<p class="subt">Si gusta apoyar alguna obra o proyecto, puede hacerlo desde aquí</p>
+<div class="apoyo">
+ <p>Los apoyos se reciben a través de <b>Stripe</b>, una plataforma de pagos segura: los datos de su tarjeta los procesa Stripe con cifrado y nunca pasan por este sitio. Elija el proyecto que desea apoyar; cualquier duda, escríbanos en <a href="#contacto">Contacto</a>.</p>
+ <ul class="compromisos">
+  <li><b>Constancia de apoyo firmada.</b> Por cada aportación recibirá, en un máximo de 5 días hábiles, una constancia digital con folio consecutivo, la clave del proyecto apoyado y la firma digital de Víctor Hugo Ramírez Salgado, autor y titular de las obras.</li>
+  <li><b>Seguimiento por correo.</b> Recibirá un reporte ejecutivo mensual del avance del proyecto: 12 meses por su primer apoyo y 6 meses más por cada apoyo adicional.</li>
+  <li><b>Su aportación suma.</b> Cada apoyo se destina a que los proyectos lleguen a su correcta ejecución, en beneficio de las personas y de la comunidad.</li>
+ </ul>
+ <div class="apoyo-b"><a class="btn" href="https://buy.stripe.com/28E5kF7c9dQwcDvgh4g7e05" target="_blank" rel="noopener">SOSistem™</a><a class="btn" href="https://buy.stripe.com/cNifZj0NLeUAdHz8OCg7e07" target="_blank" rel="noopener">Intertopía©</a><a class="btn" href="https://buy.stripe.com/9B64gBfIF13K0UNe8Wg7e08" target="_blank" rel="noopener">Econotopía©</a><a class="btn" href="https://buy.stripe.com/28E00l1RPeUAdHz1mag7e09" target="_blank" rel="noopener">Cubo 33©</a><a class="btn" href="https://buy.stripe.com/7sYeVf3ZX7s85b34ymg7e06" target="_blank" rel="noopener">Investigación y propuestas</a><a class="btn ghost" href="https://buy.stripe.com/dRm00laol13K8nfd4Sg7e04" target="_blank" rel="noopener">SOS767</a></div>
+ <p class="mini" style="margin-top:12px">¿Ya apoyó? <a href="verifica/">Verifique su certificado</a>: se lo enviamos al correo con el que pagó.</p>
+</div>
+
+<h2 class="sec" id="sec-sitios">Sitios del autor</h2>
+<p class="subt">Cada carpeta abre la página de su proyecto</p>
+<div class="carpetas" id="sitios"></div>
+
+<h2 class="sec" id="sec-dominios">Cartera de dominios del autor</h2>
+<p class="subt">Dominios registrados a nombre de Víctor Hugo Ramírez Salgado en Squarespace (estado al 18 nov 2026) · Cartera de dominios y sitios web del autor© · Safe Creative 2611017524083</p>
+<div class="dominios" id="dominios"></div>
+<p class="subt" style="font-size:.8em">© 2026 Víctor Hugo Ramírez Salgado. Todos los nombres y obras con © están registrados en Safe Creative. Fuente: panel de dominios de Squarespace del titular.</p>
+
+<h2 class="sec" id="sec-propuestas">Proyectos propuestos</h2>
+<p class="subt">Propuestas para la comunidad portuaria nacional e internacional · autoría de Víctor Hugo Ramírez Salgado</p>
+<div class="carpetas" id="propuestas"></div>
+
+</div>
+<footer class="pie">
+ <div class="pie-in">
+  <div><h4>Víctor Hugo Ramírez Salgado</h4><p>Autor y titular de las obras de esta biblioteca. Ensenada, Baja California, México.</p><p class="cv-fila">Currículum VHRS: <select id="cv-idioma" aria-label="Idioma del currículum"></select> <button type="button" class="nav" id="cv-abrir">Abrir</button></p><p class="mini">Español es el original; inglés tiene versión propia; los demás idiomas se abren con traducción automática.</p></div>
+  <div><h4>Obras</h4><p><a href="#estante">Estante de obras</a><br><a href="#constancia">Constancia de registros</a><br><a href="indice/">Índice general</a><br><a href="panel/">Panel de registros</a><br><a href="safecreative/">Registros en Safe Creative</a></p></div>
+  <div id="contacto"><h4>Contacto</h4><p>Teléfono y WhatsApp: <a href="tel:+526462270490">646 227 0490</a><br><a href="https://wa.me/526462270490" target="_blank" rel="noopener">Escribir por WhatsApp</a><br>Correo: <a href="mailto:vh@victorhugoramirezsalgado.com">vh@victorhugoramirezsalgado.com</a><br>Información: <a href="mailto:info@victorhugoramirezsalgado.com">info@victorhugoramirezsalgado.com</a><br><a href="contenedorens/">ContenedorEns©</a> · <a href="arsabodegas/">Arsa Bodegas©</a></p></div>
+  <div id="legal"><h4>Legal</h4><p><a href="legal/privacidad.html">Aviso de privacidad</a><br><a href="legal/terminos.html">Términos y condiciones</a><br><a href="legal/reembolsos.html">Política de reembolsos</a></p></div>
+ </div>
+ <div class="pie-fin">© 2026 Víctor Hugo Ramírez Salgado. Todos los derechos reservados. Obras registradas en Safe Creative · SOSistem™ marca en trámite ante el IMPI (expediente 3741790).</div>
+</footer>
+
+
+<script src="obras.js?v=2026-11-18mod"></script>
+<script src="lector.js?v=2026-11-15q"></script>
+<script>
+const R=[["Intertopía©", "2602144563892", "feb 2026"], ["1ntertopía©", "2606096034080", "jun 2026"], ["Sistema S.O.S.©", "2609046908578", "sep 2026"], ["ContenedorEns© (nombre y logo)", "2609046908752", "sep 2026"], ["Arsa Bodegas© (nombre y logo)", "2609046908806", "sep 2026"], ["Econotopía©", "2610077261709", "oct 2026"], ["CuboPY©", "2610097275281", "oct 2026"], ["Código Cúbico© · Código de comunicación del Cubo (33)©", "2610097276721", "oct 2026"], ["Cubo Interior©", "2610097277049", "oct 2026"], ["Teclado Cubo© · El Cubo de la Comunicación Econotopía (memoria descriptiva y código fuente)", "2610097277155", "9 oct 2026"], ["Econotopía Segura© · El Cubo de la Comunicación, memoria técnica y descriptiva", "2610097277377", "9 oct 2026"], ["Lector Cúbico© · Econotopía Segura, lector del Código Cúbico con cámara", "2610097277568", "9 oct 2026"], ["Sistema del Código de Comunicación del Cubo (33)© · codificada y representación gráfica del Cubo", "2610257441013", "25 oct 2026"], ["Cubo Morse©", "2610257441754", "25 oct 2026"], ["SOSistem™ · plataforma 1.0.0–3.8 (obra derivada)", "2610257442171", "25 oct 2026"], ["SOSistem™ versiones 3.9 a 6.6", "2610317507284", "31 oct 2026"], ["Econotopía© 2.0 · sistema de comunicación del Cubo", "2610317507307", "31 oct 2026"], ["Estructura y Validación mediante Código Omnigráfico© (definitivo)", "2610317507444", "31 oct 2026"], ["S.S.O.S.© expediente técnico y modelo de negocio", "2610317507475", "31 oct 2026"], ["Sensor híper inteligente SOSistem™ (documento de diseño)", "2610317507499", "31 oct 2026"], ["Registro mundial de naufragios (propuesta CIP/OMI)", "2610317507550", "31 oct 2026"], ["Regulación de contenedores de segundo uso · trazabilidad nacional (propuesta)", "2610317507741", "31 oct 2026"], ["Cartera de dominios y sitios web del autor", "2611017524083", "1 nov 2026"], ["Obra privada", "2611037540810", "3 nov 2026"], ["Plataforma SOSistem™ · cierre de la serie A (6.7 a 7.4) y serie B (7.5.0 a B.8.2.2)", "2611097590053", "9 nov 2026"], ["Juego del Cubo© y Cubo de Aprendizaje© · Juego 360 para 2 a 4 personas, tres niveles y Cubo del Idioma", "2611097590138", "9 nov 2026"], ["Obra privada", "2611097590152", "9 nov 2026"], ["Obra privada", "2611097590411", "9 nov 2026"], ["Obra privada", "2611097590442", "9 nov 2026"], ["Obra privada", "2611097590466", "9 nov 2026"], ["Hipercubo 33© · Econotopía© 3.0 · lenguaje multinumérico y multidimensional del Cubo de la Comunicación", "2611097590497", "9 nov 2026"], ["VHRS-118 · El Corazón de la tabla periódica", "2611187687748", "18 nov 2026"]];
+const claveReg=(o,n)=>{const p=P.find(p=>p[5]===n);if(p)return CLAVE[p[1]];if(/S\.O\.S|SOSistem/.test(o))return CLAVE['SOSistem™'];if(/Econotop/.test(o))return CLAVE['Econotopía©'];if(/Omnigr/.test(o))return CLAVE['Código Cúbico©'];if(/Cubo Interior/.test(o))return CLAVE['Cubo Interior©'];return '—'};
+document.getElementById('total-reg').textContent=R.length;document.querySelectorAll('.r-total').forEach(x=>x.textContent=R.length);document.getElementById('tabla').innerHTML='<tr class="cab"><td class="n">#</td><td>Obra</td><td class="c">Clave</td><td>Safe Creative</td><td class="f">Fecha</td></tr>'+R.map(([o,n,f],i)=>`<tr><td class="n">${i+1}</td><td>${o}</td><td class="c">${claveReg(o,n)}</td><td>${n}</td><td class="f">${f}</td></tr>`).join('');
+
+// carpetas: sitios del autor y proyectos propuestos
+const SITIOS=[['Víctor Hugo Ramírez Salgado','victorhugoramirezsalgado.com','./','Biblioteca de obras · este sitio'],['ContenedorEns©','contenedorens.com','contenedorens/','Contenedores marítimos'],['Arsa Bodegas©','arsabodegas.com','https://arsabodegas.com','Mini bodegas · El Sauzal'],['SOSistem™','sosistem.com','https://sosistem.com','Sistema de alerta sin cámaras'],['SOS767','767sos.com · sos767.com · sos767.org','sos767/','Número corto de auxilio 767'],['Intertopía©','intertopía.com','intertopia/','Concepto ante la RAE'],['1ntertopía©','1ntertopía.com · 1ntertopia.com','intertopia/#valor','Generación de valor'],['Econotopía©','econotopía.com','econotopia/','Sistema del Cubo'],['Cubo 33©','cubo33.com','cubo33/','Cubo de la Comunicación'],['Hipercubo 33©','victorhugoramirezsalgado.com/hipercubo33','hipercubo33/','22 cubos de idioma'],['Código Cúbico©','codigocubico.com','codigocubico/','Código del Cubo'],['Trazabilidad©','tcontenedores.com','tcontenedores/','Consulta ISO 6346'],['CCTT©','victorhugoramirezsalgado.com/cctt','cctt/','Centro de Control de Tráfico Terrestre · imágenes'],['Panel de registros','victorhugoramirezsalgado.com/panel','panel/','Trayectoria, prensa e IMPI']];
+const PROPUESTAS=[['Trazabilidad de contenedores©','Registrada · Safe Creative 2610317507741','En análisis','tcontenedores/'],['CCTT · Centro de Control de Tráfico Terrestre (vacíos)','Módulo de Trazabilidad de contenedores© · Safe Creative 2610317507741','Prototipo · propuesta al Comité de Operación','cctt/'],['Registro mundial de naufragios','Registrada · Safe Creative 2610317507550','En revisión · propuesta CIP/OMI','obra.html?id=registro-mundial-de-naufragios'],['Biblioteca portuaria','Obra del autor · registro pendiente','En análisis',''],['Hidroponía en contenedores · El Sauzal','Obra del autor · registro pendiente','En revisión',''],['Biblioteca de obras (este sitio)','Diseño del autor · registro pendiente','En producción','./'],['Ortoespacio · concepto y nota conceptual del ortoedro','Obra del autor · registro pendiente en Safe Creative','Por registrar',''],['VHRS-118 · El Corazón de la tabla periódica','Registrada · Safe Creative 2611187687748','Acceso privado con clave','https://codigocubico.com/vhrs118/']];
+const CARP='<svg viewBox="0 0 48 38" aria-hidden="true"><path d="M2 6a3 3 0 0 1 3-3h12l4 4h22a3 3 0 0 1 3 3v24a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z" fill="currentColor" opacity=".25"/><path d="M2 12h44v22a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z" fill="currentColor" opacity=".55"/></svg>';
+const CUBITO='<svg class="cubito" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="#F3EDE2" stroke="#C9A55A" stroke-width="1.4"/><g fill="none" stroke="#2C3A32" stroke-width="1.6" stroke-linejoin="round"><rect x="10" y="15" width="14" height="14"/><rect x="16" y="9" width="14" height="14"/><path d="M10 15l6-6M24 15l6-6M10 29l6-6M24 29l6-6"/></g></svg>';
+
+// cartera de dominios (Squarespace, 18 nov 2026)
+const DOMINIOS=[['1ntertopia.com','1ntertopía©','activo'],['1ntertopía.com','1ntertopía©','activo'],['767sos.com','SOS767','activo'],['arsabodegas.com','Arsa Bodegas©','activo'],['codigocubico.com','Código Cúbico©','activo'],['cubo33.com','Cubo 33©','activo'],['econotopía.com','Econotopía©','activo'],['intertopía.com','Intertopía©','activo'],['intertopía.net','Intertopía©','error'],['sos767.com','SOS767','activo'],['sos767.org','SOS767','activo'],['sosistem.com','SOSistem™','activo'],['tcontenedores.com','Trazabilidad de contenedores© · CCTT©','activo'],['victorhugoramirezsalgado.com','Biblioteca de obras · registro maestro','activo']];
+document.getElementById('dominios').innerHTML=DOMINIOS.map(([d,o,e])=>e==='activo'
+ ?`<a class="dom" href="https://${d}" target="_blank" rel="noopener"><b>${d}</b><span>${o}</span><em class="ok">Activo</em></a>`
+ :`<div class="dom err"><b>${d}</b><span>${o}</span><em class="no">Error en el registro</em></div>`).join('');
+document.getElementById('sitios').innerHTML=SITIOS.map(([n,d,u,t])=>`<a class="carpeta" href="${u}" data-pagina="${u}" data-titulo="${n}" title="Abrir ${n}">${CARP}${CUBITO}<b>${n}</b><span>${d}</span><small>${t}</small></a>`).join('');
+document.getElementById('propuestas').innerHTML=PROPUESTAS.map(([n,r,e,u])=>`<${u?'a':'div'} class="carpeta prop" ${u?`href="${u}" data-pagina="${u}" data-titulo="${n}" title="Abrir ${n}"`:''}>${CARP}${u?CUBITO:''}<b>${n}</b><span>${r}</span><em>${e}</em><small>© Víctor Hugo Ramírez Salgado · comunidad portuaria nacional e internacional</small></${u?'a':'div'}>`).join('');
+document.addEventListener('click',e=>{const a=e.target.closest('a[data-pagina]');if(!a||e.metaKey||e.ctrlKey||!window.VHRS_visor)return;e.preventDefault();VHRS_visor.abrirPagina(a.dataset.pagina,a.dataset.titulo)});
+const set=(t,g)=>{document.body.classList.toggle('biblioteca',t==='b');t1.setAttribute('aria-pressed',t!=='b');t2.setAttribute('aria-pressed',t==='b');if(g)try{localStorage.setItem('vhrs-tema2',t)}catch(e){}};
+t1.onclick=()=>set('a',1);t2.onclick=()=>set('b',1);
+let tm='b';try{tm=localStorage.getItem('vhrs-tema2')||'b'}catch(e){} if(location.hash.includes('biblioteca'))tm='b'; set(tm);
+</script>
+<script src="idiomas.js?v=2026-11-15a"></script>
+<script src="visor.js?v=2026-11-15a"></script>
+<script src="cubos-idioma.js?v=2026-11-15a"></script>
+</body>
+</html>

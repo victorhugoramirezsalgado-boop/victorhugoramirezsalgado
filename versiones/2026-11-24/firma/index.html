@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="robots" content="noindex,nofollow">
+<title>Cuadro de firma</title>
+<style>
+/* © 2026 Víctor Hugo Ramírez Salgado — cuadro para trazar la firma. Nada se guarda ni se envía: todo queda en este dispositivo. Asistencia-IA. */
+*{box-sizing:border-box}
+body{margin:0;background:#2C3A32;color:#EADBB8;font:400 15px/1.5 system-ui,-apple-system,sans-serif;padding:14px}
+h1{font:600 22px Georgia,serif;margin:4px 0 4px;text-align:center}
+.sub{text-align:center;color:#C9BA95;font-size:13px;margin:0 0 12px}
+.marco{max-width:720px;margin:0 auto;background:#FBF7EE;border-radius:10px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+canvas{display:block;width:100%;height:260px;background:#fff;border-radius:6px;touch-action:none;cursor:crosshair;
+ background-image:linear-gradient(transparent 70%,rgba(219,100,28,.35) 70%,rgba(219,100,28,.35) calc(70% + 1px),transparent calc(70% + 1px))}
+.barra{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px auto 0;max-width:720px}
+button,label{font:600 14px system-ui,sans-serif;padding:10px 16px;border-radius:999px;border:1px solid #C9A55A;background:transparent;color:#EADBB8;cursor:pointer}
+button.oro{background:#C9A55A;color:#2C3A32}
+label{display:flex;align-items:center;gap:8px}
+input[type=range]{width:110px}
+.resultado{max-width:720px;margin:14px auto 0;text-align:center;display:none}
+.resultado img{max-width:100%;background:#fff;border-radius:6px;padding:8px}
+.nota{max-width:720px;margin:14px auto 0;font-size:12.5px;color:#C9BA95;text-align:center}
+</style>
+</head>
+<body>
+<h1>Cuadro de firma</h1>
+<p class="sub">Traza tu media firma con el dedo sobre la línea naranja</p>
+<div class="marco"><canvas id="c"></canvas></div>
+<div class="barra">
+ <button id="deshacer">↶ Deshacer</button>
+ <button id="borrar">Borrar</button>
+ <label>Grosor <input type="range" id="grosor" min="2" max="9" value="4"></label>
+ <button class="oro" id="guardar">Guardar firma</button>
+</div>
+<div class="resultado" id="res"><p>Lista. En el iPhone: <b>mantén presionada la imagen → «Guardar imagen»</b> o «Compartir», y mándamela en el chat.</p><img id="img" alt="Firma trazada"></div>
+<p class="nota">Este cuadro no guarda ni envía nada: la firma solo existe en tu teléfono hasta que tú la guardes y la compartas.</p>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d');let trazos=[],actual=null,dpr=Math.max(2,window.devicePixelRatio||1);
+function tam(){const r=c.getBoundingClientRect();c.width=r.width*dpr;c.height=r.height*dpr;dibuja()}
+function dibuja(){x.clearRect(0,0,c.width,c.height);x.lineCap='round';x.lineJoin='round';x.strokeStyle='#14110F';
+ for(const t of trazos){x.lineWidth=t.g*dpr;x.beginPath();t.p.forEach(([a,b],i)=>{const X=a*c.width,Y=b*c.height;if(i===0)x.moveTo(X,Y);else{const [pa,pb]=t.p[i-1];x.quadraticCurveTo(pa*c.width,pb*c.height,(pa*c.width+X)/2,(pb*c.height+Y)/2)}});x.stroke()}}
+const pos=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]};
+c.addEventListener('pointerdown',e=>{c.setPointerCapture(e.pointerId);actual={g:+grosor.value,p:[pos(e)]};trazos.push(actual)});
+c.addEventListener('pointermove',e=>{if(!actual)return;actual.p.push(pos(e));dibuja()});
+['pointerup','pointercancel'].forEach(t=>c.addEventListener(t,()=>{actual=null}));
+deshacer.onclick=()=>{trazos.pop();dibuja()};borrar.onclick=()=>{trazos=[];dibuja();res.style.display='none'};
+guardar.onclick=()=>{if(!trazos.length)return;
+ // recorta al trazo, fondo transparente, alta resolución
+ const d=x.getImageData(0,0,c.width,c.height).data;let x0=c.width,y0=c.height,x1=0,y1=0;
+ for(let y=0;y<c.height;y++)for(let i=0;i<c.width;i++){if(d[(y*c.width+i)*4+3]>8){if(i<x0)x0=i;if(i>x1)x1=i;if(y<y0)y0=y;if(y>y1)y1=y}}
+ const m=12*dpr,w=x1-x0+2*m,h=y1-y0+2*m,o=document.createElement('canvas');o.width=w;o.height=h;o.getContext('2d').drawImage(c,x0-m,y0-m,w,h,0,0,w,h);
+ const url=o.toDataURL('image/png');img.src=url;res.style.display='block';
+ const a=document.createElement('a');a.href=url;a.download='firma-vh.png';document.body.appendChild(a);a.click();a.remove();
+ res.scrollIntoView({behavior:'smooth'})};
+addEventListener('resize',tam);tam();
+</script>
+</body>
+</html>

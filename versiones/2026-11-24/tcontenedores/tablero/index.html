@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tablero · Trazabilidad de contenedores</title>
+<meta name="author" content="Víctor Hugo Ramírez Salgado">
+<link rel="canonical" href="https://tcontenedores.com/tablero/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: tablero de control de patio — franja de indicadores, rejilla de paneles de dos columnas que baja a una en teléfono, expediente con calcomanía al final */
+:root{
+  --bg:#EEF1F3; --surface:#FFFFFF; --sunk:#F5F7F8; --ink:#101820; --ink-2:#4A5560; --ink-3:#6E7882;
+  --line:#D5DBE0; --grid:#E6EAED; --accent:#0E3A5B; --accent-soft:#DCE7F0;
+  --s1:#2a78d6; --s2:#eb6834; --good:#0ca30c; --warn:#fab219; --crit:#d03b3b;
+  --stencil:"Saira Stencil One","Arial Black",Impact,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1418; --surface:#171E24; --sunk:#1C242B; --ink:#E9EDF0; --ink-2:#AEB8C1; --ink-3:#8A95A0;
+  --line:#2C3740; --grid:#24303A; --accent:#8CB8DD; --accent-soft:#1E3346;
+  --s1:#3987e5; --s2:#d95926; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1418; --surface:#171E24; --sunk:#1C242B; --ink:#E9EDF0; --ink-2:#AEB8C1; --ink-3:#8A95A0;
+  --line:#2C3740; --grid:#24303A; --accent:#8CB8DD; --accent-soft:#1E3346;
+  --s1:#3987e5; --s2:#d95926; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 56px;display:grid;gap:18px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:3px solid var(--accent);padding-bottom:14px}
+.brand{display:grid;gap:4px;min-width:0}
+.eyebrow{font:600 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+h1{font:400 clamp(1.7rem,4.5vw,2.6rem)/1 var(--stencil);margin:0;color:var(--accent);letter-spacing:.02em;text-wrap:balance}
+.sub{color:var(--ink-2);margin:0;font-size:.92rem}
+.example{display:inline-flex;align-items:center;gap:6px;font:600 .75rem var(--mono);color:var(--ink);background:var(--warn);padding:5px 9px;border-radius:4px;letter-spacing:.04em}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+label.f{display:grid;gap:4px;font-size:.75rem;color:var(--ink-3);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+select,input{font:500 .92rem var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+input.mono{font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--s1);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:2px;position:relative;overflow:hidden}
+.kpi .n{font:600 1.75rem/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.kpi .l{font-size:.82rem;color:var(--ink-2)}
+.kpi .d{font:500 .75rem var(--mono);color:var(--ink-3)}
+.kpi.alert{border-left:4px solid var(--crit)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel h2{font:700 1rem/1.25 var(--body);margin:0;text-wrap:balance}
+.panel .q{font-size:.82rem;color:var(--ink-2);margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:12px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--ink-3)}
+.status{display:grid;gap:8px}
+.srow{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:.88rem}
+.srow b{font:600 .95rem var(--mono);font-variant-numeric:tabular-nums}
+.ico{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font:700 .7rem var(--body);color:#fff}
+.stack{display:flex;gap:2px;height:16px;border-radius:4px;overflow:hidden}
+.stack span{display:block;height:100%}
+table{width:100%;border-collapse:collapse;font-size:.86rem;font-variant-numeric:tabular-nums}
+th{text-align:left;font:600 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:8px;border-bottom:1px solid var(--grid)}
+td.n,th.n{text-align:right;font-family:var(--mono)}
+tr.tot td{border-top:2px solid var(--ink);border-bottom:0;font-weight:700}
+.tbl{overflow-x:auto}
+.mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mini div{background:var(--sunk);border-radius:6px;padding:10px;display:grid;gap:2px}
+.mini b{font:600 1.25rem var(--mono)}
+.mini span{font-size:.78rem;color:var(--ink-2)}
+.exp{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px}
+@media (max-width:820px){.exp{grid-template-columns:minmax(0,1fr)}}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:600 .74rem var(--body);padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:var(--sunk);color:var(--ink)}
+.chip.good{border-color:var(--good)}.chip.warn{border-color:var(--warn)}.chip.crit{border-color:var(--crit)}
+.chip::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;background:var(--ink-3);vertical-align:1px}
+.chip.good::before{background:var(--good)}.chip.warn::before{background:var(--warn)}.chip.crit::before{background:var(--crit)}
+ol.tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+ol.tl li{display:grid;grid-template-columns:92px 14px 1fr;gap:10px;font-size:.86rem;padding-bottom:12px}
+ol.tl .dt{font:500 .78rem var(--mono);color:var(--ink-3);padding-top:1px}
+ol.tl .dot{position:relative}
+ol.tl .dot::before{content:"";position:absolute;left:3px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+ol.tl .dot::after{content:"";position:absolute;left:6px;top:15px;bottom:-12px;width:2px;background:var(--line)}
+ol.tl li:last-child .dot::after{display:none}
+ol.tl small{display:block;color:var(--ink-3);font-size:.78rem}
+.decal{background:#FFFFFF;color:#101820;border:2px solid #101820;border-radius:10px;padding:14px;display:grid;gap:10px;box-shadow:0 1px 0 rgba(0,0,0,.08);max-width:360px}
+.decal .top{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:2px solid #101820;padding-bottom:8px}
+.decal .top b{font:400 1.05rem var(--stencil);letter-spacing:.04em}
+.decal .res{font:700 .72rem var(--mono);padding:4px 8px;border-radius:4px;color:#fff;letter-spacing:.06em}
+.decal .iso{font:600 1.5rem var(--mono);letter-spacing:.08em}
+.decal .body{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.decal code{font:600 .78rem/1.5 var(--mono);word-break:break-all}
+.decal .net{display:grid;justify-items:center}
+.decal .full{background:#F2F4F6;border-radius:6px;padding:8px}
+.decal .lnk{display:grid;gap:2px;border-top:1px dashed #101820;padding-top:8px;min-width:0}
+.decal .lnk a{font:600 .72rem/1.4 var(--mono);color:#0E3A5B;word-break:break-all}
+.decal .dbtn{display:flex;flex-wrap:wrap;gap:6px}
+.btn.ghost{background:transparent;color:#0E3A5B;border:1px solid #0E3A5B}
+.decal small{font:500 .68rem var(--mono);color:#4A5560}
+.msg{font:500 .82rem var(--mono);min-height:1.2em}
+.msg.bad{color:var(--crit)}.msg.ok{color:var(--good)}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--surface);font:500 .78rem/1.4 var(--mono);padding:7px 9px;border-radius:6px;z-index:9;max-width:240px}
+.note{font-size:.78rem;color:var(--ink-3);margin:0}
+.roles{display:grid;gap:6px}
+.rbar{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.rbar button{flex:none;font:600 .82rem var(--body);padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer}
+.rbar button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.role{border-top:4px solid var(--accent)}
+.rhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.badge{font:600 .72rem var(--mono);padding:4px 9px;border-radius:4px;background:var(--accent-soft);color:var(--accent);letter-spacing:.05em;text-transform:uppercase}
+.rcols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
+@media (max-width:820px){.rcols{grid-template-columns:minmax(0,1fr)}}
+.role h3{font:700 .8rem var(--body);margin:0 0 6px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
+.obl{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.88rem}
+.btn{font:600 .9rem var(--body);padding:9px 14px;border-radius:6px;border:0;background:var(--accent);color:var(--surface);cursor:pointer;justify-self:start}
+.btn.sm{padding:5px 10px;font-size:.78rem}
+#alertsPanel{display:grid}
+.vh{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.rdr{display:grid;gap:10px}
+.decal canvas{width:100%;max-width:300px;height:auto;justify-self:center;image-rendering:pixelated}
+.decal .under{font:600 .74rem/1.45 var(--mono);word-break:break-all;background:#F2F4F6;border-radius:6px;padding:6px 8px;color:#101820}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<nav style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:10px 16px 0;font:600 .85rem system-ui,sans-serif"><a href="../" style="display:inline-flex;align-items:center;min-height:42px;padding:0 14px;border-radius:10px;background:#F2C96B;color:#2C3A32;text-decoration:none;box-shadow:0 4px 0 #B98F2C,0 8px 14px rgba(0,0,0,.18)">&larr; tcontenedores.com</a><span style="color:#4A5560">Tablero con datos de ejemplo · © 2026 Víctor Hugo Ramírez Salgado · Safe Creative 2610317507741</span></nav>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <span class="eyebrow">Inventario nacional · ISO 6346 · Piloto Ensenada</span>
+    <h1>Trazabilidad de Contenedores</h1>
+    <p class="sub">Entradas, salidas, cambios de medio y segundo uso, por número de contenedor.</p>
+  </div>
+  <div class="filters">
+    <span class="example">⚠ DATOS DE EJEMPLO</span>
+    <label class="f" for="period">Periodo<select id="period"><option>Ene–Sep 2026</option></select></label>
+    <label class="f" for="entry">Punto de entrada<select id="entry"><option>Todos</option><option>Puerto de Ensenada</option><option>Garita Otay</option><option>Mexicali FF.CC.</option><option>Tecate</option></select></label>
+  </div>
+</header>
+
+<nav class="roles" aria-label="Usuario"><span class="eyebrow">Entrar como</span><div class="rbar" id="rbar" role="tablist"></div></nav>
+
+<section class="panel role" id="rolePanel" aria-live="polite">
+  <div class="rhead"><div style="min-width:0"><span class="eyebrow" id="rKind"></span><h2 id="rName"></h2><p class="q" id="rDesc"></p></div><span class="badge" id="rBadge"></span></div>
+  <div class="rcols">
+    <div style="min-width:0"><h3>Qué informa o hace</h3><ul class="obl" id="rObl"></ul></div>
+    <form id="evForm" style="min-width:0;display:grid;gap:8px">
+      <h3>Registrar evento</h3>
+      <label class="f" for="evIso">Número de contenedor<input id="evIso" class="mono" maxlength="11" value="EJMU6094157"></label>
+      <label class="f" for="evType">Evento<select id="evType"></select></label>
+      <button class="btn" id="evBtn" type="submit">Registrar</button>
+      <p class="msg" id="evMsg"></p>
+    </form>
+  </div>
+  <p class="note">Simulación: los eventos se agregan al expediente en esta pantalla y no se guardan.</p>
+</section>
+
+<section class="panel" data-panel="alerts" id="alertsPanel">
+  <h2>Alertas para la autoridad</h2>
+  <p class="q">Cajas sin salida en ningún punto con plazo vencido, y cajas no aptas detectadas en un intento de embarque.</p>
+  <div class="tbl"><table><thead><tr><th>Contenedor</th><th>Último punto</th><th>Motivo</th><th class="n">Días</th><th></th></tr></thead><tbody id="alerts"></tbody></table></div>
+</section>
+
+<section class="kpis" data-panel="kpis" aria-label="Indicadores">
+  <div class="kpi"><span class="n" id="k1">18,420</span><span class="l">Contenedores registrados</span><span class="d">entradas al país</span></div>
+  <div class="kpi"><span class="n">15,960</span><span class="l">Ciclos cerrados</span><span class="d">86.6 % salió por algún punto</span></div>
+  <div class="kpi"><span class="n">1,830</span><span class="l">Abiertos en plazo</span><span class="d">importación temporal vigente</span></div>
+  <div class="kpi alert"><span class="n">630</span><span class="l">Sin salida, plazo vencido</span><span class="d">75 sin ubicar</span></div>
+  <div class="kpi"><span class="n">$230,920</span><span class="l">Ingreso estimado (USD)</span><span class="d">tarifas del sistema</span></div>
+</section>
+
+<div class="grid">
+  <section class="panel" data-panel="line">
+    <h2>Entradas contra salidas por mes</h2>
+    <p class="q">La diferencia acumulada son las cajas que siguen en México.</p>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Entradas</span><span><i style="background:var(--s2)"></i>Salidas</span></div>
+    <svg class="chart" id="cLine" viewBox="0 0 520 240" role="img" aria-label="Entradas y salidas mensuales"></svg>
+  </section>
+
+  <section class="panel" data-panel="routes">
+    <h2>Rutas de ciclos cerrados</h2>
+    <p class="q">Por dónde entró y por dónde salió cada caja. Este dato hoy no existe.</p>
+    <svg class="chart" id="cRoutes" viewBox="0 0 520 250" role="img" aria-label="Contenedores por ruta de entrada y salida"></svg>
+  </section>
+
+  <section class="panel" data-panel="noret">
+    <h2>Sin salida con plazo vencido: 630</h2>
+    <p class="q">Clasificación de las cajas que no aparecen saliendo por ningún punto.</p>
+    <div class="stack" id="stack" aria-hidden="true"></div>
+    <div class="status" id="status"></div>
+  </section>
+
+  <section class="panel" data-panel="second">
+    <h2>Segundo uso y estado CSC</h2>
+    <p class="q">Origen de las cajas certificadas para segundo uso.</p>
+    <div class="mini">
+      <div><b>265</b><span>No retornada por venta</span></div>
+      <div><b>35</b><span>Regularizada</span></div>
+      <div><b>110</b><span>Recuperada de siniestro</span></div>
+    </div>
+    <div class="status">
+      <div class="srow"><span class="ico" style="background:var(--good)">✓</span><span>Aptas para transporte internacional</span><b>17,900</b></div>
+      <div class="srow"><span class="ico" style="background:var(--crit)">✕</span><span>No aptas · solo segundo uso (siniestro o modificación)</span><b>520</b></div>
+    </div>
+  </section>
+
+  <section class="panel wide" data-panel="fees">
+    <h2 id="feeTitle">Ingreso estimado por tarifa</h2>
+    <p class="q">Tarifas de la propuesta aplicadas a los movimientos del periodo de ejemplo.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Concepto</th><th>Paga</th><th class="n">Cantidad</th><th class="n">USD c/u</th><th class="n">Total USD</th></tr></thead>
+      <tbody id="fees"></tbody>
+    </table></div>
+    <p class="note">Una caja intermodal paga 1 USD a la terminal de entrada y 1 USD al operador de FF.CC. o frontera; la naviera no paga los 10 USD en ese caso.</p>
+  </section>
+
+  <section class="panel wide" data-panel="exp">
+    <h2>Expediente del contenedor</h2>
+    <p class="q">Escribe un número ISO 6346 o elige uno de ejemplo.</p>
+    <div class="filters">
+      <label class="f" for="isoIn">Número de contenedor<input id="isoIn" class="mono" list="isoList" maxlength="11" value="EJMU5520915"></label>
+      <datalist id="isoList"><option value="EJMU4810376"><option value="EJMU5520915"><option value="DEMU3307747"><option value="EJMU6094157"></datalist>
+    </div>
+    <p class="msg" id="isoMsg" aria-live="polite"></p>
+    <div class="exp" id="exp">
+      <div style="display:grid;gap:12px;min-width:0">
+        <div class="chips" id="chips"></div>
+        <ol class="tl" id="tl"></ol>
+      </div>
+      <div style="display:grid;gap:8px;align-content:start">
+        <span class="eyebrow">Calcomanía de verificación</span>
+        <div class="decal" id="decal"></div>
+        <p class="note">Las caras del cubo se asignan al azar a cada contenedor. La liga lleva el número de idioma del cubo (L1 = español de México) y abre el expediente.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel wide" data-panel="reader" id="readerPanel">
+    <h2>Lector del código</h2>
+    <p class="q">Lee la calcomanía con la cámara, o escribe la liga, el código o los 6 números del cubo. Abre el expediente del contenedor.</p>
+    <div class="rdr">
+      <div class="dbtn"><label class="btn" for="rdCam">Tomar foto</label><label class="btn ghost" for="rdGal">Elegir de Fotos</label><button type="button" class="btn ghost" id="rdDemo">Leer la calcomanía en pantalla</button></div>
+      <input id="rdCam" type="file" accept="image/*" capture="environment" class="vh"><input id="rdGal" type="file" accept="image/*" class="vh">
+      <form id="rdForm" class="filters"><label class="f" for="rdTxt" style="flex:1 1 260px">Liga, código o 6 números<input id="rdTxt" class="mono" placeholder="L1-3-I.NH-II.ZE-…-3   o   346 1977 3329 …"></label><button class="btn" type="submit">Leer</button></form>
+      <p class="msg" id="rdMsg" aria-live="polite"></p>
+    </div>
+  </section>
+</div>
+</div>
+<div id="tip" hidden></div>
+
+<script>
+/* ===== Código Cúbico de verificación · núcleo del Cubo de la Comunicación (Econotopía Segura) · © Víctor Hugo Ramírez Salgado =====
+   Cada una de las 6 caras lleva la liga completa con corrección de errores; el relleno es al azar en cada impresión. */
+window.CC=(()=>{"use strict";
+  const COLORES = ["#F2F4F7", "#7FB2E5", "#1F4E79", "#0E1520"];
+  const LADO = 23, MARCO = 25, DATOS_CARA = 100, PARIDAD = 32, BYTES_CARA = DATOS_CARA + PARIDAD;
+  const RED = [null, 4, null, null, 3, 0, 1, 2, null, 5, null, null]; // cruz: fila 1 arriba, fila 2 izq-frente-der-atrás, fila 3 abajo
+  const enc=new TextEncoder(),dec=new TextDecoder();
+  const azar = (n) => { const b = new Uint8Array(n); for (let i = 0; i < n; i += 65536) crypto.getRandomValues(b.subarray(i, i + 65536)); return b; };
+  function entero(n) {
+    const lim = Math.floor(0x100000000 / n) * n, b = new Uint32Array(1);
+    do crypto.getRandomValues(b); while (b[0] >= lim);
+    return b[0] % n;
+  }
+  function baraja(a) { for (let i = a.length - 1; i > 0; i--) { const j = entero(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+  // ---------- Reed-Solomon sobre GF(256), polinomio 0x11D
+  const GEXP = new Uint8Array(512), GLOG = new Uint8Array(256);
+  (() => { let x = 1; for (let i = 0; i < 255; i++) { GEXP[i] = x; GLOG[x] = i; x <<= 1; if (x & 256) x ^= 0x11d; } for (let i = 255; i < 512; i++) GEXP[i] = GEXP[i - 255]; })();
+  const gmul = (x, y) => (x && y) ? GEXP[GLOG[x] + GLOG[y]] : 0;
+  const gdiv = (x, y) => x ? GEXP[(GLOG[x] + 255 - GLOG[y]) % 255] : 0;
+  const gpow = (x, p) => GEXP[(((GLOG[x] * p) % 255) + 255) % 255];
+  const ginv = (x) => GEXP[255 - GLOG[x]];
+  const pescala = (p, x) => p.map((c) => gmul(c, x));
+  function psuma(p, q) {
+    const r = new Array(Math.max(p.length, q.length)).fill(0);
+    for (let i = 0; i < p.length; i++) r[i + r.length - p.length] = p[i];
+    for (let i = 0; i < q.length; i++) r[i + r.length - q.length] ^= q[i];
+    return r;
+  }
+  function pmul(p, q) {
+    const r = new Array(p.length + q.length - 1).fill(0);
+    for (let j = 0; j < q.length; j++) for (let i = 0; i < p.length; i++) r[i + j] ^= gmul(p[i], q[j]);
+    return r;
+  }
+  function peval(p, x) { let y = p[0]; for (let i = 1; i < p.length; i++) y = gmul(y, x) ^ p[i]; return y; }
+  const GEN = (() => { let g = [1]; for (let i = 0; i < PARIDAD; i++) g = pmul(g, [1, gpow(2, i)]); return g; })();
+
+  function rsCodifica(msg) {
+    const out = new Array(msg.length + PARIDAD).fill(0);
+    for (let i = 0; i < msg.length; i++) out[i] = msg[i];
+    for (let i = 0; i < msg.length; i++) {
+      const coef = out[i];
+      if (coef) for (let j = 1; j < GEN.length; j++) out[i + j] ^= gmul(GEN[j], coef);
+    }
+    for (let i = 0; i < msg.length; i++) out[i] = msg[i];
+    return Uint8Array.from(out);
+  }
+  function rsSindromes(msg) { const s = [0]; for (let i = 0; i < PARIDAD; i++) s.push(peval(msg, gpow(2, i))); return s; }
+  function rsLocalizador(synd) {
+    let loc = [1], viejo = [1];
+    const sh = synd.length - PARIDAD;
+    for (let i = 0; i < PARIDAD; i++) {
+      const K = i + sh; let delta = synd[K];
+      for (let j = 1; j < loc.length; j++) delta ^= gmul(loc[loc.length - 1 - j], synd[K - j]);
+      viejo = viejo.concat([0]);
+      if (delta) {
+        if (viejo.length > loc.length) { const nuevo = pescala(viejo, delta); viejo = pescala(loc, ginv(delta)); loc = nuevo; }
+        loc = psuma(loc, pescala(viejo, delta));
+      }
+    }
+    while (loc.length && loc[0] === 0) loc.shift();
+    if ((loc.length - 1) * 2 > PARIDAD) throw new Error("rs");
+    return loc;
+  }
+  function rsCorrige(msg, synd, pos) {
+    const cp = pos.map((p) => msg.length - 1 - p);
+    let eloc = [1];
+    for (const i of cp) eloc = pmul(eloc, psuma([1], [gpow(2, i), 0]));
+    // Evaluador de errores: resto de (síndromes invertidos × localizador) entre x^(grado+1) = sus últimos coeficientes.
+    const prod = pmul(synd.slice().reverse(), eloc);
+    const resto = prod.slice(Math.max(0, prod.length - eloc.length));
+    const X = cp.map((c) => gpow(2, c));
+    const E = new Array(msg.length).fill(0);
+    X.forEach((Xi, i) => {
+      const Xin = ginv(Xi);
+      let prime = 1;
+      X.forEach((Xj, j) => { if (j !== i) prime = gmul(prime, 1 ^ gmul(Xin, Xj)); });
+      const y = gmul(Xi, peval(resto, Xin));
+      E[pos[i]] = gdiv(y, prime);
+    });
+    return psuma(Array.from(msg), E);
+  }
+  function rsDecodifica(entrada) {
+    let msg = Array.from(entrada), synd = rsSindromes(msg);
+    if (Math.max(...synd) === 0) return { datos: Uint8Array.from(msg.slice(0, msg.length - PARIDAD)), errores: 0 };
+    const loc = rsLocalizador(synd), errs = loc.length - 1, rev = loc.slice().reverse(), pos = [];
+    for (let i = 0; i < msg.length; i++) if (peval(rev, gpow(2, i)) === 0) pos.push(msg.length - 1 - i);
+    if (pos.length !== errs) throw new Error("rs");
+    msg = rsCorrige(msg, synd, pos);
+    if (Math.max(...rsSindromes(msg)) !== 0) throw new Error("rs");
+    return { datos: Uint8Array.from(msg.slice(0, msg.length - PARIDAD)), errores: errs };
+  }
+
+  // ---------- geometría
+  const rota = (g) => g.map((_, r) => g.map((__, c) => g[g.length - 1 - c][r])); // 90° horario
+  function rotaN(g, n) { for (let i = 0; i < ((n % 4) + 4) % 4; i++) g = rota(g); return g; }
+  const copia = (caras) => caras.map((g) => g.map((r) => r.slice()));
+  // Franja que rodea el cubo. Caras: 0 frente, 1 derecha, 2 atrás, 3 izquierda, 4 arriba, 5 abajo.
+  function anillo(eje, l) {
+    const N = LADO, R = [];
+    if (eje === 0) { for (const f of [0, 1, 2, 3]) for (let c = 0; c < N; c++) R.push([f, l, c]); }
+    else {
+      for (let r = N - 1; r >= 0; r--) R.push([0, r, l]);
+      for (let r = N - 1; r >= 0; r--) R.push([4, r, l]);
+      for (let r = 0; r < N; r++) R.push([2, r, N - 1 - l]);
+      for (let r = N - 1; r >= 0; r--) R.push([5, r, l]);
+    }
+    return R;
+  }
+  // Gira una franja: 1 espacio = un cuarto de vuelta (una cara entera), 2 espacios = media vuelta.
+  function mueve(caras, eje, capa, espacios) {
+    const R = anillo(eje, capa), M = R.length, k = espacios * LADO;
+    const v = R.map(([f, r, c]) => caras[f][r][c]);
+    R.forEach(([f, r, c], i) => { caras[f][r][c] = v[(((i - k) % M) + M) % M]; });
+  }
+  function bytesACara(chunk) {
+    const sim = []; for (const b of chunk) for (let s = 6; s >= 0; s -= 2) sim.push((b >> s) & 3);
+    while (sim.length < LADO * LADO) sim.push(entero(4));
+    return Array.from({ length: LADO }, (_, r) => sim.slice(r * LADO, r * LADO + LADO));
+  }
+  function caraABytes(g) {
+    const sim = g.flat(), out = new Uint8Array(BYTES_CARA);
+    for (let i = 0; i < BYTES_CARA; i++) out[i] = (sim[4 * i] << 6) | (sim[4 * i + 1] << 4) | (sim[4 * i + 2] << 2) | sim[4 * i + 3];
+    return out;
+  }
+
+  // ---------- dibujo
+  function pintaEn(x, g, ox, oy, s) { // cara de 27×27 módulos: borde blanco, marco tinta, datos
+    x.fillStyle = "#FFFFFF"; x.fillRect(ox, oy, (MARCO + 2) * s, (MARCO + 2) * s);
+    x.fillStyle = COLORES[3]; x.fillRect(ox + s, oy + s, MARCO * s, MARCO * s);
+    for (let r = 0; r < LADO; r++) for (let c = 0; c < LADO; c++) { x.fillStyle = COLORES[g[r][c]]; x.fillRect(ox + (c + 2) * s, oy + (r + 2) * s, s, s); }
+  }
+  const F = MARCO + 2; // una cara ocupa 27×27 módulos con su borde blanco
+  function dibujaCruz(x, cubo, ox, oy, s) {
+    RED.forEach((f, j) => { if (f !== null) pintaEn(x, cubo.caras[f], ox + (j % 4) * F * s, oy + Math.floor(j / 4) * F * s, s); });
+  }
+  // Hoja con toda la cadena: 2 cubos por fila, numerados.
+  function dibujaHoja(cv, cubos, s) {
+    const n = cubos.length, PAD = 6, ET = 9, cols = Math.min(n, 2), filas = Math.ceil(n / cols);
+    const W = cols * 4 * F + (cols + 1) * PAD, H = filas * (3 * F + ET) + (filas + 1) * PAD;
+    cv.width = W * s; cv.height = H * s;
+    const x = cv.getContext("2d");
+    x.fillStyle = "#FFFFFF"; x.fillRect(0, 0, cv.width, cv.height);
+    cubos.forEach((cubo, i) => {
+      const ox = PAD + (i % cols) * (4 * F + PAD), oy = PAD + Math.floor(i / cols) * (3 * F + ET + PAD);
+      dibujaCruz(x, cubo, ox * s, oy * s, s);
+      x.fillStyle = COLORES[3]; x.font = `600 ${5 * s}px "IBM Plex Mono", ui-monospace, monospace`;
+      x.fillText(`${i + 1}/${n}`, (ox + 2 * F + 2) * s, (oy + 3 * F + 6) * s);
+    });
+  }
+  // Calcomanía de un cubo: margen blanco, línea de corte punteada y número del cubo.
+  function dibujaCalco(cv, cubo, i, n, s) {
+    const M = 5, W = 4 * F + 2 * M, H = 3 * F + 2 * M;
+    cv.width = W * s; cv.height = H * s;
+    const x = cv.getContext("2d");
+    x.fillStyle = "#FFFFFF"; x.fillRect(0, 0, cv.width, cv.height);
+    x.strokeStyle = "#9AA6B4"; x.lineWidth = Math.max(1, s * 0.4); x.setLineDash([s * 2, s * 1.5]);
+    x.strokeRect(s, s, (W - 2) * s, (H - 2) * s); x.setLineDash([]);
+    dibujaCruz(x, cubo, M * s, M * s, s);
+    x.fillStyle = "#586577"; x.font = `600 ${3.2 * s}px "IBM Plex Mono", ui-monospace, monospace`;
+    x.fillText(`Código Cúbico · ${i + 1}/${n}`, (M + 2 * F + 2) * s, (M + 2 * F + 6) * s);
+  }
+  const PASO = (MARCO + 2) / MARCO;                  // distancia entre caras vecinas, en anchos de cara
+  const CRUZ = ["0,1", "1,0", "1,1", "1,2", "1,3", "2,1"];
+  const CARA_EN = { "0,1": 4, "1,0": 3, "1,1": 0, "1,2": 1, "1,3": 2, "2,1": 5 };
+  const ESPERADOS = [[0.95, 0.02], [0.63, 0.43], [0.21, 0.38], [0, 0.08]]; // claro, cielo, azul, tinta (luz, tono azul)
+
+  function homografia(p) { // cuadrado unidad → cuadrilátero TL, TR, BR, BL
+    const [[x0, y0], [x1, y1], [x2, y2], [x3, y3]] = p;
+    const dx1 = x1 - x2, dx2 = x3 - x2, dx3 = x0 - x1 + x2 - x3, dy1 = y1 - y2, dy2 = y3 - y2, dy3 = y0 - y1 + y2 - y3;
+    let a, b, c, d, e, f, g, h;
+    if (Math.abs(dx3) < 1e-9 && Math.abs(dy3) < 1e-9) { a = x1 - x0; b = x2 - x1; c = x0; d = y1 - y0; e = y2 - y1; f = y0; g = 0; h = 0; }
+    else {
+      const det = dx1 * dy2 - dx2 * dy1;
+      g = (dx3 * dy2 - dx2 * dy3) / det; h = (dx1 * dy3 - dx3 * dy1) / det;
+      a = x1 - x0 + g * x1; b = x3 - x0 + h * x3; c = x0; d = y1 - y0 + g * y1; e = y3 - y0 + h * y3; f = y0;
+    }
+    return (u, v) => { const w = g * u + h * v + 1; return [(a * u + b * v + c) / w, (d * u + e * v + f) / w]; };
+  }
+
+  function escanea(im) {
+    const W = im.width, H = im.height, D = im.data, n = W * H;
+    const L = new Float32Array(n);
+    for (let i = 0, j = 0; i < n; i++, j += 4) L[i] = 0.299 * D[j] + 0.587 * D[j + 1] + 0.114 * D[j + 2];
+
+    // Umbral local con imagen integral: oscuro si está bastante por debajo del promedio de su zona.
+    const S = new Float64Array((W + 1) * (H + 1));
+    for (let y = 0; y < H; y++) { let fila = 0; for (let x = 0; x < W; x++) { fila += L[y * W + x]; S[(y + 1) * (W + 1) + x + 1] = S[y * (W + 1) + x + 1] + fila; } }
+    const rad = Math.max(8, Math.round(Math.min(W, H) / 10));
+    const oscuro = new Uint8Array(n);
+    for (let y = 0; y < H; y++) {
+      const y0 = Math.max(0, y - rad), y1 = Math.min(H, y + rad + 1);
+      for (let x = 0; x < W; x++) {
+        const x0 = Math.max(0, x - rad), x1 = Math.min(W, x + rad + 1);
+        const suma = S[y1 * (W + 1) + x1] - S[y0 * (W + 1) + x1] - S[y1 * (W + 1) + x0] + S[y0 * (W + 1) + x0];
+        const media = suma / ((x1 - x0) * (y1 - y0));
+        oscuro[y * W + x] = L[y * W + x] < media * 0.62 ? 1 : 0;
+      }
+    }
+
+    // Componentes conectadas de pixeles oscuros: cada cara (marco + módulos oscuros) queda aislada por su borde blanco.
+    const etiqueta = new Int32Array(n), pila = new Int32Array(n), candidatos = [];
+    let sig = 0;
+    const lado = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+    for (let s = 0; s < n; s++) {
+      if (!oscuro[s] || etiqueta[s]) continue;
+      sig++; let tope = 0, cuenta = 0; pila[tope++] = s; etiqueta[s] = sig;
+      let sMin = Infinity, sMax = -Infinity, dMin = Infinity, dMax = -Infinity, pTL, pBR, pBL, pTR;
+      while (tope) {
+        const p = pila[--tope], x = p % W, y = (p - x) / W; cuenta++;
+        const su = x + y, di = x - y;
+        if (su < sMin) { sMin = su; pTL = [x, y]; } if (su > sMax) { sMax = su; pBR = [x, y]; }
+        if (di < dMin) { dMin = di; pBL = [x, y]; } if (di > dMax) { dMax = di; pTR = [x, y]; }
+        if (x > 0 && oscuro[p - 1] && !etiqueta[p - 1]) { etiqueta[p - 1] = sig; pila[tope++] = p - 1; }
+        if (x < W - 1 && oscuro[p + 1] && !etiqueta[p + 1]) { etiqueta[p + 1] = sig; pila[tope++] = p + 1; }
+        if (y > 0 && oscuro[p - W] && !etiqueta[p - W]) { etiqueta[p - W] = sig; pila[tope++] = p - W; }
+        if (y < H - 1 && oscuro[p + W] && !etiqueta[p + W]) { etiqueta[p + W] = sig; pila[tope++] = p + W; }
+      }
+      if (cuenta < 600) continue;
+      const q = [pTL, pTR, pBR, pBL], lados = [lado(q[0], q[1]), lado(q[1], q[2]), lado(q[2], q[3]), lado(q[3], q[0])];
+      const mn = Math.min(...lados), mx = Math.max(...lados);
+      if (mn < 36 || mx / mn > 1.6) continue;
+      const area = 0.5 * Math.abs((q[0][0] * q[1][1] - q[1][0] * q[0][1]) + (q[1][0] * q[2][1] - q[2][0] * q[1][1]) + (q[2][0] * q[3][1] - q[3][0] * q[2][1]) + (q[3][0] * q[0][1] - q[0][0] * q[3][1]));
+      const lleno = cuenta / area;
+      if (lleno < 0.2 || lleno > 0.97) continue;
+      candidatos.push(q);
+    }
+
+    const muestra = (x, y, r) => {
+      let R = 0, G = 0, B = 0, k = 0;
+      const xi = Math.round(x), yi = Math.round(y);
+      for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) {
+        const xx = xi + dx, yy = yi + dy; if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue;
+        const j = (yy * W + xx) * 4; R += D[j]; G += D[j + 1]; B += D[j + 2]; k++;
+      }
+      return k ? [R / k, G / k, B / k] : [255, 255, 255];
+    };
+    const luz = (c) => 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
+
+    // Lee cada candidato: confirma el marco y clasifica los 23×23 módulos.
+    const caras = [];
+    for (const q of candidatos) {
+      const map = homografia(q);
+      const modulo = Math.min(lado(q[0], q[1]), lado(q[0], q[3])) / MARCO;
+      const r = modulo >= 6 ? 1 : 0;
+      const anillo = (t) => { const pts = []; for (let i = 0; i < 24; i++) { const s = (i + 0.5) / 24; pts.push([s, t], [1 - t, s], [1 - s, 1 - t], [t, 1 - s]); } return pts; };
+      const marco = anillo(0.5 / MARCO).map(([u, v]) => muestra(...map(u, v), r));
+      const papel = anillo(-0.5 / MARCO).map(([u, v]) => muestra(...map(u, v), r));
+      const Lt = marco.map(luz).sort((a, b) => a - b)[Math.floor(marco.length / 2)];
+      const Lw = papel.map(luz).sort((a, b) => a - b)[Math.floor(papel.length / 2)];
+      if (Lw - Lt < 40) continue;
+      const oscurosMarco = marco.filter((c) => luz(c) < Lt + 0.35 * (Lw - Lt)).length / marco.length;
+      if (oscurosMarco < 0.8) continue;
+      const chW = papel.reduce((s, c) => s + (c[2] - c[0]), 0) / papel.length;
+      const rango = Lw - Lt;
+      const rasgos = [];
+      for (let fr = 0; fr < LADO; fr++) for (let fc = 0; fc < LADO; fc++) {
+        const c = muestra(...map((fc + 1.5) / MARCO, (fr + 1.5) / MARCO), r);
+        rasgos.push([(luz(c) - Lt) / rango, ((c[2] - c[0]) - chW) / rango]);
+      }
+      // k-medias corto a partir de los colores esperados, para adaptarse a la luz de la foto.
+      let centros = ESPERADOS.map((e) => e.slice()), clase = new Array(rasgos.length).fill(0);
+      for (let it = 0; it < 8; it++) {
+        rasgos.forEach((f, i) => { let mejor = 0, dm = Infinity; centros.forEach((cc, k) => { const d = (f[0] - cc[0]) ** 2 + 1.4 * (f[1] - cc[1]) ** 2; if (d < dm) { dm = d; mejor = k; } }); clase[i] = mejor; });
+        centros = centros.map((cc, k) => { const m = rasgos.filter((_, i) => clase[i] === k); return m.length ? [m.reduce((s, f) => s + f[0], 0) / m.length, m.reduce((s, f) => s + f[1], 0) / m.length] : cc; });
+      }
+      const g = Array.from({ length: LADO }, (_, fr) => clase.slice(fr * LADO, fr * LADO + LADO));
+      const cx = (q[0][0] + q[1][0] + q[2][0] + q[3][0]) / 4, cy = (q[0][1] + q[1][1] + q[2][1] + q[3][1]) / 4;
+      const u = [((q[1][0] - q[0][0]) + (q[2][0] - q[3][0])) / 2, ((q[1][1] - q[0][1]) + (q[2][1] - q[3][1])) / 2];
+      const v = [((q[3][0] - q[0][0]) + (q[2][0] - q[1][0])) / 2, ((q[3][1] - q[0][1]) + (q[2][1] - q[1][1])) / 2];
+      caras.push({ q, g, c: [cx, cy], u, v, s: (Math.hypot(...u) + Math.hypot(...v)) / 2 });
+    }
+
+    // Agrupa las caras en cubos: vecinas a un paso de cara.
+    const grupo = caras.map((_, i) => i);
+    const raiz = (i) => (grupo[i] === i ? i : (grupo[i] = raiz(grupo[i])));
+    for (let i = 0; i < caras.length; i++) for (let j = i + 1; j < caras.length; j++) {
+      const d = Math.hypot(caras[i].c[0] - caras[j].c[0], caras[i].c[1] - caras[j].c[1]);
+      if (d < 1.2 * PASO * (caras[i].s + caras[j].s) / 2) grupo[raiz(i)] = raiz(j);
+    }
+    const porGrupo = new Map();
+    caras.forEach((f, i) => { const k = raiz(i); if (!porGrupo.has(k)) porGrupo.set(k, []); porGrupo.get(k).push(f); });
+
+    const cubos = [], avisos = [];
+    const resuelve = (d, u, v) => { const det = u[0] * v[1] - u[1] * v[0]; return [(d[0] * v[1] - d[1] * v[0]) / det, (u[0] * d[1] - u[1] * d[0]) / det]; };
+    for (const fs of porGrupo.values()) {
+      if (fs.length !== 6) { if (fs.length > 1) avisos.push(`Un cubo se vio con ${fs.length} de 6 caras.`); continue; }
+      const u = [fs.reduce((s, f) => s + f.u[0], 0) / 6, fs.reduce((s, f) => s + f.u[1], 0) / 6];
+      const v = [fs.reduce((s, f) => s + f.v[0], 0) / 6, fs.reduce((s, f) => s + f.v[1], 0) / 6];
+      const o = fs[0].c;
+      const pos = fs.map((f) => { const [a, b] = resuelve([f.c[0] - o[0], f.c[1] - o[1]], u, v); return [Math.round(b / PASO), Math.round(a / PASO)]; });
+      let hallado = -1, finales = null;
+      for (let k = 0; k < 4 && hallado < 0; k++) {
+        let p = pos.map((x) => x.slice());
+        for (let t = 0; t < k; t++) p = p.map(([fr, fc]) => [fc, -fr]);
+        const mr = Math.min(...p.map((x) => x[0])), mc = Math.min(...p.map((x) => x[1]));
+        p = p.map(([fr, fc]) => [fr - mr, fc - mc]);
+        const llaves = p.map((x) => x.join(","));
+        if (new Set(llaves).size === 6 && llaves.every((x) => CRUZ.includes(x))) { hallado = k; finales = llaves; }
+      }
+      if (hallado < 0) { avisos.push("Se vieron 6 caras juntas pero no forman la cruz del cubo."); continue; }
+      const carasCubo = new Array(6);
+      fs.forEach((f, i) => { carasCubo[CARA_EN[finales[i]]] = rotaN(f.g, hallado); });
+      const cx = fs.reduce((s, f) => s + f.c[0], 0) / 6, cy = fs.reduce((s, f) => s + f.c[1], 0) / 6;
+      cubos.push({ caras: carasCubo, centro: [cx, cy], u, v, giro: hallado, quads: fs.map((f) => f.q) });
+    }
+
+    // Orden de lectura en la hoja (filas de arriba abajo, de izquierda a derecha), según la orientación del papel.
+    if (cubos.length > 1) {
+      const u = cubos[0].u, v = cubos[0].v, k = cubos[0].giro, o = cubos[0].centro, ancho = Math.hypot(...u);
+      const clave = cubos.map((c) => {
+        const [a, b] = resuelve([c.centro[0] - o[0], c.centro[1] - o[1]], u, v);
+        let p = [b, a]; for (let t = 0; t < k; t++) p = [p[1], -p[0]];
+        return { c, fila: p[0], col: p[1] };
+      });
+      clave.sort((x, y) => (Math.abs(x.fila - y.fila) > 1.5 ? x.fila - y.fila : x.col - y.col));
+      void ancho;
+      cubos.splice(0, cubos.length, ...clave.map((x) => x.c));
+    }
+    return { cubos, caras: caras.length, avisos, candidatos: candidatos.length };
+  }
+
+  const MARCA=0x33;
+  function cuboDeToken(t){const b=enc.encode(t);if(b.length>DATOS_CARA-2)throw new Error('largo');const caras=[];
+    for(let c=0;c<6;c++){const ch=azar(DATOS_CARA);ch[0]=MARCA;ch[1]=b.length;ch.set(b,2);caras.push(bytesACara(rsCodifica(ch)))}return{caras}}
+  function lienzo(cubo,s){const cv=document.createElement('canvas');const M=3;cv.width=(4*F+2*M)*s;cv.height=(3*F+2*M)*s;const x=cv.getContext('2d');x.fillStyle='#FFFFFF';x.fillRect(0,0,cv.width,cv.height);dibujaCruz(x,cubo,M*s,M*s,s);return cv}
+  function leeImagen(im){const r=escanea(im),tokens=[];
+    for(const cu of r.cubos){for(const g of cu.caras){try{const d=rsDecodifica(caraABytes(g)).datos;if(d[0]===MARCA){tokens.push(dec.decode(d.slice(2,2+d[1])));break}}catch(e){}}}
+    return{tokens,cubos:r.cubos.length,avisos:r.avisos}}
+  return{cuboDeToken,lienzo,leeImagen};
+})();
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>n.toLocaleString('es-MX');
+const tip=$('tip');
+function showTip(e,html){tip.innerHTML=html;tip.hidden=false;const x=Math.min(e.clientX+14,innerWidth-250);tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px'}
+function hideTip(){tip.hidden=true}
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){const n=document.createElementNS(NS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n}
+
+/* --- línea mensual --- */
+const months=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep'];
+const IN=[1880,1940,2010,2050,2120,2060,2140,2090,2130];
+const OUT=[1610,1700,1740,1780,1820,1790,1850,1820,1850];
+(function(){
+  const s=$('cLine'),L=46,R=470,T=14,B=206,lo=1500,hi=2200;
+  const X=i=>L+i*(R-L)/(months.length-1),Y=v=>B-(v-lo)/(hi-lo)*(B-T);
+  for(let v=1500;v<=2200;v+=100){el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'var(--grid)'},s);el('text',{x:L-8,y:Y(v)+4,'text-anchor':'end'},s).textContent=fmt(v)}
+  months.forEach((m,i)=>{el('text',{x:X(i),y:B+18,'text-anchor':'middle'},s).textContent=m});
+  const path=a=>a.map((v,i)=>(i?'L':'M')+X(i)+' '+Y(v)).join('');
+  el('path',{d:path(IN),fill:'none',stroke:'var(--s1)','stroke-width':2},s);
+  el('path',{d:path(OUT),fill:'none',stroke:'var(--s2)','stroke-width':2},s);
+  const li=IN.length-1;
+  el('circle',{cx:X(li),cy:Y(IN[li]),r:4,fill:'var(--s1)',stroke:'var(--surface)','stroke-width':2},s);
+  el('circle',{cx:X(li),cy:Y(OUT[li]),r:4,fill:'var(--s2)',stroke:'var(--surface)','stroke-width':2},s);
+  const t1=el('text',{x:X(li)+8,y:Y(IN[li])+4},s);t1.textContent='Entradas';t1.style.fill='var(--ink-2)';
+  const t2=el('text',{x:X(li)+8,y:Y(OUT[li])+4},s);t2.textContent='Salidas';t2.style.fill='var(--ink-2)';
+  const cross=el('line',{y1:T,y2:B,stroke:'var(--ink-3)','stroke-dasharray':'3 3',visibility:'hidden'},s);
+  const hit=el('rect',{x:L,y:T,width:R-L,height:B-T,fill:'transparent'},s);
+  hit.addEventListener('pointermove',e=>{const r=s.getBoundingClientRect(),px=(e.clientX-r.left)*520/r.width;const i=Math.max(0,Math.min(li,Math.round((px-L)/((R-L)/li))));cross.setAttribute('x1',X(i));cross.setAttribute('x2',X(i));cross.setAttribute('visibility','visible');showTip(e,`<b>${months[i]} 2026</b><br>Entradas ${fmt(IN[i])}<br>Salidas ${fmt(OUT[i])}<br>Quedan ${fmt(IN[i]-OUT[i])}`)});
+  hit.addEventListener('pointerleave',()=>{cross.setAttribute('visibility','hidden');hideTip()});
+})();
+
+/* --- rutas --- */
+const ROUTES=[['Ensenada → Ensenada','puerto a puerto',9840],['Ensenada → Garita Otay','sale por frontera',2310],['Garita Otay → Ensenada','entra por frontera',1460],['Ensenada → Mexicali FF.CC.','cambio a ferrocarril',980],['Mexicali FF.CC. → Ensenada','llega por ferrocarril',640],['Ensenada → Manzanillo','otro puerto',430],['Tecate → Ensenada','entra por frontera',300]];
+(function(){
+  const s=$('cRoutes'),L=178,R=440,rowH=33,max=10000;
+  ROUTES.forEach(([name,kind,v],i)=>{
+    const y=8+i*rowH,w=Math.max(3,(R-L)*v/max);
+    const t=el('text',{x:0,y:y+12},s);t.textContent=name;t.style.fill='var(--ink)';t.style.fontSize='11.5px';
+    el('text',{x:0,y:y+25},s).textContent=kind;
+    const b=el('rect',{x:L,y:y+3,width:w,height:18,rx:4,fill:'var(--s1)'},s);
+    el('text',{x:L+w+6,y:y+16},s).textContent=fmt(v);
+    const h=el('rect',{x:0,y:y,width:520,height:rowH,fill:'transparent'},s);
+    h.addEventListener('pointermove',e=>{b.setAttribute('opacity','.8');showTip(e,`<b>${name}</b><br>${fmt(v)} cajas · ${(v/15960*100).toFixed(1)} %`)});
+    h.addEventListener('pointerleave',()=>{b.removeAttribute('opacity');hideTip()});
+  });
+})();
+
+/* --- sin salida --- */
+const NR=[['Segundo uso registrado','con dueño, salubridad* aprobada y CSC marcado',410,'var(--good)','✓'],['En regularización','cambio de régimen en trámite',145,'var(--warn)','!'],['Sin ubicar','foco de atención para la autoridad',75,'var(--crit)','?']];
+$('stack').innerHTML=NR.map(r=>`<span style="flex:${r[2]};background:${r[3]}"></span>`).join('');
+$('status').innerHTML=NR.map(r=>`<div class="srow"><span class="ico" style="background:${r[3]};color:#101820">${r[4]}</span><span>${r[0]}<br><small style="color:var(--ink-3)">${r[1]}</small></span><b>${fmt(r[2])}</b></div>`).join('');
+
+/* --- tarifas --- */
+const FEES=[['Cuota de trazabilidad, sin cambio de medio','Naviera',10270,10],['Interfaz de terminal (entrada y salida)','Terminal',26230,1],['Cambio de medio de transporte','Operador FF.CC. / frontera',5690,1],['Certificación de segundo uso','Persona moral',410,150],['Inspección a domicilio (hasta 1 h)','Solicitante',52,450],['Cargo por omisión','Responsable de la caja',38,300]];
+
+
+/* --- ISO 6346 --- */
+const AL='ABCDEFGHIJKLMNOPQRSTUVWXYZ',IV={};(()=>{let v=10;for(const c of AL){if(v%11===0)v++;IV[c]=v;v++}})();
+function isoCheck(s){if(!/^[A-Z]{3}[UJZ]\d{7}$/.test(s))return false;let t=0;for(let i=0;i<10;i++){const ch=s[i];t+=(/\d/.test(ch)?+ch:IV[ch])*2**i}return t%11%10===+s[10]}
+/* --- código del Cubo: caras al azar por contenedor; idioma catalogado como le va tocando --- */
+const LINK_BASE='https://claude.ai/artifact/5dn5Ksh8F7YniUcPPGjcnH'; // sustituir por el dominio oficial de la plataforma
+const ROM=['I','II','III','IV','V','VI'];
+const LANGS=[];function langNum(name){let i=LANGS.indexOf(name);if(i<0){LANGS.push(name);i=LANGS.length-1}return i+1}
+langNum('Español (México)');langNum('Inglés');langNum('Francés');langNum('Portugués');
+const CUBE={EJMU4810376:'FU,SO,UW,PX,SX,KI',EJMU5520915:'NH,ZE,YA,PE,IX,VF',DEMU3307747:'MU,ZI,HL,HL,FS,GJ',EJMU6094157:'VD,YE,BR,EK,VB,EI',EJMU7712049:'QK,SS,HM,XO,DN,DX',DEMU1185531:'QK,ZA,XO,SW,YN,WC'};
+const REG={EJMU4810376:'Español (México)',EJMU5520915:'Español (México)',DEMU3307747:'Español (México)',EJMU6094157:'Español (México)',EJMU7712049:'Español (México)',DEMU1185531:'Español (México)'};
+const gN=(f,q)=>f*676+AL.indexOf(q[0])*26+AL.indexOf(q[1])+1;
+function cube(s){if(!CUBE[s]){CUBE[s]=Array.from({length:6},()=>AL[Math.floor(Math.random()*26)]+AL[Math.floor(Math.random()*26)]).join(',')}
+ const p=CUBE[s].split(','),nums=p.map((q,f)=>gN(f,q)),X=nums.reduce((a,b)=>a+b,0),L='L'+langNum(REG[s]||'Español (México)');
+ const code='3-'+p.map((q,f)=>ROM[f]+'.'+q).join('-')+'-X'+X+'-3';return{p,nums,X,L,code,token:L+'-'+code,link:LINK_BASE+'#'+L+'-'+code}}
+function isoFromToken(t){for(const k in CUBE){if(cube(k).token===t)return k}return null}
+
+const BOX={
+ EJMU4810376:{chips:[['Salió por frontera','good'],['Importación temporal','good'],['CSC apta','good'],['Salubridad* sin revisar','']],res:['CICLO CERRADO','#0ca30c'],ev:[['14 feb 2026','Arribo por Puerto de Ensenada','Naviera · lleno, 40\' HC'],['15 feb 2026','Salida de terminal','Interfaz de terminal · 1 USD'],['17 feb 2026','Cruce por Garita Otay','Operador de frontera · 1 USD · cierra el ciclo']]},
+ EJMU5520915:{chips:[['En México','warn'],['Definitiva','good'],['CSC no apta','crit'],['Salubridad* aprobada','good'],['Recuperada de siniestro','warn']],res:['SEGUNDO USO','#0E3A5B'],ev:[['03 mar 2026','Arribo por Puerto de Ensenada','Naviera · lleno, 20\''],['21 mar 2026','Siniestro y pérdida total','Aseguradora · pasa a salvamento · CSC no apta'],['09 abr 2026','Cambio de dueño','Aseguradora → persona moral registrada'],['16 abr 2026','Inspección y certificación de segundo uso','Empresa de inspección · salubridad* aprobada · 150 USD'],['22 abr 2026','Entrega final','A persona física · uso como bodega']]},
+ DEMU3307747:{chips:[['Sin ubicar','crit'],['Importación temporal vencida','crit'],['CSC apta','good'],['Salubridad* sin revisar','']],res:['EN REVISIÓN','#d03b3b'],ev:[['08 ene 2026','Arribo por Puerto de Ensenada','Naviera · lleno, 40\''],['10 ene 2026','Salida de terminal','Interfaz de terminal · sin evento posterior'],['—','Sin salida registrada en ningún punto','Plazo vencido · reporte a la autoridad']]},
+ EJMU6094157:{chips:[['Salió por puerto','good'],['Importación temporal','good'],['CSC apta','good']],res:['CICLO CERRADO','#0ca30c'],ev:[['02 may 2026','Entrada por Garita Otay','Descargado en Long Beach · operador de frontera · 1 USD'],['04 may 2026','Ingreso a terminal de Ensenada','Interfaz de terminal · 1 USD'],['06 may 2026','Exportación por Puerto de Ensenada','Cierra el ciclo · estancia de 4 días']]},
+ EJMU7712049:{chips:[['Sin ubicar','crit'],['Importación temporal vencida','crit'],['CSC apta','good']],res:['EN REVISIÓN','#d03b3b'],ev:[['22 mar 2026','Entrada por Garita Otay','Operador de frontera · 1 USD'],['—','Sin salida registrada en ningún punto','Plazo vencido · reporte a la autoridad']]},
+ DEMU1185531:{chips:[['Sin ubicar','crit'],['Importación temporal vencida','crit'],['CSC apta','good']],res:['EN REVISIÓN','#d03b3b'],ev:[['11 jun 2026','Llegada por Mexicali FF.CC.','Operador de FF.CC. · 1 USD'],['—','Sin salida registrada en ningún punto','Plazo vencido · reporte a la autoridad']]}
+};
+let decalMode='cubico';const CCC={};function cubico(s){const t=cube(s).token;if(!CCC[s]||CCC[s].t!==t)CCC[s]={t,c:CC.cuboDeToken(t)};return CCC[s].c}
+function cubeNet(c){const pos=[[1,0],[0,1],[1,1],[2,1],[3,1],[1,2]],S=46;let g='';pos.forEach(([x,y],i)=>{g+=`<g><rect x="${x*S+1}" y="${y*S+1}" width="${S-2}" height="${S-2}" fill="#fff" stroke="#101820" stroke-width="1.5"/><text x="${x*S+6}" y="${y*S+13}" style="font:600 8px var(--mono);fill:#4A5560">${ROM[i]}</text><text x="${x*S+S/2}" y="${y*S+31}" text-anchor="middle" style="font:700 12px var(--mono);fill:#101820">${c.nums[i]}</text></g>`});return`<svg viewBox="0 0 ${4*S+2} ${3*S+2}" width="100%" style="max-width:200px" role="img" aria-label="Cubo en 2D con los números de sus 6 caras">${g}</svg>`}
+function selectLink(){const r=document.createRange();r.selectNodeContents($('lnkA'));const g=getSelection();g.removeAllRanges();g.addRange(r)}
+function showBox(raw){
+  const s=raw.toUpperCase().replace(/[^A-Z0-9]/g,'');
+  if(!isoCheck(s)){$('isoMsg').textContent=s.length<11?'Faltan caracteres: 4 letras + 7 dígitos.':'Número no válido: el dígito de control no coincide.';$('isoMsg').className='msg bad';$('exp').hidden=true;return}
+  const b=BOX[s];
+  if(!b){$('isoMsg').textContent='Número válido ✓ — sin expediente en los datos de ejemplo.';$('isoMsg').className='msg ok';$('exp').hidden=true;return}
+  $('isoMsg').textContent='Número válido ✓';$('isoMsg').className='msg ok';$('exp').hidden=false;
+  $('chips').innerHTML=b.chips.map(([t,c])=>`<span class="chip ${c}">${t}</span>`).join('');
+  $('tl').innerHTML=b.ev.map(([d,t,n])=>`<li><span class="dt">${d}</span><span class="dot"></span><span>${t}<small>${n}</small></span></li>`).join('');
+  const c=cube(s);
+  $('decal').innerHTML=`<div class="top"><b>VERIFICADO</b><span class="res" style="background:${b.res[1]}">${b.res[0]}</span></div><div class="iso">${s.slice(0,4)} ${s.slice(4,10)} ${s[10]}</div>`+
+   (decalMode==='cubico'?`<div class="net" id="ccBox"></div>`:`<div class="net">${cubeNet(c)}</div>`)+
+   `<div class="under" title="Código que corresponde">${c.L} · ${c.code}</div>`+
+   `<div class="lnk"><small>Liga del código · idioma ${c.L.slice(1)} (${LANGS[+c.L.slice(1)-1]})</small><a href="${c.link}" target="_blank" rel="noopener" id="lnkA">${c.link.replace('https://','')}</a></div>`+
+   `<div class="dbtn"><button type="button" class="btn sm" id="cpy">Copiar liga</button><button type="button" class="btn sm ghost" id="tog">${decalMode==='cubico'?'Ver números del cubo':'Ver Código Cúbico'}</button></div><small>Inventario de trazabilidad · ejemplo</small>`;
+  if(decalMode==='cubico'){try{$('ccBox').appendChild(CC.lienzo(cubico(s),4))}catch(e){$('ccBox').textContent='No se pudo dibujar el Código Cúbico.'}}
+  $('cpy').onclick=()=>{const done=()=>{$('cpy').textContent='Liga copiada'};try{navigator.clipboard.writeText(c.link).then(done,()=>selectLink())}catch(e){selectLink()}};
+  $('tog').onclick=()=>{decalMode=decalMode==='cubico'?'num':'cubico';showBox(s)};
+}
+$('isoIn').addEventListener('input',e=>showBox(e.target.value));
+showBox($('isoIn').value);
+
+/* --- usuarios --- */
+const ALLP=['kpis','line','routes','noret','second','fees','exp','alerts','reader'];
+const ROLES=[
+ {k:'naviera',n:'Naviera',kind:'Sujeto obligado',d:'Informa el arribo y el destino de cada caja, el cambio de régimen y toda venta o transferencia, individual o por lote.',b:'Interfaz con su sistema',o:['Arribo y destino de la caja (manifiesto)','Cambio de régimen: de temporal a definitiva','Venta o transferencia a persona moral registrada','Paga 10 USD por caja que no cambia de medio de transporte'],ev:['Arribo por puerto','Cambio de régimen','Cambio de dueño o transferencia'],see:['kpis','line','routes','fees','exp','reader'],pay:['Naviera']},
+ {k:'terminal',n:'Terminal portuaria',kind:'Sujeto obligado',d:'Reporta por interfaz cada entrada y salida de su patio, lleno o vacío, con el número de contenedor.',b:'Interfaz con su sistema',o:['Entrada a terminal por número ISO 6346','Salida de terminal: exportación o retorno de vacío','Consulta el estado CSC antes de aceptar una caja para embarque','Paga 1 USD por entrada y 1 USD por salida'],ev:['Entrada a terminal','Salida de terminal'],see:['routes','fees','exp','reader'],pay:['Terminal']},
+ {k:'ffcc',n:'Operador de FF.CC.',kind:'Sujeto obligado',d:'Registra la caja cuando cambia de buque a ferrocarril y cuando cruza la frontera por vía férrea.',b:'Interfaz con su sistema',o:['Cambio de medio: de terminal a ferrocarril','Cruce fronterizo por ferrocarril','Consulta el estado CSC antes de cargar','Paga 1 USD por caja con cambio de medio'],ev:['Carga a ferrocarril','Cruce por ferrocarril'],see:['routes','fees','exp','reader'],pay:['Operador FF.CC. / frontera']},
+ {k:'frontera',n:'Cruce fronterizo',kind:'Sujeto obligado',d:'Captura el número de contenedor en cada cruce terrestre de entrada o salida, para cerrar o abrir su ciclo.',b:'Captura en garita',o:['Entrada por garita con número ISO 6346','Salida por garita: cierra el ciclo mexicano','Paga 1 USD por caja con cambio de medio'],ev:['Entrada por frontera','Salida por frontera'],see:['routes','fees','exp','reader'],pay:['Operador FF.CC. / frontera']},
+ {k:'moral',n:'Persona moral de segundo uso',kind:'Registrada en el sistema',d:'Recibe cajas para segundo uso, las pasa por inspección y certificación, e informa a quién las entregó.',b:'Alta en el sistema',o:['Recepción de la caja de la naviera o aseguradora','Solicitud de inspección y certificación de segundo uso','Entrega final a persona moral o física','Paga 150 USD por certificación y 450 USD por inspección a domicilio'],ev:['Recepción de caja','Solicitud de inspección','Entrega final'],see:['second','fees','exp','reader'],pay:['Persona moral','Solicitante']},
+ {k:'poseedor',n:'Poseedor final',kind:'Persona física o moral',d:'Quien tiene la caja en uso. Consulta su expediente y comprueba la calcomanía de verificación.',b:'Consulta',o:['Consulta el expediente de su caja','Verifica que la calcomanía y el código del Cubo coincidan','Reporta un traslado o una nueva venta'],ev:['Reporte de traslado'],see:['exp','reader'],pay:[]},
+ {k:'inspeccion',n:'Empresa de inspección',kind:'Primer y segundo uso',d:'En primer uso inspecciona y reporta. En segundo uso inspecciona, reporta y emite la certificación con su calcomanía.',b:'Intermediario del sistema',o:['Inspección de salubridad*, diseño, alteraciones, olores y rasgos','Revisión estructural y estado CSC','Certificación de segundo uso con calcomanía del Cubo','Cobra las tarifas del sistema y reporta omisiones a la autoridad'],ev:['Inspección de primer uso','Certificación de segundo uso','Reporte de omisión'],see:['kpis','noret','second','fees','exp','reader'],pay:null},
+ {k:'aut-mx',n:'Autoridad nacional',kind:'SEMAR · ANAM/SAT · SENASICA · COFEPRIS',d:'Consulta todo el inventario, recibe alertas y sanciona con base en los dictámenes.',b:'Acceso total',o:['Consulta completa del inventario y estadística','Alertas de cajas sin ubicar o no aptas','Sanción con base en el dictamen de la empresa de inspección','Supervisa a la empresa de inspección y a los sujetos obligados'],ev:['Orden de inspección','Inicio de procedimiento'],see:ALLP,pay:null},
+ {k:'aut-int',n:'Autoridad internacional',kind:'Aduanas y autoridades marítimas de otros países',d:'Valida números de contenedor, su estado CSC y los cruces binacionales. No ve datos fiscales mexicanos.',b:'Consulta por convenio',o:['Validación del número ISO 6346 y la calcomanía','Estado CSC: apta o solo segundo uso','Cruces binacionales que cierran ciclos','Informa los eventos de su lado una vez conectada'],ev:['Salida por puerto extranjero'],see:['routes','second','exp','reader'],pay:[]}
+];
+let role=ROLES[0];
+$('rbar').innerHTML=ROLES.map((r,i)=>`<button type="button" role="tab" data-i="${i}" aria-selected="${i===0}">${r.n}</button>`).join('');
+$('rbar').querySelectorAll('button').forEach(b=>b.onclick=()=>setRole(+b.dataset.i));
+function renderFees(){let t=0;const rows=FEES.filter(f=>!role.pay||role.pay.includes(f[1]));
+ $('feeTitle').textContent=role.pay?(rows.length?'Cuotas que le corresponden':'Sin cuotas para este usuario'):'Ingreso estimado por tarifa';
+ $('fees').innerHTML=rows.map(([c,p,q,u])=>{const v=q*u;t+=v;return`<tr><td>${c}</td><td>${p}</td><td class="n">${fmt(q)}</td><td class="n">${fmt(u)}</td><td class="n">${fmt(v)}</td></tr>`}).join('')+(rows.length?`<tr class="tot"><td colspan="4">Total</td><td class="n">${fmt(t)}</td></tr>`:'')}
+function setRole(i){role=ROLES[i];
+ $('rbar').querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+ $('rKind').textContent=role.kind;$('rName').textContent=role.n;$('rDesc').textContent=role.d;$('rBadge').textContent=role.b;
+ $('rObl').innerHTML=role.o.map(x=>`<li>${x}</li>`).join('');
+ $('evType').innerHTML=role.ev.map(x=>`<option>${x}</option>`).join('');$('evMsg').textContent='';
+ document.querySelectorAll('[data-panel]').forEach(p=>p.hidden=!role.see.includes(p.dataset.panel));
+ renderFees();
+ try{localStorage.setItem('traz_role',i)}catch(e){}}
+const ALERTS=[['DEMU3307747','Terminal Ensenada','Sin salida, plazo vencido',274],['EJMU7712049','Garita Otay','Sin salida, plazo vencido',191],['EJMU5520915','Terminal Ensenada','No apta (CSC) en intento de embarque',3],['DEMU1185531','Mexicali FF.CC.','Sin salida, plazo vencido',122]];
+$('alerts').innerHTML=ALERTS.map(a=>`<tr><td style="font-family:var(--mono)">${a[0]}</td><td>${a[1]}</td><td>${a[2]}</td><td class="n">${a[3]}</td><td><button class="btn sm" type="button" data-iso="${a[0]}">Ver expediente</button></td></tr>`).join('');
+$('alerts').querySelectorAll('button').forEach(b=>b.onclick=()=>{$('isoIn').value=b.dataset.iso;showBox(b.dataset.iso);document.querySelector('[data-panel="exp"]').scrollIntoView({behavior:'smooth'})});
+$('evForm').addEventListener('submit',e=>{e.preventDefault();
+ const s=$('evIso').value.toUpperCase().replace(/[^A-Z0-9]/g,'');
+ if(!isoCheck(s)){$('evMsg').textContent='Número no válido: revisa el dígito de control.';$('evMsg').className='msg bad';return}
+ if(!BOX[s]){BOX[s]={chips:[['Registrada en el sistema','good']],res:['REGISTRADA','#0E3A5B'],ev:[]};REG[s]=role.k==='aut-int'?'Inglés':'Español (México)'}
+ BOX[s].ev.push(['hoy',$('evType').value,role.n+' · registrado desde la plataforma']);
+ $('evMsg').textContent='Registrado en el expediente de '+s;$('evMsg').className='msg ok';
+ $('isoIn').value=s;showBox(s)});
+let r0=0;try{r0=+(localStorage.getItem('traz_role')||0)||0}catch(e){}
+setRole(Math.min(r0,ROLES.length-1));
+/* --- lector --- */
+function abrir(iso,via){$('isoIn').value=iso;showBox(iso);$('rdMsg').textContent='Leído '+via+': '+iso;$('rdMsg').className='msg ok';const e=document.querySelector('[data-panel="exp"]');e.hidden=false;e.scrollIntoView({behavior:'smooth'})}
+function leeTexto(t){t=t.trim();const h=t.indexOf('#');if(h>=0)t=t.slice(h+1);t=decodeURIComponent(t).toUpperCase().replace(/\s+/g,' ');
+ const nums=(t.match(/\d+/g)||[]).map(Number);
+ if(!/[A-Z]/.test(t)&&nums.length===6){for(const k in CUBE){if(cube(k).nums.every((n,i)=>n===nums[i]))return k}return null}
+ const tok=t.replace(/\s/g,'');for(const k in CUBE){const c=cube(k);if(c.token===tok||c.code===tok)return k}return null}
+$('rdForm').addEventListener('submit',e=>{e.preventDefault();const iso=leeTexto($('rdTxt').value);if(iso)abrir(iso,'por texto');else{$('rdMsg').textContent='No corresponde a ningún contenedor registrado. Revisa la liga, el código o los 6 números en orden I a VI.';$('rdMsg').className='msg bad'}});
+function leeLienzo(cv,via){const r=CC.leeImagen(cv.getContext('2d').getImageData(0,0,cv.width,cv.height));
+ for(const t of r.tokens){const iso=isoFromToken(t);if(iso)return abrir(iso,via)}
+ $('rdMsg').textContent=r.cubos?'Se vio el cubo pero su código no corresponde a un contenedor registrado.':(r.avisos[0]||'No encontré el Código Cúbico. Acércate, con luz pareja y sin reflejos.');$('rdMsg').className='msg bad'}
+async function leeArchivo(f){$('rdMsg').textContent='Buscando el Código Cúbico…';$('rdMsg').className='msg';
+ let bmp;try{bmp=await createImageBitmap(f,{imageOrientation:'from-image'})}catch(e){const u=URL.createObjectURL(f),im=new Image();im.src=u;await im.decode();bmp=im}
+ const k=Math.min(1,2200/Math.max(bmp.width,bmp.height)),cv=document.createElement('canvas');cv.width=Math.round(bmp.width*k);cv.height=Math.round(bmp.height*k);cv.getContext('2d').drawImage(bmp,0,0,cv.width,cv.height);
+ await new Promise(r=>setTimeout(r,30));leeLienzo(cv,'con la cámara')}
+['rdCam','rdGal'].forEach(id=>$(id).addEventListener('change',e=>{const f=e.target.files[0];e.target.value='';if(f)leeArchivo(f).catch(()=>{$('rdMsg').textContent='No pude abrir esa imagen.';$('rdMsg').className='msg bad'})}));
+$('rdDemo').onclick=()=>{const iso=$('isoIn').value.toUpperCase().replace(/[^A-Z0-9]/g,'');if(!BOX[iso]){$('rdMsg').textContent='Primero abre un expediente con calcomanía.';$('rdMsg').className='msg bad';return}
+ const src=CC.lienzo(cubico(iso),6),cv=document.createElement('canvas');cv.width=src.width+120;cv.height=src.height+120;const x=cv.getContext('2d');x.fillStyle='#D9D2C3';x.fillRect(0,0,cv.width,cv.height);x.drawImage(src,60,60);leeLienzo(cv,'de la calcomanía en pantalla')};
+function openHash(){const t=decodeURIComponent((location.hash||'').slice(1));if(!t)return;const iso=isoFromToken(t);if(iso){$('isoIn').value=iso;showBox(iso);document.querySelector('[data-panel="exp"]').hidden=false;document.querySelector('[data-panel="exp"]').scrollIntoView()}else{$('isoMsg').textContent='La liga no corresponde a ningún contenedor registrado.';$('isoMsg').className='msg bad'}}
+openHash();addEventListener('hashchange',openHash);
+</script>
