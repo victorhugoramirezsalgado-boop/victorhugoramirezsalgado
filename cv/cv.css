@@ -29,3 +29,20 @@ td.fec{white-space:nowrap;color:var(--mut);width:92px}
 @media (max-width:600px){.hoja{margin:10px 8px;border-radius:8px}.cab{padding:22px 18px 18px}.cuerpo{padding:4px 16px 22px}td.num{width:104px}td.fec{display:none}table{font-size:12px}body{font-size:14.5px}}
 @media print{@page{size:letter;margin:12mm}body{background:#fff;font-size:11px}.hoja{box-shadow:none;margin:0;max-width:none;border-radius:0}.acciones{display:none}.cab{-webkit-print-color-adjust:exact;print-color-adjust:exact}h2{break-after:avoid}li,tr{break-inside:avoid}}
 @media (max-width:600px){.acciones{justify-content:center;flex-wrap:wrap;margin:10px 8px 0}.acciones a,.acciones button{font-size:11px;padding:5px 10px}}
+/* v2026-11-24: versión académica (CETYS) */
+h3{font:700 14px Inter,Arial,sans-serif;color:#8a4a1a;margin:18px 0 6px}
+.cuerpo p,.cuerpo li{text-align:justify;hyphens:auto}
+.cuerpo td,.cuerpo th{text-align:left}
+.tabla{overflow-x:auto}
+.tabla table{table-layout:auto}
+li.fuente{list-style:none;font-size:12px;color:var(--mut);margin-top:-4px}
+.firma{margin-top:18px;font-weight:700;text-align:left!important}
+.tabla td:first-child{white-space:nowrap}
+@media (max-width:600px){
+ .tabla table,.tabla tbody,.tabla tr,.tabla td{display:block;width:auto}
+ .tabla tr:first-child{display:none}
+ .tabla tr{border-bottom:1px solid var(--linea);padding:6px 0}
+ .tabla td{border:0;padding:2px 4px;white-space:normal!important}
+ .tabla td:first-child{font-weight:700;color:var(--carbon)}
+ .tabla td[data-l]:not(:first-child)::before{content:attr(data-l) ": ";font-weight:600;color:#8a4a1a;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+}
