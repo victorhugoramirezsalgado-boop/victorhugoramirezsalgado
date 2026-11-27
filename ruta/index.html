@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruta profesional VHRS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: sobrio, institucional, legible para organismos internacionales
+   IDEA: bitácora portuaria — tablero de mando de un recinto
+   PICTURE: medidor de avance de los 3 proyectos ancla al abrir
+   COLOUR and TYPE: paleta VHRS (verde, beige, concha, azul mar, amarillo, rojo alerta); Inter
+   LAYOUT: pestañas en relieve, una sección a la vez, tablas apiladas en celular */
+:root{color-scheme:light dark;
+--bg:light-dark(#f7f2e8,#1d211f);--card:light-dark(#fffdf7,#262b28);--ink:light-dark(#2b2b2b,#ecebe6);
+--mute:light-dark(#5f625e,#b5b7b1);--ver:light-dark(#2f6b4f,#6fbf95);--bei:light-dark(#e9dfc9,#3a3a32);
+--azu:light-dark(#1f5e7a,#7cc0dc);--ama:light-dark(#c99a1c,#e9c45a);--roj:light-dark(#b3261e,#f08a80);--lin:light-dark(#d8d0bd,#444a45)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+p,li{text-align:justify;hyphens:auto}
+header{background:var(--ver);color:#fffdf7;padding:28px max(5vw,16px) 22px}
+header h1{font-size:clamp(28px,4.4vw,44px);line-height:1.05;margin:0 0 6px;text-wrap:balance;font-weight:800}
+header p{margin:0;max-width:70ch;opacity:.92;text-align:left}
+.priv{display:inline-block;margin-top:12px;background:#fffdf7;color:#2f6b4f;border-radius:6px;padding:4px 10px;font-size:13px;font-weight:600}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px max(5vw,16px);background:var(--bei);position:sticky;top:0;z-index:5}
+.tab{font:600 15px Inter,sans-serif;min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--lin);background:var(--card);color:var(--ink);cursor:pointer;box-shadow:0 3px 0 var(--lin),0 4px 8px rgba(0,0,0,.08);transition:transform .08s}
+.tab:active{transform:translateY(2px);box-shadow:0 1px 0 var(--lin)}
+.tab[aria-selected=true]{background:var(--ver);color:#fffdf7;border-color:var(--ver);box-shadow:0 3px 0 #1f4a36}
+.tab:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--ama);outline-offset:2px}
+.lang{margin-left:auto;display:flex;gap:6px;align-items:center;font-size:14px}
+select{font:16px Inter,sans-serif;min-height:44px;border-radius:10px;border:1px solid var(--lin);background:var(--card);color:var(--ink);padding:0 8px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:10px;background:var(--azu);color:#fffdf7;text-decoration:none;font-weight:600;box-shadow:0 3px 0 #123c4f}
+main{padding:clamp(20px,3vw,40px) max(5vw,16px);max-width:1240px;margin:0 auto}
+section{display:none}section.on{display:block}
+h2{font-size:clamp(24px,3vw,32px);line-height:1.1;margin:0 0 6px}
+h3{font-size:19px;margin:18px 0 6px}
+.lead{color:var(--mute);margin:0 0 18px;max-width:75ch}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.card{background:var(--card);border:1px solid var(--lin);border-radius:14px;padding:16px 18px}
+.card h3{margin-top:0}
+.meter{height:14px;border-radius:7px;background:var(--bei);overflow:hidden;margin:8px 0 4px}
+.meter i{display:block;height:100%;background:var(--ver);border-radius:7px;transition:width .8s ease}
+.pct{font-size:clamp(30px,5vw,44px);font-weight:800;line-height:1;color:var(--ver)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;font-size:15px}
+.two ul{margin:4px 0 0;padding-left:18px}
+.ok{color:var(--ver);font-weight:600}.no{color:var(--roj);font-weight:600}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--lin);border-radius:12px;overflow:hidden;font-size:15px}
+th{background:var(--bei);text-align:left;padding:10px;font-weight:600}
+td{padding:10px;border-top:1px solid var(--lin);vertical-align:top}
+td.n{white-space:nowrap;font-weight:600}
+u{text-decoration-color:var(--ama);text-decoration-thickness:2px}
+.tag{display:inline-block;font-size:13px;padding:2px 8px;border-radius:6px;background:var(--bei)}
+.tag.c{background:var(--ver);color:#fffdf7}
+.note{font-size:14px;color:var(--mute)}
+blockquote{margin:10px 0;padding:12px 16px;border-left:4px solid var(--azu);background:var(--card);border-radius:0 10px 10px 0}
+footer{padding:22px max(5vw,16px);background:var(--bei);font-size:14px;color:var(--mute)}
+ol.src li{text-align:left;margin-bottom:6px;overflow-wrap:anywhere}
+@media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;font-weight:600}.stack td:empty{display:none}.lang{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.meter i{transition:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<header>
+  <h1>Víctor Hugo Ramírez Salgado</h1>
+  <p>Vinculador portuario y logístico · Estadística y regulación portuaria · Innovación aplicada. Ruta profesional, proyectos ancla y oportunidades 2027.</p>
+  <span class="priv">Actualizado: 27 de noviembre de 2026</span>
+</header>
+
+<nav class="bar" aria-label="Secciones">
+  <button class="tab" data-s="perfil">Perfil</button>
+  <button class="tab" data-s="anclas">3 proyectos ancla</button>
+  <a class="tab" href="../" style="display:inline-flex;align-items:center;text-decoration:none">Sitio principal</a>
+  <a class="tab" href="../privado/" style="display:inline-flex;align-items:center;text-decoration:none">Acceso privado</a>
+  <div class="lang"><label for="lg">Idioma</label>
+    <select id="lg"><option value="es">Español</option><option value="en">English</option><option value="fr">Français</option><option value="zh-CN">中文</option><option value="ar">العربية</option><option value="ru">Русский</option><option value="pt">Português</option><option value="it">Italiano</option><option value="de">Deutsch</option><option value="ja">日本語</option><option value="ko">한국어</option></select>
+    <a class="btn" id="tr" href="#" rel="noopener">Traducir</a></div>
+</nav>
+
+<main>
+<section id="perfil">
+  <h2>Perfil y giro para LinkedIn</h2>
+  <p class="lead">Un solo mensaje para todas las plataformas: el experto que conecta puertos, gobierno, empresas y academia con datos.</p>
+  <div class="grid">
+    <div class="card"><h3>Titular propuesto</h3><p>Vinculador portuario y logístico | Estadística y regulación portuaria | 21 años en la industria marítimo-portuaria | Creador de SOSistem™</p></div>
+    <div class="card"><h3>Perfil público</h3><p>linkedin.com/in/victorhugoramirezsalgado — por autoría de VHRS.</p><p class="note">Publicar 2 veces por semana: un dato portuario y una solución.</p></div>
+  </div>
+  <h3>Acerca de (borrador)</h3>
+  <blockquote>Especialista en estadística, regulación y operación portuaria, con 21 años en la industria marítimo-portuaria de México, 12 de ellos en la Administración Portuaria Integral de Ensenada (hoy ASIPONA). Vinculo empresas, gobiernos, academia y organismos internacionales para convertir datos y normatividad en proyectos que se ejecutan. MBA por CETYS Universidad y aspirante al Doctorado en Negocios. Autor de SOSistem™, de la propuesta nacional de trazabilidad de contenedores no retornados (Contopía) y de más de 30 obras registradas.</blockquote>
+  <h3>Tres destacados para fijar en LinkedIn</h3>
+  <div class="grid">
+    <div class="card"><h3>SOSistem™</h3><p>Monitoreo sin cámaras para recintos confinados. Marca en trámite ante el IMPI (expediente 3741790).</p></div>
+    <div class="card"><h3>Contopía · CCTT</h3><p>Trazabilidad nacional de contenedores no retornados y control neutral de citas de camiones con vacíos.</p></div>
+    <div class="card"><h3>Observatorio Portuario y Logístico de Baja California</h3><p>Reporte estadístico mensual y abierto. Proyecto nuevo propuesto.</p></div>
+  </div>
+</section>
+
+<section id="anclas">
+  <h2>Los 3 proyectos ancla</h2>
+  <p class="lead">Los tres proyectos con los que se presenta el perfil profesional. El resto de las obras está en el registro maestro del sitio.</p>
+  <div class="grid" id="anc"></div>
+</section>
+
+</main>
+
+<footer>© 2026 Víctor Hugo Ramírez Salgado (VHRS), autor y titular al 100 %. SOSistem™, Econotopía©, Contopía y demás obras por autoría de VHRS. Elaborado con asistencia de IA (Claude) como herramienta. Lo subrayado está pendiente de verificación.</footer>
+
+<script>
+{
+const ANC=[
+ {t:"SOSistem™",d:"Monitoreo sin cámaras para sanitarios, cabinas y recintos confinados: detecta personas en el piso, sismos, gases y voces de auxilio, y avisa al administrador y a los servicios de emergencia.",e:"Plataforma en operación de prueba · marca en trámite ante el IMPI (expediente 3741790)",l:"https://sosistem.com"},
+ {t:"Contopía · CCTT",d:"Propuesta nacional de trazabilidad de contenedores no retornados (estadística, impuestos, salubridad y seguridad) y Centro de Control de Tráfico Terrestre para citas neutrales de camiones con vacíos en Ensenada.",e:"Propuesta registrada en Safe Creative (2610317507741)",l:"https://tcontenedores.com"},
+ {t:"Observatorio Portuario y Logístico de Baja California",d:"Reporte estadístico mensual y abierto sobre movimiento portuario, contenedores, tiempos y costos logísticos, con base en diez años de experiencia en estadística portuaria oficial.",e:"Proyecto en preparación",l:""}
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $=id=>document.getElementById(id);
+$("anc").innerHTML=ANC.map(a=>`<div class="card"><h3>${a.t}</h3><p>${a.d}</p><p class="note"><span class="ok">Estado:</span> ${a.e}</p>${a.l?`<a class="btn" href="${a.l}">Visitar sitio</a>`:""}</div>`).join("");
+const fill=()=>document.querySelectorAll("section.on .meter i").forEach(i=>i.style.width=i.dataset.w+"%");
+let ac;
+const MORSE={V:"...-",H:"....",R:".-.",S:"..."};
+function beep(){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();let t=ac.currentTime+.02;for(const ch of "VHRS"){for(const s of MORSE[ch]){const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=660;g.gain.value=.05;o.connect(g).connect(ac.destination);const d=s==="."?.05:.15;o.start(t);o.stop(t+d);t+=d+.05}t+=.1}}catch(e){}}
+const ids=[...document.querySelectorAll("button.tab")].map(b=>b.dataset.s);
+function show(id){if(!ids.includes(id))id="perfil";document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("button.tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.s===id));setTimeout(fill,60)}
+document.querySelectorAll("button.tab").forEach(b=>b.addEventListener("click",()=>{beep();if(location.hash!=="#"+b.dataset.s)location.hash=b.dataset.s;else show(b.dataset.s)}));
+addEventListener("hashchange",()=>show(location.hash.slice(1)));
+const tr=$("tr"),lg=$("lg");
+const setTr=()=>{tr.href="https://translate.google.com/translate?sl=es&tl="+encodeURIComponent(lg.value)+"&u="+encodeURIComponent("https://victorhugoramirezsalgado.com/ruta/")};
+lg.addEventListener("change",setTr);setTr();
+show(location.hash.slice(1));
+}
+</script>
+</body>
+</html>

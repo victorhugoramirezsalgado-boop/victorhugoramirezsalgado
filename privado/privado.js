@@ -6,6 +6,7 @@
   const API = 'https://api.github.com';
   const LLAVE = 'vhrs_clave';
   const ACCESOS = [
+    { t: 'Ruta profesional y oportunidades', r: 'ligas-y-fuentes-de-proyectos-', p: 'RUTA-PROFESIONAL.md' },
     { t: 'Expedientes institucionales', r: 'cv-rizoma', p: 'expedientes/README.md' },
     { t: 'Registros en Safe Creative', r: 'ligas-y-fuentes-de-proyectos-', p: 'REGISTROS-SAFE-CREATIVE.md' },
     { t: 'Pendientes de SOSistem', r: 'sistema-sos', p: 'PENDIENTES.md' },
