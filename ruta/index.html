@@ -60,7 +60,7 @@ ol.src li{text-align:left;margin-bottom:6px;overflow-wrap:anywhere}
 @media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;font-weight:600}.stack td:empty{display:none}.lang{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.meter i{transition:none}}
 </style>
-<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+
 </head>
 <body>
 <header>
@@ -107,29 +107,7 @@ ol.src li{text-align:left;margin-bottom:6px;overflow-wrap:anywhere}
 
 <footer>© 2026 Víctor Hugo Ramírez Salgado (VHRS), autor y titular al 100 %. SOSistem™, Econotopía©, Contopía y demás obras por autoría de VHRS. Elaborado con asistencia de IA (Claude) como herramienta. Lo subrayado está pendiente de verificación.</footer>
 
-<script>
-{
-const ANC=[
- {t:"SOSistem™",d:"Monitoreo sin cámaras para sanitarios, cabinas y recintos confinados: detecta personas en el piso, sismos, gases y voces de auxilio, y avisa al administrador y a los servicios de emergencia.",e:"Plataforma en operación de prueba · marca en trámite ante el IMPI (expediente 3741790)",l:"https://sosistem.com"},
- {t:"Contopía · CCTT",d:"Propuesta nacional de trazabilidad de contenedores no retornados (estadística, impuestos, salubridad y seguridad) y Centro de Control de Tráfico Terrestre para citas neutrales de camiones con vacíos en Ensenada.",e:"Propuesta registrada en Safe Creative (2610317507741)",l:"https://tcontenedores.com"},
- {t:"Observatorio Portuario y Logístico de Baja California",d:"Reporte estadístico mensual y abierto sobre movimiento portuario, contenedores, tiempos y costos logísticos, con base en diez años de experiencia en estadística portuaria oficial.",e:"Proyecto en preparación",l:""}
-];
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const $=id=>document.getElementById(id);
-$("anc").innerHTML=ANC.map(a=>`<div class="card"><h3>${a.t}</h3><p>${a.d}</p><p class="note"><span class="ok">Estado:</span> ${a.e}</p>${a.l?`<a class="btn" href="${a.l}">Visitar sitio</a>`:""}</div>`).join("");
-const fill=()=>document.querySelectorAll("section.on .meter i").forEach(i=>i.style.width=i.dataset.w+"%");
-let ac;
-const MORSE={V:"...-",H:"....",R:".-.",S:"..."};
-function beep(){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();let t=ac.currentTime+.02;for(const ch of "VHRS"){for(const s of MORSE[ch]){const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=660;g.gain.value=.05;o.connect(g).connect(ac.destination);const d=s==="."?.05:.15;o.start(t);o.stop(t+d);t+=d+.05}t+=.1}}catch(e){}}
-const ids=[...document.querySelectorAll("button.tab")].map(b=>b.dataset.s);
-function show(id){if(!ids.includes(id))id="perfil";document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("button.tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.s===id));setTimeout(fill,60)}
-document.querySelectorAll("button.tab").forEach(b=>b.addEventListener("click",()=>{beep();if(location.hash!=="#"+b.dataset.s)location.hash=b.dataset.s;else show(b.dataset.s)}));
-addEventListener("hashchange",()=>show(location.hash.slice(1)));
-const tr=$("tr"),lg=$("lg");
-const setTr=()=>{tr.href="https://translate.google.com/translate?sl=es&tl="+encodeURIComponent(lg.value)+"&u="+encodeURIComponent("https://victorhugoramirezsalgado.com/ruta/")};
-lg.addEventListener("change",setTr);setTr();
-show(location.hash.slice(1));
-}
-</script>
+<script src="../cubo-base/assets/cubo-rt.js"></script>
+<script src="ruta.js?v=1"></script>
 </body>
 </html>
